@@ -114,7 +114,26 @@ flowchart LR
 
 ---
 
-## 6. Immediate Next Steps & Deliverables
+## 6. Future Directions: Advanced Color Spaces & Alternative Input Modalities
+
+To further bolster multi-viewpoint generalization and policy robustness against environmental variations, subsequent research phases will explore alternative input representations and sensor fusion schemes benchmarked in Phase 5:
+
+### 6.1 HSV Color Space Integration (Alongside RGB)
+- **Scientific Motivation:** Standard RGB color representations are sensitive to viewpoint-dependent photometric variations, such as directional shadows and specular table reflections. When a camera shifts from front to flank, the perceived RGB values of identical surfaces fluctuate significantly due to surface normal angles relative to the light source.
+- **Proposed Formulation:** Convert or augment visual observations with the **HSV (Hue, Saturation, Value)** color space. Because HSV decouples chromaticity ($H, S$) from luminance intensity ($V$), the policy can learn color-constant geometric boundaries of the cube and gripper jaws that remain stable across diverse camera vantage points.
+
+### 6.2 Modality Variations from Phase 5 Architecture Battery
+We plan to evaluate whether alternative visual modalities benchmarked in Phase 5 offer superior cross-viewpoint transfer:
+1. **Asymmetric Decoupled Sensor Fusion (Candidate C):**
+   - Fuses a lightweight semantic RGB stream ($64 \times 64$) with a high-resolution geometric Depth stream ($256 \times 256$). This decouples high-frequency spatial localization (carried by depth) from low-frequency semantic identification, potentially accelerating federated consensus across angles.
+2. **Pure Geometric Depth (Candidate D):**
+   - Evaluating a 256x256 pure depth encoder that completely ignores RGB pixel values, establishing whether visual policy generalization across viewpoints can be made entirely immune to lighting shifts and texture variations.
+3. **Multi-Spectral Concatenation (RGB + HSV + Depth):**
+   - Testing 7-channel visual inputs ($[R, G, B, H, S, V, D]$) to provide maximal perceptual signal to the downstream policy networks.
+
+---
+
+## 7. Immediate Next Steps & Deliverables
 
 1. **Complete Pipeline 8/8 (VP 06):** Active on GPU (~1,930 SPS).
 2. **Execute Cross-Viewpoint Transfer Matrix:** Run 200 evaluation episodes per pair to populate the full $8 \times 8$ zero-shot generalization matrix.

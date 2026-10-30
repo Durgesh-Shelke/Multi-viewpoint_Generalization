@@ -1,0 +1,19 @@
+{
+  "method": "Multi-Teacher Policy Distillation",
+  "epochs": 30,
+  "dagger_rounds": 2,
+  "best_mean_success": 79.5,
+  "best_min_success": 4.0,
+  "per_viewpoint": {
+    "17": 92.0,
+    "0": 90.0,
+    "28": 4.0,
+    "18": 94.0,
+    "27": 86.0,
+    "20": 94.0,
+    "19": 88.0,
+    "6": 88.0
+  },
+  "total_walltime_seconds": 353.9,
+  "checkpoint_path": "/home/maniskill/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt"
+}

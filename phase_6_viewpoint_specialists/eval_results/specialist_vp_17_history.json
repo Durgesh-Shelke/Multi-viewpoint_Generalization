@@ -1,0 +1,407 @@
+[
+  {
+    "iteration": 25,
+    "global_step": 160000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1845,
+    "elapsed_seconds": 86.8
+  },
+  {
+    "iteration": 50,
+    "global_step": 320000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1882,
+    "elapsed_seconds": 174.7
+  },
+  {
+    "iteration": 75,
+    "global_step": 480000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1871,
+    "elapsed_seconds": 262.6
+  },
+  {
+    "iteration": 100,
+    "global_step": 640000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1848,
+    "elapsed_seconds": 350.8
+  },
+  {
+    "iteration": 125,
+    "global_step": 800000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1838,
+    "elapsed_seconds": 439.1
+  },
+  {
+    "iteration": 150,
+    "global_step": 960000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1853,
+    "elapsed_seconds": 526.6
+  },
+  {
+    "iteration": 175,
+    "global_step": 1120000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1870,
+    "elapsed_seconds": 613.4
+  },
+  {
+    "iteration": 200,
+    "global_step": 1280000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1869,
+    "elapsed_seconds": 700.5
+  },
+  {
+    "iteration": 225,
+    "global_step": 1440000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1800,
+    "elapsed_seconds": 791.0
+  },
+  {
+    "iteration": 250,
+    "global_step": 1600000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1819,
+    "elapsed_seconds": 881.5
+  },
+  {
+    "iteration": 275,
+    "global_step": 1760000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1799,
+    "elapsed_seconds": 971.9
+  },
+  {
+    "iteration": 300,
+    "global_step": 1920000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1774,
+    "elapsed_seconds": 1063.7
+  },
+  {
+    "iteration": 325,
+    "global_step": 2080000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1753,
+    "elapsed_seconds": 1156.0
+  },
+  {
+    "iteration": 350,
+    "global_step": 2240000,
+    "eval_success": 4.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1719,
+    "elapsed_seconds": 1249.7
+  },
+  {
+    "iteration": 375,
+    "global_step": 2400000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1690,
+    "elapsed_seconds": 1344.7
+  },
+  {
+    "iteration": 390,
+    "global_step": 2496000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1673,
+    "elapsed_seconds": 1403.2
+  },
+  {
+    "iteration": 391,
+    "global_step": 2502400,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1793,
+    "elapsed_seconds": 1408.2
+  },
+  {
+    "iteration": 392,
+    "global_step": 2508800,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1959,
+    "elapsed_seconds": 1413.1
+  },
+  {
+    "iteration": 393,
+    "global_step": 2515200,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1919,
+    "elapsed_seconds": 1418.0
+  },
+  {
+    "iteration": 394,
+    "global_step": 2521600,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1921,
+    "elapsed_seconds": 1423.0
+  },
+  {
+    "iteration": 395,
+    "global_step": 2528000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1904,
+    "elapsed_seconds": 1428.0
+  },
+  {
+    "iteration": 396,
+    "global_step": 2534400,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1841,
+    "elapsed_seconds": 1433.1
+  },
+  {
+    "iteration": 397,
+    "global_step": 2540800,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1895,
+    "elapsed_seconds": 1438.2
+  },
+  {
+    "iteration": 398,
+    "global_step": 2547200,
+    "eval_success": 6.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1897,
+    "elapsed_seconds": 1443.1
+  },
+  {
+    "iteration": 399,
+    "global_step": 2553600,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1869,
+    "elapsed_seconds": 1448.2
+  },
+  {
+    "iteration": 400,
+    "global_step": 2560000,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1901,
+    "elapsed_seconds": 1453.1
+  },
+  {
+    "iteration": 401,
+    "global_step": 2566400,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1884,
+    "elapsed_seconds": 1458.2
+  },
+  {
+    "iteration": 402,
+    "global_step": 2572800,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1876,
+    "elapsed_seconds": 1463.2
+  },
+  {
+    "iteration": 403,
+    "global_step": 2579200,
+    "eval_success": 2.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1891,
+    "elapsed_seconds": 1468.3
+  },
+  {
+    "iteration": 425,
+    "global_step": 2720000,
+    "eval_success": 4.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1862,
+    "elapsed_seconds": 1545.6
+  },
+  {
+    "iteration": 450,
+    "global_step": 2880000,
+    "eval_success": 6.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1834,
+    "elapsed_seconds": 1633.3
+  },
+  {
+    "iteration": 475,
+    "global_step": 3040000,
+    "eval_success": 0.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1764,
+    "elapsed_seconds": 1724.4
+  },
+  {
+    "iteration": 500,
+    "global_step": 3200000,
+    "eval_success": 20.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1677,
+    "elapsed_seconds": 1817.7
+  },
+  {
+    "iteration": 525,
+    "global_step": 3360000,
+    "eval_success": 18.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1600,
+    "elapsed_seconds": 1916.2
+  },
+  {
+    "iteration": 550,
+    "global_step": 3520000,
+    "eval_success": 12.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1536,
+    "elapsed_seconds": 2019.2
+  },
+  {
+    "iteration": 575,
+    "global_step": 3680000,
+    "eval_success": 18.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1538,
+    "elapsed_seconds": 2124.7
+  },
+  {
+    "iteration": 600,
+    "global_step": 3840000,
+    "eval_success": 22.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1498,
+    "elapsed_seconds": 2230.9
+  },
+  {
+    "iteration": 625,
+    "global_step": 4000000,
+    "eval_success": 36.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1544,
+    "elapsed_seconds": 2337.1
+  },
+  {
+    "iteration": 650,
+    "global_step": 4160000,
+    "eval_success": 40.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1520,
+    "elapsed_seconds": 2443.4
+  },
+  {
+    "iteration": 675,
+    "global_step": 4320000,
+    "eval_success": 44.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1507,
+    "elapsed_seconds": 2550.2
+  },
+  {
+    "iteration": 700,
+    "global_step": 4480000,
+    "eval_success": 50.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1512,
+    "elapsed_seconds": 2656.4
+  },
+  {
+    "iteration": 725,
+    "global_step": 4640000,
+    "eval_success": 70.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1509,
+    "elapsed_seconds": 2766.3
+  },
+  {
+    "iteration": 750,
+    "global_step": 4800000,
+    "eval_success": 56.00000000000001,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1521,
+    "elapsed_seconds": 2873.2
+  },
+  {
+    "iteration": 775,
+    "global_step": 4960000,
+    "eval_success": 68.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1511,
+    "elapsed_seconds": 2982.7
+  },
+  {
+    "iteration": 781,
+    "global_step": 4998400,
+    "eval_success": 68.0,
+    "eval_return": 0.0,
+    "eval_length": 0.0,
+    "sps": 1502,
+    "elapsed_seconds": 3009.8
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "viewpoint_id": 28,
+  "azimuth_deg": 2.93,
+  "elevation_deg": 46.16,
+  "world_eye": [
+    0.142,
+    0.0387,
+    0.7892
+  ],
+  "completed": true,
+  "early_stopped": true,
+  "total_timesteps": 1497600,
+  "best_eval_success": 12.0,
+  "total_walltime_seconds": 950.1,
+  "best_checkpoint": "/home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt",
+  "boosted": true
+}

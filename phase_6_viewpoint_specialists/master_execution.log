@@ -1,0 +1,643 @@
+
+[2026-10-30 12:26:47] ==========================================================================
+[2026-10-30 12:26:47]  STARTING PHASE 6: INDIVIDUAL VIEWPOINT SPECIALIST TRAINING (8 VIEWPOINTS)
+[2026-10-30 12:26:47]  Working Directory: /home/maniskill/phase_6_viewpoint_specialists
+[2026-10-30 12:26:47]  Viewpoint Order:   [17, 0, 28, 18, 27, 20, 19, 6]
+[2026-10-30 12:26:47] ==========================================================================
+[2026-10-30 12:26:47] 
+--- [Pipeline 1/8] Viewpoint 17: Front-Mid (Canonical Baseline) (Az: -4.7°, El: 31.8°) ---
+[2026-10-30 12:26:47]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 17 --total-timesteps 2500000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 17
+ Azimuth:   -4.7° | Elevation: 31.8° | Eye: [0.3118, -0.0768, 0.5766]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 2,500,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 390...
+[Iter 0025/390 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1845 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0050/390 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1882 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0075/390 | Step 480,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1871 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0100/390 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1848 | Best:   2.0% | VRAM: 1352MB
+[Iter 0125/390 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1838 | Best:   2.0% | VRAM: 1352MB
+[Iter 0150/390 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1853 | Best:   2.0% | VRAM: 1352MB
+[Iter 0175/390 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1870 | Best:   2.0% | VRAM: 1352MB
+[Iter 0200/390 | Step 1,280,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1869 | Best:   2.0% | VRAM: 1352MB
+[Iter 0225/390 | Step 1,440,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1800 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0250/390 | Step 1,600,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1819 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0275/390 | Step 1,760,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1799 | Best:   2.0% | VRAM: 1352MB
+[Iter 0300/390 | Step 1,920,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1774 | Best:   2.0% | VRAM: 1352MB
+[Iter 0325/390 | Step 2,080,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1753 | Best:   2.0% | VRAM: 1352MB
+[Iter 0350/390 | Step 2,240,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1719 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0375/390 | Step 2,400,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1690 | Best:   4.0% | VRAM: 1352MB
+[Iter 0390/390 | Step 2,496,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1673 | Best:   4.0% | VRAM: 1352MB
+
+[COMPLETED] Viewpoint 17 Training Finished!
+ Steps: 2,496,000 | Best Eval: 4.0% | Walltime: 23.4 mins | Avg SPS: 1778
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+
+[2026-10-30 12:50:18] 
+--- [Pipeline 2/8] Viewpoint 00: Front-Low (Tabletop Graze) (Az: +0.0°, El: 12.3°) ---
+[2026-10-30 12:50:18]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 0 --total-timesteps 2500000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 00
+ Azimuth:   +0.0° | Elevation: 12.3° | Eye: [0.4542, 0.0, 0.2326]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 2,500,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 390...
+[Iter 0025/390 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1904 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0050/390 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1932 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0075/390 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1857 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0100/390 | Step 640,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1870 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0125/390 | Step 800,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1872 | Best:   4.0% | VRAM: 1352MB
+[Iter 0150/390 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1868 | Best:   4.0% | VRAM: 1352MB
+[Iter 0175/390 | Step 1,120,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1862 | Best:   4.0% | VRAM: 1352MB
+[Iter 0200/390 | Step 1,280,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1833 | Best:   4.0% | VRAM: 1352MB
+[Iter 0225/390 | Step 1,440,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1813 | Best:   4.0% | VRAM: 1352MB
+[Iter 0250/390 | Step 1,600,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1815 | Best:   4.0% | VRAM: 1352MB
+[Iter 0275/390 | Step 1,760,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1777 | Best:   4.0% | VRAM: 1352MB
+[Iter 0300/390 | Step 1,920,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1774 | Best:   4.0% | VRAM: 1352MB
+[Iter 0325/390 | Step 2,080,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1777 | Best:   4.0% | VRAM: 1352MB
+[Iter 0350/390 | Step 2,240,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1716 | Best:   4.0% | VRAM: 1352MB
+[Iter 0375/390 | Step 2,400,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1732 | Best:   4.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0390/390 | Step 2,496,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1722 | Best:   4.0% | VRAM: 1352MB
+
+[COMPLETED] Viewpoint 00 Training Finished!
+ Steps: 2,496,000 | Best Eval: 4.0% | Walltime: 23.1 mins | Avg SPS: 1798
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+
+[2026-10-30 13:13:32] 
+--- [Pipeline 3/8] Viewpoint 28: Front-High (Steep Tilt) (Az: +2.9°, El: 46.2°) ---
+[2026-10-30 13:13:32]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 28 --total-timesteps 2500000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 28
+ Azimuth:   +2.9° | Elevation: 46.2° | Eye: [0.142, 0.0387, 0.7892]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 2,500,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 390...
+[Iter 0025/390 | Step 160,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1920 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0050/390 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1914 | Best:   2.0% | VRAM: 1352MB
+[Iter 0075/390 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1911 | Best:   2.0% | VRAM: 1352MB
+[Iter 0100/390 | Step 640,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1929 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0125/390 | Step 800,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1916 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0150/390 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1896 | Best:   2.0% | VRAM: 1352MB
+[Iter 0175/390 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1862 | Best:   2.0% | VRAM: 1352MB
+[Iter 0200/390 | Step 1,280,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1862 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0225/390 | Step 1,440,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1855 | Best:   2.0% | VRAM: 1352MB
+[Iter 0250/390 | Step 1,600,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1804 | Best:   2.0% | VRAM: 1352MB
+[Iter 0275/390 | Step 1,760,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1810 | Best:   2.0% | VRAM: 1352MB
+[Iter 0300/390 | Step 1,920,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1743 | Best:   2.0% | VRAM: 1352MB
+[Iter 0325/390 | Step 2,080,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1744 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0350/390 | Step 2,240,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1735 | Best:   2.0% | VRAM: 1352MB
+[Iter 0375/390 | Step 2,400,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1731 | Best:   2.0% | VRAM: 1352MB
+[Iter 0390/390 | Step 2,496,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1725 | Best:   2.0% | VRAM: 1352MB
+
+[COMPLETED] Viewpoint 28 Training Finished!
+ Steps: 2,496,000 | Best Eval: 2.0% | Walltime: 23.1 mins | Avg SPS: 1804
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+
+[2026-10-30 13:36:42] 
+--- [Pipeline 4/8] Viewpoint 18: Left-Flank 90° (Az: -89.7°, El: 33.1°) ---
+[2026-10-30 13:36:42]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 18 --total-timesteps 2500000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 18
+ Azimuth:  -89.7° | Elevation: 33.1° | Eye: [-0.6105, -0.9171, 0.5969]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 2,500,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 390...
+[Iter 0025/390 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1884 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0050/390 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1853 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0075/390 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1863 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0100/390 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1843 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0125/390 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1835 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+
+[PAUSE] Detected /home/maniskill/phase_6_viewpoint_specialists/.pause. Saving state and entering sleep loop...
+[2026-10-30 13:51:34] ==========================================================================
+[2026-10-30 13:51:34]  STARTING PHASE 6: INDIVIDUAL VIEWPOINT SPECIALIST TRAINING (8 VIEWPOINTS)
+[2026-10-30 13:51:34]  Working Directory: /home/maniskill/phase_6_viewpoint_specialists
+[2026-10-30 13:51:34]  Viewpoint Order:   [17, 0, 28, 18, 27, 20, 19, 6]
+[2026-10-30 13:51:34] ==========================================================================
+[2026-10-30 13:51:34] 
+--- [Pipeline 1/8] Viewpoint 17: Front-Mid (Canonical Baseline) (Az: -4.7°, El: 31.8°) ---
+[2026-10-30 13:51:34]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 17 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 17
+ Azimuth:   -4.7° | Elevation: 31.8° | Eye: [0.3118, -0.0768, 0.5766]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Resume] Found checkpoint at /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_latest.pt. Restoring...
+[Resume] Restored state from Iteration 403, Step 2,579,200, Best Eval: 6.0%
+[Training] Launching PPO loop from iteration 404 to 781...
+[Iter 0425/781 | Step 2,720,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1862 | Best:   6.0% | VRAM: 1364MB
+[Iter 0450/781 | Step 2,880,000] Eval Success:   6.0% | Return:  0.00 | Length:  0.0 | SPS: 1834 | Best:   6.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 6.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1764 | Best:   6.0% | VRAM: 1364MB
+[Iter 0500/781 | Step 3,200,000] Eval Success:  20.0% | Return:  0.00 | Length:  0.0 | SPS: 1677 | Best:   6.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 20.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0525/781 | Step 3,360,000] Eval Success:  18.0% | Return:  0.00 | Length:  0.0 | SPS: 1600 | Best:  20.0% | VRAM: 1364MB
+[Iter 0550/781 | Step 3,520,000] Eval Success:  12.0% | Return:  0.00 | Length:  0.0 | SPS: 1536 | Best:  20.0% | VRAM: 1364MB
+[Iter 0575/781 | Step 3,680,000] Eval Success:  18.0% | Return:  0.00 | Length:  0.0 | SPS: 1538 | Best:  20.0% | VRAM: 1364MB
+[Iter 0600/781 | Step 3,840,000] Eval Success:  22.0% | Return:  0.00 | Length:  0.0 | SPS: 1498 | Best:  20.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 22.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0625/781 | Step 4,000,000] Eval Success:  36.0% | Return:  0.00 | Length:  0.0 | SPS: 1544 | Best:  22.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 36.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0650/781 | Step 4,160,000] Eval Success:  40.0% | Return:  0.00 | Length:  0.0 | SPS: 1520 | Best:  36.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 40.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0675/781 | Step 4,320,000] Eval Success:  44.0% | Return:  0.00 | Length:  0.0 | SPS: 1507 | Best:  40.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 44.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0700/781 | Step 4,480,000] Eval Success:  50.0% | Return:  0.00 | Length:  0.0 | SPS: 1512 | Best:  44.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 50.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0725/781 | Step 4,640,000] Eval Success:  70.0% | Return:  0.00 | Length:  0.0 | SPS: 1509 | Best:  50.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 17 Model Saved! Success: 70.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+[Iter 0750/781 | Step 4,800,000] Eval Success:  56.0% | Return:  0.00 | Length:  0.0 | SPS: 1521 | Best:  70.0% | VRAM: 1364MB
+[Iter 0775/781 | Step 4,960,000] Eval Success:  68.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  70.0% | VRAM: 1364MB
+[Iter 0781/781 | Step 4,998,400] Eval Success:  68.0% | Return:  0.00 | Length:  0.0 | SPS: 1502 | Best:  70.0% | VRAM: 1364MB
+
+[COMPLETED] Viewpoint 17 Training Finished!
+ Steps: 4,998,400 | Best Eval: 70.0% | Walltime: 50.2 mins | Avg SPS: 1660
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_17_best.pt
+
+[2026-10-30 14:17:23] 
+--- [Pipeline 2/8] Viewpoint 00: Front-Low (Tabletop Graze) (Az: +0.0°, El: 12.3°) ---
+[2026-10-30 14:17:23]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 0 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 00
+ Azimuth:   +0.0° | Elevation: 12.3° | Eye: [0.4542, 0.0, 0.2326]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Resume] Found checkpoint at /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_latest.pt. Restoring...
+[Resume] Restored state from Iteration 390, Step 2,496,000, Best Eval: 4.0%
+[Training] Launching PPO loop from iteration 391 to 781...
+[Iter 0400/781 | Step 2,560,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1853 | Best:   4.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0425/781 | Step 2,720,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1855 | Best:   4.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0450/781 | Step 2,880,000] Eval Success:   6.0% | Return:  0.00 | Length:  0.0 | SPS: 1766 | Best:   4.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 6.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:  18.0% | Return:  0.00 | Length:  0.0 | SPS: 1729 | Best:   6.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 18.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0500/781 | Step 3,200,000] Eval Success:  22.0% | Return:  0.00 | Length:  0.0 | SPS: 1599 | Best:  18.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 22.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0525/781 | Step 3,360,000] Eval Success:  40.0% | Return:  0.00 | Length:  0.0 | SPS: 1518 | Best:  22.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 40.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0550/781 | Step 3,520,000] Eval Success:  38.0% | Return:  0.00 | Length:  0.0 | SPS: 1535 | Best:  40.0% | VRAM: 1364MB
+[Iter 0575/781 | Step 3,680,000] Eval Success:  72.0% | Return:  0.00 | Length:  0.0 | SPS: 1531 | Best:  40.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 72.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0600/781 | Step 3,840,000] Eval Success:  70.0% | Return:  0.00 | Length:  0.0 | SPS: 1529 | Best:  72.0% | VRAM: 1364MB
+[Iter 0625/781 | Step 4,000,000] Eval Success:  68.0% | Return:  0.00 | Length:  0.0 | SPS: 1547 | Best:  72.0% | VRAM: 1364MB
+[Iter 0650/781 | Step 4,160,000] Eval Success:  66.0% | Return:  0.00 | Length:  0.0 | SPS: 1515 | Best:  72.0% | VRAM: 1364MB
+[Iter 0675/781 | Step 4,320,000] Eval Success:  86.0% | Return:  0.00 | Length:  0.0 | SPS: 1533 | Best:  72.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 86.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0700/781 | Step 4,480,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1543 | Best:  86.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 90.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0725/781 | Step 4,640,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1542 | Best:  90.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 90.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+[Iter 0750/781 | Step 4,800,000] Eval Success:  88.0% | Return:  0.00 | Length:  0.0 | SPS: 1540 | Best:  90.0% | VRAM: 1364MB
+[Iter 0775/781 | Step 4,960,000] Eval Success:  98.0% | Return:  0.00 | Length:  0.0 | SPS: 1520 | Best:  90.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 00 Model Saved! Success: 98.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 00 reached 98.0% >= 95.0%!
+ Plateau mastered at Step 4,960,000 (Iter 775). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 00 Training Finished!
+ Steps: 4,960,000 | Best Eval: 98.0% | Walltime: 49.3 mins | Avg SPS: 1677
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_00_best.pt
+
+[2026-10-30 14:43:38] 
+--- [Pipeline 3/8] Viewpoint 28: Front-High (Steep Tilt) (Az: +2.9°, El: 46.2°) ---
+[2026-10-30 14:43:38]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 28 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 28
+ Azimuth:   +2.9° | Elevation: 46.2° | Eye: [0.142, 0.0387, 0.7892]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Resume] Found checkpoint at /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_latest.pt. Restoring...
+[Resume] Restored state from Iteration 390, Step 2,496,000, Best Eval: 2.0%
+[Training] Launching PPO loop from iteration 391 to 781...
+[Iter 0400/781 | Step 2,560,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1892 | Best:   2.0% | VRAM: 1364MB
+[Iter 0425/781 | Step 2,720,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1914 | Best:   2.0% | VRAM: 1364MB
+[Iter 0450/781 | Step 2,880,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1895 | Best:   2.0% | VRAM: 1364MB
+[Iter 0475/781 | Step 3,040,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1882 | Best:   2.0% | VRAM: 1364MB
+[Iter 0500/781 | Step 3,200,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1875 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0525/781 | Step 3,360,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1842 | Best:   2.0% | VRAM: 1364MB
+[Iter 0550/781 | Step 3,520,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1840 | Best:   2.0% | VRAM: 1364MB
+[Iter 0575/781 | Step 3,680,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1833 | Best:   2.0% | VRAM: 1364MB
+[Iter 0600/781 | Step 3,840,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1821 | Best:   2.0% | VRAM: 1364MB
+[Iter 0625/781 | Step 4,000,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1807 | Best:   2.0% | VRAM: 1364MB
+[Iter 0650/781 | Step 4,160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1795 | Best:   2.0% | VRAM: 1364MB
+[Iter 0675/781 | Step 4,320,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1754 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0700/781 | Step 4,480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1744 | Best:   2.0% | VRAM: 1364MB
+[Iter 0725/781 | Step 4,640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1721 | Best:   2.0% | VRAM: 1364MB
+[Iter 0750/781 | Step 4,800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1679 | Best:   2.0% | VRAM: 1364MB
+[Iter 0775/781 | Step 4,960,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1714 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 28 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+[Iter 0781/781 | Step 4,998,400] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1714 | Best:   2.0% | VRAM: 1364MB
+
+[COMPLETED] Viewpoint 28 Training Finished!
+ Steps: 4,998,400 | Best Eval: 2.0% | Walltime: 46.6 mins | Avg SPS: 1787
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_28_best.pt
+
+[2026-10-30 15:07:18] 
+--- [Pipeline 4/8] Viewpoint 18: Left-Flank 90° (Az: -89.7°, El: 33.1°) ---
+[2026-10-30 15:07:18]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 18 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 18
+ Azimuth:  -89.7° | Elevation: 33.1° | Eye: [-0.6105, -0.9171, 0.5969]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Resume] Found checkpoint at /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_latest.pt. Restoring...
+[Resume] Restored state from Iteration 128, Step 819,200, Best Eval: 0.0%
+[Training] Launching PPO loop from iteration 129 to 781...
+[Iter 0150/781 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1880 | Best:   0.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0175/781 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1901 | Best:   0.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0200/781 | Step 1,280,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1852 | Best:   0.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0225/781 | Step 1,440,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1832 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0250/781 | Step 1,600,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1787 | Best:   2.0% | VRAM: 1364MB
+[Iter 0275/781 | Step 1,760,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1758 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0300/781 | Step 1,920,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1743 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0325/781 | Step 2,080,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1664 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0350/781 | Step 2,240,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1671 | Best:   2.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0375/781 | Step 2,400,000] Eval Success:  14.0% | Return:  0.00 | Length:  0.0 | SPS: 1580 | Best:   4.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 14.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0400/781 | Step 2,560,000] Eval Success:  54.0% | Return:  0.00 | Length:  0.0 | SPS: 1524 | Best:  14.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 54.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0425/781 | Step 2,720,000] Eval Success:  62.0% | Return:  0.00 | Length:  0.0 | SPS: 1512 | Best:  54.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 62.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0450/781 | Step 2,880,000] Eval Success:  62.0% | Return:  0.00 | Length:  0.0 | SPS: 1512 | Best:  62.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 62.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:  76.0% | Return:  0.00 | Length:  0.0 | SPS: 1495 | Best:  62.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 76.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0500/781 | Step 3,200,000] Eval Success:  72.0% | Return:  0.00 | Length:  0.0 | SPS: 1510 | Best:  76.0% | VRAM: 1364MB
+[Iter 0525/781 | Step 3,360,000] Eval Success:  86.0% | Return:  0.00 | Length:  0.0 | SPS: 1496 | Best:  76.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 86.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0550/781 | Step 3,520,000] Eval Success:  86.0% | Return:  0.00 | Length:  0.0 | SPS: 1496 | Best:  86.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 86.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0575/781 | Step 3,680,000] Eval Success:  88.0% | Return:  0.00 | Length:  0.0 | SPS: 1517 | Best:  86.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 88.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0600/781 | Step 3,840,000] Eval Success:  92.0% | Return:  0.00 | Length:  0.0 | SPS: 1495 | Best:  88.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 92.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0625/781 | Step 4,000,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1496 | Best:  92.0% | VRAM: 1364MB
+[Iter 0650/781 | Step 4,160,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1480 | Best:  92.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0675/781 | Step 4,320,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1497 | Best:  94.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0700/781 | Step 4,480,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1492 | Best:  94.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+[Iter 0725/781 | Step 4,640,000] Eval Success:  98.0% | Return:  0.00 | Length:  0.0 | SPS: 1495 | Best:  94.0% | VRAM: 1364MB
+  >>> [NEW BEST] VP 18 Model Saved! Success: 98.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 18 reached 98.0% >= 95.0%!
+ Plateau mastered at Step 4,640,000 (Iter 725). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 18 Training Finished!
+ Steps: 4,640,000 | Best Eval: 98.0% | Walltime: 47.8 mins | Avg SPS: 1618
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_18_best.pt
+
+[2026-10-30 15:47:41] 
+--- [Pipeline 5/8] Viewpoint 27: Right-Flank 90° (Az: +87.9°, El: 44.6°) ---
+[2026-10-30 15:47:41]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 27 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 27
+ Azimuth:  +87.9° | Elevation: 44.6° | Eye: [-0.5866, 0.778, 0.7689]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 781...
+[Iter 0025/781 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1936 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0050/781 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1917 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0075/781 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1906 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0100/781 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1899 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0125/781 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1841 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0150/781 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1770 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0175/781 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1811 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0200/781 | Step 1,280,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1768 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0225/781 | Step 1,440,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1758 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0250/781 | Step 1,600,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1735 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0275/781 | Step 1,760,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1699 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0300/781 | Step 1,920,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1645 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0325/781 | Step 2,080,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1380 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0350/781 | Step 2,240,000] Eval Success:  18.0% | Return:  0.00 | Length:  0.0 | SPS: 1572 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 18.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0375/781 | Step 2,400,000] Eval Success:  22.0% | Return:  0.00 | Length:  0.0 | SPS: 1546 | Best:  18.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 22.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0400/781 | Step 2,560,000] Eval Success:  32.0% | Return:  0.00 | Length:  0.0 | SPS: 1526 | Best:  22.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 32.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0425/781 | Step 2,720,000] Eval Success:  36.0% | Return:  0.00 | Length:  0.0 | SPS: 1564 | Best:  32.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 36.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0450/781 | Step 2,880,000] Eval Success:  52.0% | Return:  0.00 | Length:  0.0 | SPS: 1532 | Best:  36.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 52.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:  66.0% | Return:  0.00 | Length:  0.0 | SPS: 1520 | Best:  52.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 66.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0500/781 | Step 3,200,000] Eval Success:  66.0% | Return:  0.00 | Length:  0.0 | SPS: 1522 | Best:  66.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 66.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0525/781 | Step 3,360,000] Eval Success:  70.0% | Return:  0.00 | Length:  0.0 | SPS: 1546 | Best:  66.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 70.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0550/781 | Step 3,520,000] Eval Success:  84.0% | Return:  0.00 | Length:  0.0 | SPS: 1514 | Best:  70.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 84.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0575/781 | Step 3,680,000] Eval Success:  82.0% | Return:  0.00 | Length:  0.0 | SPS: 1497 | Best:  84.0% | VRAM: 1352MB
+[Iter 0600/781 | Step 3,840,000] Eval Success:  86.0% | Return:  0.00 | Length:  0.0 | SPS: 1500 | Best:  84.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 86.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0625/781 | Step 4,000,000] Eval Success:  88.0% | Return:  0.00 | Length:  0.0 | SPS: 1506 | Best:  86.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 88.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+[Iter 0650/781 | Step 4,160,000] Eval Success:  96.0% | Return:  0.00 | Length:  0.0 | SPS: 1523 | Best:  88.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 27 Model Saved! Success: 96.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 27 reached 96.0% >= 95.0%!
+ Plateau mastered at Step 4,160,000 (Iter 650). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 27 Training Finished!
+ Steps: 4,160,000 | Best Eval: 96.0% | Walltime: 42.8 mins | Avg SPS: 1620
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_27_best.pt
+
+[2026-10-30 16:30:34] 
+--- [Pipeline 6/8] Viewpoint 20: Diag Front-Left (-45°) (Az: -37.2°, El: 35.0°) ---
+[2026-10-30 16:30:34]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 20 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 20
+ Azimuth:  -37.2° | Elevation: 35.0° | Eye: [0.0992, -0.542, 0.6272]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 781...
+[Iter 0025/781 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1936 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0050/781 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1919 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0075/781 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1925 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0100/781 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1921 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0125/781 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1952 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0150/781 | Step 960,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1925 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0175/781 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1888 | Best:   2.0% | VRAM: 1352MB
+[Iter 0200/781 | Step 1,280,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1879 | Best:   2.0% | VRAM: 1352MB
+[Iter 0225/781 | Step 1,440,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1777 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0250/781 | Step 1,600,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1691 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0275/781 | Step 1,760,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1692 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0300/781 | Step 1,920,000] Eval Success:   8.0% | Return:  0.00 | Length:  0.0 | SPS: 1636 | Best:   4.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 8.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0325/781 | Step 2,080,000] Eval Success:  20.0% | Return:  0.00 | Length:  0.0 | SPS: 1596 | Best:   8.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 20.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0350/781 | Step 2,240,000] Eval Success:  34.0% | Return:  0.00 | Length:  0.0 | SPS: 1528 | Best:  20.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 34.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0375/781 | Step 2,400,000] Eval Success:  36.0% | Return:  0.00 | Length:  0.0 | SPS: 1546 | Best:  34.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 36.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0400/781 | Step 2,560,000] Eval Success:  64.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  36.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 64.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0425/781 | Step 2,720,000] Eval Success:  72.0% | Return:  0.00 | Length:  0.0 | SPS: 1528 | Best:  64.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 72.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0450/781 | Step 2,880,000] Eval Success:  84.0% | Return:  0.00 | Length:  0.0 | SPS: 1510 | Best:  72.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 84.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1520 | Best:  84.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0500/781 | Step 3,200,000] Eval Success:  84.0% | Return:  0.00 | Length:  0.0 | SPS: 1507 | Best:  94.0% | VRAM: 1352MB
+[Iter 0525/781 | Step 3,360,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1518 | Best:  94.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0550/781 | Step 3,520,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  94.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0575/781 | Step 3,680,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  94.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0600/781 | Step 3,840,000] Eval Success:  94.0% | Return:  0.00 | Length:  0.0 | SPS: 1514 | Best:  94.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 94.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+[Iter 0625/781 | Step 4,000,000] Eval Success:  96.0% | Return:  0.00 | Length:  0.0 | SPS: 1513 | Best:  94.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 20 Model Saved! Success: 96.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 20 reached 96.0% >= 95.0%!
+ Plateau mastered at Step 4,000,000 (Iter 625). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 20 Training Finished!
+ Steps: 4,000,000 | Best Eval: 96.0% | Walltime: 40.6 mins | Avg SPS: 1642
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_20_best.pt
+
+[2026-10-30 17:11:16] 
+--- [Pipeline 7/8] Viewpoint 19: Diag Front-Right (+45°) (Az: +47.8°, El: 33.7°) ---
+[2026-10-30 17:11:16]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 19 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 19
+ Azimuth:  +47.8° | Elevation: 33.7° | Eye: [-0.0033, 0.6743, 0.607]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 781...
+[Iter 0025/781 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1901 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0050/781 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1878 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0075/781 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1885 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0100/781 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1871 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0125/781 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1841 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0150/781 | Step 960,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1845 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0175/781 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1816 | Best:   2.0% | VRAM: 1352MB
+[Iter 0200/781 | Step 1,280,000] Eval Success:  10.0% | Return:  0.00 | Length:  0.0 | SPS: 1791 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 10.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0225/781 | Step 1,440,000] Eval Success:  12.0% | Return:  0.00 | Length:  0.0 | SPS: 1660 | Best:  10.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 12.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0250/781 | Step 1,600,000] Eval Success:  18.0% | Return:  0.00 | Length:  0.0 | SPS: 1564 | Best:  12.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 18.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0275/781 | Step 1,760,000] Eval Success:  54.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  18.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 54.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0300/781 | Step 1,920,000] Eval Success:  72.0% | Return:  0.00 | Length:  0.0 | SPS: 1488 | Best:  54.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 72.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0325/781 | Step 2,080,000] Eval Success:  78.0% | Return:  0.00 | Length:  0.0 | SPS: 1481 | Best:  72.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 78.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0350/781 | Step 2,240,000] Eval Success:  78.0% | Return:  0.00 | Length:  0.0 | SPS: 1500 | Best:  78.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 78.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0375/781 | Step 2,400,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1506 | Best:  78.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 90.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+[Iter 0400/781 | Step 2,560,000] Eval Success:  98.0% | Return:  0.00 | Length:  0.0 | SPS: 1486 | Best:  90.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 19 Model Saved! Success: 98.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 19 reached 98.0% >= 95.0%!
+ Plateau mastered at Step 2,560,000 (Iter 400). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 19 Training Finished!
+ Steps: 2,560,000 | Best Eval: 98.0% | Walltime: 25.6 mins | Avg SPS: 1665
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_19_best.pt
+
+[2026-10-30 17:37:00] 
+--- [Pipeline 8/8] Viewpoint 06: Low Flank Right (Az: +72.6°, El: 18.3°) ---
+[2026-10-30 17:37:00]  Executing: /opt/conda/bin/python3 -u /home/maniskill/phase_6_viewpoint_specialists/train_viewpoint_specialist.py --viewpoint-id 6 --total-timesteps 5000000 --num-envs 128 --early-stop-threshold 95.0 --eval-freq 25 --output-dir /home/maniskill/phase_6_viewpoint_specialists
+
+==============================================================================
+ TRAINING SPECIALIST: VIEWPOINT 06
+ Azimuth:  +72.6° | Elevation: 18.3° | Eye: [-0.3041, 0.9911, 0.3439]
+ Input: 128x128 4-Channel RGB-D | Orthogonal Random Init
+ Envs: 128 | Batch: 6400 | Total Steps: 5,000,000
+ Target Early Stopping: >=95.0% Eval Success
+==============================================================================
+
+[Training] Launching PPO loop from iteration 1 to 781...
+[Iter 0025/781 | Step 160,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1928 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0050/781 | Step 320,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1884 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0075/781 | Step 480,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1918 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0100/781 | Step 640,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1881 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0125/781 | Step 800,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1873 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0150/781 | Step 960,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1848 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0175/781 | Step 1,120,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1847 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0200/781 | Step 1,280,000] Eval Success:   0.0% | Return:  0.00 | Length:  0.0 | SPS: 1833 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 0.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0225/781 | Step 1,440,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1775 | Best:   0.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 2.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0250/781 | Step 1,600,000] Eval Success:   4.0% | Return:  0.00 | Length:  0.0 | SPS: 1638 | Best:   2.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 4.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0275/781 | Step 1,760,000] Eval Success:   2.0% | Return:  0.00 | Length:  0.0 | SPS: 1620 | Best:   4.0% | VRAM: 1352MB
+[Iter 0300/781 | Step 1,920,000] Eval Success:  10.0% | Return:  0.00 | Length:  0.0 | SPS: 1611 | Best:   4.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 10.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0325/781 | Step 2,080,000] Eval Success:   8.0% | Return:  0.00 | Length:  0.0 | SPS: 1531 | Best:  10.0% | VRAM: 1352MB
+[Iter 0350/781 | Step 2,240,000] Eval Success:  14.0% | Return:  0.00 | Length:  0.0 | SPS: 1511 | Best:  10.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 14.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0375/781 | Step 2,400,000] Eval Success:  42.0% | Return:  0.00 | Length:  0.0 | SPS: 1466 | Best:  14.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 42.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0400/781 | Step 2,560,000] Eval Success:  50.0% | Return:  0.00 | Length:  0.0 | SPS: 1425 | Best:  42.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 50.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0425/781 | Step 2,720,000] Eval Success:  60.0% | Return:  0.00 | Length:  0.0 | SPS: 1441 | Best:  50.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 60.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0450/781 | Step 2,880,000] Eval Success:  70.0% | Return:  0.00 | Length:  0.0 | SPS: 1469 | Best:  60.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 70.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0475/781 | Step 3,040,000] Eval Success:  74.0% | Return:  0.00 | Length:  0.0 | SPS: 1461 | Best:  70.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 74.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0500/781 | Step 3,200,000] Eval Success:  86.0% | Return:  0.00 | Length:  0.0 | SPS: 1502 | Best:  74.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 86.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0525/781 | Step 3,360,000] Eval Success:  82.0% | Return:  0.00 | Length:  0.0 | SPS: 1421 | Best:  86.0% | VRAM: 1352MB
+[Iter 0550/781 | Step 3,520,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1476 | Best:  86.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 90.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0575/781 | Step 3,680,000] Eval Success:  78.0% | Return:  0.00 | Length:  0.0 | SPS: 1461 | Best:  90.0% | VRAM: 1352MB
+[Iter 0600/781 | Step 3,840,000] Eval Success:  88.0% | Return:  0.00 | Length:  0.0 | SPS: 1430 | Best:  90.0% | VRAM: 1352MB
+[Iter 0625/781 | Step 4,000,000] Eval Success:  90.0% | Return:  0.00 | Length:  0.0 | SPS: 1467 | Best:  90.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 90.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0650/781 | Step 4,160,000] Eval Success:  92.0% | Return:  0.00 | Length:  0.0 | SPS: 1477 | Best:  90.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 92.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0675/781 | Step 4,320,000] Eval Success:  92.0% | Return:  0.00 | Length:  0.0 | SPS: 1466 | Best:  92.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 92.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+[Iter 0700/781 | Step 4,480,000] Eval Success:  96.0% | Return:  0.00 | Length:  0.0 | SPS: 1461 | Best:  92.0% | VRAM: 1352MB
+  >>> [NEW BEST] VP 06 Model Saved! Success: 96.0% -> /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+
+******************************************************************************
+ [EARLY STOPPING TRIGGERED] VP 06 reached 96.0% >= 95.0%!
+ Plateau mastered at Step 4,480,000 (Iter 700). Cleanly completing training.
+******************************************************************************
+
+
+[COMPLETED] Viewpoint 06 Training Finished!
+ Steps: 4,480,000 | Best Eval: 96.0% | Walltime: 47.3 mins | Avg SPS: 1579
+ Best Weights: /home/maniskill/phase_6_viewpoint_specialists/checkpoints/specialist_vp_06_best.pt
+
+[2026-10-30 18:24:23] 
+==========================================================================
+[2026-10-30 18:24:23]  ALL 8 VIEWPOINT SPECIALISTS COMPLETED! PROCEEDING TO CROSS-EVALUATION...
+[2026-10-30 18:24:23] ==========================================================================
+[2026-10-30 18:24:23]  Executing: /opt/conda/bin/python3 /home/maniskill/phase_6_viewpoint_specialists/evaluate_cross_transfer_matrix.py --output-dir /home/maniskill/phase_6_viewpoint_specialists --episodes 200

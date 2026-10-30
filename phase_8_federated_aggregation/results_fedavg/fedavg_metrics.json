@@ -1,0 +1,10 @@
+{
+  "method": "FEDAVG",
+  "mu": 0.0,
+  "rounds": 15,
+  "local_iterations": 5,
+  "best_mean_success": 0.25,
+  "best_min_success": 0.0,
+  "total_walltime_seconds": 1621.3,
+  "best_model_path": "/home/maniskill/phase_8_federated_aggregation/results_fedavg/checkpoints/fedavg_global_best.pt"
+}

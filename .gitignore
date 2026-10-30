@@ -16,6 +16,11 @@ phase_1_to_3/joint_multiview_experiment/runs/pilot_*
 phase_4/archive_pre_5m/
 phase_4/runs/sim2real_45mm_block_rgb_5m/checkpoints/
 phase_4/runs/sim2real_45mm_block_rgbd_5m/checkpoints/
+# Large rollout datasets (>100MB)
+phase_7_multiteacher_distillation/data/
+*/data/*.pt
+data/*.pt
+
 *_latest.pt
 *.pth
 

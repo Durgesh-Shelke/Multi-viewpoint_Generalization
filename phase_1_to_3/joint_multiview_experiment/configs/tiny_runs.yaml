@@ -1,0 +1,20 @@
+# Tiny smoke test runs configuration for manual verification of ctl.py and runner.py
+# Designed to take ~2.5 to 3 minutes per run using configs/tiny_test.yaml.
+# Completely isolated from production pilot/main runs.
+
+runs:
+  tiny_rgb:
+    modality: "rgb"
+    seed: 42
+    total_timesteps: 30000
+    output_dir: "runs/tiny_rgb"
+    config: "configs/tiny_test.yaml"
+    description: "Tiny 30k-step smoke test run for RGB (~2.5 minutes)"
+
+  tiny_rgbd:
+    modality: "rgbd"
+    seed: 42
+    total_timesteps: 30000
+    output_dir: "runs/tiny_rgbd"
+    config: "configs/tiny_test.yaml"
+    description: "Tiny 30k-step smoke test run for RGB-D (~2.5 minutes)"

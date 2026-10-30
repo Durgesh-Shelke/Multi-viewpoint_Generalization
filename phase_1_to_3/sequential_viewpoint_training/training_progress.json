@@ -1,0 +1,312 @@
+{
+  "current_viewpoint_idx": 30,
+  "total_viewpoints": 30,
+  "target_accuracy_pct": 95.0,
+  "status": "completed",
+  "current_iteration": 0,
+  "latest_eval_accuracy": 0.0,
+  "latest_checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_29.pt",
+  "completed_viewpoints": [
+    {
+      "viewpoint_id": 0,
+      "azimuth_deg": 0.0,
+      "elevation_deg": 12.27,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_00.pt",
+      "epochs_trained": 95,
+      "accuracy": 100.0,
+      "target_hit": true,
+      "completed_at": "2026-10-20 20:24:05"
+    },
+    {
+      "viewpoint_id": 1,
+      "azimuth_deg": -84.98,
+      "elevation_deg": 13.36,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_01.pt",
+      "epochs_trained": 400,
+      "accuracy": 52.0,
+      "target_hit": false,
+      "completed_at": "2026-10-20 20:53:13"
+    },
+    {
+      "viewpoint_id": 2,
+      "azimuth_deg": 52.52,
+      "elevation_deg": 13.9,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_02.pt",
+      "epochs_trained": 400,
+      "accuracy": 74.0,
+      "target_hit": false,
+      "completed_at": "2026-10-20 21:22:19"
+    },
+    {
+      "viewpoint_id": 3,
+      "azimuth_deg": -32.46,
+      "elevation_deg": 15.0,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_03.pt",
+      "epochs_trained": 265,
+      "accuracy": 96.0,
+      "target_hit": true,
+      "completed_at": "2026-10-20 21:41:45"
+    },
+    {
+      "viewpoint_id": 4,
+      "azimuth_deg": 20.06,
+      "elevation_deg": 16.65,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_04.pt",
+      "epochs_trained": 305,
+      "accuracy": 98.0,
+      "target_hit": true,
+      "completed_at": "2026-10-20 22:03:49"
+    },
+    {
+      "viewpoint_id": 5,
+      "azimuth_deg": -64.92,
+      "elevation_deg": 17.76,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_05.pt",
+      "epochs_trained": 375,
+      "accuracy": 96.0,
+      "target_hit": true,
+      "completed_at": "2026-10-20 22:31:18"
+    },
+    {
+      "viewpoint_id": 6,
+      "azimuth_deg": 72.59,
+      "elevation_deg": 18.32,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_06.pt",
+      "epochs_trained": 400,
+      "accuracy": 46.0,
+      "target_hit": false,
+      "completed_at": "2026-10-20 23:01:03"
+    },
+    {
+      "viewpoint_id": 7,
+      "azimuth_deg": -12.4,
+      "elevation_deg": 19.44,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_07.pt",
+      "epochs_trained": 400,
+      "accuracy": 22.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 00:52:17"
+    },
+    {
+      "viewpoint_id": 8,
+      "azimuth_deg": 40.12,
+      "elevation_deg": 21.13,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_08.pt",
+      "epochs_trained": 400,
+      "accuracy": 80.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 01:22:26"
+    },
+    {
+      "viewpoint_id": 9,
+      "azimuth_deg": -44.86,
+      "elevation_deg": 22.27,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_09.pt",
+      "epochs_trained": 400,
+      "accuracy": 62.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 01:52:48"
+    },
+    {
+      "viewpoint_id": 10,
+      "azimuth_deg": 7.66,
+      "elevation_deg": 24.0,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_10.pt",
+      "epochs_trained": 400,
+      "accuracy": 2.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 02:21:50"
+    },
+    {
+      "viewpoint_id": 11,
+      "azimuth_deg": -77.32,
+      "elevation_deg": 25.17,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_11.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 02:49:27"
+    },
+    {
+      "viewpoint_id": 12,
+      "azimuth_deg": 60.19,
+      "elevation_deg": 25.75,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_12.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 03:17:08"
+    },
+    {
+      "viewpoint_id": 13,
+      "azimuth_deg": -24.8,
+      "elevation_deg": 26.94,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_13.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 03:45:31"
+    },
+    {
+      "viewpoint_id": 14,
+      "azimuth_deg": 27.73,
+      "elevation_deg": 28.73,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_14.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 04:13:13"
+    },
+    {
+      "viewpoint_id": 15,
+      "azimuth_deg": -57.26,
+      "elevation_deg": 29.95,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_15.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 04:40:56"
+    },
+    {
+      "viewpoint_id": 16,
+      "azimuth_deg": 80.25,
+      "elevation_deg": 30.56,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_16.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 05:07:51"
+    },
+    {
+      "viewpoint_id": 17,
+      "azimuth_deg": -4.74,
+      "elevation_deg": 31.8,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_17.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 05:35:37"
+    },
+    {
+      "viewpoint_id": 18,
+      "azimuth_deg": -89.72,
+      "elevation_deg": 33.06,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_18.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 06:01:53"
+    },
+    {
+      "viewpoint_id": 19,
+      "azimuth_deg": 47.79,
+      "elevation_deg": 33.69,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_19.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 06:29:54"
+    },
+    {
+      "viewpoint_id": 20,
+      "azimuth_deg": -37.2,
+      "elevation_deg": 34.98,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_20.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 06:58:08"
+    },
+    {
+      "viewpoint_id": 21,
+      "azimuth_deg": 15.33,
+      "elevation_deg": 36.94,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_21.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 07:24:50"
+    },
+    {
+      "viewpoint_id": 22,
+      "azimuth_deg": -69.66,
+      "elevation_deg": 38.28,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_22.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 07:52:46"
+    },
+    {
+      "viewpoint_id": 23,
+      "azimuth_deg": 67.85,
+      "elevation_deg": 38.96,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_23.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 08:20:57"
+    },
+    {
+      "viewpoint_id": 24,
+      "azimuth_deg": -17.14,
+      "elevation_deg": 40.33,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_24.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 08:48:19"
+    },
+    {
+      "viewpoint_id": 25,
+      "azimuth_deg": 35.39,
+      "elevation_deg": 42.45,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_25.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 09:16:07"
+    },
+    {
+      "viewpoint_id": 26,
+      "azimuth_deg": -49.6,
+      "elevation_deg": 43.91,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_26.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 09:44:01"
+    },
+    {
+      "viewpoint_id": 27,
+      "azimuth_deg": 87.91,
+      "elevation_deg": 44.65,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_27.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 10:11:33"
+    },
+    {
+      "viewpoint_id": 28,
+      "azimuth_deg": 2.93,
+      "elevation_deg": 46.16,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_28.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 10:37:56"
+    },
+    {
+      "viewpoint_id": 29,
+      "azimuth_deg": -82.06,
+      "elevation_deg": 47.71,
+      "checkpoint": "/home/maniskill/sequential_viewpoint_training/checkpoints/ckpt_vp_29.pt",
+      "epochs_trained": 400,
+      "accuracy": 0.0,
+      "target_hit": false,
+      "completed_at": "2026-10-21 11:05:16"
+    }
+  ],
+  "last_updated": "2026-10-21 11:05:16"
+}

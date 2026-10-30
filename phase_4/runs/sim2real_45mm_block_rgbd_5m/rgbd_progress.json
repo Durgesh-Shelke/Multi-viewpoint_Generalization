@@ -1,0 +1,9 @@
+{
+  "iteration": 390,
+  "global_step": 4992000,
+  "best_eval_success": 100.0,
+  "latest_reward": 0.424,
+  "sps": 1919,
+  "early_stopped": false,
+  "last_updated": "2026-10-23 00:07:59"
+}

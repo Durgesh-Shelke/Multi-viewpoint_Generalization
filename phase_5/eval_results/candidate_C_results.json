@@ -1,0 +1,71 @@
+{
+  "candidate": "C",
+  "resolution": 256,
+  "checkpoint": "/home/maniskill/resolution_ablation_study/checkpoints/candidate_C.pt",
+  "test1_front_view_1000": {
+    "episodes": 1000,
+    "success_count": 958,
+    "success_rate": 95.8,
+    "mean_return": 5.2104,
+    "mean_length": 12.95,
+    "elapsed_seconds": 9.57,
+    "mean_latency_ms": 1.15
+  },
+  "test2_angular_jitter": {
+    "mean_success_rate": 45.77,
+    "angles": {
+      "angle_75deg": {
+        "episodes": 1000,
+        "success_count": 266,
+        "success_rate": 26.6,
+        "mean_return": 7.0637,
+        "mean_length": 40.87,
+        "elapsed_seconds": 27.19,
+        "mean_latency_ms": 0.77
+      },
+      "angle_90deg": {
+        "episodes": 1000,
+        "success_count": 961,
+        "success_rate": 96.1,
+        "mean_return": 5.3903,
+        "mean_length": 13.13,
+        "elapsed_seconds": 9.28,
+        "mean_latency_ms": 0.78
+      },
+      "angle_105deg": {
+        "episodes": 1000,
+        "success_count": 146,
+        "success_rate": 14.6,
+        "mean_return": 6.541,
+        "mean_length": 44.68,
+        "elapsed_seconds": 27.72,
+        "mean_latency_ms": 0.79
+      }
+    }
+  },
+  "test3_photometric_shift": {
+    "darkened_0.7x": {
+      "episodes": 1000,
+      "success_count": 701,
+      "success_rate": 70.1,
+      "mean_return": 6.3085,
+      "mean_length": 23.57,
+      "elapsed_seconds": 17.51,
+      "mean_latency_ms": 0.75
+    },
+    "brightened_1.3x": {
+      "episodes": 1000,
+      "success_count": 745,
+      "success_rate": 74.5,
+      "mean_return": 6.0903,
+      "mean_length": 21.79,
+      "elapsed_seconds": 16.67,
+      "mean_latency_ms": 0.75
+    },
+    "mean_perturbed_success": 72.3
+  },
+  "test4_hardware": {
+    "parameter_count": 3771833,
+    "mean_inference_latency_ms": 1.15
+  }
+}

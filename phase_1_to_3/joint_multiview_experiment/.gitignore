@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch checkpoints and models
+*.pt
+*.pth
+*.ckpt
+
+# Temporary and state files
+state/lock
+state/PAUSE
+*.tmp
+frozen_code/
+
+# Run artifacts (checkpoints can be large; keep config/manifest/logs if needed or keep run dirs clean)
+runs/**/checkpoints/
+runs/test_*/
+runs/demo_*/
+runs/dev_test/
+
+# Operating system / IDE files
+.DS_Store
+*.swp
+*~

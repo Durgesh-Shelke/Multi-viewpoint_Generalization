@@ -1,0 +1,8 @@
+{
+  "target_episodes": 1000,
+  "success_count": 950,
+  "success_rate": 95.0,
+  "mean_return": 5.9558,
+  "mean_length": 14.14,
+  "elapsed_seconds": 9.05
+}

@@ -1,0 +1,11 @@
+{
+  "candidate": "C",
+  "resolution": 256,
+  "checkpoint": "/home/maniskill/resolution_ablation_study/checkpoints/candidate_C.pt",
+  "total_timesteps": 10003200,
+  "completed": true,
+  "total_walltime_seconds": 8456.36,
+  "avg_sps": 1079,
+  "peak_vram_mb": 3954.06,
+  "best_eval_success": 100.0
+}

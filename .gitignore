@@ -1,0 +1,28 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# TensorBoard logs
+*.tfevents*
+events.out.*
+tb_logs/
+
+# Intermediate / pilot / progression training checkpoints (>1GB total)
+# (Preserved locally; definitive best checkpoints are tracked below)
+phase_1_to_3/RGB/checkpoints/training_progression/
+phase_1_to_3/joint_multiview_experiment/runs/pilot_*
+phase_4/archive_pre_5m/
+phase_4/runs/sim2real_45mm_block_rgb_5m/checkpoints/
+phase_4/runs/sim2real_45mm_block_rgbd_5m/checkpoints/
+*_latest.pt
+*.pth
+
+# OS & Editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.pause

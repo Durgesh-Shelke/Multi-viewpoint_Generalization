@@ -1,0 +1,190 @@
+{
+  "checkpoint": "/home/maniskill/visual_manipulation/best_sim2real_policy.pt",
+  "sphere_radius": 1.094177773490213,
+  "episodes_per_angle": 1000,
+  "total_walltime_sec": 421.54,
+  "results": [
+    {
+      "angle_deg": 0.0,
+      "eye_position": [
+        -0.615,
+        0.915,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 2,
+      "success_rate": 0.2,
+      "mean_return": 3.52,
+      "mean_length": 49.93,
+      "elapsed_seconds": 33.68
+    },
+    {
+      "angle_deg": 15.0,
+      "eye_position": [
+        -0.3781805737311935,
+        0.8838221310544976,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 1,
+      "success_rate": 0.1,
+      "mean_return": 3.72,
+      "mean_length": 49.97,
+      "elapsed_seconds": 31.45
+    },
+    {
+      "angle_deg": 30.0,
+      "eye_position": [
+        -0.15750000000000003,
+        0.7924132444627614,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 3,
+      "success_rate": 0.3,
+      "mean_return": 3.65,
+      "mean_length": 49.95,
+      "elapsed_seconds": 31.42
+    },
+    {
+      "angle_deg": 45.0,
+      "eye_position": [
+        0.032002704785691005,
+        0.6470027047856911,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 5,
+      "success_rate": 0.5,
+      "mean_return": 3.85,
+      "mean_length": 49.89,
+      "elapsed_seconds": 31.15
+    },
+    {
+      "angle_deg": 60.0,
+      "eye_position": [
+        0.1774132444627614,
+        0.45750000000000013,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 35,
+      "success_rate": 3.5,
+      "mean_return": 5.44,
+      "mean_length": 49.45,
+      "elapsed_seconds": 35.99
+    },
+    {
+      "angle_deg": 75.0,
+      "eye_position": [
+        0.2688221310544976,
+        0.23681942626880648,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 42,
+      "success_rate": 4.2,
+      "mean_return": 5.97,
+      "mean_length": 48.59,
+      "elapsed_seconds": 36.67
+    },
+    {
+      "angle_deg": 90.0,
+      "eye_position": [
+        0.30000000000000004,
+        5.602759106099141e-17,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 971,
+      "success_rate": 97.1,
+      "mean_return": 5.49,
+      "mean_length": 12.97,
+      "elapsed_seconds": 11.09
+    },
+    {
+      "angle_deg": 105.0,
+      "eye_position": [
+        0.2688221310544976,
+        -0.2368194262688066,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 112,
+      "success_rate": 11.2,
+      "mean_return": 7.18,
+      "mean_length": 46.36,
+      "elapsed_seconds": 35.79
+    },
+    {
+      "angle_deg": 120.0,
+      "eye_position": [
+        0.1774132444627614,
+        -0.4574999999999998,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 36,
+      "success_rate": 3.6,
+      "mean_return": 6.82,
+      "mean_length": 49.13,
+      "elapsed_seconds": 34.36
+    },
+    {
+      "angle_deg": 135.0,
+      "eye_position": [
+        0.032002704785691116,
+        -0.647002704785691,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 0,
+      "success_rate": 0.0,
+      "mean_return": 3.62,
+      "mean_length": 50.0,
+      "elapsed_seconds": 30.57
+    },
+    {
+      "angle_deg": 150.0,
+      "eye_position": [
+        -0.15750000000000003,
+        -0.7924132444627614,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 4,
+      "success_rate": 0.4,
+      "mean_return": 3.28,
+      "mean_length": 49.94,
+      "elapsed_seconds": 30.66
+    },
+    {
+      "angle_deg": 165.0,
+      "eye_position": [
+        -0.3781805737311933,
+        -0.8838221310544975,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 4,
+      "success_rate": 0.4,
+      "mean_return": 3.49,
+      "mean_length": 49.93,
+      "elapsed_seconds": 31.07
+    },
+    {
+      "angle_deg": 180.0,
+      "eye_position": [
+        -0.6149999999999999,
+        -0.915,
+        0.6
+      ],
+      "episodes": 1000,
+      "success_count": 4,
+      "success_rate": 0.4,
+      "mean_return": 3.55,
+      "mean_length": 49.94,
+      "elapsed_seconds": 32.08
+    }
+  ]
+}

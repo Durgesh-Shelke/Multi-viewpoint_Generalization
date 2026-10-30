@@ -1,0 +1,18 @@
+# Overnight Training Supervision Schedule
+# Controls allowed running window for unattended training.
+# A start and end of "00:00" means all day, 7 days a week.
+# Outside this window, watchdog pauses training via ctl.py pause and does not restart it.
+# Inside this window, watchdog auto-resumes training unless a manual pause marker exists.
+
+schedule:
+  start: "00:00"
+  end: "00:00"
+  timezone: "local"
+  days:
+    - "Mon"
+    - "Tue"
+    - "Wed"
+    - "Thu"
+    - "Fri"
+    - "Sat"
+    - "Sun"

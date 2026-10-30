@@ -1,0 +1,37 @@
+{
+  "A": {
+    "peak_success": 100.0,
+    "step_to_50_pct": 2713600,
+    "step_to_80_pct": 3033600,
+    "plateau_start_step": 3033600,
+    "plateau_mean_success": 93.33
+  },
+  "B": {
+    "peak_success": 100.0,
+    "step_to_50_pct": 2233600,
+    "step_to_80_pct": 2873600,
+    "plateau_start_step": 2873600,
+    "plateau_mean_success": 95.0
+  },
+  "C": {
+    "peak_success": 100.0,
+    "step_to_50_pct": 3033600,
+    "step_to_80_pct": 3673600,
+    "plateau_start_step": 4153600,
+    "plateau_mean_success": 89.53
+  },
+  "D": {
+    "peak_success": 100.0,
+    "step_to_50_pct": 6713600,
+    "step_to_80_pct": 8153600,
+    "plateau_start_step": 8153600,
+    "plateau_mean_success": 87.5
+  },
+  "E": {
+    "peak_success": 100.0,
+    "step_to_50_pct": 3033600,
+    "step_to_80_pct": 4473600,
+    "plateau_start_step": 4793600,
+    "plateau_mean_success": 42.8
+  }
+}

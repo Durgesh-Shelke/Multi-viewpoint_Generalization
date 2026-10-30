@@ -1,0 +1,10 @@
+{
+  "checkpoint": "/home/maniskill/runs/sim2real_45mm_block/ckpt_401.pt",
+  "target_episodes": 1000,
+  "success_count": 971,
+  "success_rate": 97.1,
+  "goal_met": true,
+  "mean_return": 5.4498162732124324,
+  "mean_length": 12.949,
+  "elapsed_seconds": 45.13294768333435
+}

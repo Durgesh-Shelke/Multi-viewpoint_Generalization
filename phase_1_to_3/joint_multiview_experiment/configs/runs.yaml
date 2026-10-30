@@ -1,0 +1,53 @@
+# Experiment Runs Configuration
+# Defines main-grid runs for joint multi-view training.
+# Six main runs alternating RGB and RGB-D across seeds 0, 1, 2.
+# Total timesteps set to 40,000,000 steps per run with final evaluation on all groups.
+
+runs:
+  main_rgb_seed0:
+    modality: "rgb"
+    seed: 0
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgb_seed0"
+    final_eval_groups: "all"
+    description: "Main grid RGB seed 0 (40M steps, target_kl=0.2)"
+
+  main_rgbd_seed0:
+    modality: "rgbd"
+    seed: 0
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgbd_seed0"
+    final_eval_groups: "all"
+    description: "Main grid RGB-D seed 0 (40M steps, target_kl=0.2)"
+
+  main_rgb_seed1:
+    modality: "rgb"
+    seed: 1
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgb_seed1"
+    final_eval_groups: "all"
+    description: "Main grid RGB seed 1 (40M steps, target_kl=0.2)"
+
+  main_rgbd_seed1:
+    modality: "rgbd"
+    seed: 1
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgbd_seed1"
+    final_eval_groups: "all"
+    description: "Main grid RGB-D seed 1 (40M steps, target_kl=0.2)"
+
+  main_rgb_seed2:
+    modality: "rgb"
+    seed: 2
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgb_seed2"
+    final_eval_groups: "all"
+    description: "Main grid RGB seed 2 (40M steps, target_kl=0.2)"
+
+  main_rgbd_seed2:
+    modality: "rgbd"
+    seed: 2
+    total_timesteps: 40000000
+    output_dir: "runs/main_rgbd_seed2"
+    final_eval_groups: "all"
+    description: "Main grid RGB-D seed 2 (40M steps, target_kl=0.2)"

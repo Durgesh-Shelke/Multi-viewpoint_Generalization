@@ -1,0 +1,10 @@
+{
+  "checkpoint": "/home/maniskill/visual_manipulation/best_sim2real_policy.pt",
+  "target_episodes": 1000,
+  "success_count": 4,
+  "success_rate": 0.4,
+  "goal_met": false,
+  "mean_return": 3.71644192135334,
+  "mean_length": 49.866,
+  "elapsed_seconds": 48.90212821960449
+}

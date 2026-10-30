@@ -1,0 +1,73 @@
+# Frozen PPO Hyperparameters for Joint Multi-View PickCube Experiment
+# Extracted from train_joint_multiview.py / ppo_rgbd.py per SPEC Section 3 & 4.2.
+# Frozen for all pilot and main grid runs. Do not modify.
+# Note: total_timesteps is removed here and set per run from configs/runs.yaml.
+
+# Environment and Task Settings
+env_id: "PickCube-v1"
+reward_mode: "normalized_dense"
+max_episode_steps: 50
+control_mode: "pd_ee_delta_pos"
+sim_backend: "physx_cuda"
+ignore_terminations: false
+record_metrics: true
+
+# Camera Configuration
+# camera.look_at: Focus point for all hemispherical viewpoint cameras in world coordinates.
+# Rationale: Franka Panda robot base is located at [-0.615, 0.0, 0.0]. The cube spawns
+# centered around [0.0, 0.0, 0.0] on the table surface (z=0.0). Setting camera.look_at to
+# [-0.1, 0.0, 0.1] aims the camera 10 cm behind the cube center (towards the robot arm)
+# and 10 cm above the table plane (z=0.1), keeping both the gripper end-effector and the
+# grasping / lifting workspace in optimal focus across all azimuth/elevation viewpoints.
+camera:
+  width: 128
+  height: 128
+  fov: 1.5707963267948966   # pi / 2 radians (90.0 degrees)
+  near: 0.01
+  far: 100.0
+  look_at: [-0.1, 0.0, 0.1]
+
+# Parallel Environments & Rollout Horizon (SPEC Section 4.2)
+num_envs: 160               # 160 parallel envs (8 envs per each of the 20 train views)
+num_steps: 50               # Rollout horizon per env (batch_size = 160 * 50 = 8,000)
+num_minibatches: 16         # 16 minibatches (minibatch_size = 8,000 / 16 = 500)
+update_epochs: 4            # PPO optimization epochs per rollout
+
+# Optimization Hyperparameters
+lr: 0.0002                  # Adam optimizer learning rate (2e-4)
+adam_eps: 0.00001           # Adam epsilon (1e-5)
+max_grad_norm: 0.5          # Gradient clipping threshold
+gamma: 0.8                  # Discount factor
+gae_lambda: 0.9             # Generalized Advantage Estimation parameter
+clip_coef: 0.2              # PPO surrogate clipping coefficient
+ent_coef: 0.0               # Entropy loss coefficient
+vf_coef: 0.5                # Value function loss coefficient
+norm_adv: true              # Normalize mini-batch advantages
+clip_vloss: false           # Do not clip value loss
+anneal_lr: false            # Constant learning rate
+target_kl: 0.2              # Early-stop update epochs when approx_kl > target_kl
+
+# Depth Preprocessing
+depth_clamp: 3.0            # Clamp depth to [0.0, 3.0] meters and normalize to [0.0, 1.0]
+
+# Checkpointing & Logging Intervals
+checkpoint_interval_s: 300      # Checkpoint every 5 minutes (300 seconds)
+checkpoint_interval_iters: 10   # Or every 10 iterations, whichever comes first
+rolling_keep: 2                 # Keep last 2 rolling checkpoints
+milestone_interval: 5000000     # Save permanent milestone every 5M steps
+log_freq_iters: 1               # Log progress every iteration
+
+# Periodic Evaluation Settings (SPEC Section 5)
+eval_interval_steps: 1000000    # Evaluate every 1M steps (aligned to iteration boundary)
+eval_episodes_per_view: 10      # 10 episodes per view across all train and val views
+
+# Final Evaluation Settings (SPEC Section 5)
+final_eval_fixed_episodes: 200     # 30 fixed views x 200 episodes
+final_eval_fresh_episodes: 100     # 60 fresh views x 100 episodes
+
+# Model Architecture Settings
+model:
+  state_activation: "none"      # "none" (default, matching CleanRL baselines) or "relu"
+
+# Viewpoint Split Partition for Training
+split_group: "train"

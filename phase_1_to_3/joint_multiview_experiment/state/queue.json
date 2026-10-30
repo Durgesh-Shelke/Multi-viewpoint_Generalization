@@ -1,0 +1,74 @@
+{
+  "main_rgb_seed0": {
+    "status": "pending",
+    "modality": "rgb",
+    "seed": 0,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgb_seed0",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGB seed 0 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  },
+  "main_rgbd_seed0": {
+    "status": "pending",
+    "modality": "rgbd",
+    "seed": 0,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgbd_seed0",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGBD seed 0 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  },
+  "main_rgb_seed1": {
+    "status": "pending",
+    "modality": "rgb",
+    "seed": 1,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgb_seed1",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGB seed 1 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  },
+  "main_rgbd_seed1": {
+    "status": "pending",
+    "modality": "rgbd",
+    "seed": 1,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgbd_seed1",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGBD seed 1 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  },
+  "main_rgb_seed2": {
+    "status": "pending",
+    "modality": "rgb",
+    "seed": 2,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgb_seed2",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGB seed 2 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  },
+  "main_rgbd_seed2": {
+    "status": "pending",
+    "modality": "rgbd",
+    "seed": 2,
+    "total_timesteps": 40000000,
+    "output_dir": "runs/main_rgbd_seed2",
+    "config": null,
+    "final_eval_groups": "all",
+    "is_pilot": null,
+    "description": "Main grid RGBD seed 2 (40M steps, target_kl=0.2)",
+    "created_at": "2026-10-22 13:45:00 UTC"
+  }
+}

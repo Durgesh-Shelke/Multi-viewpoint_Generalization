@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "created_at": "2026-10-22 01:31:30 UTC",
+  "description": "Pre-pilot frozen configurations and split manifests checksums",
+  "file_hashes": {
+    "configs/ppo_frozen.yaml": "bc0a9721fe6a3e23f6570cb7dacbf0ac1445a75a1df48366b9fc83fda33a959a",
+    "configs/viewpoint_split.json": "65b8cb83ee0bee2357a6d9b3e99c62da6328fbab71b1c701414c252488786b6d",
+    "configs/fresh_views.json": "4f3784655e2a29cea89ea2fb86e622f5b76dd10a9ea62b2385e9cb5bb7ead4c6",
+    "configs/requirements_frozen.txt": "97e5ae6f41198e58990c795e7a7325072eb6cfa6097d113b596afca0c1da5c4c",
+    "configs/ppo_frozen.yaml.sha256": "1ffe6578c369c7db87a1f29581d18630dcd7d2294da9ae20bd79ce63f33c7d8e",
+    "configs/viewpoint_split.json.sha256": "31213ef686bc66cd9c81b093ae7350a8d27f46d91de98010a090755a3ab3121e",
+    "configs/fresh_views.json.sha256": "c7043cf50039857b47157e94a90615c7caa03991c006bcfba323e09f68f9e267",
+    "configs/requirements_frozen.txt.sha256": "1c0bca4dd620bbb89057414bebc4d2f83a26f746bb1eaf18e10078a54d833077"
+  }
+}

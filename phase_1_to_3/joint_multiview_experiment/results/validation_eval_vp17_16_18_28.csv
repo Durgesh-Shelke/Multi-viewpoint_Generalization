@@ -1,0 +1,5 @@
+view_id,type,group,azimuth_deg,elevation_deg,nearest_train_dist_deg,episodes,success_count,success_rate,wilson_95_lower,wilson_95_upper,any_step_success_count,any_step_success_rate,any_step_wilson_95_lower,any_step_wilson_95_upper,final_step_success_count,final_step_success_rate,final_step_wilson_95_lower,final_step_wilson_95_upper,mean_return,std_return,mean_length,std_length
+17,,,,,,200,200,100.0,98.12,100.0,200,100.0,98.12,100.0,200,100.0,98.12,100.0,5.6829,1.4393,14.78,5.32
+16,,,,,,200,2,1.0,0.27,3.57,2,1.0,0.27,3.57,2,1.0,0.27,3.57,3.818,3.0236,49.84,2.19
+18,,,,,,200,1,0.5,0.09,2.78,1,0.5,0.09,2.78,1,0.5,0.09,2.78,3.5554,3.0652,49.8,2.75
+28,,,,,,200,1,0.5,0.09,2.78,1,0.5,0.09,2.78,1,0.5,0.09,2.78,6.3592,0.8152,49.82,2.54

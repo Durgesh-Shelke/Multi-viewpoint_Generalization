@@ -1,0 +1,18 @@
+ManiSkill feasibility results
+
+- OS: Ubuntu 20.04.4 LTS (Linux 6.8.0-45-generic x86_64)
+- Python version: Python 3.9.19
+- ManiSkill version: 3.0.1 (SAPIEN 3.0.0b1)
+- `nvidia-smi` works?: Yes (NVIDIA GeForce RTX 4060 Laptop GPU, 8GB VRAM, Driver 595.91.07, CUDA 13.2)
+- `vulkaninfo` works?: Yes (/usr/bin/vulkaninfo available; GPU Vulkan camera rendering enabled)
+- Random-action demo works?: Yes (verified on PickCube-v1 across discrete/continuous spaces)
+- RGB observations work?: Yes (128x128x3 uint8 visual observations verified via FlattenRGBDObservationWrapper)
+- Camera viewpoint changes work?: Yes (tested front eye [0.3, 0.0, 0.6] and spherical 90-degree side-view [-0.615, 0.915, 0.6])
+- Parallel environments tested (1 / 4 / 8): Yes (1, 4, 8, 32, 100, and up to 256 parallel environments tested on GPU PhysX)
+- Peak VRAM: ~6.0 GB / 8.0 GB (~75% VRAM utilization during 256-environment visual RL training)
+- Simulation throughput (steps/sec, if available): ~2,250 – 2,650 SPS (steps per second) during GPU visual PPO training
+- Visual-RL training started?: Yes (PPO visual manipulation policy trained from scratch on raw RGB observations)
+- Training time and evidence of learning: ~38 minutes wall time (5.12M environment steps); 1,000-run benchmark pick accuracy improved from 0.0% (initial) -> 87.5% (epoch 201) -> 92.50% (epoch 251) -> 97.10% (epoch 401 / ckpt_401.pt)
+- Errors or issues: Attempting >= 1024 concurrent visual environments exceeds the 8GB GPU buffer limit (causing Vulkan camera allocation failure); 256 environments is the stable maximum on an 8GB GPU. Visual policy trained on a single fixed perspective exhibits viewpoint sensitivity (accuracy drops from 97.1% to 0.4% under 90-degree out-of-distribution camera shift).
+
+Verdict: Ready

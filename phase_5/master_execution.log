@@ -1,0 +1,111 @@
+================================================================================
+ STARTING MASTER UNBIASED RESOLUTION & SENSOR FUSION BENCHMARK
+ Start Time:        2026-10-23 05:40:39
+ Candidates to Run: ['A', 'B', 'C', 'D', 'E']
+ Budget per Model:  10,000,000 steps
+ Resume Mode:       Enabled (Checkpoints active)
+ Training Envs:     128 | Battery Eval Envs: 100
+ Output Directory:  /home/maniskill/resolution_ablation_study
+ Logging to:        /home/maniskill/resolution_ablation_study/master_execution.log
+================================================================================
+
+
+################################################################################
+ LAUNCHING CANDIDATE A
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate A --total-timesteps 10000000 --num-envs 128 --num-minibatches 8 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+[PIPELINE PAUSED/STOPPED] Candidate A was stopped or paused by user.
+[RESUME READY] Run /home/maniskill/resume.sh to continue training seamlessly.
+
+[Warning] No history found for Candidate B at /home/maniskill/resolution_ablation_study/eval_results/candidate_B_history.csv
+[Warning] No history found for Candidate C at /home/maniskill/resolution_ablation_study/eval_results/candidate_C_history.csv
+[Warning] No history found for Candidate D at /home/maniskill/resolution_ablation_study/eval_results/candidate_D_history.csv
+[Warning] No history found for Candidate E at /home/maniskill/resolution_ablation_study/eval_results/candidate_E_history.csv
+
+[Plot] Generated growth curves comparison plot saved to: /home/maniskill/resolution_ablation_study/growth_curves_comparison.png
+[Plot] Mirrored plot to brain directory: /root/.gemini/antigravity-cli/brain/82673f33-5c96-4154-bb42-cf6de559c7b7/growth_curves_comparison.png
+[Stats] Saved plateau summary to: /home/maniskill/resolution_ablation_study/eval_results/plateau_summary.json
+
+================================================================================
+ MASTER UNBIASED BENCHMARK COMPLETED SUCCESSFULLY!
+ Total Runtime:     1.65 hours (5925.7 seconds)
+ Master JSON:       /home/maniskill/resolution_ablation_study/master_benchmark_summary.json
+ Research Report:   /home/maniskill/research_reports/14_resolution_and_asymmetric_depth_ablation_report.md
+================================================================================
+
+================================================================================
+ STARTING MASTER UNBIASED RESOLUTION & SENSOR FUSION BENCHMARK
+ Start Time:        2026-10-23 07:20:45
+ Candidates to Run: ['A', 'B', 'C', 'D', 'E']
+ Budget per Model:  10,000,000 steps
+ Resume Mode:       Enabled (Checkpoints active)
+ Training Envs:     128 | Battery Eval Envs: 100
+ Output Directory:  /home/maniskill/resolution_ablation_study
+ Logging to:        /home/maniskill/resolution_ablation_study/master_execution.log
+================================================================================
+
+
+################################################################################
+ LAUNCHING CANDIDATE A
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate A --total-timesteps 10000000 --num-envs 128 --num-minibatches 8 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/evaluate_battery.py --candidate A --checkpoint /home/maniskill/resolution_ablation_study/checkpoints/candidate_A.pt --num-envs 100 --output-dir /home/maniskill/resolution_ablation_study/eval_results --target-episodes 1000
+
+
+################################################################################
+ LAUNCHING CANDIDATE B
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate B --total-timesteps 10000000 --num-envs 128 --num-minibatches 16 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/evaluate_battery.py --candidate B --checkpoint /home/maniskill/resolution_ablation_study/checkpoints/candidate_B.pt --num-envs 100 --output-dir /home/maniskill/resolution_ablation_study/eval_results --target-episodes 1000
+
+
+################################################################################
+ LAUNCHING CANDIDATE C
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate C --total-timesteps 10000000 --num-envs 128 --num-minibatches 16 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/evaluate_battery.py --candidate C --checkpoint /home/maniskill/resolution_ablation_study/checkpoints/candidate_C.pt --num-envs 100 --output-dir /home/maniskill/resolution_ablation_study/eval_results --target-episodes 1000
+
+
+################################################################################
+ LAUNCHING CANDIDATE D
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate D --total-timesteps 10000000 --num-envs 128 --num-minibatches 16 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/evaluate_battery.py --candidate D --checkpoint /home/maniskill/resolution_ablation_study/checkpoints/candidate_D.pt --num-envs 100 --output-dir /home/maniskill/resolution_ablation_study/eval_results --target-episodes 1000
+
+
+################################################################################
+ LAUNCHING CANDIDATE E
+################################################################################
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/train_candidate.py --candidate E --total-timesteps 10000000 --num-envs 128 --num-minibatches 16 --target-kl 0.2 --eval-freq 25 --output-dir /home/maniskill/resolution_ablation_study
+
+
+Executing: /opt/conda/bin/python3 /home/maniskill/resolution_ablation_study/evaluate_battery.py --candidate E --checkpoint /home/maniskill/resolution_ablation_study/checkpoints/candidate_E.pt --num-envs 100 --output-dir /home/maniskill/resolution_ablation_study/eval_results --target-episodes 1000
+
+
+[Plot] Generated growth curves comparison plot saved to: /home/maniskill/resolution_ablation_study/growth_curves_comparison.png
+[Plot] Mirrored plot to brain directory: /root/.gemini/antigravity-cli/brain/82673f33-5c96-4154-bb42-cf6de559c7b7/growth_curves_comparison.png
+[Stats] Saved plateau summary to: /home/maniskill/resolution_ablation_study/eval_results/plateau_summary.json
+
+================================================================================
+ MASTER UNBIASED BENCHMARK COMPLETED SUCCESSFULLY!
+ Total Runtime:     11.90 hours (42853.6 seconds)
+ Master JSON:       /home/maniskill/resolution_ablation_study/master_benchmark_summary.json
+ Research Report:   /home/maniskill/research_reports/14_resolution_and_asymmetric_depth_ablation_report.md
+================================================================================
+

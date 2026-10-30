@@ -1,0 +1,70 @@
+# Smoke Test Configuration based on Frozen PPO Hyperparameters
+# Uses real 160 envs, 16 minibatches, 4 epochs, 2e-4 lr, etc.
+# Overridden ONLY for smoke test measurements:
+# - eval_interval_steps: 100000 (100k steps)
+# - final_eval_fixed_episodes: 10
+# - final_eval_fresh_episodes: 10
+# - final_eval_fresh_views_count: 10
+
+# Environment and Task Settings
+env_id: "PickCube-v1"
+reward_mode: "normalized_dense"
+max_episode_steps: 50
+control_mode: "pd_ee_delta_pos"
+sim_backend: "physx_cuda"
+ignore_terminations: false
+record_metrics: true
+
+# Camera Configuration
+camera:
+  width: 128
+  height: 128
+  fov: 1.5707963267948966
+  near: 0.01
+  far: 100.0
+  look_at: [-0.1, 0.0, 0.1]
+
+# Parallel Environments & Rollout Horizon (SPEC Section 4.2)
+num_envs: 160               # 160 parallel envs (8 envs per each of the 20 train views)
+num_steps: 50               # Rollout horizon per env (batch_size = 160 * 50 = 8,000)
+num_minibatches: 16         # 16 minibatches (minibatch_size = 8,000 / 16 = 500)
+update_epochs: 4            # PPO optimization epochs per rollout
+
+# Optimization Hyperparameters
+lr: 0.0002
+adam_eps: 0.00001
+max_grad_norm: 0.5
+gamma: 0.8
+gae_lambda: 0.9
+clip_coef: 0.2
+ent_coef: 0.0
+vf_coef: 0.5
+norm_adv: true
+clip_vloss: false
+anneal_lr: false
+
+# Depth Preprocessing
+depth_clamp: 3.0
+
+# Checkpointing & Logging Intervals
+checkpoint_interval_s: 300
+checkpoint_interval_iters: 10
+rolling_keep: 2
+milestone_interval: 5000000
+log_freq_iters: 1
+
+# Periodic Evaluation Settings (Overridden for smoke test: 100k steps)
+eval_interval_steps: 100000
+eval_episodes_per_view: 10
+
+# Final Evaluation Settings (Overridden for smoke test timing)
+final_eval_fixed_episodes: 10
+final_eval_fresh_episodes: 10
+final_eval_fresh_views_count: 10
+
+# Model Architecture Settings
+model:
+  state_activation: "none"
+
+# Viewpoint Split Partition for Training
+split_group: "train"

@@ -1,0 +1,22 @@
+{
+  "checkpoint": "/home/maniskill/visual_manipulation/best_sim2real_policy.pt",
+  "sphere_radius": 1.094177773490213,
+  "episodes_per_angle": 10,
+  "total_walltime_sec": 5.33,
+  "results": [
+    {
+      "angle_deg": 0.0,
+      "eye_position": [
+        -0.615,
+        0.915,
+        0.6
+      ],
+      "episodes": 10,
+      "success_count": 0,
+      "success_rate": 0.0,
+      "mean_return": 3.05,
+      "mean_length": 50.0,
+      "elapsed_seconds": 3.28
+    }
+  ]
+}

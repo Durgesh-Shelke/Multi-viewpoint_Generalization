@@ -1,0 +1,66 @@
+# Tiny Test Configuration for Pause/Resume Testing
+# 2 viewpoints x 2 envs = 4 parallel environments, ~5,000 environment steps.
+# Enables sub-second PPO iterations to rigorously test signal pauses, hard kills, and auto-resumes.
+
+# Environment and Task Settings
+env_id: "PickCube-v1"
+reward_mode: "normalized_dense"
+max_episode_steps: 50
+control_mode: "pd_ee_delta_pos"
+sim_backend: "physx_cuda"
+ignore_terminations: false
+record_metrics: true
+
+# Camera Configuration
+camera:
+  width: 128
+  height: 128
+  fov: 1.5707963267948966
+  near: 0.01
+  far: 100.0
+  look_at: [-0.1, 0.0, 0.1]
+
+# Step budget: 25 iterations of 200 steps = 5000 steps total
+total_timesteps: 5000
+
+# Architecture & environments
+num_envs: 4            # 4 parallel environments (2 envs per view)
+num_steps: 50          # Rollout horizon per env (batch_size = 4 * 50 = 200)
+num_minibatches: 4     # 4 minibatches (minibatch_size = 200 / 4 = 50)
+update_epochs: 2       # 2 optimization epochs for rapid testing
+viewpoint_ids: [0, 1]  # Explicit 2 viewpoints
+
+# Optimization hyperparameters
+lr: 0.0002
+adam_eps: 0.00001
+max_grad_norm: 0.5
+gamma: 0.8
+gae_lambda: 0.9
+clip_coef: 0.2
+ent_coef: 0.0
+vf_coef: 0.5
+norm_adv: true
+clip_vloss: false
+anneal_lr: false
+
+# Depth preprocessing
+depth_clamp: 3.0
+
+# Model Architecture Settings
+model:
+  state_activation: "none"
+
+# Checkpointing intervals
+checkpoint_interval_s: 300
+checkpoint_interval_iters: 10
+rolling_keep: 2
+milestone_interval: 5000000
+log_freq_iters: 1
+
+# Periodic Evaluation Settings
+eval_interval_steps: 1000000
+eval_episodes_per_view: 2
+
+# Final Evaluation Settings
+final_eval_fixed_episodes: 2
+final_eval_fresh_episodes: 2

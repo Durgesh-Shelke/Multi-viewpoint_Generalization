@@ -1,0 +1,155 @@
+diff --git a/CITATION.cff b/CITATION.cff
+old mode 100644
+new mode 100755
+diff --git a/CITATION_MS2.cff b/CITATION_MS2.cff
+old mode 100644
+new mode 100755
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+old mode 100644
+new mode 100755
+diff --git a/LICENSE b/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/LICENSE-3RD-PARTY b/LICENSE-3RD-PARTY
+old mode 100644
+new mode 100755
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+diff --git a/mani_skill/envs/tasks/tabletop/pick_cube.py b/mani_skill/envs/tasks/tabletop/pick_cube.py
+index 60a8b3b..74c81e7 100644
+--- a/mani_skill/envs/tasks/tabletop/pick_cube.py
++++ b/mani_skill/envs/tasks/tabletop/pick_cube.py
+@@ -46,7 +46,7 @@ class PickCubeEnv(BaseEnv):
+     cube_spawn_half_size = 0.05
+     cube_spawn_center = (0, 0)
+ 
+-    def __init__(self, *args, robot_uids="panda", robot_init_qpos_noise=0.02, **kwargs):
++    def __init__(self, *args, robot_uids="panda", robot_init_qpos_noise=0.02, sensor_cam_eye_pos=None, sensor_cam_target_pos=None, **kwargs):
+         self.robot_init_qpos_noise = robot_init_qpos_noise
+         if robot_uids in PICK_CUBE_CONFIGS:
+             cfg = PICK_CUBE_CONFIGS[robot_uids]
+@@ -57,8 +57,8 @@ class PickCubeEnv(BaseEnv):
+         self.cube_spawn_half_size = cfg["cube_spawn_half_size"]
+         self.cube_spawn_center = cfg["cube_spawn_center"]
+         self.max_goal_height = cfg["max_goal_height"]
+-        self.sensor_cam_eye_pos = cfg["sensor_cam_eye_pos"]
+-        self.sensor_cam_target_pos = cfg["sensor_cam_target_pos"]
++        self.sensor_cam_eye_pos = sensor_cam_eye_pos if sensor_cam_eye_pos is not None else cfg["sensor_cam_eye_pos"]
++        self.sensor_cam_target_pos = sensor_cam_target_pos if sensor_cam_target_pos is not None else cfg["sensor_cam_target_pos"]
+         self.human_cam_eye_pos = cfg["human_cam_eye_pos"]
+         self.human_cam_target_pos = cfg["human_cam_target_pos"]
+         super().__init__(*args, robot_uids=robot_uids, **kwargs)
+diff --git a/mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py b/mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py
+index e5eef27..b6529ea 100644
+--- a/mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py
++++ b/mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py
+@@ -5,16 +5,16 @@ and the camera angles are reasonable.
+ """
+ PICK_CUBE_CONFIGS = {
+     "panda": {
+-        "cube_half_size": 0.02,
++        "cube_half_size": 0.0225,
+         "goal_thresh": 0.025,
+         "cube_spawn_half_size": 0.1,
+         "cube_spawn_center": (0, 0),
+         "max_goal_height": 0.3,
+         "sensor_cam_eye_pos": [
+-            0.3,
+-            0,
++            -0.615,
++            0.915,
+             0.6,
+-        ],  # sensor cam is the camera used for visual observation generation
++        ],  # side view on the sphere centered at robot base [-0.615, 0, 0] with R=1.0942m
+         "sensor_cam_target_pos": [-0.1, 0, 0.1],
+         "human_cam_eye_pos": [
+             0.6,
+diff --git a/mani_skill/envs/tasks/tabletop/stack_cube.py b/mani_skill/envs/tasks/tabletop/stack_cube.py
+index 3687371..503a10c 100644
+--- a/mani_skill/envs/tasks/tabletop/stack_cube.py
++++ b/mani_skill/envs/tasks/tabletop/stack_cube.py
+@@ -55,21 +55,23 @@ class StackCubeEnv(BaseEnv):
+         super()._load_agent(options, sapien.Pose(p=[-0.615, 0, 0]))
+ 
+     def _load_scene(self, options: dict):
+-        self.cube_half_size = common.to_tensor([0.02] * 3, device=self.device)
++        self.cubeA_half_size = common.to_tensor([0.02] * 3, device=self.device)
++        self.cubeB_half_size = common.to_tensor([0.005] * 3, device=self.device)
++        print(f"DEBUG: cubeB half size is {self.cubeB_half_size[0].item()}")
+         self.table_scene = TableSceneBuilder(
+             env=self, robot_init_qpos_noise=self.robot_init_qpos_noise
+         )
+         self.table_scene.build()
+         self.cubeA = actors.build_cube(
+             self.scene,
+-            half_size=0.02,
++            half_size=self.cubeA_half_size[0].item(),
+             color=[1, 0, 0, 1],
+             name="cubeA",
+             initial_pose=sapien.Pose(p=[0, 0, 0.1]),
+         )
+         self.cubeB = actors.build_cube(
+             self.scene,
+-            half_size=0.02,
++            half_size=self.cubeB_half_size[0].item(),
+             color=[0, 1, 0, 1],
+             name="cubeB",
+             initial_pose=sapien.Pose(p=[1, 0, 0.1]),
+@@ -115,9 +117,9 @@ class StackCubeEnv(BaseEnv):
+         offset = pos_A - pos_B
+         xy_flag = (
+             torch.linalg.norm(offset[..., :2], axis=1)
+-            <= torch.linalg.norm(self.cube_half_size[:2]) + 0.005
++            <= torch.linalg.norm(self.cubeA_half_size[:2]) + 0.005
+         )
+-        z_flag = torch.abs(offset[..., 2] - self.cube_half_size[..., 2] * 2) <= 0.005
++        z_flag = torch.abs(offset[..., 2] - (self.cubeA_half_size[..., 2] + self.cubeB_half_size[..., 2])) <= 0.005
+         is_cubeA_on_cubeB = torch.logical_and(xy_flag, z_flag)
+         # NOTE (stao): GPU sim can be fast but unstable. Angular velocity is rather high despite it not really rotating
+         is_cubeA_static = self.cubeA.is_static(lin_thresh=1e-2, ang_thresh=0.5)
+@@ -153,7 +155,7 @@ class StackCubeEnv(BaseEnv):
+         cubeA_pos = self.cubeA.pose.p
+         cubeB_pos = self.cubeB.pose.p
+         goal_xyz = torch.hstack(
+-            [cubeB_pos[:, 0:2], (cubeB_pos[:, 2] + self.cube_half_size[2] * 2)[:, None]]
++            [cubeB_pos[:, 0:2], (cubeB_pos[:, 2] + self.cubeA_half_size[2] + self.cubeB_half_size[2])[:, None]]
+         )
+         cubeA_to_goal_dist = torch.linalg.norm(goal_xyz - cubeA_pos, axis=1)
+         place_reward = 1 - torch.tanh(5.0 * cubeA_to_goal_dist)
+diff --git a/mani_skill/utils/structs/types.py b/mani_skill/utils/structs/types.py
+index b150456..d0b1a6c 100644
+--- a/mani_skill/utils/structs/types.py
++++ b/mani_skill/utils/structs/types.py
+@@ -1,5 +1,9 @@
+ from dataclasses import asdict, dataclass, field
+-from typing import Any, Literal, Sequence, TypeAlias, Union
++from typing import Any, Literal, Sequence, Union
++try:
++    from typing import TypeAlias
++except ImportError:
++    from typing_extensions import TypeAlias
+ 
+ import numpy as np
+ import torch
+diff --git a/pyproject.toml b/pyproject.toml
+old mode 100644
+new mode 100755
+diff --git a/pyrightconfig.json b/pyrightconfig.json
+old mode 100644
+new mode 100755
+diff --git a/setup.py b/setup.py
+old mode 100644
+new mode 100755
+index 8bb4564..9ecfe81
+--- a/setup.py
++++ b/setup.py
+@@ -47,7 +47,7 @@ def get_dependencies():
+         "nvidia-ml-py",  # gpu monitoring
+         "tyro>=0.8.5",  # nice, typed, command line arg parser
+         "huggingface_hub",  # we use HF to version control some assets/datasets more easily
+-        "sapien>=3.0.3;platform_system=='Linux'",
++        "sapien>=3.0.1;platform_system=='Linux'",
+         "sapien>=3.0.0.b1;platform_system=='Windows'",
+         "sapien>=3.0.2;platform_system=='Darwin'",
+     ]

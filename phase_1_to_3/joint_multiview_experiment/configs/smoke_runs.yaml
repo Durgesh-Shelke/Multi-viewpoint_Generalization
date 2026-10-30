@@ -1,0 +1,19 @@
+# Smoke Test Runs Configuration for Milestone M2b-2
+# Runs both RGB and RGB-D for 200,000 steps with real 160 envs and periodic eval at 100k steps.
+
+runs:
+  smoke_rgb:
+    modality: "rgb"
+    seed: 42
+    total_timesteps: 200000
+    output_dir: "runs/smoke_rgb"
+    config: "configs/smoke_ppo.yaml"
+    description: "Smoke test run for RGB (200k steps, 160 envs, real frozen architecture)"
+
+  smoke_rgbd:
+    modality: "rgbd"
+    seed: 42
+    total_timesteps: 200000
+    output_dir: "runs/smoke_rgbd"
+    config: "configs/smoke_ppo.yaml"
+    description: "Smoke test run for RGB-D (200k steps, 160 envs, real frozen architecture)"

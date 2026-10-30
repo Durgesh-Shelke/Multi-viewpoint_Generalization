@@ -187,6 +187,14 @@ All experiments are backed by formal empirical markdown reports:
 
 ---
 
-## 8. License
+## 8. Repository Maintenance & Developer Guide
+
+For complete guidelines on extending this repository, adding new experimental phases (e.g. Phase 6), handling large `.pt` checkpoints, modifying environment wrappers, and maintaining clean git hygiene for future AI agents and contributors, refer to:
+
+👉 **[`MAINTENANCE.md`](MAINTENANCE.md)** — *Operational architecture, dual-workspace conventions, file size guardrails, pause/resume standards, and contributor checklist.*
+
+---
+
+## 9. License
 
 This research repository is licensed under the [MIT License](LICENSE).

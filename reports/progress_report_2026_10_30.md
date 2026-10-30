@@ -3,7 +3,7 @@
 **Date:** October 30, 2026  
 **Project:** Multi-Viewpoint Generalization & Policy Aggregation for Robotic Manipulation  
 **Environment:** ManiSkill 3 (`PickCube-v1`), SAPIEN PhysX CUDA Headless Backend  
-**Hardware Platform:** NVIDIA GeForce RTX 4060 Laptop GPU (8,188 MiB VRAM), Intel Core i7  
+**Hardware Platform:** NVIDIA GeForce RTX 4060 Laptop GPU (8,188 MiB VRAM), Ryzen9  
 **Repository:** [`https://github.com/Durgesh-Shelke/Multi-viewpoint_Generalization.git`](https://github.com/Durgesh-Shelke/Multi-viewpoint_Generalization.git)  
 
 ---

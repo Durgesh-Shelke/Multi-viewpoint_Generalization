@@ -1,0 +1,1001 @@
+trial_id,viewpoint_id,role,azimuth_deg,elevation_deg,success,return,length
+1,19,Diag Front-Right,47.79,33.69,1,0.0,50
+2,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+3,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+4,19,Diag Front-Right,47.79,33.69,1,0.0,50
+5,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+6,6,Low Flank Right,72.59,18.32,1,0.0,50
+7,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+8,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+9,19,Diag Front-Right,47.79,33.69,1,0.0,50
+10,0,Front-Low Graze,0.0,12.27,1,0.0,50
+11,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+12,19,Diag Front-Right,47.79,33.69,1,0.0,50
+13,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+14,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+15,6,Low Flank Right,72.59,18.32,0,0.0,50
+16,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+17,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+18,6,Low Flank Right,72.59,18.32,1,0.0,50
+19,6,Low Flank Right,72.59,18.32,0,0.0,50
+20,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+21,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+22,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+23,0,Front-Low Graze,0.0,12.27,1,0.0,50
+24,6,Low Flank Right,72.59,18.32,1,0.0,50
+25,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+26,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+27,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+28,0,Front-Low Graze,0.0,12.27,1,0.0,50
+29,6,Low Flank Right,72.59,18.32,1,0.0,50
+30,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+31,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+32,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+33,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+34,0,Front-Low Graze,0.0,12.27,1,0.0,50
+35,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+36,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+37,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+38,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+39,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+40,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+41,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+42,19,Diag Front-Right,47.79,33.69,1,0.0,50
+43,0,Front-Low Graze,0.0,12.27,1,0.0,50
+44,6,Low Flank Right,72.59,18.32,0,0.0,50
+45,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+46,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+47,6,Low Flank Right,72.59,18.32,1,0.0,50
+48,19,Diag Front-Right,47.79,33.69,1,0.0,50
+49,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+50,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+51,19,Diag Front-Right,47.79,33.69,1,0.0,50
+52,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+53,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+54,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+55,19,Diag Front-Right,47.79,33.69,0,0.0,50
+56,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+57,6,Low Flank Right,72.59,18.32,1,0.0,50
+58,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+59,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+60,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+61,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+62,19,Diag Front-Right,47.79,33.69,1,0.0,50
+63,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+64,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+65,19,Diag Front-Right,47.79,33.69,1,0.0,50
+66,0,Front-Low Graze,0.0,12.27,1,0.0,50
+67,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+68,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+69,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+70,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+71,0,Front-Low Graze,0.0,12.27,1,0.0,50
+72,0,Front-Low Graze,0.0,12.27,1,0.0,50
+73,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+74,0,Front-Low Graze,0.0,12.27,1,0.0,50
+75,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+76,0,Front-Low Graze,0.0,12.27,1,0.0,50
+77,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+78,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+79,19,Diag Front-Right,47.79,33.69,1,0.0,50
+80,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+81,19,Diag Front-Right,47.79,33.69,1,0.0,50
+82,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+83,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+84,6,Low Flank Right,72.59,18.32,1,0.0,50
+85,19,Diag Front-Right,47.79,33.69,1,0.0,50
+86,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+87,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+88,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+89,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+90,0,Front-Low Graze,0.0,12.27,1,0.0,50
+91,6,Low Flank Right,72.59,18.32,0,0.0,50
+92,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+93,0,Front-Low Graze,0.0,12.27,1,0.0,50
+94,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+95,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+96,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+97,0,Front-Low Graze,0.0,12.27,1,0.0,50
+98,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+99,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+100,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+101,19,Diag Front-Right,47.79,33.69,1,0.0,50
+102,0,Front-Low Graze,0.0,12.27,1,0.0,50
+103,0,Front-Low Graze,0.0,12.27,1,0.0,50
+104,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+105,0,Front-Low Graze,0.0,12.27,1,0.0,50
+106,0,Front-Low Graze,0.0,12.27,1,0.0,50
+107,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+108,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+109,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+110,19,Diag Front-Right,47.79,33.69,1,0.0,50
+111,6,Low Flank Right,72.59,18.32,0,0.0,50
+112,19,Diag Front-Right,47.79,33.69,0,0.0,50
+113,6,Low Flank Right,72.59,18.32,1,0.0,50
+114,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+115,19,Diag Front-Right,47.79,33.69,1,0.0,50
+116,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+117,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+118,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+119,6,Low Flank Right,72.59,18.32,1,0.0,50
+120,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+121,6,Low Flank Right,72.59,18.32,1,0.0,50
+122,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+123,0,Front-Low Graze,0.0,12.27,1,0.0,50
+124,19,Diag Front-Right,47.79,33.69,1,0.0,50
+125,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+126,6,Low Flank Right,72.59,18.32,1,0.0,50
+127,0,Front-Low Graze,0.0,12.27,1,0.0,50
+128,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+129,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+130,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+131,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+132,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+133,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+134,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+135,19,Diag Front-Right,47.79,33.69,1,0.0,50
+136,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+137,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+138,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+139,19,Diag Front-Right,47.79,33.69,1,0.0,50
+140,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+141,6,Low Flank Right,72.59,18.32,1,0.0,50
+142,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+143,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+144,6,Low Flank Right,72.59,18.32,1,0.0,50
+145,6,Low Flank Right,72.59,18.32,1,0.0,50
+146,19,Diag Front-Right,47.79,33.69,1,0.0,50
+147,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+148,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+149,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+150,6,Low Flank Right,72.59,18.32,1,0.0,50
+151,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+152,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+153,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+154,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+155,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+156,0,Front-Low Graze,0.0,12.27,1,0.0,50
+157,19,Diag Front-Right,47.79,33.69,1,0.0,50
+158,0,Front-Low Graze,0.0,12.27,1,0.0,50
+159,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+160,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+161,19,Diag Front-Right,47.79,33.69,1,0.0,50
+162,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+163,6,Low Flank Right,72.59,18.32,0,0.0,50
+164,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+165,0,Front-Low Graze,0.0,12.27,1,0.0,50
+166,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+167,6,Low Flank Right,72.59,18.32,0,0.0,50
+168,19,Diag Front-Right,47.79,33.69,0,0.0,50
+169,19,Diag Front-Right,47.79,33.69,1,0.0,50
+170,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+171,6,Low Flank Right,72.59,18.32,1,0.0,50
+172,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+173,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+174,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+175,6,Low Flank Right,72.59,18.32,1,0.0,50
+176,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+177,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+178,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+179,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+180,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+181,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+182,19,Diag Front-Right,47.79,33.69,1,0.0,50
+183,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+184,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+185,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+186,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+187,0,Front-Low Graze,0.0,12.27,1,0.0,50
+188,19,Diag Front-Right,47.79,33.69,1,0.0,50
+189,19,Diag Front-Right,47.79,33.69,1,0.0,50
+190,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+191,19,Diag Front-Right,47.79,33.69,1,0.0,50
+192,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+193,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+194,19,Diag Front-Right,47.79,33.69,1,0.0,50
+195,19,Diag Front-Right,47.79,33.69,1,0.0,50
+196,0,Front-Low Graze,0.0,12.27,1,0.0,50
+197,0,Front-Low Graze,0.0,12.27,1,0.0,50
+198,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+199,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+200,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+201,19,Diag Front-Right,47.79,33.69,1,0.0,50
+202,6,Low Flank Right,72.59,18.32,1,0.0,50
+203,19,Diag Front-Right,47.79,33.69,1,0.0,50
+204,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+205,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+206,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+207,6,Low Flank Right,72.59,18.32,1,0.0,50
+208,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+209,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+210,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+211,19,Diag Front-Right,47.79,33.69,1,0.0,50
+212,19,Diag Front-Right,47.79,33.69,1,0.0,50
+213,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+214,19,Diag Front-Right,47.79,33.69,1,0.0,50
+215,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+216,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+217,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+218,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+219,6,Low Flank Right,72.59,18.32,1,0.0,50
+220,19,Diag Front-Right,47.79,33.69,1,0.0,50
+221,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+222,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+223,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+224,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+225,0,Front-Low Graze,0.0,12.27,1,0.0,50
+226,0,Front-Low Graze,0.0,12.27,1,0.0,50
+227,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+228,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+229,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+230,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+231,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+232,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+233,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+234,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+235,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+236,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+237,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+238,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+239,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+240,6,Low Flank Right,72.59,18.32,1,0.0,50
+241,0,Front-Low Graze,0.0,12.27,1,0.0,50
+242,19,Diag Front-Right,47.79,33.69,1,0.0,50
+243,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+244,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+245,19,Diag Front-Right,47.79,33.69,1,0.0,50
+246,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+247,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+248,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+249,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+250,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+251,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+252,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+253,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+254,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+255,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+256,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+257,19,Diag Front-Right,47.79,33.69,1,0.0,50
+258,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+259,6,Low Flank Right,72.59,18.32,1,0.0,50
+260,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+261,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+262,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+263,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+264,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+265,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+266,0,Front-Low Graze,0.0,12.27,1,0.0,50
+267,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+268,6,Low Flank Right,72.59,18.32,1,0.0,50
+269,19,Diag Front-Right,47.79,33.69,1,0.0,50
+270,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+271,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+272,6,Low Flank Right,72.59,18.32,0,0.0,50
+273,6,Low Flank Right,72.59,18.32,1,0.0,50
+274,6,Low Flank Right,72.59,18.32,1,0.0,50
+275,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+276,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+277,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+278,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+279,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+280,0,Front-Low Graze,0.0,12.27,0,0.0,50
+281,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+282,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+283,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+284,19,Diag Front-Right,47.79,33.69,0,0.0,50
+285,0,Front-Low Graze,0.0,12.27,1,0.0,50
+286,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+287,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+288,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+289,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+290,6,Low Flank Right,72.59,18.32,1,0.0,50
+291,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+292,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+293,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+294,0,Front-Low Graze,0.0,12.27,0,0.0,50
+295,0,Front-Low Graze,0.0,12.27,1,0.0,50
+296,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+297,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+298,19,Diag Front-Right,47.79,33.69,1,0.0,50
+299,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+300,6,Low Flank Right,72.59,18.32,1,0.0,50
+301,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+302,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+303,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+304,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+305,0,Front-Low Graze,0.0,12.27,1,0.0,50
+306,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+307,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+308,0,Front-Low Graze,0.0,12.27,1,0.0,50
+309,6,Low Flank Right,72.59,18.32,1,0.0,50
+310,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+311,6,Low Flank Right,72.59,18.32,1,0.0,50
+312,19,Diag Front-Right,47.79,33.69,1,0.0,50
+313,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+314,19,Diag Front-Right,47.79,33.69,1,0.0,50
+315,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+316,6,Low Flank Right,72.59,18.32,1,0.0,50
+317,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+318,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+319,19,Diag Front-Right,47.79,33.69,1,0.0,50
+320,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+321,6,Low Flank Right,72.59,18.32,1,0.0,50
+322,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+323,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+324,0,Front-Low Graze,0.0,12.27,1,0.0,50
+325,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+326,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+327,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+328,19,Diag Front-Right,47.79,33.69,1,0.0,50
+329,6,Low Flank Right,72.59,18.32,1,0.0,50
+330,6,Low Flank Right,72.59,18.32,1,0.0,50
+331,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+332,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+333,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+334,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+335,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+336,6,Low Flank Right,72.59,18.32,1,0.0,50
+337,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+338,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+339,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+340,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+341,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+342,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+343,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+344,0,Front-Low Graze,0.0,12.27,1,0.0,50
+345,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+346,19,Diag Front-Right,47.79,33.69,1,0.0,50
+347,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+348,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+349,6,Low Flank Right,72.59,18.32,1,0.0,50
+350,19,Diag Front-Right,47.79,33.69,0,0.0,50
+351,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+352,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+353,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+354,6,Low Flank Right,72.59,18.32,1,0.0,50
+355,6,Low Flank Right,72.59,18.32,1,0.0,50
+356,19,Diag Front-Right,47.79,33.69,0,0.0,50
+357,0,Front-Low Graze,0.0,12.27,1,0.0,50
+358,6,Low Flank Right,72.59,18.32,1,0.0,50
+359,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+360,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+361,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+362,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+363,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+364,0,Front-Low Graze,0.0,12.27,1,0.0,50
+365,19,Diag Front-Right,47.79,33.69,1,0.0,50
+366,19,Diag Front-Right,47.79,33.69,1,0.0,50
+367,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+368,0,Front-Low Graze,0.0,12.27,1,0.0,50
+369,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+370,19,Diag Front-Right,47.79,33.69,1,0.0,50
+371,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+372,6,Low Flank Right,72.59,18.32,1,0.0,50
+373,0,Front-Low Graze,0.0,12.27,1,0.0,50
+374,6,Low Flank Right,72.59,18.32,1,0.0,50
+375,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+376,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+377,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+378,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+379,0,Front-Low Graze,0.0,12.27,1,0.0,50
+380,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+381,6,Low Flank Right,72.59,18.32,0,0.0,50
+382,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+383,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+384,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+385,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+386,6,Low Flank Right,72.59,18.32,1,0.0,50
+387,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+388,19,Diag Front-Right,47.79,33.69,1,0.0,50
+389,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+390,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+391,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+392,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+393,6,Low Flank Right,72.59,18.32,1,0.0,50
+394,6,Low Flank Right,72.59,18.32,1,0.0,50
+395,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+396,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+397,6,Low Flank Right,72.59,18.32,1,0.0,50
+398,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+399,6,Low Flank Right,72.59,18.32,1,0.0,50
+400,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+401,6,Low Flank Right,72.59,18.32,0,0.0,50
+402,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+403,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+404,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+405,6,Low Flank Right,72.59,18.32,1,0.0,50
+406,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+407,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+408,6,Low Flank Right,72.59,18.32,1,0.0,50
+409,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+410,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+411,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+412,6,Low Flank Right,72.59,18.32,1,0.0,50
+413,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+414,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+415,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+416,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+417,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+418,0,Front-Low Graze,0.0,12.27,1,0.0,50
+419,6,Low Flank Right,72.59,18.32,1,0.0,50
+420,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+421,0,Front-Low Graze,0.0,12.27,1,0.0,50
+422,0,Front-Low Graze,0.0,12.27,1,0.0,50
+423,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+424,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+425,6,Low Flank Right,72.59,18.32,1,0.0,50
+426,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+427,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+428,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+429,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+430,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+431,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+432,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+433,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+434,6,Low Flank Right,72.59,18.32,1,0.0,50
+435,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+436,6,Low Flank Right,72.59,18.32,1,0.0,50
+437,6,Low Flank Right,72.59,18.32,1,0.0,50
+438,6,Low Flank Right,72.59,18.32,1,0.0,50
+439,19,Diag Front-Right,47.79,33.69,1,0.0,50
+440,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+441,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+442,6,Low Flank Right,72.59,18.32,1,0.0,50
+443,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+444,6,Low Flank Right,72.59,18.32,1,0.0,50
+445,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+446,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+447,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+448,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+449,19,Diag Front-Right,47.79,33.69,1,0.0,50
+450,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+451,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+452,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+453,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+454,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+455,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+456,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+457,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+458,6,Low Flank Right,72.59,18.32,1,0.0,50
+459,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+460,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+461,0,Front-Low Graze,0.0,12.27,1,0.0,50
+462,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+463,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+464,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+465,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+466,19,Diag Front-Right,47.79,33.69,1,0.0,50
+467,6,Low Flank Right,72.59,18.32,1,0.0,50
+468,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+469,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+470,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+471,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+472,6,Low Flank Right,72.59,18.32,1,0.0,50
+473,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+474,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+475,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+476,6,Low Flank Right,72.59,18.32,1,0.0,50
+477,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+478,6,Low Flank Right,72.59,18.32,1,0.0,50
+479,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+480,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+481,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+482,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+483,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+484,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+485,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+486,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+487,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+488,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+489,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+490,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+491,6,Low Flank Right,72.59,18.32,1,0.0,50
+492,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+493,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+494,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+495,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+496,19,Diag Front-Right,47.79,33.69,1,0.0,50
+497,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+498,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+499,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+500,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+501,19,Diag Front-Right,47.79,33.69,1,0.0,50
+502,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+503,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+504,6,Low Flank Right,72.59,18.32,1,0.0,50
+505,19,Diag Front-Right,47.79,33.69,1,0.0,50
+506,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+507,6,Low Flank Right,72.59,18.32,1,0.0,50
+508,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+509,6,Low Flank Right,72.59,18.32,0,0.0,50
+510,0,Front-Low Graze,0.0,12.27,1,0.0,50
+511,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+512,0,Front-Low Graze,0.0,12.27,1,0.0,50
+513,19,Diag Front-Right,47.79,33.69,1,0.0,50
+514,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+515,0,Front-Low Graze,0.0,12.27,1,0.0,50
+516,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+517,6,Low Flank Right,72.59,18.32,1,0.0,50
+518,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+519,6,Low Flank Right,72.59,18.32,1,0.0,50
+520,0,Front-Low Graze,0.0,12.27,1,0.0,50
+521,6,Low Flank Right,72.59,18.32,1,0.0,50
+522,19,Diag Front-Right,47.79,33.69,1,0.0,50
+523,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+524,19,Diag Front-Right,47.79,33.69,1,0.0,50
+525,0,Front-Low Graze,0.0,12.27,1,0.0,50
+526,19,Diag Front-Right,47.79,33.69,1,0.0,50
+527,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+528,0,Front-Low Graze,0.0,12.27,1,0.0,50
+529,0,Front-Low Graze,0.0,12.27,1,0.0,50
+530,0,Front-Low Graze,0.0,12.27,1,0.0,50
+531,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+532,6,Low Flank Right,72.59,18.32,0,0.0,50
+533,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+534,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+535,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+536,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+537,6,Low Flank Right,72.59,18.32,1,0.0,50
+538,19,Diag Front-Right,47.79,33.69,0,0.0,50
+539,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+540,0,Front-Low Graze,0.0,12.27,1,0.0,50
+541,19,Diag Front-Right,47.79,33.69,1,0.0,50
+542,0,Front-Low Graze,0.0,12.27,1,0.0,50
+543,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+544,0,Front-Low Graze,0.0,12.27,1,0.0,50
+545,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+546,6,Low Flank Right,72.59,18.32,1,0.0,50
+547,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+548,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+549,0,Front-Low Graze,0.0,12.27,1,0.0,50
+550,19,Diag Front-Right,47.79,33.69,0,0.0,50
+551,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+552,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+553,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+554,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+555,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+556,6,Low Flank Right,72.59,18.32,1,0.0,50
+557,6,Low Flank Right,72.59,18.32,1,0.0,50
+558,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+559,6,Low Flank Right,72.59,18.32,1,0.0,50
+560,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+561,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+562,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+563,19,Diag Front-Right,47.79,33.69,1,0.0,50
+564,19,Diag Front-Right,47.79,33.69,1,0.0,50
+565,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+566,0,Front-Low Graze,0.0,12.27,1,0.0,50
+567,0,Front-Low Graze,0.0,12.27,1,0.0,50
+568,6,Low Flank Right,72.59,18.32,1,0.0,50
+569,19,Diag Front-Right,47.79,33.69,1,0.0,50
+570,19,Diag Front-Right,47.79,33.69,1,0.0,50
+571,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+572,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+573,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+574,0,Front-Low Graze,0.0,12.27,1,0.0,50
+575,19,Diag Front-Right,47.79,33.69,1,0.0,50
+576,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+577,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+578,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+579,0,Front-Low Graze,0.0,12.27,0,0.0,50
+580,0,Front-Low Graze,0.0,12.27,0,0.0,50
+581,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+582,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+583,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+584,0,Front-Low Graze,0.0,12.27,0,0.0,50
+585,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+586,19,Diag Front-Right,47.79,33.69,1,0.0,50
+587,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+588,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+589,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+590,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+591,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+592,6,Low Flank Right,72.59,18.32,1,0.0,50
+593,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+594,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+595,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+596,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+597,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+598,19,Diag Front-Right,47.79,33.69,1,0.0,50
+599,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+600,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+601,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+602,6,Low Flank Right,72.59,18.32,1,0.0,50
+603,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+604,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+605,19,Diag Front-Right,47.79,33.69,1,0.0,50
+606,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+607,19,Diag Front-Right,47.79,33.69,0,0.0,50
+608,6,Low Flank Right,72.59,18.32,1,0.0,50
+609,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+610,6,Low Flank Right,72.59,18.32,1,0.0,50
+611,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+612,0,Front-Low Graze,0.0,12.27,1,0.0,50
+613,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+614,0,Front-Low Graze,0.0,12.27,1,0.0,50
+615,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+616,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+617,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+618,6,Low Flank Right,72.59,18.32,1,0.0,50
+619,19,Diag Front-Right,47.79,33.69,1,0.0,50
+620,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+621,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+622,0,Front-Low Graze,0.0,12.27,1,0.0,50
+623,19,Diag Front-Right,47.79,33.69,1,0.0,50
+624,0,Front-Low Graze,0.0,12.27,1,0.0,50
+625,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+626,0,Front-Low Graze,0.0,12.27,1,0.0,50
+627,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+628,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+629,19,Diag Front-Right,47.79,33.69,1,0.0,50
+630,19,Diag Front-Right,47.79,33.69,1,0.0,50
+631,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+632,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+633,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+634,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+635,0,Front-Low Graze,0.0,12.27,1,0.0,50
+636,0,Front-Low Graze,0.0,12.27,1,0.0,50
+637,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+638,19,Diag Front-Right,47.79,33.69,1,0.0,50
+639,0,Front-Low Graze,0.0,12.27,1,0.0,50
+640,6,Low Flank Right,72.59,18.32,0,0.0,50
+641,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+642,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+643,6,Low Flank Right,72.59,18.32,1,0.0,50
+644,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+645,6,Low Flank Right,72.59,18.32,1,0.0,50
+646,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+647,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+648,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+649,6,Low Flank Right,72.59,18.32,1,0.0,50
+650,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+651,19,Diag Front-Right,47.79,33.69,1,0.0,50
+652,6,Low Flank Right,72.59,18.32,0,0.0,50
+653,19,Diag Front-Right,47.79,33.69,1,0.0,50
+654,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+655,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+656,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+657,19,Diag Front-Right,47.79,33.69,1,0.0,50
+658,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+659,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+660,0,Front-Low Graze,0.0,12.27,1,0.0,50
+661,6,Low Flank Right,72.59,18.32,1,0.0,50
+662,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+663,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+664,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+665,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+666,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+667,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+668,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+669,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+670,19,Diag Front-Right,47.79,33.69,1,0.0,50
+671,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+672,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+673,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+674,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+675,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+676,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+677,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+678,6,Low Flank Right,72.59,18.32,1,0.0,50
+679,0,Front-Low Graze,0.0,12.27,1,0.0,50
+680,0,Front-Low Graze,0.0,12.27,1,0.0,50
+681,6,Low Flank Right,72.59,18.32,1,0.0,50
+682,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+683,19,Diag Front-Right,47.79,33.69,1,0.0,50
+684,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+685,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+686,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+687,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+688,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+689,19,Diag Front-Right,47.79,33.69,1,0.0,50
+690,0,Front-Low Graze,0.0,12.27,0,0.0,50
+691,0,Front-Low Graze,0.0,12.27,1,0.0,50
+692,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+693,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+694,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+695,0,Front-Low Graze,0.0,12.27,1,0.0,50
+696,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+697,19,Diag Front-Right,47.79,33.69,1,0.0,50
+698,0,Front-Low Graze,0.0,12.27,1,0.0,50
+699,0,Front-Low Graze,0.0,12.27,1,0.0,50
+700,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+701,0,Front-Low Graze,0.0,12.27,1,0.0,50
+702,6,Low Flank Right,72.59,18.32,1,0.0,50
+703,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+704,6,Low Flank Right,72.59,18.32,1,0.0,50
+705,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+706,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+707,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+708,6,Low Flank Right,72.59,18.32,1,0.0,50
+709,6,Low Flank Right,72.59,18.32,1,0.0,50
+710,6,Low Flank Right,72.59,18.32,1,0.0,50
+711,19,Diag Front-Right,47.79,33.69,1,0.0,50
+712,0,Front-Low Graze,0.0,12.27,1,0.0,50
+713,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+714,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+715,6,Low Flank Right,72.59,18.32,1,0.0,50
+716,6,Low Flank Right,72.59,18.32,1,0.0,50
+717,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+718,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+719,6,Low Flank Right,72.59,18.32,1,0.0,50
+720,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+721,0,Front-Low Graze,0.0,12.27,1,0.0,50
+722,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+723,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+724,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+725,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+726,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+727,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+728,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+729,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+730,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+731,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+732,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+733,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+734,6,Low Flank Right,72.59,18.32,1,0.0,50
+735,0,Front-Low Graze,0.0,12.27,1,0.0,50
+736,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+737,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+738,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+739,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+740,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+741,19,Diag Front-Right,47.79,33.69,1,0.0,50
+742,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+743,0,Front-Low Graze,0.0,12.27,1,0.0,50
+744,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+745,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+746,0,Front-Low Graze,0.0,12.27,1,0.0,50
+747,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+748,19,Diag Front-Right,47.79,33.69,0,0.0,50
+749,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+750,0,Front-Low Graze,0.0,12.27,1,0.0,50
+751,6,Low Flank Right,72.59,18.32,0,0.0,50
+752,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+753,0,Front-Low Graze,0.0,12.27,1,0.0,50
+754,0,Front-Low Graze,0.0,12.27,1,0.0,50
+755,0,Front-Low Graze,0.0,12.27,1,0.0,50
+756,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+757,0,Front-Low Graze,0.0,12.27,1,0.0,50
+758,28,Front-High Steep Tilt,2.93,46.16,1,0.0,50
+759,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+760,19,Diag Front-Right,47.79,33.69,1,0.0,50
+761,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+762,0,Front-Low Graze,0.0,12.27,0,0.0,50
+763,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+764,0,Front-Low Graze,0.0,12.27,1,0.0,50
+765,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+766,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+767,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+768,6,Low Flank Right,72.59,18.32,1,0.0,50
+769,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+770,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+771,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+772,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+773,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+774,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+775,0,Front-Low Graze,0.0,12.27,1,0.0,50
+776,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+777,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+778,6,Low Flank Right,72.59,18.32,1,0.0,50
+779,6,Low Flank Right,72.59,18.32,1,0.0,50
+780,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+781,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+782,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+783,6,Low Flank Right,72.59,18.32,1,0.0,50
+784,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+785,0,Front-Low Graze,0.0,12.27,1,0.0,50
+786,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+787,19,Diag Front-Right,47.79,33.69,1,0.0,50
+788,6,Low Flank Right,72.59,18.32,1,0.0,50
+789,6,Low Flank Right,72.59,18.32,1,0.0,50
+790,19,Diag Front-Right,47.79,33.69,1,0.0,50
+791,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+792,6,Low Flank Right,72.59,18.32,0,0.0,50
+793,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+794,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+795,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+796,19,Diag Front-Right,47.79,33.69,1,0.0,50
+797,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+798,19,Diag Front-Right,47.79,33.69,1,0.0,50
+799,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+800,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+801,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+802,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+803,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+804,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+805,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+806,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+807,6,Low Flank Right,72.59,18.32,1,0.0,50
+808,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+809,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+810,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+811,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+812,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+813,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+814,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+815,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+816,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+817,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+818,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+819,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+820,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+821,19,Diag Front-Right,47.79,33.69,1,0.0,50
+822,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+823,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+824,19,Diag Front-Right,47.79,33.69,1,0.0,50
+825,6,Low Flank Right,72.59,18.32,1,0.0,50
+826,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+827,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+828,0,Front-Low Graze,0.0,12.27,1,0.0,50
+829,19,Diag Front-Right,47.79,33.69,1,0.0,50
+830,6,Low Flank Right,72.59,18.32,1,0.0,50
+831,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+832,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+833,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+834,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+835,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+836,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+837,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+838,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+839,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+840,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+841,19,Diag Front-Right,47.79,33.69,1,0.0,50
+842,6,Low Flank Right,72.59,18.32,1,0.0,50
+843,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+844,19,Diag Front-Right,47.79,33.69,1,0.0,50
+845,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+846,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+847,0,Front-Low Graze,0.0,12.27,1,0.0,50
+848,0,Front-Low Graze,0.0,12.27,1,0.0,50
+849,19,Diag Front-Right,47.79,33.69,1,0.0,50
+850,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+851,19,Diag Front-Right,47.79,33.69,1,0.0,50
+852,0,Front-Low Graze,0.0,12.27,1,0.0,50
+853,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+854,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+855,19,Diag Front-Right,47.79,33.69,1,0.0,50
+856,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+857,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+858,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+859,0,Front-Low Graze,0.0,12.27,1,0.0,50
+860,19,Diag Front-Right,47.79,33.69,1,0.0,50
+861,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+862,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+863,0,Front-Low Graze,0.0,12.27,1,0.0,50
+864,0,Front-Low Graze,0.0,12.27,1,0.0,50
+865,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+866,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+867,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+868,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+869,19,Diag Front-Right,47.79,33.69,1,0.0,50
+870,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+871,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+872,6,Low Flank Right,72.59,18.32,1,0.0,50
+873,0,Front-Low Graze,0.0,12.27,1,0.0,50
+874,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+875,0,Front-Low Graze,0.0,12.27,1,0.0,50
+876,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+877,0,Front-Low Graze,0.0,12.27,0,0.0,50
+878,0,Front-Low Graze,0.0,12.27,1,0.0,50
+879,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+880,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+881,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+882,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+883,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+884,6,Low Flank Right,72.59,18.32,1,0.0,50
+885,6,Low Flank Right,72.59,18.32,1,0.0,50
+886,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+887,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+888,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+889,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+890,17,Front-Mid Canonical,-4.74,31.8,0,0.0,50
+891,19,Diag Front-Right,47.79,33.69,1,0.0,50
+892,19,Diag Front-Right,47.79,33.69,1,0.0,50
+893,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+894,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+895,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+896,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+897,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+898,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+899,19,Diag Front-Right,47.79,33.69,1,0.0,50
+900,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+901,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+902,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+903,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+904,19,Diag Front-Right,47.79,33.69,1,0.0,50
+905,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+906,0,Front-Low Graze,0.0,12.27,1,0.0,50
+907,0,Front-Low Graze,0.0,12.27,1,0.0,50
+908,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+909,19,Diag Front-Right,47.79,33.69,1,0.0,50
+910,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+911,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+912,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+913,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+914,0,Front-Low Graze,0.0,12.27,1,0.0,50
+915,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+916,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+917,0,Front-Low Graze,0.0,12.27,0,0.0,50
+918,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+919,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+920,6,Low Flank Right,72.59,18.32,1,0.0,50
+921,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+922,19,Diag Front-Right,47.79,33.69,1,0.0,50
+923,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+924,19,Diag Front-Right,47.79,33.69,1,0.0,50
+925,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+926,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+927,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+928,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+929,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+930,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+931,19,Diag Front-Right,47.79,33.69,1,0.0,50
+932,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+933,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+934,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+935,6,Low Flank Right,72.59,18.32,1,0.0,50
+936,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+937,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+938,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+939,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+940,0,Front-Low Graze,0.0,12.27,1,0.0,50
+941,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+942,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+943,6,Low Flank Right,72.59,18.32,1,0.0,50
+944,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+945,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+946,19,Diag Front-Right,47.79,33.69,1,0.0,50
+947,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+948,6,Low Flank Right,72.59,18.32,1,0.0,50
+949,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+950,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+951,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+952,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+953,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+954,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+955,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+956,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+957,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+958,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+959,0,Front-Low Graze,0.0,12.27,1,0.0,50
+960,19,Diag Front-Right,47.79,33.69,1,0.0,50
+961,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+962,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+963,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+964,19,Diag Front-Right,47.79,33.69,1,0.0,50
+965,19,Diag Front-Right,47.79,33.69,1,0.0,50
+966,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+967,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+968,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+969,20,Diag Front-Left,-37.2,34.98,0,0.0,50
+970,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+971,6,Low Flank Right,72.59,18.32,1,0.0,50
+972,19,Diag Front-Right,47.79,33.69,1,0.0,50
+973,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+974,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50
+975,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+976,0,Front-Low Graze,0.0,12.27,0,0.0,50
+977,6,Low Flank Right,72.59,18.32,0,0.0,50
+978,6,Low Flank Right,72.59,18.32,1,0.0,50
+979,6,Low Flank Right,72.59,18.32,1,0.0,50
+980,20,Diag Front-Left,-37.2,34.98,1,0.0,50
+981,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+982,6,Low Flank Right,72.59,18.32,1,0.0,50
+983,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+984,27,Right-Flank 90°,87.91,44.65,1,0.0,50
+985,6,Low Flank Right,72.59,18.32,1,0.0,50
+986,0,Front-Low Graze,0.0,12.27,1,0.0,50
+987,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+988,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+989,0,Front-Low Graze,0.0,12.27,1,0.0,50
+990,6,Low Flank Right,72.59,18.32,1,0.0,50
+991,0,Front-Low Graze,0.0,12.27,1,0.0,50
+992,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+993,0,Front-Low Graze,0.0,12.27,0,0.0,50
+994,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+995,18,Left-Flank 90°,-89.72,33.06,0,0.0,50
+996,27,Right-Flank 90°,87.91,44.65,0,0.0,50
+997,17,Front-Mid Canonical,-4.74,31.8,1,0.0,50
+998,18,Left-Flank 90°,-89.72,33.06,1,0.0,50
+999,6,Low Flank Right,72.59,18.32,1,0.0,50
+1000,28,Front-High Steep Tilt,2.93,46.16,0,0.0,50

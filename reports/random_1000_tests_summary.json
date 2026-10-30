@@ -1,0 +1,101 @@
+{
+  "benchmark": "1,000 Randomized Viewpoint Tests",
+  "model": "Distilled Unified Policy (Candidate A NatureCNN)",
+  "checkpoint": "/home/maniskill/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt",
+  "seed": 42,
+  "total_tests": 1000,
+  "total_successes": 809,
+  "overall_accuracy": 80.9,
+  "viable_accuracy_excl_vp28": 90.3,
+  "walltime_seconds": 43.97,
+  "per_viewpoint_breakdown": {
+    "17": {
+      "viewpoint_id": 17,
+      "role": "Front-Mid Canonical",
+      "azimuth_deg": -4.74,
+      "elevation_deg": 31.8,
+      "trials_allocated": 133,
+      "successes": 124,
+      "success_rate": 93.23,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "0": {
+      "viewpoint_id": 0,
+      "role": "Front-Low Graze",
+      "azimuth_deg": 0.0,
+      "elevation_deg": 12.27,
+      "trials_allocated": 117,
+      "successes": 106,
+      "success_rate": 90.6,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "28": {
+      "viewpoint_id": 28,
+      "role": "Front-High Steep Tilt",
+      "azimuth_deg": 2.93,
+      "elevation_deg": 46.16,
+      "trials_allocated": 113,
+      "successes": 8,
+      "success_rate": 7.08,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "18": {
+      "viewpoint_id": 18,
+      "role": "Left-Flank 90\u00b0",
+      "azimuth_deg": -89.72,
+      "elevation_deg": 33.06,
+      "trials_allocated": 146,
+      "successes": 135,
+      "success_rate": 92.47,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "27": {
+      "viewpoint_id": 27,
+      "role": "Right-Flank 90\u00b0",
+      "azimuth_deg": 87.91,
+      "elevation_deg": 44.65,
+      "trials_allocated": 125,
+      "successes": 111,
+      "success_rate": 88.8,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "20": {
+      "viewpoint_id": 20,
+      "role": "Diag Front-Left",
+      "azimuth_deg": -37.2,
+      "elevation_deg": 34.98,
+      "trials_allocated": 113,
+      "successes": 99,
+      "success_rate": 87.61,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "19": {
+      "viewpoint_id": 19,
+      "role": "Diag Front-Right",
+      "azimuth_deg": 47.79,
+      "elevation_deg": 33.69,
+      "trials_allocated": 119,
+      "successes": 109,
+      "success_rate": 91.6,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    },
+    "6": {
+      "viewpoint_id": 6,
+      "role": "Low Flank Right",
+      "azimuth_deg": 72.59,
+      "elevation_deg": 18.32,
+      "trials_allocated": 134,
+      "successes": 117,
+      "success_rate": 87.31,
+      "mean_return": 0.0,
+      "mean_length": 50.0
+    }
+  }
+}

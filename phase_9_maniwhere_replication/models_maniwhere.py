@@ -141,29 +141,25 @@ class ManiwhereAgent(nn.Module):
         self.encoder = ManiwhereVisualEncoder(in_channels=4, feature_dim=feature_dim)
 
         self.state_net = nn.Sequential(
-            nn.Linear(state_dim, 64),
+            nn.Linear(state_dim, 256),
             nn.ReLU(),
         )
 
-        fusion_dim = feature_dim + 64
+        fusion_dim = feature_dim + 256  # 256 (visual) + 256 (state) = 512
 
         # Actor Network (End-Effector Delta Position Control)
         self.actor_mean = nn.Sequential(
-            nn.Linear(fusion_dim, 256),
+            nn.Linear(fusion_dim, 512),
             nn.ReLU(),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, action_dim),
+            nn.Linear(512, action_dim),
         )
         self.actor_logstd = nn.Parameter(torch.zeros(1, action_dim))
 
         # Critic Network (Value Function)
         self.critic = nn.Sequential(
-            nn.Linear(fusion_dim, 256),
+            nn.Linear(fusion_dim, 512),
             nn.ReLU(),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
+            nn.Linear(512, 1),
         )
 
     def _prepare_rgbd(self, obs: dict) -> torch.Tensor:

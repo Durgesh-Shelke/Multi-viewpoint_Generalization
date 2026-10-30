@@ -113,6 +113,7 @@ def train_maniwhere(
     temperature: float = 0.1,
     eval_freq_iters: int = 10,
     output_dir: str = "/home/maniskill/phase_9_maniwhere_replication",
+    warm_start_ckpt: str = None,
     device_str: str = "cuda",
 ):
     device = torch.device(device_str)
@@ -130,6 +131,8 @@ def train_maniwhere(
     print(f" Target Steps: {total_timesteps:,} | Envs: {num_envs} | Rollout Steps: {rollout_steps}")
     print(f" Multi-View Loss: InfoNCE (tau={temperature}) + Feature Alignment (lambda={lambda_feat})")
     print(f" STN Architecture: Perspective 3x3 Homography (lr={stn_lr})")
+    if warm_start_ckpt:
+        print(f" Warm-Start Initialization: {warm_start_ckpt}")
     print("=" * 78 + "\n")
 
     # Initial Moving Viewpoint
@@ -155,6 +158,45 @@ def train_maniwhere(
 
     # Initialize Maniwhere Agent
     agent = ManiwhereAgent(action_dim=4, state_dim=29, feature_dim=256).to(device)
+
+    # Optional Warm-Start from Candidate A manipulation base
+    if warm_start_ckpt and os.path.exists(warm_start_ckpt):
+        print(f"[Warm-Start] Loading pretrained manipulation base: {warm_start_ckpt}")
+        base_state = torch.load(warm_start_ckpt, map_location=device)
+        if "model_state" in base_state:
+            base_state = base_state["model_state"]
+
+        key_mapping = {
+            "feature_net.cnn.0.weight": "encoder.conv1.0.weight",
+            "feature_net.cnn.0.bias": "encoder.conv1.0.bias",
+            "feature_net.cnn.2.weight": "encoder.conv2.0.weight",
+            "feature_net.cnn.2.bias": "encoder.conv2.0.bias",
+            "feature_net.cnn.4.weight": "encoder.conv2.2.weight",
+            "feature_net.cnn.4.bias": "encoder.conv2.2.bias",
+            "feature_net.cnn.7.weight": "encoder.fc.0.weight",
+            "feature_net.cnn.7.bias": "encoder.fc.0.bias",
+            "feature_net.state_fc.0.weight": "state_net.0.weight",
+            "feature_net.state_fc.0.bias": "state_net.0.bias",
+            "actor_mean.0.weight": "actor_mean.0.weight",
+            "actor_mean.0.bias": "actor_mean.0.bias",
+            "actor_mean.2.weight": "actor_mean.2.weight",
+            "actor_mean.2.bias": "actor_mean.2.bias",
+            "actor_logstd": "actor_logstd",
+            "critic.0.weight": "critic.0.weight",
+            "critic.0.bias": "critic.0.bias",
+            "critic.2.weight": "critic.2.weight",
+            "critic.2.bias": "critic.2.bias",
+        }
+
+        agent_state = agent.state_dict()
+        transferred = 0
+        for src_k, dst_k in key_mapping.items():
+            if src_k in base_state and dst_k in agent_state:
+                if base_state[src_k].shape == agent_state[dst_k].shape:
+                    agent_state[dst_k] = base_state[src_k]
+                    transferred += 1
+        agent.load_state_dict(agent_state)
+        print(f"[Warm-Start] Successfully transferred {transferred} weight tensors! (STN preserved at Identity H=I)")
 
     # Optimizers: separate parameter groups for base and STN
     stn_params = list(agent.encoder.stn.parameters())
@@ -376,10 +418,12 @@ if __name__ == "__main__":
     parser.add_argument("--total-timesteps", type=int, default=3000000)
     parser.add_argument("--num-envs", type=int, default=64)
     parser.add_argument("--eval-freq", type=int, default=10)
+    parser.add_argument("--warm-start", type=str, default="/home/maniskill/phase_5/checkpoints/candidate_A_best.pt")
     args = parser.parse_args()
 
     train_maniwhere(
         total_timesteps=args.total_timesteps,
         num_envs=args.num_envs,
         eval_freq_iters=args.eval_freq,
+        warm_start_ckpt=args.warm_start if args.warm_start and args.warm_start.lower() != "none" else None,
     )

@@ -1,0 +1,99 @@
+[33;1m2026-10-31 18:03:51,259 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:03:54,560 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:03:58,195 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:02,086 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:05,833 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:09,587 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:13,363 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:17,066 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:20,920 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:24,720 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:28,528 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:32,288 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:36,212 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:40,113 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:44,216 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:48,283 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:52,349 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:04:56,438 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:00,471 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:04,483 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:08,397 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:12,356 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:16,440 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:20,478 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:24,405 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-10-31 18:05:28,417 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+================================================================================
+ PHASE 16: COMPOSITE MODULAR ARCHITECTURE EXECUTION
+================================================================================
+
+--- Step 1: Loading Pre-trained Viewpoint Engine Weights ---
+[OK] Viewpoint perception weights successfully loaded from /home/maniskill/phase_15_cross_embodiment/combined/combined_omniarm_best.pt
+
+--- Step 2: Training Kinematic Engine ---
+
+================================================================================
+ COLLECTING KINEMATIC DATASET FOR EMBODIMENT ENGINE (10,000 PAIRS)
+================================================================================
+
+--- Collecting kinematic pairs for panda (DoF=7) ---
+
+--- Collecting kinematic pairs for xarm6_robotiq (DoF=6) ---
+[OK] Kinematic dataset collected: 10,000 pairs in 5.5s
+
+================================================================================
+ TRAINING SUB-MODULE 2: EMBODIMENT KINEMATIC ENGINE (NEURAL IK)
+================================================================================
+  Kinematic Adapter Epoch  5/20 | Loss (MSE): 0.000107 | Time: 0.5s
+  Kinematic Adapter Epoch 10/20 | Loss (MSE): 0.000095 | Time: 1.0s
+  Kinematic Adapter Epoch 15/20 | Loss (MSE): 0.000090 | Time: 1.5s
+  Kinematic Adapter Epoch 20/20 | Loss (MSE): 0.000088 | Time: 2.2s
+[OK] Kinematic Adapter training complete.
+
+--- Step 3: Exporting Unified Deliverable Checkpoint ---
+[OK] Universal Composite Model exported to /home/maniskill/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt
+
+--- Step 4: Validating Single Deliverable Across All Viewpoints & Robots ---
+[OK] Universal Composite Model loaded from /home/maniskill/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt
+
+================================================================================
+ BENCHMARKING SINGLE COMPOSITE DELIVERABLE MODEL ACROSS 13 VIEWPOINTS
+ Testing on BOTH Franka Panda (7 DoF) and xArm 6 Robotiq (6 DoF)
+================================================================================
+
+--- Testing Composite Deliverable on panda (Embodiment ID=0) ---
+  [ANCHOR    ] VP 17 (Front-Mid Anchor)           : Succ= 78.0% | Grasp= 94.0%
+  [ANCHOR    ] VP 00 (Front-Low Anchor)           : Succ= 84.0% | Grasp= 94.0%
+  [ANCHOR    ] VP 20 (Left-Mid Anchor)            : Succ= 78.0% | Grasp= 90.0%
+  [ANCHOR    ] VP 19 (Right-Mid Anchor)           : Succ= 80.0% | Grasp= 90.0%
+  [IN-BETWEEN] In-Between VP 10 (Elevation Interp): Succ= 76.0% | Grasp= 84.0%
+  [IN-BETWEEN] In-Between VP 13 (Azimuth Interp)  : Succ= 78.0% | Grasp= 86.0%
+  [IN-BETWEEN] In-Between VP 11 (High-Elevation Interp): Succ= 78.0% | Grasp= 92.0%
+  [IN-BETWEEN] In-Between VP 12 (Flank Interp)    : Succ= 72.0% | Grasp= 84.0%
+  [IN-BETWEEN] In-Between VP 14 (Elevation Interp): Succ= 68.0% | Grasp= 82.0%
+  [IN-BETWEEN] In-Between VP 15 (Mid-Left Interp) : Succ= 76.0% | Grasp= 84.0%
+  [IN-BETWEEN] In-Between VP 16 (Mid-Right Interp): Succ= 60.0% | Grasp= 76.0%
+  [IN-BETWEEN] In-Between VP 18 (Upper-Left Interp): Succ= 72.0% | Grasp= 84.0%
+  [IN-BETWEEN] In-Between VP 21 (Extreme Flank Interp): Succ= 70.0% | Grasp= 80.0%
+
+--- Testing Composite Deliverable on xarm6_robotiq (Embodiment ID=1) ---
+  [ANCHOR    ] VP 17 (Front-Mid Anchor)           : Succ= 92.0% | Grasp= 96.0%
+  [ANCHOR    ] VP 00 (Front-Low Anchor)           : Succ= 92.0% | Grasp= 94.0%
+  [ANCHOR    ] VP 20 (Left-Mid Anchor)            : Succ= 96.0% | Grasp=100.0%
+  [ANCHOR    ] VP 19 (Right-Mid Anchor)           : Succ= 82.0% | Grasp= 90.0%
+  [IN-BETWEEN] In-Between VP 10 (Elevation Interp): Succ= 90.0% | Grasp= 98.0%
+  [IN-BETWEEN] In-Between VP 13 (Azimuth Interp)  : Succ= 90.0% | Grasp= 92.0%
+  [IN-BETWEEN] In-Between VP 11 (High-Elevation Interp): Succ= 96.0% | Grasp=100.0%
+  [IN-BETWEEN] In-Between VP 12 (Flank Interp)    : Succ= 88.0% | Grasp= 90.0%
+  [IN-BETWEEN] In-Between VP 14 (Elevation Interp): Succ= 92.0% | Grasp= 94.0%
+  [IN-BETWEEN] In-Between VP 15 (Mid-Left Interp) : Succ= 94.0% | Grasp= 98.0%
+  [IN-BETWEEN] In-Between VP 16 (Mid-Right Interp): Succ= 94.0% | Grasp=100.0%
+  [IN-BETWEEN] In-Between VP 18 (Upper-Left Interp): Succ= 96.0% | Grasp=100.0%
+  [IN-BETWEEN] In-Between VP 21 (Extreme Flank Interp): Succ= 96.0% | Grasp= 96.0%
+
+Summary for PANDA: Overall SR=74.6% | Anchor SR=80.0% | In-Between SR=72.2% | Grasp=86.2%
+
+Summary for XARM6: Overall SR=92.2% | Anchor SR=90.5% | In-Between SR=92.9% | Grasp=96.0%
+
+[OK] Benchmark results written to /home/maniskill/phase_16_composite_modular_architecture/eval_results/composite_architecture_benchmark.json

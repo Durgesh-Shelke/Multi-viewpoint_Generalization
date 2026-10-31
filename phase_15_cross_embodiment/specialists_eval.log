@@ -1,0 +1,84 @@
+
+================================================================================
+ BENCHMARKING SPECIALIST: FRANKA PANDA SPECIALIST ON PANDA
+ Checkpoint: /home/maniskill/phase_15_cross_embodiment/checkpoints/panda_specialist_best.pt
+ Test Suite: 13 Viewpoints (4 Anchors + 9 Novel In-Betweens) | 50 envs/vp
+================================================================================
+[33;1m2026-10-31 16:27:38,834 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 17 (Front-Mid Anchor)        : Succ=  2.0% | Grasp= 80.0%
+[33;1m2026-10-31 16:27:43,632 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 00 (Front-Low Anchor)        : Succ=  2.0% | Grasp= 82.0%
+[33;1m2026-10-31 16:27:47,201 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 20 (Diag-Left Anchor)        : Succ=  0.0% | Grasp= 80.0%
+[33;1m2026-10-31 16:27:50,607 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 19 (Diag-Right Anchor)       : Succ=  2.0% | Grasp= 70.0%
+[33;1m2026-10-31 16:27:54,163 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 10 (In-Between Elevation)    : Succ=  0.0% | Grasp= 82.0%
+[33;1m2026-10-31 16:27:57,811 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 13 (In-Between Az: VP17-20)  : Succ=  0.0% | Grasp= 72.0%
+[33;1m2026-10-31 16:28:01,555 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 14 (In-Between Az: VP17-19)  : Succ=  2.0% | Grasp= 88.0%
+[33;1m2026-10-31 16:28:05,143 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 08 (Low-El Interpolated)     : Succ=  2.0% | Grasp= 94.0%
+[33;1m2026-10-31 16:28:08,724 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 09 (Low-El Interpolated)     : Succ=  2.0% | Grasp= 80.0%
+[33;1m2026-10-31 16:28:12,331 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 12 (Flank In-Between R)      : Succ=  4.0% | Grasp= 86.0%
+[33;1m2026-10-31 16:28:15,909 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 15 (Flank In-Between L)      : Succ=  4.0% | Grasp= 88.0%
+[33;1m2026-10-31 16:28:19,460 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 21 (High-El Steep Angle)     : Succ=  2.0% | Grasp= 84.0%
+[33;1m2026-10-31 16:28:23,066 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 22 (High-El Steep Angle)     : Succ=  0.0% | Grasp= 86.0%
+
+================================================================================
+ FRANKA PANDA SPECIALIST RESULTS SUMMARY (Time: 47.7s):
+ Overall Success Rate:              1.7%
+ Novel In-Between Viewpoints (9):   1.8%
+ Anchor Viewpoints (4):             1.5%
+ Overall Grasp Rate:               82.5%
+================================================================================
+
+
+================================================================================
+ BENCHMARKING SPECIALIST: XARM 6 ROBOTIQ SPECIALIST ON XARM6_ROBOTIQ
+ Checkpoint: /home/maniskill/phase_15_cross_embodiment/checkpoints/xarm6_specialist_best.pt
+ Test Suite: 13 Viewpoints (4 Anchors + 9 Novel In-Betweens) | 50 envs/vp
+================================================================================
+[33;1m2026-10-31 16:28:26,565 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 17 (Front-Mid Anchor)        : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:30,484 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 00 (Front-Low Anchor)        : Succ=  0.0% | Grasp=  4.0%
+[33;1m2026-10-31 16:28:34,477 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 20 (Diag-Left Anchor)        : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:38,290 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]      VP 19 (Diag-Right Anchor)       : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:42,055 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 10 (In-Between Elevation)    : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:45,859 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 13 (In-Between Az: VP17-20)  : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:49,625 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 14 (In-Between Az: VP17-19)  : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:53,502 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 08 (Low-El Interpolated)     : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:28:58,020 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 09 (Low-El Interpolated)     : Succ=  2.0% | Grasp=  2.0%
+[33;1m2026-10-31 16:29:03,284 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 12 (Flank In-Between R)      : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:29:07,024 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 15 (Flank In-Between L)      : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:29:10,776 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 21 (High-El Steep Angle)     : Succ=  0.0% | Grasp=  0.0%
+[33;1m2026-10-31 16:29:14,733 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN]  VP 22 (High-El Steep Angle)     : Succ=  0.0% | Grasp=  2.0%
+
+================================================================================
+ XARM 6 ROBOTIQ SPECIALIST RESULTS SUMMARY (Time: 53.1s):
+ Overall Success Rate:              0.2%
+ Novel In-Between Viewpoints (9):   0.2%
+ Anchor Viewpoints (4):             0.0%
+ Overall Grasp Rate:                0.6%
+================================================================================
+
+[OK] Specialist accuracy results saved to /home/maniskill/phase_15_cross_embodiment/eval_results/specialists_accuracy_benchmark.json
+[OK] Comparison plot saved to /home/maniskill/phase_15_cross_embodiment/eval_results/specialists_accuracy_benchmark.png

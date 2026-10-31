@@ -1,0 +1,67 @@
+
+================================================================================
+ PHASE 15: CROSS-EMBODIMENT GENERALIZATION MASTER EXPERIMENT
+================================================================================
+
+================================================================================
+ [DATA COLLECTION] PANDA | 1,500 EPISODES | CONTINUOUS RANDOM VIEWPOINTS
+================================================================================
+/opt/conda/lib/python3.9/site-packages/gymnasium/core.py:311: UserWarning: [33mWARN: env.num_envs to get variables from other wrappers is deprecated and will be removed in v1.0, to get this variable you can do `env.unwrapped.num_envs` for environment variables or `env.get_wrapper_attr('num_envs')` that will search the reminding wrappers.[0m
+  logger.warn(
+  [panda] Batch  1/47 | Collected: 1,600/75,000 samples | Time: 4.1s
+  [panda] Batch 10/47 | Collected: 16,000/75,000 samples | Time: 33.6s
+  [panda] Batch 20/47 | Collected: 32,000/75,000 samples | Time: 65.4s
+  [panda] Batch 30/47 | Collected: 48,000/75,000 samples | Time: 97.3s
+  [panda] Batch 40/47 | Collected: 64,000/75,000 samples | Time: 130.1s
+  [panda] Batch 47/47 | Collected: 75,000/75,000 samples | Time: 152.5s
+[OK] Saved panda dataset (75,000 transitions) to /home/maniskill/phase_15_cross_embodiment/data/dataset_panda_1500eps.pt in 152.7s
+
+================================================================================
+ [DATA COLLECTION] XARM6_ROBOTIQ | 1,500 EPISODES | CONTINUOUS RANDOM VIEWPOINTS
+================================================================================
+  [xarm6_robotiq] Batch  1/47 | Collected: 1,600/75,000 samples | Time: 3.5s
+  [xarm6_robotiq] Batch 10/47 | Collected: 16,000/75,000 samples | Time: 34.6s
+  [xarm6_robotiq] Batch 20/47 | Collected: 32,000/75,000 samples | Time: 69.2s
+  [xarm6_robotiq] Batch 30/47 | Collected: 48,000/75,000 samples | Time: 103.7s
+  [xarm6_robotiq] Batch 40/47 | Collected: 64,000/75,000 samples | Time: 138.7s
+Traceback (most recent call last):
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1150, in _sapien_gpu_setup_sensors
+    camera_group = self.render_system_group.create_camera_group(
+RuntimeError: vk::Device::createFenceUnique: ErrorOutOfHostMemory
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maniskill/phase_15_cross_embodiment/run_cross_embodiment_master.py", line 587, in <module>
+    main()
+  File "/home/maniskill/phase_15_cross_embodiment/run_cross_embodiment_master.py", line 446, in main
+    pts_xarm, proprio_xarm, act_xarm = collect_dataset_for_arm("xarm6_robotiq", num_episodes=1500, batch_envs=32, seed=142)
+  File "/home/maniskill/phase_15_cross_embodiment/run_cross_embodiment_master.py", line 222, in collect_dataset_for_arm
+    env = gym.make(
+  File "/opt/conda/lib/python3.9/site-packages/gymnasium/envs/registration.py", line 802, in make
+    env = env_creator(**env_spec_kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 182, in make
+    env = env_spec.make(**kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 79, in make
+    return self.cls(**_kwargs)
+  File "/home/maniskill/mani_skill/envs/tasks/tabletop/pick_cube.py", line 64, in __init__
+    super().__init__(*args, robot_uids=robot_uids, **kwargs)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 325, in __init__
+    obs, _ = self.reset(seed=[2022 + i for i in range(self.num_envs)], options=dict(reconfigure=True))
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 976, in reset
+    obs = self.get_obs(info)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 533, in get_obs
+    obs = self._get_obs_with_sensor_data(info)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 634, in _get_obs_with_sensor_data
+    sensor_data=self._get_obs_sensor_data(apply_texture_transforms),
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 604, in _get_obs_sensor_data
+    self.scene.update_render(update_sensors=True, update_human_render_cameras=False)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 408, in update_render
+    self._sapien_update_render(
+  File "/home/maniskill/mani_skill/envs/scene.py", line 423, in _sapien_update_render
+    self._gpu_setup_sensors(self.sensors)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1144, in _gpu_setup_sensors
+    self._sapien_gpu_setup_sensors(sensors)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1157, in _sapien_gpu_setup_sensors
+    raise RuntimeError(
+RuntimeError: Unable to create GPU parallelized camera group. If the error is about being unable to create a buffer, you are likely using too many Cameras. Either use less cameras (via less parallel envs) and/or reduce the size of the cameras. Another common cause is using a memory intensive shader, you can try using the 'minimal' shader which optimizes for GPU memory but disables some advanced functionalities. Another option is to avoid rendering with the rgb_array mode / using the human render cameras as they can be more memory intensive as they typically have higher resolutions for the purposes of visualization.

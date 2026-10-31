@@ -1,0 +1,188 @@
+{
+  "panda_zeroshot_on_xarm6": [
+    {
+      "id": 17,
+      "name": "VP 17 (Front-Mid Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 0,
+      "name": "VP 00 (Front-Low Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 20,
+      "name": "VP 20 (Diag-Left Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 19,
+      "name": "VP 19 (Diag-Right Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 10,
+      "name": "VP 10 (In-Between El: VP00-17)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 13,
+      "name": "VP 13 (In-Between Az: VP17-20)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 14,
+      "name": "VP 14 (In-Between Az: VP17-19)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 4,
+      "name": "VP 04 (In-Between Low-Right)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 7,
+      "name": "VP 07 (In-Between Low-Left)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 21,
+      "name": "VP 21 (In-Between Mid-Right)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 24,
+      "name": "VP 24 (In-Between High-Mid)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 12,
+      "name": "VP 12 (Flank In-Between R)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 15,
+      "name": "VP 15 (Flank In-Between L)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    }
+  ],
+  "xarm6_zeroshot_on_panda": [
+    {
+      "id": 17,
+      "name": "VP 17 (Front-Mid Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 0,
+      "name": "VP 00 (Front-Low Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 20,
+      "name": "VP 20 (Diag-Left Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 19,
+      "name": "VP 19 (Diag-Right Anchor)",
+      "type": "Anchor",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 10,
+      "name": "VP 10 (In-Between El: VP00-17)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 13,
+      "name": "VP 13 (In-Between Az: VP17-20)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 14,
+      "name": "VP 14 (In-Between Az: VP17-19)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 4,
+      "name": "VP 04 (In-Between Low-Right)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 7,
+      "name": "VP 07 (In-Between Low-Left)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 21,
+      "name": "VP 21 (In-Between Mid-Right)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 24,
+      "name": "VP 24 (In-Between High-Mid)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 12,
+      "name": "VP 12 (Flank In-Between R)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    },
+    {
+      "id": 15,
+      "name": "VP 15 (Flank In-Between L)",
+      "type": "In-Between",
+      "success_rate": 0.0,
+      "grasp_rate": 0.0
+    }
+  ]
+}

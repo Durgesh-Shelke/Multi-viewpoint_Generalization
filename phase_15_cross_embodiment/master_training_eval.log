@@ -1,0 +1,35 @@
+
+================================================================================
+ PHASE 15: CROSS-EMBODIMENT GENERALIZATION MASTER EXPERIMENT
+================================================================================
+[CACHE] Loading cached dataset for panda from /home/maniskill/phase_15_cross_embodiment/data/dataset_panda_1500eps.pt
+[CACHE] Loading cached dataset for xarm6_robotiq from /home/maniskill/phase_15_cross_embodiment/data/dataset_xarm6_robotiq_1500eps.pt
+
+[OK] Combined OmniArm dataset prepared: 150,000 transitions from Panda and xArm6 Robotiq.
+
+================================================================================
+ [TRAINING] PANDA_SPECIALIST | 75,000 TRANSITIONS | 25 EPOCHS
+================================================================================
+  [panda_specialist] Epoch  1/25 | Action MSE Loss: 0.08398 | Time: 4.7s
+  [panda_specialist] Epoch  5/25 | Action MSE Loss: 0.03540 | Time: 4.5s
+  [panda_specialist] Epoch 10/25 | Action MSE Loss: 0.03067 | Time: 4.5s
+  [panda_specialist] Epoch 15/25 | Action MSE Loss: 0.03017 | Time: 4.7s
+  [panda_specialist] Epoch 20/25 | Action MSE Loss: 0.02988 | Time: 4.7s
+  [panda_specialist] Epoch 25/25 | Action MSE Loss: 0.02977 | Time: 4.8s
+[OK] Model saved to /home/maniskill/phase_15_cross_embodiment/checkpoints/panda_specialist_best.pt (Best MSE: 0.02975)
+
+================================================================================
+ [TRAINING] XARM6_SPECIALIST | 75,000 TRANSITIONS | 25 EPOCHS
+================================================================================
+  [xarm6_specialist] Epoch  1/25 | Action MSE Loss: 0.08131 | Time: 5.3s
+  [xarm6_specialist] Epoch  5/25 | Action MSE Loss: 0.03567 | Time: 4.6s
+  [xarm6_specialist] Epoch 10/25 | Action MSE Loss: 0.02957 | Time: 4.6s
+  [xarm6_specialist] Epoch 15/25 | Action MSE Loss: 0.02876 | Time: 4.6s
+  [xarm6_specialist] Epoch 20/25 | Action MSE Loss: 0.02827 | Time: 4.6s
+  [xarm6_specialist] Epoch 25/25 | Action MSE Loss: 0.02802 | Time: 4.5s
+[OK] Model saved to /home/maniskill/phase_15_cross_embodiment/checkpoints/xarm6_specialist_best.pt (Best MSE: 0.02796)
+
+================================================================================
+ [TRAINING] COMBINED_OMNIARM | 150,000 TRANSITIONS | 25 EPOCHS
+================================================================================
+  [combined_omniarm] Epoch  1/25 | Action MSE Loss: 0.06466 | Time: 9.1s

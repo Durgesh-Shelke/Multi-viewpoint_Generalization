@@ -1,0 +1,668 @@
+{
+  "specialists": {
+    "franka_panda_7dof": {
+      "overall_sr": 90.6,
+      "anchor_sr": 93.5,
+      "inbetween_sr": 89.3,
+      "grasp_rate": 97.5
+    },
+    "xarm6_robotiq_6dof": {
+      "overall_sr": 60.3,
+      "anchor_sr": 60.0,
+      "inbetween_sr": 60.4,
+      "grasp_rate": 90.0
+    },
+    "xarm6_panda_gripper_6dof": {
+      "robot_uid": "xarm6_panda_gripper",
+      "overall_success_rate": 6.769230589270592,
+      "overall_grasp_rate": 21.384614820663746,
+      "anchor_success_rate": 6.9999998435378075,
+      "inbetween_success_rate": 6.66666647626294,
+      "per_viewpoint": [
+        {
+          "id": 17,
+          "name": "VP 17 (Front-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -4.74,
+          "elevation": 31.8,
+          "success_rate": 7.999999821186066,
+          "grasp_rate": 19.999998807907104
+        },
+        {
+          "id": 0,
+          "name": "VP 00 (Front-Low Anchor)",
+          "type": "Anchor",
+          "azimuth": 0.0,
+          "elevation": 12.27,
+          "success_rate": 5.999999865889549,
+          "grasp_rate": 21.99999988079071
+        },
+        {
+          "id": 20,
+          "name": "VP 20 (Left-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -37.2,
+          "elevation": 34.98,
+          "success_rate": 7.999999821186066,
+          "grasp_rate": 15.999999642372131
+        },
+        {
+          "id": 19,
+          "name": "VP 19 (Right-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": 47.79,
+          "elevation": 33.69,
+          "success_rate": 5.999999865889549,
+          "grasp_rate": 23.999999463558197
+        },
+        {
+          "id": 10,
+          "name": "In-Between VP 10 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 7.66,
+          "elevation": 24.0,
+          "success_rate": 3.999999910593033,
+          "grasp_rate": 19.999998807907104
+        },
+        {
+          "id": 13,
+          "name": "In-Between VP 13 (Azimuth Interp)",
+          "type": "In-Between",
+          "azimuth": -24.8,
+          "elevation": 26.94,
+          "success_rate": 3.999999910593033,
+          "grasp_rate": 9.999999403953552
+        },
+        {
+          "id": 11,
+          "name": "In-Between VP 11 (High-Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": -77.32,
+          "elevation": 25.17,
+          "success_rate": 1.9999999552965164,
+          "grasp_rate": 21.99999988079071
+        },
+        {
+          "id": 12,
+          "name": "In-Between VP 12 (Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 60.19,
+          "elevation": 25.75,
+          "success_rate": 3.999999910593033,
+          "grasp_rate": 21.99999988079071
+        },
+        {
+          "id": 14,
+          "name": "In-Between VP 14 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 27.73,
+          "elevation": 28.73,
+          "success_rate": 3.999999910593033,
+          "grasp_rate": 15.999999642372131
+        },
+        {
+          "id": 15,
+          "name": "In-Between VP 15 (Mid-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -57.26,
+          "elevation": 29.95,
+          "success_rate": 7.999999821186066,
+          "grasp_rate": 25.999999046325684
+        },
+        {
+          "id": 16,
+          "name": "In-Between VP 16 (Mid-Right Interp)",
+          "type": "In-Between",
+          "azimuth": 80.25,
+          "elevation": 30.56,
+          "success_rate": 9.999999403953552,
+          "grasp_rate": 28.00000011920929
+        },
+        {
+          "id": 18,
+          "name": "In-Between VP 18 (Upper-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -89.72,
+          "elevation": 33.06,
+          "success_rate": 14.000000059604645,
+          "grasp_rate": 25.999999046325684
+        },
+        {
+          "id": 21,
+          "name": "In-Between VP 21 (Extreme Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 15.33,
+          "elevation": 36.94,
+          "success_rate": 9.999999403953552,
+          "grasp_rate": 25.999999046325684
+        }
+      ]
+    }
+  },
+  "path1_diverse_grippers": {
+    "description": "Joint policy trained on Franka Panda (Linear Prismatic) + xArm 6 Robotiq (4-Bar Linkage)",
+    "panda": {
+      "overall_sr": 79.2,
+      "anchor_sr": 84.0,
+      "inbetween_sr": 77.1,
+      "grasp_rate": 86.6
+    },
+    "xarm6_robotiq": {
+      "overall_sr": 84.9,
+      "anchor_sr": 87.0,
+      "inbetween_sr": 84.0,
+      "grasp_rate": 90.2
+    },
+    "combined_average_sr": 82.05
+  },
+  "path2_standardized_gripper": {
+    "description": "Joint policy trained on Franka Panda (7 DoF) + xArm 6 (6 DoF) with identical Franka Gripper",
+    "panda": {
+      "robot_uid": "panda",
+      "overall_success_rate": 63.99999879873716,
+      "overall_grasp_rate": 72.92307569430425,
+      "anchor_success_rate": 70.49999833106995,
+      "inbetween_success_rate": 61.11111011770036,
+      "per_viewpoint": [
+        {
+          "id": 17,
+          "name": "VP 17 (Front-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -4.74,
+          "elevation": 31.8,
+          "success_rate": 81.99999928474426,
+          "grasp_rate": 85.999995470047
+        },
+        {
+          "id": 0,
+          "name": "VP 00 (Front-Low Anchor)",
+          "type": "Anchor",
+          "azimuth": 0.0,
+          "elevation": 12.27,
+          "success_rate": 65.99999666213989,
+          "grasp_rate": 74.00000095367432
+        },
+        {
+          "id": 20,
+          "name": "VP 20 (Left-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -37.2,
+          "elevation": 34.98,
+          "success_rate": 68.00000071525574,
+          "grasp_rate": 74.00000095367432
+        },
+        {
+          "id": 19,
+          "name": "VP 19 (Right-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": 47.79,
+          "elevation": 33.69,
+          "success_rate": 65.99999666213989,
+          "grasp_rate": 74.00000095367432
+        },
+        {
+          "id": 10,
+          "name": "In-Between VP 10 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 7.66,
+          "elevation": 24.0,
+          "success_rate": 68.00000071525574,
+          "grasp_rate": 71.99999690055847
+        },
+        {
+          "id": 13,
+          "name": "In-Between VP 13 (Azimuth Interp)",
+          "type": "In-Between",
+          "azimuth": -24.8,
+          "elevation": 26.94,
+          "success_rate": 63.999998569488525,
+          "grasp_rate": 63.999998569488525
+        },
+        {
+          "id": 11,
+          "name": "In-Between VP 11 (High-Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": -77.32,
+          "elevation": 25.17,
+          "success_rate": 53.999996185302734,
+          "grasp_rate": 71.99999690055847
+        },
+        {
+          "id": 12,
+          "name": "In-Between VP 12 (Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 60.19,
+          "elevation": 25.75,
+          "success_rate": 56.00000023841858,
+          "grasp_rate": 68.00000071525574
+        },
+        {
+          "id": 14,
+          "name": "In-Between VP 14 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 27.73,
+          "elevation": 28.73,
+          "success_rate": 51.99999809265137,
+          "grasp_rate": 63.999998569488525
+        },
+        {
+          "id": 15,
+          "name": "In-Between VP 15 (Mid-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -57.26,
+          "elevation": 29.95,
+          "success_rate": 68.00000071525574,
+          "grasp_rate": 77.99999713897705
+        },
+        {
+          "id": 16,
+          "name": "In-Between VP 16 (Mid-Right Interp)",
+          "type": "In-Between",
+          "azimuth": 80.25,
+          "elevation": 30.56,
+          "success_rate": 47.999998927116394,
+          "grasp_rate": 68.00000071525574
+        },
+        {
+          "id": 18,
+          "name": "In-Between VP 18 (Upper-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -89.72,
+          "elevation": 33.06,
+          "success_rate": 71.99999690055847,
+          "grasp_rate": 79.99999523162842
+        },
+        {
+          "id": 21,
+          "name": "In-Between VP 21 (Extreme Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 15.33,
+          "elevation": 36.94,
+          "success_rate": 68.00000071525574,
+          "grasp_rate": 74.00000095367432
+        }
+      ]
+    },
+    "xarm6_panda_gripper": {
+      "robot_uid": "xarm6_panda_gripper",
+      "overall_success_rate": 36.1538453744008,
+      "overall_grasp_rate": 75.53845919095554,
+      "anchor_success_rate": 36.99999898672104,
+      "inbetween_success_rate": 35.77777710225847,
+      "per_viewpoint": [
+        {
+          "id": 17,
+          "name": "VP 17 (Front-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -4.74,
+          "elevation": 31.8,
+          "success_rate": 37.99999952316284,
+          "grasp_rate": 87.99999952316284
+        },
+        {
+          "id": 0,
+          "name": "VP 00 (Front-Low Anchor)",
+          "type": "Anchor",
+          "azimuth": 0.0,
+          "elevation": 12.27,
+          "success_rate": 35.999998450279236,
+          "grasp_rate": 85.999995470047
+        },
+        {
+          "id": 20,
+          "name": "VP 20 (Left-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -37.2,
+          "elevation": 34.98,
+          "success_rate": 35.999998450279236,
+          "grasp_rate": 79.99999523162842
+        },
+        {
+          "id": 19,
+          "name": "VP 19 (Right-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": 47.79,
+          "elevation": 33.69,
+          "success_rate": 37.99999952316284,
+          "grasp_rate": 74.00000095367432
+        },
+        {
+          "id": 10,
+          "name": "In-Between VP 10 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 7.66,
+          "elevation": 24.0,
+          "success_rate": 31.999999284744263,
+          "grasp_rate": 83.99999737739563
+        },
+        {
+          "id": 13,
+          "name": "In-Between VP 13 (Azimuth Interp)",
+          "type": "In-Between",
+          "azimuth": -24.8,
+          "elevation": 26.94,
+          "success_rate": 34.00000035762787,
+          "grasp_rate": 65.99999666213989
+        },
+        {
+          "id": 11,
+          "name": "In-Between VP 11 (High-Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": -77.32,
+          "elevation": 25.17,
+          "success_rate": 34.00000035762787,
+          "grasp_rate": 77.99999713897705
+        },
+        {
+          "id": 12,
+          "name": "In-Between VP 12 (Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 60.19,
+          "elevation": 25.75,
+          "success_rate": 29.999998211860657,
+          "grasp_rate": 65.99999666213989
+        },
+        {
+          "id": 14,
+          "name": "In-Between VP 14 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 27.73,
+          "elevation": 28.73,
+          "success_rate": 41.999998688697815,
+          "grasp_rate": 69.9999988079071
+        },
+        {
+          "id": 15,
+          "name": "In-Between VP 15 (Mid-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -57.26,
+          "elevation": 29.95,
+          "success_rate": 35.999998450279236,
+          "grasp_rate": 81.99999928474426
+        },
+        {
+          "id": 16,
+          "name": "In-Between VP 16 (Mid-Right Interp)",
+          "type": "In-Between",
+          "azimuth": 80.25,
+          "elevation": 30.56,
+          "success_rate": 28.00000011920929,
+          "grasp_rate": 50.0
+        },
+        {
+          "id": 18,
+          "name": "In-Between VP 18 (Upper-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -89.72,
+          "elevation": 33.06,
+          "success_rate": 41.999998688697815,
+          "grasp_rate": 79.99999523162842
+        },
+        {
+          "id": 21,
+          "name": "In-Between VP 21 (Extreme Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 15.33,
+          "elevation": 36.94,
+          "success_rate": 43.99999976158142,
+          "grasp_rate": 77.99999713897705
+        }
+      ]
+    },
+    "combined_average_sr": 50.076922086568985
+  },
+  "zero_shot_generalization": {
+    "path1_combined_to_unseen_xarm6_panda": {
+      "robot_uid": "xarm6_panda_gripper",
+      "overall_success_rate": 28.92307616197146,
+      "overall_grasp_rate": 66.30768982263712,
+      "anchor_success_rate": 25.499999523162842,
+      "inbetween_success_rate": 30.444443556997513,
+      "per_viewpoint": [
+        {
+          "id": 17,
+          "name": "VP 17 (Front-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -4.74,
+          "elevation": 31.8,
+          "success_rate": 28.00000011920929,
+          "grasp_rate": 79.99999523162842
+        },
+        {
+          "id": 0,
+          "name": "VP 00 (Front-Low Anchor)",
+          "type": "Anchor",
+          "azimuth": 0.0,
+          "elevation": 12.27,
+          "success_rate": 23.999999463558197,
+          "grasp_rate": 79.99999523162842
+        },
+        {
+          "id": 20,
+          "name": "VP 20 (Left-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -37.2,
+          "elevation": 34.98,
+          "success_rate": 35.999998450279236,
+          "grasp_rate": 83.99999737739563
+        },
+        {
+          "id": 19,
+          "name": "VP 19 (Right-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": 47.79,
+          "elevation": 33.69,
+          "success_rate": 14.000000059604645,
+          "grasp_rate": 43.99999976158142
+        },
+        {
+          "id": 10,
+          "name": "In-Between VP 10 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 7.66,
+          "elevation": 24.0,
+          "success_rate": 29.999998211860657,
+          "grasp_rate": 71.99999690055847
+        },
+        {
+          "id": 13,
+          "name": "In-Between VP 13 (Azimuth Interp)",
+          "type": "In-Between",
+          "azimuth": -24.8,
+          "elevation": 26.94,
+          "success_rate": 35.999998450279236,
+          "grasp_rate": 81.99999928474426
+        },
+        {
+          "id": 11,
+          "name": "In-Between VP 11 (High-Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": -77.32,
+          "elevation": 25.17,
+          "success_rate": 25.999999046325684,
+          "grasp_rate": 65.99999666213989
+        },
+        {
+          "id": 12,
+          "name": "In-Between VP 12 (Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 60.19,
+          "elevation": 25.75,
+          "success_rate": 9.999999403953552,
+          "grasp_rate": 41.999998688697815
+        },
+        {
+          "id": 14,
+          "name": "In-Between VP 14 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 27.73,
+          "elevation": 28.73,
+          "success_rate": 28.00000011920929,
+          "grasp_rate": 51.99999809265137
+        },
+        {
+          "id": 15,
+          "name": "In-Between VP 15 (Mid-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -57.26,
+          "elevation": 29.95,
+          "success_rate": 41.999998688697815,
+          "grasp_rate": 85.999995470047
+        },
+        {
+          "id": 16,
+          "name": "In-Between VP 16 (Mid-Right Interp)",
+          "type": "In-Between",
+          "azimuth": 80.25,
+          "elevation": 30.56,
+          "success_rate": 25.999999046325684,
+          "grasp_rate": 37.99999952316284
+        },
+        {
+          "id": 18,
+          "name": "In-Between VP 18 (Upper-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -89.72,
+          "elevation": 33.06,
+          "success_rate": 31.999999284744263,
+          "grasp_rate": 69.9999988079071
+        },
+        {
+          "id": 21,
+          "name": "In-Between VP 21 (Extreme Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 15.33,
+          "elevation": 36.94,
+          "success_rate": 43.99999976158142,
+          "grasp_rate": 65.99999666213989
+        }
+      ]
+    },
+    "path2_combined_to_unseen_robotiq": {
+      "robot_uid": "xarm6_robotiq",
+      "overall_success_rate": 0.461538451222273,
+      "overall_grasp_rate": 21.846153357854256,
+      "anchor_success_rate": 0.0,
+      "inbetween_success_rate": 0.6666666517655054,
+      "per_viewpoint": [
+        {
+          "id": 17,
+          "name": "VP 17 (Front-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -4.74,
+          "elevation": 31.8,
+          "success_rate": 0.0,
+          "grasp_rate": 21.99999988079071
+        },
+        {
+          "id": 0,
+          "name": "VP 00 (Front-Low Anchor)",
+          "type": "Anchor",
+          "azimuth": 0.0,
+          "elevation": 12.27,
+          "success_rate": 0.0,
+          "grasp_rate": 23.999999463558197
+        },
+        {
+          "id": 20,
+          "name": "VP 20 (Left-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": -37.2,
+          "elevation": 34.98,
+          "success_rate": 0.0,
+          "grasp_rate": 29.999998211860657
+        },
+        {
+          "id": 19,
+          "name": "VP 19 (Right-Mid Anchor)",
+          "type": "Anchor",
+          "azimuth": 47.79,
+          "elevation": 33.69,
+          "success_rate": 0.0,
+          "grasp_rate": 14.000000059604645
+        },
+        {
+          "id": 10,
+          "name": "In-Between VP 10 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 7.66,
+          "elevation": 24.0,
+          "success_rate": 0.0,
+          "grasp_rate": 34.00000035762787
+        },
+        {
+          "id": 13,
+          "name": "In-Between VP 13 (Azimuth Interp)",
+          "type": "In-Between",
+          "azimuth": -24.8,
+          "elevation": 26.94,
+          "success_rate": 1.9999999552965164,
+          "grasp_rate": 31.999999284744263
+        },
+        {
+          "id": 11,
+          "name": "In-Between VP 11 (High-Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": -77.32,
+          "elevation": 25.17,
+          "success_rate": 0.0,
+          "grasp_rate": 11.999999731779099
+        },
+        {
+          "id": 12,
+          "name": "In-Between VP 12 (Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 60.19,
+          "elevation": 25.75,
+          "success_rate": 0.0,
+          "grasp_rate": 14.000000059604645
+        },
+        {
+          "id": 14,
+          "name": "In-Between VP 14 (Elevation Interp)",
+          "type": "In-Between",
+          "azimuth": 27.73,
+          "elevation": 28.73,
+          "success_rate": 0.0,
+          "grasp_rate": 21.99999988079071
+        },
+        {
+          "id": 15,
+          "name": "In-Between VP 15 (Mid-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -57.26,
+          "elevation": 29.95,
+          "success_rate": 0.0,
+          "grasp_rate": 17.999999225139618
+        },
+        {
+          "id": 16,
+          "name": "In-Between VP 16 (Mid-Right Interp)",
+          "type": "In-Between",
+          "azimuth": 80.25,
+          "elevation": 30.56,
+          "success_rate": 1.9999999552965164,
+          "grasp_rate": 17.999999225139618
+        },
+        {
+          "id": 18,
+          "name": "In-Between VP 18 (Upper-Left Interp)",
+          "type": "In-Between",
+          "azimuth": -89.72,
+          "elevation": 33.06,
+          "success_rate": 1.9999999552965164,
+          "grasp_rate": 14.000000059604645
+        },
+        {
+          "id": 21,
+          "name": "In-Between VP 21 (Extreme Flank Interp)",
+          "type": "In-Between",
+          "azimuth": 15.33,
+          "elevation": 36.94,
+          "success_rate": 0.0,
+          "grasp_rate": 29.999998211860657
+        }
+      ]
+    }
+  }
+}

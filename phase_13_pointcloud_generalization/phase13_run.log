@@ -1,0 +1,63 @@
+[OK] Privileged State Teacher loaded successfully from /home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,920 EPISODES IN 3D POINT-CLOUD FORMAT
+ Teacher: Privileged State Oracle (100% success rate)
+ Points per Frame: 512 (Robot Base Frame Metric Coordinates)
+================================================================================
+  Batch  1/60 | [Anchor VP (nominal Az=-4.7°)] Az= -4.7°, El=31.8°, Dist=1.09m | Collected: 1,600 / 96,000 samples
+  Batch  5/60 | [Continuous Random] Az=-27.4°, El=31.9°, Dist=1.08m | Collected: 8,000 / 96,000 samples
+  Batch 10/60 | [Continuous Random] Az=-46.1°, El=14.5°, Dist=1.23m | Collected: 16,000 / 96,000 samples
+  Batch 15/60 | [Continuous Random] Az=-26.4°, El=31.8°, Dist=1.11m | Collected: 24,000 / 96,000 samples
+  Batch 20/60 | [Continuous Random] Az=-32.0°, El=43.5°, Dist=1.06m | Collected: 32,000 / 96,000 samples
+  Batch 25/60 | [Continuous Random] Az=+38.0°, El=14.8°, Dist=1.06m | Collected: 40,000 / 96,000 samples
+  Batch 30/60 | [Continuous Random] Az=+29.9°, El=40.9°, Dist=1.12m | Collected: 48,000 / 96,000 samples
+  Batch 35/60 | [Continuous Random] Az=-12.5°, El=40.7°, Dist=1.02m | Collected: 56,000 / 96,000 samples
+  Batch 40/60 | [Continuous Random] Az=+55.5°, El=24.1°, Dist=0.98m | Collected: 64,000 / 96,000 samples
+  Batch 45/60 | [Continuous Random] Az= +2.6°, El=38.7°, Dist=1.06m | Collected: 72,000 / 96,000 samples
+  Batch 50/60 | [Continuous Random] Az=-36.5°, El=17.5°, Dist=1.10m | Collected: 80,000 / 96,000 samples
+  Batch 55/60 | [Continuous Random] Az=-25.1°, El=19.1°, Dist=0.96m | Collected: 88,000 / 96,000 samples
+  Batch 60/60 | [Continuous Random] Az=-54.1°, El=47.1°, Dist=1.21m | Collected: 96,000 / 96,000 samples
+
+[OK] 3D Point-Cloud dataset collection completed: 96,000 transitions in 203.2s
+
+================================================================================
+ [STAGE 2] TRAINING PHASE 13 PointNet STUDENT POLICY
+ Dataset: 96,000 transitions | Epochs: 25 | Batch Size: 256
+ Architecture: Robot-Frame 3D PointNet + Proprioception Fusion
+================================================================================
+  Epoch  1/25 | Action MSE Loss: 0.06548 | lr: 4.98e-04 | Time: 6.0s
+  Epoch  5/25 | Action MSE Loss: 0.00515 | lr: 4.53e-04 | Time: 6.2s
+  Epoch 10/25 | Action MSE Loss: 0.00253 | lr: 3.31e-04 | Time: 6.0s
+  Epoch 15/25 | Action MSE Loss: 0.00184 | lr: 1.79e-04 | Time: 6.0s
+  Epoch 20/25 | Action MSE Loss: 0.00152 | lr: 5.68e-05 | Time: 6.0s
+  Epoch 25/25 | Action MSE Loss: 0.00140 | lr: 1.00e-05 | Time: 6.0s
+
+[OK] Distillation finished! Best model saved to /home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt (MSE: 0.00140)
+
+================================================================================
+ [STAGE 3] BENCHMARKING PHASE 13 PointNet ON IN-BETWEEN & ANCHOR VIEWPOINTS
+ Checkpoint: /home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt
+================================================================================
+  [ANCHOR]     VP 17 (Front-Mid Anchor)         (Az= -4.7°, El=31.8°): Succ= 96.0% | Grasp=100.0%
+  [ANCHOR]     VP 00 (Front-Low Anchor)         (Az=  0.0°, El=12.3°): Succ= 90.0% | Grasp= 96.0%
+  [ANCHOR]     VP 20 (Diag-Left Anchor)         (Az=-37.2°, El=35.0°): Succ= 90.0% | Grasp= 98.0%
+  [ANCHOR]     VP 19 (Diag-Right Anchor)        (Az= 47.8°, El=33.7°): Succ= 94.0% | Grasp=100.0%
+  [IN-BETWEEN] VP 10 (In-Between El: VP00-17)   (Az=  7.7°, El=24.0°): Succ= 98.0% | Grasp=100.0%
+  [IN-BETWEEN] VP 13 (In-Between Az: VP17-20)   (Az=-24.8°, El=26.9°): Succ= 86.0% | Grasp= 96.0%
+  [IN-BETWEEN] VP 14 (In-Between Az: VP17-19)   (Az= 27.7°, El=28.7°): Succ= 92.0% | Grasp= 98.0%
+  [IN-BETWEEN] VP 04 (In-Between Low-Right)     (Az= 20.1°, El=16.6°): Succ= 90.0% | Grasp= 98.0%
+  [IN-BETWEEN] VP 07 (In-Between Low-Left)      (Az=-12.4°, El=19.4°): Succ= 92.0% | Grasp= 98.0%
+  [IN-BETWEEN] VP 21 (In-Between Mid-Right)     (Az= 15.3°, El=36.9°): Succ= 84.0% | Grasp= 92.0%
+  [IN-BETWEEN] VP 24 (In-Between High-Mid)      (Az=-17.1°, El=40.3°): Succ= 82.0% | Grasp= 96.0%
+  [IN-BETWEEN] VP 12 (Flank In-Between R)       (Az= 60.2°, El=25.8°): Succ= 98.0% | Grasp=100.0%
+  [IN-BETWEEN] VP 15 (Flank In-Between L)       (Az=-57.3°, El=29.9°): Succ= 88.0% | Grasp= 96.0%
+
+================================================================================
+ PHASE 13 FINAL SUMMARY:
+   Anchor Viewpoint Success:      92.5%
+   In-Between Viewpoint Success:  90.0%  (Phase 10: 2.9% | Phase 12: 12.9%)
+   In-Between Grasp Rate:         97.1%  (Phase 10: 19.8% | Phase 12: 53.1%)
+================================================================================
+
+[OK] Benchmark plot saved to /home/maniskill/phase_13_pointcloud_generalization/eval_results/phase13_pointnet_comparison.png

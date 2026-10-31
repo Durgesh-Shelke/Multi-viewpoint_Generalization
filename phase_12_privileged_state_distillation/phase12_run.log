@@ -1,0 +1,62 @@
+[OK] Privileged State Teacher loaded successfully from /home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,920 EPISODES ACROSS CONTINUOUS CAMERA VIEWPOINTS
+ Teacher: Privileged State Oracle (100% success rate)
+================================================================================
+  Batch  1/60 | [Anchor VP (nominal Az=-4.7°)] Az= -4.7°, El=31.8°, Dist=1.09m | Collected: 1,600 / 96,000 samples
+  Batch  5/60 | [Continuous Random] Az=-27.4°, El=31.9°, Dist=1.08m | Collected: 8,000 / 96,000 samples
+  Batch 10/60 | [Continuous Random] Az=-46.1°, El=14.5°, Dist=1.23m | Collected: 16,000 / 96,000 samples
+  Batch 15/60 | [Continuous Random] Az=-26.4°, El=31.8°, Dist=1.11m | Collected: 24,000 / 96,000 samples
+  Batch 20/60 | [Continuous Random] Az=-32.0°, El=43.5°, Dist=1.06m | Collected: 32,000 / 96,000 samples
+  Batch 25/60 | [Continuous Random] Az=+38.0°, El=14.8°, Dist=1.06m | Collected: 40,000 / 96,000 samples
+  Batch 30/60 | [Continuous Random] Az=+29.9°, El=40.9°, Dist=1.12m | Collected: 48,000 / 96,000 samples
+  Batch 35/60 | [Continuous Random] Az=-12.5°, El=40.7°, Dist=1.02m | Collected: 56,000 / 96,000 samples
+  Batch 40/60 | [Continuous Random] Az=+55.5°, El=24.1°, Dist=0.98m | Collected: 64,000 / 96,000 samples
+  Batch 45/60 | [Continuous Random] Az= +2.6°, El=38.7°, Dist=1.06m | Collected: 72,000 / 96,000 samples
+  Batch 50/60 | [Continuous Random] Az=-36.5°, El=17.5°, Dist=1.10m | Collected: 80,000 / 96,000 samples
+  Batch 55/60 | [Continuous Random] Az=-25.1°, El=19.1°, Dist=0.96m | Collected: 88,000 / 96,000 samples
+  Batch 60/60 | [Continuous Random] Az=-54.1°, El=47.1°, Dist=1.21m | Collected: 96,000 / 96,000 samples
+
+[OK] Continuous dataset collection completed: 96,000 transitions in 202.3s
+
+================================================================================
+ [STAGE 2] TRAINING PHASE 12 FiLM-CONDITIONED STUDENT POLICY
+ Dataset: 96,000 transitions | Epochs: 25 | Batch Size: 256
+ Architecture: Early-Fusion FiLM Modulation on NatureCNN Backbone
+================================================================================
+  Epoch  1/25 | Action MSE Loss: 0.11116 | lr: 2.99e-04 | Time: 7.2s
+  Epoch  5/25 | Action MSE Loss: 0.01589 | lr: 2.72e-04 | Time: 7.3s
+  Epoch 10/25 | Action MSE Loss: 0.00466 | lr: 2.00e-04 | Time: 7.0s
+  Epoch 15/25 | Action MSE Loss: 0.00236 | lr: 1.10e-04 | Time: 7.5s
+  Epoch 20/25 | Action MSE Loss: 0.00154 | lr: 3.77e-05 | Time: 7.2s
+  Epoch 25/25 | Action MSE Loss: 0.00124 | lr: 1.00e-05 | Time: 7.2s
+
+[OK] Distillation finished! Best model saved to /home/maniskill/phase_12_privileged_state_distillation/student/film_student_best.pt (MSE: 0.00124)
+
+================================================================================
+ [STAGE 3] BENCHMARKING PHASE 12 FiLM STUDENT ON IN-BETWEEN & ANCHOR VIEWPOINTS
+ Checkpoint: /home/maniskill/phase_12_privileged_state_distillation/student/film_student_best.pt
+================================================================================
+  [ANCHOR]     VP 17 (Front-Mid Anchor)         (Az= -4.7°, El=31.8°): Succ=  8.0% | Grasp= 26.0%
+  [ANCHOR]     VP 00 (Front-Low Anchor)         (Az=  0.0°, El=12.3°): Succ= 12.0% | Grasp= 66.0%
+  [ANCHOR]     VP 20 (Diag-Left Anchor)         (Az=-37.2°, El=35.0°): Succ= 36.0% | Grasp= 90.0%
+  [ANCHOR]     VP 19 (Diag-Right Anchor)        (Az= 47.8°, El=33.7°): Succ= 38.0% | Grasp= 86.0%
+  [IN-BETWEEN] VP 10 (In-Between El: VP00-17)   (Az=  7.7°, El=24.0°): Succ=  0.0% | Grasp= 32.0%
+  [IN-BETWEEN] VP 13 (In-Between Az: VP17-20)   (Az=-24.8°, El=26.9°): Succ= 22.0% | Grasp= 80.0%
+  [IN-BETWEEN] VP 14 (In-Between Az: VP17-19)   (Az= 27.7°, El=28.7°): Succ= 12.0% | Grasp= 48.0%
+  [IN-BETWEEN] VP 04 (In-Between Low-Right)     (Az= 20.1°, El=16.6°): Succ=  4.0% | Grasp= 40.0%
+  [IN-BETWEEN] VP 07 (In-Between Low-Left)      (Az=-12.4°, El=19.4°): Succ=  4.0% | Grasp= 40.0%
+  [IN-BETWEEN] VP 21 (In-Between Mid-Right)     (Az= 15.3°, El=36.9°): Succ=  0.0% | Grasp= 34.0%
+  [IN-BETWEEN] VP 24 (In-Between High-Mid)      (Az=-17.1°, El=40.3°): Succ= 12.0% | Grasp= 64.0%
+  [IN-BETWEEN] VP 12 (Flank In-Between R)       (Az= 60.2°, El=25.8°): Succ= 24.0% | Grasp= 52.0%
+  [IN-BETWEEN] VP 15 (Flank In-Between L)       (Az=-57.3°, El=29.9°): Succ= 38.0% | Grasp= 88.0%
+
+================================================================================
+ PHASE 12 FINAL SUMMARY:
+   Anchor Viewpoint Success:      23.5%
+   In-Between Viewpoint Success:  12.9%  (Phase 10 Baseline: 2.9%)
+   In-Between Grasp Rate:         53.1%  (Phase 10 Baseline: 19.8%)
+================================================================================
+
+[OK] Benchmark plot saved to /home/maniskill/phase_12_privileged_state_distillation/eval_results/phase12_film_comparison.png

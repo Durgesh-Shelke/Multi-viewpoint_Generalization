@@ -1,0 +1,443 @@
+{
+  "student_checkpoint": "/home/maniskill/phase_10_omniview_nextgen/student/omniview_student_best.pt",
+  "catalog_results": [
+    {
+      "trials": 50,
+      "successes": 47,
+      "success_rate": 94.0,
+      "grasps": 50,
+      "grasp_rate": 100.0,
+      "mean_return": 41.09,
+      "id": 17,
+      "label": "VP 17 (Front-Mid Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.3118,
+        -0.0768,
+        0.5766
+      ],
+      "az": -4.74,
+      "el": 31.8
+    },
+    {
+      "trials": 50,
+      "successes": 44,
+      "success_rate": 88.0,
+      "grasps": 50,
+      "grasp_rate": 100.0,
+      "mean_return": 38.6,
+      "id": 0,
+      "label": "VP 00 (Front-Low Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.4542,
+        0.0,
+        0.2326
+      ],
+      "az": 0.0,
+      "el": 12.27
+    },
+    {
+      "trials": 50,
+      "successes": 42,
+      "success_rate": 84.0,
+      "grasps": 49,
+      "grasp_rate": 98.0,
+      "mean_return": 35.71,
+      "id": 20,
+      "label": "VP 20 (Diag-Left Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.0992,
+        -0.542,
+        0.6272
+      ],
+      "az": -37.2,
+      "el": 34.98
+    },
+    {
+      "trials": 50,
+      "successes": 34,
+      "success_rate": 68.0,
+      "grasps": 45,
+      "grasp_rate": 90.0,
+      "mean_return": 31.63,
+      "id": 19,
+      "label": "VP 19 (Diag-Right Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        -0.0033,
+        0.6743,
+        0.607
+      ],
+      "az": 47.79,
+      "el": 33.69
+    },
+    {
+      "trials": 50,
+      "successes": 5,
+      "success_rate": 10.0,
+      "grasps": 11,
+      "grasp_rate": 22.0,
+      "mean_return": 8.74,
+      "id": 10,
+      "label": "VP 10 (In-Between El: VP00-VP17)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3757,
+        0.1333,
+        0.4451
+      ],
+      "az": 7.66,
+      "el": 24.0
+    },
+    {
+      "trials": 50,
+      "successes": 3,
+      "success_rate": 6.0,
+      "grasps": 15,
+      "grasp_rate": 30.0,
+      "mean_return": 7.51,
+      "id": 13,
+      "label": "VP 13 (In-Between Az: VP17-VP20)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2705,
+        -0.4091,
+        0.4957
+      ],
+      "az": -24.8,
+      "el": 26.94
+    },
+    {
+      "trials": 50,
+      "successes": 2,
+      "success_rate": 4.0,
+      "grasps": 13,
+      "grasp_rate": 26.0,
+      "mean_return": 8.64,
+      "id": 14,
+      "label": "VP 14 (In-Between Az: VP17-VP19)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2343,
+        0.4464,
+        0.526
+      ],
+      "az": 27.73,
+      "el": 28.73
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 1,
+      "grasp_rate": 2.0,
+      "mean_return": 3.73,
+      "id": 4,
+      "label": "VP 04 (In-Between Low-Right)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3697,
+        0.3596,
+        0.3135
+      ],
+      "az": 20.06,
+      "el": 16.65
+    },
+    {
+      "trials": 50,
+      "successes": 1,
+      "success_rate": 2.0,
+      "grasps": 21,
+      "grasp_rate": 42.0,
+      "mean_return": 10.44,
+      "id": 7,
+      "label": "VP 07 (In-Between Low-Left)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3928,
+        -0.2216,
+        0.3641
+      ],
+      "az": -12.4,
+      "el": 19.44
+    },
+    {
+      "trials": 50,
+      "successes": 1,
+      "success_rate": 2.0,
+      "grasps": 6,
+      "grasp_rate": 12.0,
+      "mean_return": 5.61,
+      "id": 21,
+      "label": "VP 21 (In-Between Mid-Right)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2284,
+        0.2312,
+        0.6576
+      ],
+      "az": 15.33,
+      "el": 36.94
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 8,
+      "grasp_rate": 16.0,
+      "mean_return": 5.68,
+      "id": 24,
+      "label": "VP 24 (In-Between High-Mid)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.1821,
+        -0.2457,
+        0.7082
+      ],
+      "az": -17.14,
+      "el": 40.33
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 5,
+      "grasp_rate": 10.0,
+      "mean_return": 3.46,
+      "id": 12,
+      "label": "VP 12 (Flank In-Between R)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        -0.125,
+        0.8551,
+        0.4754
+      ],
+      "az": 60.19,
+      "el": 25.75
+    },
+    {
+      "trials": 50,
+      "successes": 1,
+      "success_rate": 2.0,
+      "grasps": 10,
+      "grasp_rate": 20.0,
+      "mean_return": 5.69,
+      "id": 15,
+      "label": "VP 15 (Flank In-Between L)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        -0.1022,
+        -0.7975,
+        0.5463
+      ],
+      "az": -57.26,
+      "el": 29.95
+    }
+  ],
+  "basin_results": [
+    {
+      "trials": 50,
+      "successes": 43,
+      "success_rate": 86.0,
+      "grasps": 50,
+      "grasp_rate": 100.0,
+      "mean_return": 36.97,
+      "name": "0 cm (Exact Anchor)",
+      "offset_m": 0.0,
+      "deg": 0.0,
+      "shift": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 47,
+      "success_rate": 94.0,
+      "grasps": 48,
+      "grasp_rate": 96.0,
+      "mean_return": 37.78,
+      "name": "+2 cm lateral",
+      "offset_m": 0.02,
+      "deg": 1.0,
+      "shift": [
+        0.0,
+        0.02,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 36,
+      "success_rate": 72.0,
+      "grasps": 46,
+      "grasp_rate": 92.0,
+      "mean_return": 32.19,
+      "name": "+5 cm lateral",
+      "offset_m": 0.05,
+      "deg": 2.6,
+      "shift": [
+        0.0,
+        0.05,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 20,
+      "success_rate": 40.0,
+      "grasps": 40,
+      "grasp_rate": 80.0,
+      "mean_return": 21.41,
+      "name": "+10 cm lateral",
+      "offset_m": 0.1,
+      "deg": 5.2,
+      "shift": [
+        0.0,
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 5,
+      "success_rate": 10.0,
+      "grasps": 24,
+      "grasp_rate": 48.0,
+      "mean_return": 11.52,
+      "name": "+15 cm lateral",
+      "offset_m": 0.15,
+      "deg": 7.8,
+      "shift": [
+        0.0,
+        0.15,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 4,
+      "success_rate": 8.0,
+      "grasps": 18,
+      "grasp_rate": 36.0,
+      "mean_return": 9.39,
+      "name": "+20 cm lateral",
+      "offset_m": 0.2,
+      "deg": 10.4,
+      "shift": [
+        0.0,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 11,
+      "grasp_rate": 22.0,
+      "mean_return": 7.94,
+      "name": "+30 cm lateral",
+      "offset_m": 0.3,
+      "deg": 15.6,
+      "shift": [
+        0.0,
+        0.3,
+        0.0
+      ]
+    }
+  ],
+  "zoom_results": [
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 15,
+      "grasp_rate": 30.0,
+      "mean_return": 7.22,
+      "name": "0.90 m (-19.4cm Zoom-In)",
+      "dist": 0.9,
+      "delta_cm": -19.4
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 8,
+      "grasp_rate": 16.0,
+      "mean_return": 5.72,
+      "name": "0.95 m (-14.4cm Zoom-In)",
+      "dist": 0.95,
+      "delta_cm": -14.4
+    },
+    {
+      "trials": 50,
+      "successes": 3,
+      "success_rate": 6.0,
+      "grasps": 26,
+      "grasp_rate": 52.0,
+      "mean_return": 9.77,
+      "name": "1.00 m (-9.4cm Zoom-In)",
+      "dist": 1.0,
+      "delta_cm": -9.4
+    },
+    {
+      "trials": 50,
+      "successes": 21,
+      "success_rate": 42.0,
+      "grasps": 37,
+      "grasp_rate": 74.0,
+      "mean_return": 22.2,
+      "name": "1.05 m (-4.4cm Zoom-In)",
+      "dist": 1.05,
+      "delta_cm": -4.4
+    },
+    {
+      "trials": 50,
+      "successes": 46,
+      "success_rate": 92.0,
+      "grasps": 49,
+      "grasp_rate": 98.0,
+      "mean_return": 37.07,
+      "name": "1.09 m (Exact Anchor Dist)",
+      "dist": 1.094223030282218,
+      "delta_cm": 0.0
+    },
+    {
+      "trials": 50,
+      "successes": 16,
+      "success_rate": 32.0,
+      "grasps": 31,
+      "grasp_rate": 62.0,
+      "mean_return": 16.49,
+      "name": "1.15 m (+5.6cm Zoom-Out)",
+      "dist": 1.15,
+      "delta_cm": 5.6
+    },
+    {
+      "trials": 50,
+      "successes": 2,
+      "success_rate": 4.0,
+      "grasps": 4,
+      "grasp_rate": 8.0,
+      "mean_return": 7.34,
+      "name": "1.20 m (+10.6cm Zoom-Out)",
+      "dist": 1.2,
+      "delta_cm": 10.6
+    },
+    {
+      "trials": 50,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasps": 1,
+      "grasp_rate": 2.0,
+      "mean_return": 5.6,
+      "name": "1.25 m (+15.6cm Zoom-Out)",
+      "dist": 1.25,
+      "delta_cm": 15.6
+    }
+  ]
+}

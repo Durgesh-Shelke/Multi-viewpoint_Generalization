@@ -1,0 +1,33 @@
+================================================================================
+ [PHASE 14] POINTNET COMPREHENSIVE ROBUSTNESS & STRESS-TESTING SUITE
+ Checkpoint: /home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt
+================================================================================
+
+--- TEST 1: 1,000 Continuous Uniform Spherical Trials ---
+ [RESULT] 1,000 Continuous Spherical Trials (in 73.7s):
+   Success Rate: 75.70% | Grasp Rate: 87.00%
+
+--- TEST 2: Extrinsic Calibration Noise Sweep ---
+  Extrinsic Noise:  0.0 cm | Success:  88.0% | Grasp:  99.0%
+  Extrinsic Noise:  1.0 cm | Success:  12.0% | Grasp:  50.0%
+  Extrinsic Noise:  2.0 cm | Success:   3.0% | Grasp:  30.0%
+  Extrinsic Noise:  3.0 cm | Success:   2.0% | Grasp:  19.0%
+  Extrinsic Noise:  5.0 cm | Success:   1.0% | Grasp:  18.0%
+  Extrinsic Noise: 10.0 cm | Success:   0.0% | Grasp:   8.0%
+
+--- TEST 3: Point Cloud Sparsity & Sensor Dropout Sweep ---
+  Point Count:  512 pts | Success:  92.0% | Grasp:  99.0%
+  Point Count:  256 pts | Success:  85.0% | Grasp:  97.0%
+  Point Count:  128 pts | Success:  75.0% | Grasp:  89.0%
+  Point Count:   64 pts | Success:  85.0% | Grasp:  97.0%
+  Point Count:   32 pts | Success:  49.0% | Grasp:  83.0%
+
+--- TEST 4: Depth Sensor Range Noise Sweep ---
+  Depth Range Noise:  0.0 mm | Success:  64.0% | Grasp:  80.0%
+  Depth Range Noise:  2.0 mm | Success:   0.0% | Grasp:   4.0%
+  Depth Range Noise:  5.0 mm | Success:   0.0% | Grasp:   7.0%
+  Depth Range Noise: 10.0 mm | Success:   0.0% | Grasp:   7.0%
+  Depth Range Noise: 20.0 mm | Success:   0.0% | Grasp:   6.0%
+
+[OK] Robustness results saved to /home/maniskill/phase_14_robustness_and_videos/eval_results/phase14_robustness_results.json
+[OK] 4-Panel Robustness plot saved to /home/maniskill/phase_14_robustness_and_videos/eval_results/phase14_robustness_curves.png

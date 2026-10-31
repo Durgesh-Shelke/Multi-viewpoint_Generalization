@@ -1,0 +1,254 @@
+{
+  "test1_continuous_1000": {
+    "success_rate": 75.7,
+    "grasp_rate": 87.0,
+    "records": [
+      {
+        "batch": 0,
+        "azimuth": -31.00285127219113,
+        "elevation": 23.253178280375288,
+        "distance": 0.9480300315755757,
+        "success_rate": 92.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 1,
+        "azimuth": -11.116563749272373,
+        "elevation": 11.155677599602761,
+        "distance": 0.9478909575419932,
+        "success_rate": 86.0,
+        "grasp_rate": 96.0
+      },
+      {
+        "batch": 2,
+        "azimuth": -23.551153845003903,
+        "elevation": 21.162100967286932,
+        "distance": 1.156760927848273,
+        "success_rate": 94.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 3,
+        "azimuth": 12.873137854216665,
+        "elevation": 52.67838392722755,
+        "distance": 0.8705652682690929,
+        "success_rate": 22.0,
+        "grasp_rate": 46.0
+      },
+      {
+        "batch": 4,
+        "azimuth": -1.892090001424748,
+        "elevation": 56.0413078146604,
+        "distance": 0.9045509416594284,
+        "success_rate": 4.0,
+        "grasp_rate": 24.0
+      },
+      {
+        "batch": 5,
+        "azimuth": -14.230940431302997,
+        "elevation": 33.50634112372775,
+        "distance": 0.9136482743476043,
+        "success_rate": 86.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 6,
+        "azimuth": 77.17680004655588,
+        "elevation": 11.015798310268673,
+        "distance": 1.2027430240059827,
+        "success_rate": 78.0,
+        "grasp_rate": 100.0
+      },
+      {
+        "batch": 7,
+        "azimuth": 74.48146277517435,
+        "elevation": 27.63726958167919,
+        "distance": 1.1529473789644,
+        "success_rate": 84.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 8,
+        "azimuth": -45.21914623176343,
+        "elevation": 59.59847731438183,
+        "distance": 1.1845897817193447,
+        "success_rate": 64.0,
+        "grasp_rate": 76.0
+      },
+      {
+        "batch": 9,
+        "azimuth": 30.886358696315895,
+        "elevation": 18.773546340819177,
+        "distance": 1.265224402643732,
+        "success_rate": 86.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 10,
+        "azimuth": -40.6099573713054,
+        "elevation": 40.209784664179494,
+        "distance": 1.2592560282680036,
+        "success_rate": 88.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 11,
+        "azimuth": -13.160567727273644,
+        "elevation": 13.073452232315216,
+        "distance": 1.303627026439543,
+        "success_rate": 94.0,
+        "grasp_rate": 100.0
+      },
+      {
+        "batch": 12,
+        "azimuth": 37.418465881704165,
+        "elevation": 29.01829885639703,
+        "distance": 1.0470957854962526,
+        "success_rate": 92.0,
+        "grasp_rate": 100.0
+      },
+      {
+        "batch": 13,
+        "azimuth": 60.57654033265939,
+        "elevation": 15.591473391813107,
+        "distance": 1.0671433894311027,
+        "success_rate": 86.0,
+        "grasp_rate": 96.0
+      },
+      {
+        "batch": 14,
+        "azimuth": 10.969869893436226,
+        "elevation": 10.981043164131185,
+        "distance": 1.0325733451095378,
+        "success_rate": 92.0,
+        "grasp_rate": 100.0
+      },
+      {
+        "batch": 15,
+        "azimuth": -4.873774730355933,
+        "elevation": 22.26332635823187,
+        "distance": 1.1248248850868348,
+        "success_rate": 98.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 16,
+        "azimuth": -10.218369366644879,
+        "elevation": 56.587552957497735,
+        "distance": 0.9974460539615986,
+        "success_rate": 10.0,
+        "grasp_rate": 28.000000000000004
+      },
+      {
+        "batch": 17,
+        "azimuth": -12.602561405345156,
+        "elevation": 22.490762602656382,
+        "distance": 1.07101728317781,
+        "success_rate": 90.0,
+        "grasp_rate": 98.0
+      },
+      {
+        "batch": 18,
+        "azimuth": 13.341739991636445,
+        "elevation": 48.01041474901691,
+        "distance": 1.216714083322239,
+        "success_rate": 74.0,
+        "grasp_rate": 90.0
+      },
+      {
+        "batch": 19,
+        "azimuth": 35.536185148149585,
+        "elevation": 46.92525019190367,
+        "distance": 1.1058710292879308,
+        "success_rate": 94.0,
+        "grasp_rate": 100.0
+      }
+    ]
+  },
+  "test2_extrinsic_noise": [
+    {
+      "noise_cm": 0.0,
+      "success_rate": 88.0,
+      "grasp_rate": 99.0
+    },
+    {
+      "noise_cm": 1.0,
+      "success_rate": 12.0,
+      "grasp_rate": 50.0
+    },
+    {
+      "noise_cm": 2.0,
+      "success_rate": 3.0,
+      "grasp_rate": 30.0
+    },
+    {
+      "noise_cm": 3.0,
+      "success_rate": 2.0,
+      "grasp_rate": 19.0
+    },
+    {
+      "noise_cm": 5.0,
+      "success_rate": 1.0,
+      "grasp_rate": 18.0
+    },
+    {
+      "noise_cm": 10.0,
+      "success_rate": 0.0,
+      "grasp_rate": 8.0
+    }
+  ],
+  "test3_point_sparsity": [
+    {
+      "num_points": 512,
+      "success_rate": 92.0,
+      "grasp_rate": 99.0
+    },
+    {
+      "num_points": 256,
+      "success_rate": 85.0,
+      "grasp_rate": 97.0
+    },
+    {
+      "num_points": 128,
+      "success_rate": 75.0,
+      "grasp_rate": 89.0
+    },
+    {
+      "num_points": 64,
+      "success_rate": 85.0,
+      "grasp_rate": 97.0
+    },
+    {
+      "num_points": 32,
+      "success_rate": 49.0,
+      "grasp_rate": 83.0
+    }
+  ],
+  "test4_depth_noise": [
+    {
+      "noise_mm": 0.0,
+      "success_rate": 64.0,
+      "grasp_rate": 80.0
+    },
+    {
+      "noise_mm": 2.0,
+      "success_rate": 0.0,
+      "grasp_rate": 4.0
+    },
+    {
+      "noise_mm": 5.0,
+      "success_rate": 0.0,
+      "grasp_rate": 7.000000000000001
+    },
+    {
+      "noise_mm": 10.0,
+      "success_rate": 0.0,
+      "grasp_rate": 7.000000000000001
+    },
+    {
+      "noise_mm": 20.0,
+      "success_rate": 0.0,
+      "grasp_rate": 6.0
+    }
+  ]
+}

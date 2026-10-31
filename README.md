@@ -183,11 +183,34 @@ All experiments are backed by formal empirical markdown reports:
 | **12** | [RGB vs. RGB-D Head-to-Head Comparative Study](phase_4/reports/12_rgb_vs_rgbd_comparative_research_report.md) |
 | **13** | [Definitive 5M-Step Parity Study](phase_4/reports/13_definitive_5m_rgb_vs_rgbd_comparative_report.md) |
 | **14** | [50M-Step Unbiased Resolution & Sensor Fusion Ablation Study](phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md) |
+| **18** | Phase 10: OmniView 1,000-Test Multi-Teacher Benchmark |
+| **19** | [Continuous Viewpoint Interpolation Collapse Report](reports/research_report_19_interpolated_viewpoints_generalization.md) |
+| **20** | Continuous Generalization Master Roadmap & FiLM Conditioning |
+| **21** | Phase 12: Continuous Extrinsics FiLM Results & 2D Convolutions Limits |
+| **22** | Phase 13: 3D PointNet Metric Spatial Invariance Breakthrough (90.6% SR) |
+| **23** | Phase 14: Rigorous Perturbation Robustness Curves & MP4 Video Gallery |
+| **24** | [Phase 15: Cross-Embodiment Generalization & Zero-Shot Transfer](reports/research_report_24_phase15_cross_embodiment_zeroshot.md) |
+| **25** | [Phase 16: Composite Modular Universal Policy Architecture](reports/research_report_25_phase16_composite_modular_architecture.md) |
 | **Master** | [Consolidated Master Research Compendium](phase_1_to_3/reports/consolidated_research_reports_master.md) |
 
 ---
 
-## 8. Repository Maintenance & Developer Guide
+## 8. Latest Phase 15 & 16 Scientific Breakthroughs
+
+### Phase 15: Cross-Embodiment Generalization & Zero-Shot Transfer
+- **Combined OmniArm Policy:** Trained on joint workspace 3D Point Clouds, achieving **84.9% Success Rate on xArm 6 Robotiq** and **79.2% on Franka Panda** across all 13 camera viewpoints suite.
+- **Zero-Shot Transfer:** Achieved **28.9% Success Rate** and **66.3% Grasp Rate** completely zero-shot on an unseen hybrid robot (`xarm6_panda_gripper`).
+
+### Phase 16: Composite Modular Universal Architecture
+- **Single Deliverable Policy (`universal_composite_omniarm.pt`):** Decouples Viewpoint Generalization (3D PointNet) from DoF/Kinematic Generalization (Neural IK), assembled via weight surgery into a single deployable module.
+- **Master 13-Viewpoint Benchmark (1,300 Episodes):**
+  - **xArm 6 Robotiq (6 DoF):** **92.2% Overall SR** (90.5% Anchor, 92.9% In-Between, 96.0% Grasp).
+  - **Franka Panda (7 DoF):** **74.6% Overall SR** (80.0% Anchor, 72.2% In-Between, 86.2% Grasp).
+  - **Combined Model Average:** **83.4% Overall SR** (91.1% Grasp Rate).
+
+---
+
+## 9. Repository Maintenance & Developer Guide
 
 For complete guidelines on extending this repository, adding new experimental phases (e.g. Phase 6), handling large `.pt` checkpoints, modifying environment wrappers, and maintaining clean git hygiene for future AI agents and contributors, refer to:
 

@@ -44,5 +44,12 @@
     "anchor_sr": 0.0,
     "inbetween_sr": 0.0,
     "gen_gap": 0.0
+  },
+  "LiftPegUpright-v1": {
+    "env_id": "LiftPegUpright-v1",
+    "overall_sr": 95.84615138860849,
+    "anchor_sr": 93.99999678134918,
+    "inbetween_sr": 96.66666454739041,
+    "gen_gap": -2.666667766041229
   }
 }

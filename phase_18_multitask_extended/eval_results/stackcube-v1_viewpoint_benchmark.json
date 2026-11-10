@@ -1,6 +1,6 @@
 {
   "env_id": "StackCube-v1",
-  "control_mode": "pd_joint_delta_pos",
+  "control_mode": "pd_ee_delta_pose",
   "overall_success_rate": 0.0,
   "anchor_success_rate": 0.0,
   "inbetween_success_rate": 0.0,

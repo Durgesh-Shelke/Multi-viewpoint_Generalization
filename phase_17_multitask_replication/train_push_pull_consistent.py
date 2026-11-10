@@ -480,6 +480,18 @@ def update_master_synthesis():
             "gen_gap": d.get("generalization_gap", 0.0),
         }
 
+    # Load LiftPegUpright from Phase 18
+    lift_json = os.path.join(REPO_DIR, "phase_18_multitask_extended/eval_results/liftpegupright-v1_viewpoint_benchmark.json")
+    if os.path.exists(lift_json):
+        with open(lift_json, "r") as f:
+            d = json.load(f)
+        tasks_data["LiftPegUpright-v1\n(Dexterous Reorientation)"] = {
+            "anchor_sr": d.get("anchor_success_rate", 0.0),
+            "interp_sr": d.get("interp_success_rate", d.get("inbetween_success_rate", 0.0)),
+            "overall_sr": d.get("overall_success_rate", 0.0),
+            "gen_gap": d.get("generalization_gap", 0.0),
+        }
+
     # Generate master plot
     tasks = list(tasks_data.keys())
     anchor_scores = [tasks_data[t]["anchor_sr"] for t in tasks]
@@ -489,7 +501,7 @@ def update_master_synthesis():
     x = np.arange(len(tasks))
     w = 0.25
 
-    fig, ax = plt.subplots(figsize=(11, 6))
+    fig, ax = plt.subplots(figsize=(13.5, 6))
     b1 = ax.bar(x - w, anchor_scores, w, label="Anchor Cameras (4 Views)", color="#1f77b4", alpha=0.9)
     b2 = ax.bar(x, interp_scores, w, label="Novel In-Between Cameras (9 Views)", color="#ff7f0e", alpha=0.9)
     b3 = ax.bar(x + w, overall_scores, w, label="Overall Continuous Benchmark", color="#2ca02c", alpha=0.9)

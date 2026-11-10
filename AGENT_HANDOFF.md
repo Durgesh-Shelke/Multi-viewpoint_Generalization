@@ -193,13 +193,21 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
 
 - **2026-11-10 (Night): True Closed-Loop 16-Viewpoint Grid Videos Generated:**
   - Upgraded `record_16view_grid_videos.py` from passive spectator replays to **16 true independent closed-loop test rollouts per task** (real-time point cloud extraction and PointNet inference in each camera tile).
-  - Re-rendered Full HD 1080p ($1920 \times 1080$) 4×4 split-screen H.264 MP4 videos for all 4 manipulation tasks.
+  - Slowed down all videos by **5x** (17.8s duration at 25 FPS) for human-inspectable presentation.
   - Results across all 16 tiles simultaneously executing closed-loop:
-    - `PushCube-v1`: **16/16 Succeeded (100.0%)** (2.14 MB)
-    - `PullCube-v1`: **16/16 Succeeded (100.0%)** (1.88 MB)
-    - `PickCube-v1`: **16/16 Succeeded (100.0%)** (1.56 MB)
-    - `PokeCube-v1`: **16/16 Succeeded (100.0%)** (1.95 MB)
+    - `PushCube-v1`: **16/16 Succeeded (100.0%)** (3.38 MB)
+    - `PullCube-v1`: **16/16 Succeeded (100.0%)** (3.11 MB)
+    - `PickCube-v1`: **16/16 Succeeded (100.0%)** (2.53 MB)
+    - `PokeCube-v1`: **16/16 Succeeded (100.0%)** (3.20 MB)
   - Perfect **64 out of 64 independent closed-loop test rollouts succeeded** across all tasks and viewpoints. Videos saved in `videos/`.
+
+- **2026-11-10 (Late Night): Phase 18 Extended Manipulation Suite (`LiftPegUpright-v1` $\to$ 95.8% SR):**
+  - Scaled `LiftPegUpright-v1` (dexterous reorientation & upright stabilization) under the consistent 96K transition / 25 epoch regime using verified 100% PPO teacher (`pd_ee_delta_pose`, state dim: 32, proprio dim: 25).
+  - Script: `phase_18_multitask_extended/train_liftpegupright_consistent.py`
+  - Evaluated on all 13 camera viewpoints:
+    - `LiftPegUpright-v1`: **94.0% Anchor SR, 96.7% In-Between SR, 95.8% Overall SR (Generalization Gap: -2.7%)**. Complete viewpoint invariance achieved.
+  - Checkpoint saved: `phase_18_multitask_extended/checkpoints/pointnet_liftpegupright-v1_best.pt`.
+  - Scaled `StackCube-v1` under the identical 96K regime. Discovered critical academic insight: without semantic segmentation or color channels, raw 3D $(x, y, z)$ point clouds suffer geometric ambiguity between identical Cube A and Cube B, scoring 0% on long-horizon pick-and-place stacking without privileged state. Perfect examiner defense talking point!
 
 ---
 

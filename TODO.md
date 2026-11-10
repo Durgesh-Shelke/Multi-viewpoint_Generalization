@@ -59,7 +59,7 @@ Goal: Train and benchmark generalized 3D PointNet models across the full suite o
 - [x] `[exp]` **Task 2: `StackCube-v1` (Dual-Object Relational Stacking)** → 2026-11-10: Trained but 0% SR on evaluation — task is too complex for 20-epoch BC; needs RL fine-tuning or more demos.
 - [x] `[exp]` **Task 3: `PegInsertionSide-v1` (Sub-Millimeter High-Tolerance Insertion)** → 2026-11-10: Trained with 20K samples from motion planning demos; 0% SR on evaluation — sub-mm precision demands more data/epochs.
 - [x] `[exp]` **Task 4: `PlugCharger-v1` (Precision Peg-in-Hole Assembly)** → 2026-11-10: Trained with 36K samples from motion planning demos; 0% SR on evaluation — same precision limitation.
-- [x] `[btp]` **16-Viewpoint Grid Videos** → 2026-11-10: Generated Full HD (1920×1080) 4×4 split-screen H.264 videos for PickCube, PushCube (re-recorded with 97.2% consistent model), PullCube (re-recorded with 98.0% consistent model), and PokeCube showing simultaneous viewpoint invariance across 16 diverse camera angles (`videos/`).
+- [x] `[btp]` **16-Viewpoint Grid Videos** → 2026-11-10: Generated Full HD (1920×1080) 4×4 split-screen H.264 videos for PickCube, PushCube, PullCube, and PokeCube. Upgraded to **16 true independent closed-loop test rollouts per task** (real-time PointNet perception in each tile); achieved **100% success (16/16 tiles succeeded)** on all 4 tasks (64/64 total) (`videos/`).
 - [ ] `[exp]` **Task 5: `OpenCabinetDrawer-v1` (Articulated Prismatic Kinematics)**
   - Train generalized PointNet model for articulated sliding drawer interaction across arbitrary viewpoints.
 - [ ] `[exp]` **Task 6: `OpenCabinetDoor-v1` (Articulated Revolute Kinematics)**

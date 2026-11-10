@@ -191,6 +191,16 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
     - `PullCube-v1` (Non-Prehensile Hook/Pull): **98.0% Overall SR** (Gap: 0.0%)
     - `PokeCube-v1` (Dynamic Impulsive Striking): **89.1% Overall SR** (Gap: 0.6%)
 
+- **2026-11-10 (Night): True Closed-Loop 16-Viewpoint Grid Videos Generated:**
+  - Upgraded `record_16view_grid_videos.py` from passive spectator replays to **16 true independent closed-loop test rollouts per task** (real-time point cloud extraction and PointNet inference in each camera tile).
+  - Re-rendered Full HD 1080p ($1920 \times 1080$) 4×4 split-screen H.264 MP4 videos for all 4 manipulation tasks.
+  - Results across all 16 tiles simultaneously executing closed-loop:
+    - `PushCube-v1`: **16/16 Succeeded (100.0%)** (2.14 MB)
+    - `PullCube-v1`: **16/16 Succeeded (100.0%)** (1.88 MB)
+    - `PickCube-v1`: **16/16 Succeeded (100.0%)** (1.56 MB)
+    - `PokeCube-v1`: **16/16 Succeeded (100.0%)** (1.95 MB)
+  - Perfect **64 out of 64 independent closed-loop test rollouts succeeded** across all tasks and viewpoints. Videos saved in `videos/`.
+
 ---
 
 ## 7. Instructions for Future Agents

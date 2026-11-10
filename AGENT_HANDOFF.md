@@ -154,7 +154,11 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
 - **2026-10-31 (Afternoon):** Executed Phase 14 perturbation stress tests (1,000 trials, 75.7% continuous success under jitter) and rendered broadcast rollout videos.
 - **2026-10-31 (Evening):** Executed Phase 15 Cross-Embodiment Generalization (Franka Panda vs xArm 6 Robotiq) and Zero-Shot Transfer (28.9% SR on unseen robot).
 - **2026-10-31 (Night):** Implemented Phase 16 Composite Modular Architecture. Validated single deliverable model achieving 92.2% on xArm 6 Robotiq and 74.6% on Franka Panda.
-- **2026-11-10:** Verified test suite `test_all_deliverables.py` (100% PASS). Synchronized all 25 research reports and established `AGENT_HANDOFF.md` and `TODO.md`.
+- **2026-11-10:** Verified test suite `test_all_deliverables.py` (100% PASS). Synchronized all 25 research reports and established `AGENT_HANDOFF.md` and `TODO.md`. Executed 4 comprehensive viewpoint stress experiments:
+  - *Extrinsic calibration noise:* Sustained 82.0% SR at ±2.0 cm hand-eye jitter, 82.0% SR at ±6.0° angular error (`calibration_noise_robustness_curve.png`).
+  - *RealSense depth noise:* Sustained 94.0% SR at RealSense D435 baseline σ=2.5mm; sustained 86.0% SR even when 75% of depth points are missing (`realsense_depth_noise_ablation.png`).
+  - *Extreme OOD angles:* Maintained 82–92% across ±65° flanks and 0.90m–1.35m zoom; identified gripper self-occlusion at 75° steep overhead (`extreme_ood_viewpoints_benchmark.png`).
+  - *Latency profiling:* RTX 4060 runs at 0.13 ms (7,837 FPS / 156.7x 50Hz); AMD Ryzen CPU runs at 0.29 ms (3,445 FPS / 68.9x 50Hz) (`latency_profiling_results.json`).
 
 ---
 

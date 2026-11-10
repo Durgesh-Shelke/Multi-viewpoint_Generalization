@@ -1,0 +1,217 @@
+{
+  "experiment_1_calibration_noise": {
+    "translation_sweep": [
+      {
+        "err_cm": 0.0,
+        "success_rate": 93.99999976158142,
+        "grasp_rate": 100.0
+      },
+      {
+        "err_cm": 1.0,
+        "success_rate": 85.999995470047,
+        "grasp_rate": 95.99999785423279
+      },
+      {
+        "err_cm": 2.0,
+        "success_rate": 81.99999928474426,
+        "grasp_rate": 97.99999594688416
+      },
+      {
+        "err_cm": 3.0,
+        "success_rate": 62.00000047683716,
+        "grasp_rate": 81.99999928474426
+      },
+      {
+        "err_cm": 4.0,
+        "success_rate": 51.99999809265137,
+        "grasp_rate": 75.99999904632568
+      },
+      {
+        "err_cm": 6.0,
+        "success_rate": 28.00000011920929,
+        "grasp_rate": 56.00000023841858
+      },
+      {
+        "err_cm": 8.0,
+        "success_rate": 17.999999225139618,
+        "grasp_rate": 37.99999952316284
+      },
+      {
+        "err_cm": 10.0,
+        "success_rate": 7.999999821186066,
+        "grasp_rate": 25.999999046325684
+      }
+    ],
+    "rotation_sweep": [
+      {
+        "err_deg": 0.0,
+        "success_rate": 97.99999594688416,
+        "grasp_rate": 100.0
+      },
+      {
+        "err_deg": 1.0,
+        "success_rate": 89.99999761581421,
+        "grasp_rate": 95.99999785423279
+      },
+      {
+        "err_deg": 2.0,
+        "success_rate": 87.99999952316284,
+        "grasp_rate": 95.99999785423279
+      },
+      {
+        "err_deg": 4.0,
+        "success_rate": 85.999995470047,
+        "grasp_rate": 97.99999594688416
+      },
+      {
+        "err_deg": 6.0,
+        "success_rate": 81.99999928474426,
+        "grasp_rate": 97.99999594688416
+      },
+      {
+        "err_deg": 8.0,
+        "success_rate": 65.99999666213989,
+        "grasp_rate": 83.99999737739563
+      },
+      {
+        "err_deg": 10.0,
+        "success_rate": 56.00000023841858,
+        "grasp_rate": 85.999995470047
+      }
+    ]
+  },
+  "experiment_2_depth_sensor_noise": {
+    "depth_noise_sweep": [
+      {
+        "noise_mm": 0.0,
+        "success_rate": 87.99999952316284,
+        "grasp_rate": 100.0
+      },
+      {
+        "noise_mm": 2.0,
+        "success_rate": 93.99999976158142,
+        "grasp_rate": 100.0
+      },
+      {
+        "noise_mm": 5.0,
+        "success_rate": 85.999995470047,
+        "grasp_rate": 97.99999594688416
+      },
+      {
+        "noise_mm": 10.0,
+        "success_rate": 91.99999570846558,
+        "grasp_rate": 100.0
+      },
+      {
+        "noise_mm": 15.0,
+        "success_rate": 79.99999523162842,
+        "grasp_rate": 93.99999976158142
+      },
+      {
+        "noise_mm": 20.0,
+        "success_rate": 56.00000023841858,
+        "grasp_rate": 87.99999952316284
+      }
+    ],
+    "sparsity_sweep": [
+      {
+        "n_points": 512,
+        "drop_rate": 0.0,
+        "success_rate": 95.99999785423279,
+        "grasp_rate": 100.0
+      },
+      {
+        "n_points": 384,
+        "drop_rate": 25.0,
+        "success_rate": 91.99999570846558,
+        "grasp_rate": 97.99999594688416
+      },
+      {
+        "n_points": 256,
+        "drop_rate": 50.0,
+        "success_rate": 100.0,
+        "grasp_rate": 100.0
+      },
+      {
+        "n_points": 128,
+        "drop_rate": 75.0,
+        "success_rate": 85.999995470047,
+        "grasp_rate": 93.99999976158142
+      },
+      {
+        "n_points": 64,
+        "drop_rate": 87.5,
+        "success_rate": 77.99999713897705,
+        "grasp_rate": 87.99999952316284
+      }
+    ]
+  },
+  "experiment_3_extreme_ood_viewpoints": [
+    {
+      "name": "Front Anchor (VP 17)",
+      "az": -4.74,
+      "el": 31.8,
+      "dist": 1.0942,
+      "success_rate": 87.99999952316284,
+      "grasp_rate": 100.0
+    },
+    {
+      "name": "Extreme Left Flank (Az=-65\u00b0)",
+      "az": -65.0,
+      "el": 30.0,
+      "dist": 1.1,
+      "success_rate": 81.99999928474426,
+      "grasp_rate": 91.99999570846558
+    },
+    {
+      "name": "Extreme Right Flank (Az=+65\u00b0)",
+      "az": 65.0,
+      "el": 30.0,
+      "dist": 1.1,
+      "success_rate": 91.99999570846558,
+      "grasp_rate": 97.99999594688416
+    },
+    {
+      "name": "Close Macro Zoom (Dist=0.90m)",
+      "az": 0.0,
+      "el": 30.0,
+      "dist": 0.9,
+      "success_rate": 91.99999570846558,
+      "grasp_rate": 95.99999785423279
+    },
+    {
+      "name": "Wide Telephoto Zoom (Dist=1.35m)",
+      "az": 0.0,
+      "el": 30.0,
+      "dist": 1.35,
+      "success_rate": 89.99999761581421,
+      "grasp_rate": 95.99999785423279
+    },
+    {
+      "name": "Steep Overhead (El=75\u00b0)*",
+      "az": 0.0,
+      "el": 75.0,
+      "dist": 1.1,
+      "success_rate": 1.9999999552965164,
+      "grasp_rate": 15.999999642372131
+    }
+  ],
+  "experiment_4_latency_profiling": {
+    "gpu_rtx4060": {
+      "mean_ms": 0.1275948119964596,
+      "p50_ms": 0.1266180001948669,
+      "p95_ms": 0.13221150070421572,
+      "p99_ms": 0.14542300010361942,
+      "throughput_fps": 7837.309247555826,
+      "control_frequency_headroom": "156.7x 50Hz budget"
+    },
+    "cpu_ryzen": {
+      "mean_ms": 0.2902529280127055,
+      "p50_ms": 0.2900614999816753,
+      "p95_ms": 0.2987660499911726,
+      "p99_ms": 0.3030307095286844,
+      "throughput_fps": 3445.2710153408893,
+      "control_frequency_headroom": "68.9x 50Hz budget"
+    }
+  }
+}

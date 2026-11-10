@@ -1,0 +1,102 @@
+================================================================================
+ EXECUTING FLAGSHIP 3D POINTNET VIEWPOINT STRESS SUITE
+================================================================================
+Loading Flagship 3D PointNet Model from /home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/student/pointnet_student_best.pt...
+[OK] PointNet Agent successfully loaded and ready for stress-testing.
+
+================================================================================
+ EXPERIMENT 1: EXTRINSIC CALIBRATION NOISE TOLERANCE SWEEP
+================================================================================
+--- 1A: Translation Error Sweep ---
+[33;1m2026-11-10 15:40:42,561 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  0.0 cm | Success:  94.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:40:46,358 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  1.0 cm | Success:  86.0% | Grasp:  96.0%
+[33;1m2026-11-10 15:40:48,692 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  2.0 cm | Success:  82.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:40:51,058 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  3.0 cm | Success:  62.0% | Grasp:  82.0%
+[33;1m2026-11-10 15:40:53,465 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  4.0 cm | Success:  52.0% | Grasp:  76.0%
+[33;1m2026-11-10 15:40:55,891 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  6.0 cm | Success:  28.0% | Grasp:  56.0%
+[33;1m2026-11-10 15:40:58,302 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error =  8.0 cm | Success:  18.0% | Grasp:  38.0%
+[33;1m2026-11-10 15:41:00,746 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Translation Error = 10.0 cm | Success:   8.0% | Grasp:  26.0%
+
+--- 1B: Rotation Error Sweep ---
+[33;1m2026-11-10 15:41:03,171 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  0.0° | Success:  98.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:05,501 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  1.0° | Success:  90.0% | Grasp:  96.0%
+[33;1m2026-11-10 15:41:07,874 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  2.0° | Success:  88.0% | Grasp:  96.0%
+[33;1m2026-11-10 15:41:10,223 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  4.0° | Success:  86.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:41:12,580 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  6.0° | Success:  82.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:41:14,990 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    =  8.0° | Success:  66.0% | Grasp:  84.0%
+[33;1m2026-11-10 15:41:17,412 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Rotation Error    = 10.0° | Success:  56.0% | Grasp:  86.0%
+[OK] Calibration noise curve saved to /home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/calibration_noise_robustness_curve.png
+
+================================================================================
+ EXPERIMENT 2: REALSENSE DEPTH SENSOR NOISE & POINT SPARSITY SWEEP
+================================================================================
+--- 2A: Depth Gaussian Noise Sweep ---
+[33;1m2026-11-10 15:41:20,148 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise =  0.0 mm | Success:  88.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:23,737 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise =  2.0 mm | Success:  94.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:26,078 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise =  5.0 mm | Success:  86.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:41:28,436 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise = 10.0 mm | Success:  92.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:30,740 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise = 15.0 mm | Success:  80.0% | Grasp:  94.0%
+[33;1m2026-11-10 15:41:33,096 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Gaussian Depth Noise = 20.0 mm | Success:  56.0% | Grasp:  88.0%
+
+--- 2B: Point Cloud Sparsity Sweep (Missing Depth Pixels) ---
+[33;1m2026-11-10 15:41:35,507 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Points = 512 (Dropout:  0.0%) | Success:  96.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:37,854 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Points = 384 (Dropout: 25.0%) | Success:  92.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:41:40,180 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Points = 256 (Dropout: 50.0%) | Success: 100.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:42,466 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Points = 128 (Dropout: 75.0%) | Success:  86.0% | Grasp:  94.0%
+[33;1m2026-11-10 15:41:44,835 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Points =  64 (Dropout: 87.5%) | Success:  78.0% | Grasp:  88.0%
+[OK] Depth noise ablation plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/realsense_depth_noise_ablation.png
+
+================================================================================
+ EXPERIMENT 3: EXTREME OUT-OF-DISTRIBUTION (OOD) VIEWPOINTS BENCHMARK
+================================================================================
+[33;1m2026-11-10 15:41:47,576 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Front Anchor (VP 17)                 | Success:  88.0% | Grasp: 100.0%
+[33;1m2026-11-10 15:41:51,281 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Extreme Left Flank (Az=-65°)         | Success:  82.0% | Grasp:  92.0%
+[33;1m2026-11-10 15:41:53,631 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Extreme Right Flank (Az=+65°)        | Success:  92.0% | Grasp:  98.0%
+[33;1m2026-11-10 15:41:55,921 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Close Macro Zoom (Dist=0.90m)        | Success:  92.0% | Grasp:  96.0%
+[33;1m2026-11-10 15:41:58,308 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Wide Telephoto Zoom (Dist=1.35m)     | Success:  90.0% | Grasp:  96.0%
+[33;1m2026-11-10 15:42:00,632 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Steep Overhead (El=75°)*             | Success:   2.0% | Grasp:  16.0%
+[OK] OOD viewpoint plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/extreme_ood_viewpoints_benchmark.png
+
+================================================================================
+ EXPERIMENT 4: REAL-TIME LATENCY & COMPUTE PROFILING (1,000 INFERENCE RUNS)
+================================================================================
+  GPU (RTX 4060) Latency: Mean =  0.13 ms | p50 =  0.13 ms | p95 =  0.13 ms | Throughput = 7837.3 FPS
+  CPU (AMD Ryzen) Latency: Mean =  0.29 ms | p50 =  0.29 ms | p95 =  0.30 ms | Throughput = 3445.3 FPS
+[OK] Latency profiling saved to /home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/latency_profiling_results.json
+
+================================================================================
+ ALL 4 VIEWPOINT STRESS EXPERIMENTS COMPLETED SUCCESSFULLY!
+ Master Summary JSON: /home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/comprehensive_viewpoint_stress_summary.json
+================================================================================

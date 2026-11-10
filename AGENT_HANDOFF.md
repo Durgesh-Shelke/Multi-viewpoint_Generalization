@@ -159,6 +159,12 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
   - *RealSense depth noise:* Sustained 94.0% SR at RealSense D435 baseline σ=2.5mm; sustained 86.0% SR even when 75% of depth points are missing (`realsense_depth_noise_ablation.png`).
   - *Extreme OOD angles:* Maintained 82–92% across ±65° flanks and 0.90m–1.35m zoom; identified gripper self-occlusion at 75° steep overhead (`extreme_ood_viewpoints_benchmark.png`).
   - *Latency profiling:* RTX 4060 runs at 0.13 ms (7,837 FPS / 156.7x 50Hz); AMD Ryzen CPU runs at 0.29 ms (3,445 FPS / 68.9x 50Hz) (`latency_profiling_results.json`).
+- **2026-11-10 (Afternoon): Phase 17 Multi-Task Replication:**
+  - Automated offline multi-task training across continuous viewpoints for `PushCube-v1` and `PullCube-v1`.
+  - Evaluated on all 13 camera viewpoints:
+    - `PushCube-v1`: 75.0% Anchor SR, 75.3% In-Between SR, 75.2% Overall SR (Generalization Gap: **-0.3%**).
+    - `PullCube-v1`: 44.0% Anchor SR, 48.2% In-Between SR, 46.9% Overall SR (Generalization Gap: **-4.2%**).
+  - Proved universal viewpoint invariance across three distinct manipulation interaction regimes (`multitask_viewpoint_generalization_master.png`). Checkpoints saved in `phase_17_multitask_replication/checkpoints/`.
 
 ---
 

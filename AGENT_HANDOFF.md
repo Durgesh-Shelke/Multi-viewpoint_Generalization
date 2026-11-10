@@ -179,6 +179,18 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
     - `PullCube-v1`: **98.0% Anchor SR, 98.0% In-Between SR, 98.0% Overall SR (Generalization Gap: 0.0%)**.
   - Generated updated plots: `pushcube-v1_viewpoint_benchmark_consistent.png`, `pullcube-v1_viewpoint_benchmark_consistent.png`, `multitask_viewpoint_generalization_consistent_master.png`, and updated `multitask_7task_viewpoint_generalization_master.png`. Checkpoints saved to `phase_17_multitask_replication/checkpoints/`.
 
+- **2026-11-10 (Night): Phase 18 PokeCube Consistent Scaling ($\to$ 89.1% SR, 0.6% Gap):**
+  - Scaled `PokeCube-v1` to the identical 96,000 transitions / 25 epochs regime using verified 96.0% PPO teacher (`pd_joint_delta_pos`, 8-dim action space, 29-dim proprioception).
+  - Script: `phase_18_multitask_extended/train_pokecube_consistent.py`
+  - Evaluated on all 13 camera viewpoints:
+    - `PokeCube-v1`: **89.5% Anchor SR, 88.9% In-Between SR, 89.1% Overall SR (Generalization Gap: 0.6%)** (jump from 71.2% / 3.8% gap).
+  - Checkpoint updated: `phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt`.
+  - All four core manipulation archetypes are now fully standardized under the 96K transition regime with near-zero viewpoint generalization gap:
+    - `PickCube-v1` (Prehensile Pick & Place): **90.6% Overall SR** (Gap: 4.2%)
+    - `PushCube-v1` (Planar Sliding Contact): **97.2% Overall SR** (Gap: 1.1%)
+    - `PullCube-v1` (Non-Prehensile Hook/Pull): **98.0% Overall SR** (Gap: 0.0%)
+    - `PokeCube-v1` (Dynamic Impulsive Striking): **89.1% Overall SR** (Gap: 0.6%)
+
 ---
 
 ## 7. Instructions for Future Agents

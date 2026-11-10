@@ -34,3 +34,6 @@ Thumbs.db
 
 # Root duplicate videos
 /*_16view_grid.mp4
+
+# Run logs
+*.log

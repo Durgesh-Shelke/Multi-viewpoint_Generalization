@@ -55,7 +55,7 @@ These experiments directly strengthen your BTP defense by addressing the exact t
 
 Goal: Train and benchmark generalized 3D PointNet models across the full suite of manipulation tasks (replicating the success achieved on `PickCube-v1` [90.6% SR], `PushCube-v1` [75.2% SR], `PullCube-v1` [46.9% SR], and `PokeCube-v1` [71.2% SR]):
 
-- [x] `[exp]` **Task 1: `PokeCube-v1` (Planar Contact & Impulsive Interaction)** → 2026-11-10: Trained with 64K continuous dome samples; **71.2% Overall SR, 73.8% Anchor, 70.0% In-Between, 3.8% gap** (`pokecube-v1_viewpoint_benchmark.png`).
+- [x] `[exp]` **Task 1: `PokeCube-v1` (Planar Contact & Impulsive Interaction)** → 2026-11-10: Initially 71.2% SR with 64K samples. Scaled to consistent 96K transition / 25 epoch regime with 96% PPO teacher: achieved **89.1% Overall SR, 89.5% Anchor, 88.9% In-Between, 0.6% gap** (`pokecube-v1_viewpoint_benchmark.png`, `multitask_viewpoint_generalization_consistent_master.png`). Checkpoint saved to `phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt`.
 - [x] `[exp]` **Task 2: `StackCube-v1` (Dual-Object Relational Stacking)** → 2026-11-10: Trained but 0% SR on evaluation — task is too complex for 20-epoch BC; needs RL fine-tuning or more demos.
 - [x] `[exp]` **Task 3: `PegInsertionSide-v1` (Sub-Millimeter High-Tolerance Insertion)** → 2026-11-10: Trained with 20K samples from motion planning demos; 0% SR on evaluation — sub-mm precision demands more data/epochs.
 - [x] `[exp]` **Task 4: `PlugCharger-v1` (Precision Peg-in-Hole Assembly)** → 2026-11-10: Trained with 36K samples from motion planning demos; 0% SR on evaluation — same precision limitation.

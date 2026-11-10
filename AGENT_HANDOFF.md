@@ -166,6 +166,11 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
     - `PullCube-v1`: 44.0% Anchor SR, 48.2% In-Between SR, 46.9% Overall SR (Generalization Gap: **-4.2%**).
   - Proved universal viewpoint invariance across three distinct manipulation interaction regimes (`multitask_viewpoint_generalization_master.png`). Checkpoints saved in `phase_17_multitask_replication/checkpoints/`.
 
+- **2026-11-10 (Evening): Multi-Task Generalized Policy Expansion (Roadmap added to `TODO.md`):**
+  - Expanded roadmap to train generalized 3D PointNet models across 8 additional manipulation domains: `StackCube-v1`, `PokeCube-v1`, `PegInsertionSide-v1`, `PlugCharger-v1`, `OpenCabinetDrawer-v1`, `OpenCabinetDoor-v1`, `MoveBucket-v1`, and `ManiSkill-HAB`.
+  - Fixed `StackCube-v1` environment bug (reverted cube half-size to 0.02) and verified official PPO teacher checkpoint (`ppo_pd_ee_delta_pose_ckpt.pt`) achieves 100.0% success rate (`eval_success_once_mean = 1.00`).
+  - Downloaded 1,000 demonstrations for `PegInsertionSide-v1` (98.0% SR) and `PlugCharger-v1` (motion planning).
+
 ---
 
 ## 7. Instructions for Future Agents

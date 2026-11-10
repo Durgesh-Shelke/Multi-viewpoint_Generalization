@@ -1,0 +1,8 @@
+========================================================================
+ STARTING CONSISTENT MULTI-TASK VIEWPOINT TRAINING PIPELINE
+ Tasks: PushCube-v1 & PullCube-v1
+ Regime: 1,920 Episodes (96,000 Transitions) | 25 Epochs (Matching PickCube)
+ Teachers: 100% Verified PPO Oracles (pd_ee_delta_pose, 7-dim)
+ Time: Tue Nov 10 20:44:56 IST 2026
+ Log file: /home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/logs/consistent_push_pull_20261110_204456.log
+========================================================================

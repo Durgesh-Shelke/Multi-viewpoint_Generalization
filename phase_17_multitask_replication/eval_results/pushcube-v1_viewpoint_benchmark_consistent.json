@@ -1,0 +1,181 @@
+{
+  "env_id": "PushCube-v1",
+  "control_mode": "pd_ee_delta_pose",
+  "action_dim": 7,
+  "proprio_dim": 28,
+  "anchor_success_rate": 97.99999743700027,
+  "interp_success_rate": 96.888886557685,
+  "overall_success_rate": 97.23076682824355,
+  "generalization_gap": 1.1111108793152766,
+  "detailed_results": [
+    {
+      "id": 17,
+      "label": "VP 17 (Front-Mid Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.3118,
+        -0.0768,
+        0.5766
+      ],
+      "azimuth": -4.74,
+      "elevation": 31.8,
+      "success_rate": 100.0
+    },
+    {
+      "id": 0,
+      "label": "VP 00 (Front-Low Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.4542,
+        0.0,
+        0.2326
+      ],
+      "azimuth": 0.0,
+      "elevation": 12.27,
+      "success_rate": 97.99999594688416
+    },
+    {
+      "id": 20,
+      "label": "VP 20 (Diag-Left Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        0.0992,
+        -0.542,
+        0.6272
+      ],
+      "azimuth": -37.2,
+      "elevation": 34.98,
+      "success_rate": 95.99999785423279
+    },
+    {
+      "id": 19,
+      "label": "VP 19 (Diag-Right Anchor)",
+      "type": "trained",
+      "cam_eye": [
+        -0.0033,
+        0.6743,
+        0.607
+      ],
+      "azimuth": 47.79,
+      "elevation": 33.69,
+      "success_rate": 97.99999594688416
+    },
+    {
+      "id": 10,
+      "label": "VP 10 (In-Between El: VP00-VP17)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3757,
+        0.1333,
+        0.4451
+      ],
+      "azimuth": 7.66,
+      "elevation": 24.0,
+      "success_rate": 95.99999785423279
+    },
+    {
+      "id": 13,
+      "label": "VP 13 (In-Between Az: VP17-VP20)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2705,
+        -0.4091,
+        0.4957
+      ],
+      "azimuth": -24.8,
+      "elevation": 26.94,
+      "success_rate": 91.99999570846558
+    },
+    {
+      "id": 14,
+      "label": "VP 14 (In-Between Az: VP17-VP19)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2343,
+        0.4464,
+        0.526
+      ],
+      "azimuth": 27.73,
+      "elevation": 28.73,
+      "success_rate": 97.99999594688416
+    },
+    {
+      "id": 4,
+      "label": "VP 04 (In-Between Low-Right)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3697,
+        0.3596,
+        0.3135
+      ],
+      "azimuth": 20.06,
+      "elevation": 16.65,
+      "success_rate": 100.0
+    },
+    {
+      "id": 7,
+      "label": "VP 07 (In-Between Low-Left)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.3928,
+        -0.2216,
+        0.3641
+      ],
+      "azimuth": -12.4,
+      "elevation": 19.44,
+      "success_rate": 95.99999785423279
+    },
+    {
+      "id": 21,
+      "label": "VP 21 (In-Between Mid-Right)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.2284,
+        0.2312,
+        0.6576
+      ],
+      "azimuth": 15.33,
+      "elevation": 36.94,
+      "success_rate": 97.99999594688416
+    },
+    {
+      "id": 24,
+      "label": "VP 24 (In-Between High-Mid)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        0.1821,
+        -0.2457,
+        0.7082
+      ],
+      "azimuth": -17.14,
+      "elevation": 40.33,
+      "success_rate": 95.99999785423279
+    },
+    {
+      "id": 12,
+      "label": "VP 12 (Flank In-Between R)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        -0.125,
+        0.8551,
+        0.4754
+      ],
+      "azimuth": 60.19,
+      "elevation": 25.75,
+      "success_rate": 100.0
+    },
+    {
+      "id": 15,
+      "label": "VP 15 (Flank In-Between L)",
+      "type": "untrained_interp",
+      "cam_eye": [
+        -0.1022,
+        -0.7975,
+        0.5463
+      ],
+      "azimuth": -57.26,
+      "elevation": 29.95,
+      "success_rate": 95.99999785423279
+    }
+  ]
+}

@@ -171,6 +171,14 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
   - Fixed `StackCube-v1` environment bug (reverted cube half-size to 0.02) and verified official PPO teacher checkpoint (`ppo_pd_ee_delta_pose_ckpt.pt`) achieves 100.0% success rate (`eval_success_once_mean = 1.00`).
   - Downloaded 1,000 demonstrations for `PegInsertionSide-v1` (98.0% SR) and `PlugCharger-v1` (motion planning).
 
+- **2026-11-10 (Night): Phase 17 Consistent Scaling Breakthrough (PushCube & PullCube $\to$ 97–98% SR):**
+  - Identified the root cause of previous 75.2% (Push) and 46.9% (Pull) accuracy: the `pd_ee_delta_pos` (4-dim) PPO teachers were capped at 82.0% and 58.0% SR, and training was budgeted for only 64K transitions.
+  - Re-trained both tasks under the exact consistent regime of PickCube: 1,920 episodes (**96,000 transitions** across continuous dome), **25 epochs**, and verified **100.0% PPO teachers** using `pd_ee_delta_pose` (7-dim action space, 28-dim proprioception).
+  - Evaluated on all 13 camera viewpoints:
+    - `PushCube-v1`: **98.0% Anchor SR, 96.9% In-Between SR, 97.2% Overall SR (Generalization Gap: 1.1%)**.
+    - `PullCube-v1`: **98.0% Anchor SR, 98.0% In-Between SR, 98.0% Overall SR (Generalization Gap: 0.0%)**.
+  - Generated updated plots: `pushcube-v1_viewpoint_benchmark_consistent.png`, `pullcube-v1_viewpoint_benchmark_consistent.png`, `multitask_viewpoint_generalization_consistent_master.png`, and updated `multitask_7task_viewpoint_generalization_master.png`. Checkpoints saved to `phase_17_multitask_replication/checkpoints/`.
+
 ---
 
 ## 7. Instructions for Future Agents

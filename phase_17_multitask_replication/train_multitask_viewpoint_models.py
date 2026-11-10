@@ -432,16 +432,105 @@ def generate_multitask_master_plot(all_task_summaries: dict):
 # =========================================================================
 # MAIN AUTOMATED WORKFLOW
 # =========================================================================
-def main():
-    print("#" * 80, flush=True)
-    print(" STARTING AUTOMATED MULTI-TASK VIEWPOINT TRAINING PIPELINE", flush=True)
-    print(" Tasks to Train in Order: 1. PushCube-v1 | 2. PullCube-v1", flush=True)
-    print(" Comparison Baseline: PickCube-v1 (Phase 13 Breakthrough)", flush=True)
+import argparse
+
+
+def run_single_task(cfg):
+    env_id = cfg["env_id"]
+    task_name = cfg["name"]
+    state_dim = cfg["state_dim"]
+    teacher_path = cfg["teacher_ckpt"]
+
+    print("\n" + "#" * 80, flush=True)
+    print(f" EXECUTING PIPELINE FOR TASK: {env_id}", flush=True)
     print("#" * 80, flush=True)
 
-    t_start = time.time()
-    task_configs = [
-        {
+    # 1. Load Teacher Oracle
+    class DummySpace:
+        def __init__(self, shape): self.shape = shape
+    dummy_vec = SimpleNamespace(
+        single_observation_space=DummySpace((state_dim,)),
+        single_action_space=DummySpace((4,))
+    )
+    teacher = PrivilegedAgent(dummy_vec).to(DEVICE)
+    ckpt = torch.load(teacher_path, map_location=DEVICE)
+    teacher.load_state_dict(ckpt)
+    teacher.eval()
+    print(f"[OK] Teacher oracle loaded from {teacher_path}", flush=True)
+
+    # 2. Collect Continuous Viewpoint Dataset
+    buf_pts, buf_proprio, buf_actions = collect_pointcloud_dataset(
+        env_id, teacher, state_dim, num_episodes=cfg["episodes"], batch_envs=32
+    )
+
+    # 3. Train PointNet Student Policy
+    ckpt_student = train_pointnet_student(
+        task_name, buf_pts, buf_proprio, buf_actions, num_epochs=cfg["epochs"], batch_size=256
+    )
+
+    del buf_pts, buf_proprio, buf_actions, teacher
+    gc.collect()
+    torch.cuda.empty_cache()
+
+    # 4. Benchmark across 13 Viewpoints
+    summary = evaluate_policy_across_viewpoints(env_id, ckpt_student, batch_envs=50)
+    return summary
+
+
+def synthesize_all_results():
+    print("\n" + "#" * 80, flush=True)
+    print(" SYNTHESIZING ALL MULTI-TASK VIEWPOINT GENERALIZATION RESULTS", flush=True)
+    print("#" * 80, flush=True)
+
+    all_summaries = {}
+
+    # PickCube-v1 flagship reference
+    all_summaries["PickCube-v1\n(Prehensile Lift)"] = {
+        "anchor_success_rate": 93.8,
+        "interp_success_rate": 89.6,
+        "overall_success_rate": 90.6,
+        "generalization_gap": 4.2,
+    }
+
+    # Load PushCube if exists
+    push_json = os.path.join(EVAL_DIR, "pushcube-v1_viewpoint_benchmark.json")
+    if os.path.exists(push_json):
+        with open(push_json, "r") as f:
+            data = json.load(f)
+        all_summaries["PushCube-v1\n(Planar Sliding)"] = {
+            "anchor_success_rate": data["anchor_success_rate"],
+            "interp_success_rate": data["interp_success_rate"],
+            "overall_success_rate": data["overall_success_rate"],
+            "generalization_gap": data["generalization_gap"],
+        }
+
+    # Load PullCube if exists
+    pull_json = os.path.join(EVAL_DIR, "pullcube-v1_viewpoint_benchmark.json")
+    if os.path.exists(pull_json):
+        with open(pull_json, "r") as f:
+            data = json.load(f)
+        all_summaries["PullCube-v1\n(Non-Prehensile Pull)"] = {
+            "anchor_success_rate": data["anchor_success_rate"],
+            "interp_success_rate": data["interp_success_rate"],
+            "overall_success_rate": data["overall_success_rate"],
+            "generalization_gap": data["generalization_gap"],
+        }
+
+    generate_multitask_master_plot(all_summaries)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--task", type=str, default="all", choices=["all", "PushCube-v1", "PullCube-v1", "synthesize"])
+    parser.add_argument("--synthesize", action="store_true")
+    args = parser.parse_args()
+
+    if args.synthesize or args.task == "synthesize":
+        synthesize_all_results()
+        return
+
+    task_configs = {
+        "PushCube-v1": {
             "env_id": "PushCube-v1",
             "name": "PushCube",
             "state_dim": 35,
@@ -449,7 +538,7 @@ def main():
             "episodes": 1280,
             "epochs": 20,
         },
-        {
+        "PullCube-v1": {
             "env_id": "PullCube-v1",
             "name": "PullCube",
             "state_dim": 35,
@@ -457,68 +546,15 @@ def main():
             "episodes": 1280,
             "epochs": 20,
         },
-    ]
-
-    all_summaries = {}
-
-    # Include existing PickCube-v1 benchmark results as reference
-    all_summaries["PickCube-v1\n(Prehensile Grasp)"] = {
-        "anchor_success_rate": 93.8,
-        "interp_success_rate": 89.6,
-        "overall_success_rate": 90.6,
-        "generalization_gap": 4.2,
     }
 
-    for cfg in task_configs:
-        env_id = cfg["env_id"]
-        task_name = cfg["name"]
-        state_dim = cfg["state_dim"]
-        teacher_path = cfg["teacher_ckpt"]
-
-        print("\n" + "#" * 80, flush=True)
-        print(f" EXECUTING PIPELINE FOR TASK: {env_id}", flush=True)
-        print("#" * 80, flush=True)
-
-        # 1. Load Teacher Oracle
-        class DummySpace:
-            def __init__(self, shape): self.shape = shape
-        dummy_vec = SimpleNamespace(
-            single_observation_space=DummySpace((state_dim,)),
-            single_action_space=DummySpace((4,))
-        )
-        teacher = PrivilegedAgent(dummy_vec).to(DEVICE)
-        ckpt = torch.load(teacher_path, map_location=DEVICE)
-        teacher.load_state_dict(ckpt)
-        teacher.eval()
-        print(f"[OK] Teacher oracle loaded from {teacher_path}", flush=True)
-
-        # 2. Collect Continuous Viewpoint Dataset
-        buf_pts, buf_proprio, buf_actions = collect_pointcloud_dataset(
-            env_id, teacher, state_dim, num_episodes=cfg["episodes"], batch_envs=32
-        )
-
-        # 3. Train PointNet Student Policy
-        ckpt_student = train_pointnet_student(
-            task_name, buf_pts, buf_proprio, buf_actions, num_epochs=cfg["epochs"], batch_size=256
-        )
-
-        del buf_pts, buf_proprio, buf_actions, teacher
-        gc.collect()
-        torch.cuda.empty_cache()
-
-        # 4. Benchmark across 13 Viewpoints
-        summary = evaluate_policy_across_viewpoints(env_id, ckpt_student, batch_envs=50)
-        label_key = f"{env_id}\n(Planar Sliding)" if "Push" in env_id else f"{env_id}\n(Non-Prehensile Pull)"
-        all_summaries[label_key] = summary
-
-    # 5. Master Multi-Task Synthesis Plot
-    generate_multitask_master_plot(all_summaries)
-
-    elapsed_total = (time.time() - t_start) / 60.0
-    print("\n" + "=" * 80, flush=True)
-    print(f" ALL MULTI-TASK MODELS TRAINED AND BENCHMARKED IN {elapsed_total:.1f} MINUTES!", flush=True)
-    print(" Master Plots & Summaries Generated Successfully.", flush=True)
-    print("=" * 80, flush=True)
+    if args.task in task_configs:
+        run_single_task(task_configs[args.task])
+        synthesize_all_results()
+    else:
+        for tname, cfg in task_configs.items():
+            run_single_task(cfg)
+        synthesize_all_results()
 
 
 if __name__ == "__main__":

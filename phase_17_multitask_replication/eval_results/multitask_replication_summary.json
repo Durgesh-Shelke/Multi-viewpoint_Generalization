@@ -1,0 +1,20 @@
+{
+  "PickCube-v1\n(Prehensile Lift)": {
+    "anchor_success_rate": 93.8,
+    "interp_success_rate": 89.6,
+    "overall_success_rate": 90.6,
+    "generalization_gap": 4.2
+  },
+  "PushCube-v1\n(Planar Sliding)": {
+    "anchor_success_rate": 75.0,
+    "interp_success_rate": 75.33333169089423,
+    "overall_success_rate": 75.23076809369601,
+    "generalization_gap": -0.33333169089422654
+  },
+  "PullCube-v1\n(Non-Prehensile Pull)": {
+    "anchor_success_rate": 43.99999901652336,
+    "interp_success_rate": 48.22222060627408,
+    "overall_success_rate": 46.9230755017354,
+    "generalization_gap": -4.222221589750717
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "PickCube-v1": {
+    "anchor_sr": 92.5,
+    "inbetween_sr": 88.3,
+    "overall_sr": 90.6,
+    "gen_gap": 4.2
+  },
+  "PushCube-v1": {
+    "anchor_sr": 75.0,
+    "inbetween_sr": 75.3,
+    "overall_sr": 75.2,
+    "gen_gap": -0.3
+  },
+  "PullCube-v1": {
+    "anchor_sr": 44.0,
+    "inbetween_sr": 48.2,
+    "overall_sr": 46.9,
+    "gen_gap": -4.2
+  },
+  "StackCube-v1": {
+    "env_id": "StackCube-v1",
+    "overall_sr": 0.0,
+    "anchor_sr": 0.0,
+    "inbetween_sr": 0.0,
+    "gen_gap": 0.0
+  },
+  "PokeCube-v1": {
+    "env_id": "PokeCube-v1",
+    "overall_sr": 71.15384730008932,
+    "anchor_sr": 73.7500011920929,
+    "inbetween_sr": 70.00000112586551,
+    "gen_gap": 3.7500000662273862
+  }
+}

@@ -1,0 +1,228 @@
+================================================================================
+ STARTING AUTOMATED 4-TASK EXTENDED VIEWPOINT GENERALIZATION SUITE
+ Timestamp: 20261110_184346
+ Tasks: 1. StackCube-v1 | 2. PokeCube-v1 | 3. PegInsertionSide-v1 | 4. PlugCharger-v1
+================================================================================
+
+[Tue Nov 10 18:43:46 IST 2026] >>> STARTING TASK 1/4: StackCube-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: StackCube-v1
+################################################################################
+[OK] Loaded PPO Teacher: state_dim=48, action_dim=8 from /root/.maniskill/demos/StackCube-v1/rl/ppo_pd_joint_delta_pos_ckpt.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,280 EPISODES FOR StackCube-v1 VIA PPO TEACHER
+ Control Mode: pd_joint_delta_pos | Action Dim: 8 | State Dim: 48
+================================================================================
+  Batch  1/40 | [Anchor View] Az= -4.7°, El=31.8°, Dist=1.09m | Samples: 1,600 / 64,000 (3.8s)
+  Batch 10/40 | [Continuous Dome] Az=-46.1°, El=14.5°, Dist=1.23m | Samples: 16,000 / 64,000 (32.4s)
+  Batch 20/40 | [Continuous Dome] Az=-32.0°, El=43.5°, Dist=1.06m | Samples: 32,000 / 64,000 (64.2s)
+  Batch 30/40 | [Continuous Dome] Az=+29.9°, El=40.9°, Dist=1.12m | Samples: 48,000 / 64,000 (96.0s)
+  Batch 40/40 | [Continuous Dome] Az=+55.5°, El=24.1°, Dist=0.98m | Samples: 64,000 / 64,000 (127.5s)
+[OK] Dataset for StackCube-v1 collected: 64,000 samples in 127.5s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR STACKCUBE-V1
+ Action Dim: 8 | Transitions: 64,000 | Epochs: 20
+================================================================================
+  Epoch  1/20 | MSE Loss: 0.252809 | Best: 0.252809 | Time: 4.14s
+  Epoch  5/20 | MSE Loss: 0.056034 | Best: 0.056034 | Time: 3.82s
+  Epoch 10/20 | MSE Loss: 0.038527 | Best: 0.038527 | Time: 3.95s
+  Epoch 15/20 | MSE Loss: 0.033283 | Best: 0.033283 | Time: 3.90s
+  Epoch 20/20 | MSE Loss: 0.031750 | Best: 0.031750 | Time: 3.86s
+[OK] Training complete. Best model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_stackcube-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR StackCube-v1
+================================================================================
+  [ANCHOR]      VP 17 (VP 17 (Front-Mid Anchor)    ) (Az= -4.7°, El=31.8°): Success =   0.0%
+  [ANCHOR]      VP 00 (VP 00 (Front-Low Anchor)    ) (Az= +0.0°, El=12.3°): Success =   0.0%
+  [ANCHOR]      VP 20 (VP 20 (Diag-Left Anchor)    ) (Az=-37.2°, El=35.0°): Success =   0.0%
+  [ANCHOR]      VP 19 (VP 19 (Diag-Right Anchor)   ) (Az=+47.8°, El=33.7°): Success =   0.0%
+  [IN-BETWEEN]  VP 10 (VP 10 (In-Between El: VP00-VP17)) (Az= +7.7°, El=24.0°): Success =   0.0%
+  [IN-BETWEEN]  VP 13 (VP 13 (In-Between Az: VP17-VP20)) (Az=-24.8°, El=26.9°): Success =   0.0%
+  [IN-BETWEEN]  VP 14 (VP 14 (In-Between Az: VP17-VP19)) (Az=+27.7°, El=28.7°): Success =   0.0%
+  [IN-BETWEEN]  VP 04 (VP 04 (In-Between Low-Right)) (Az=+20.1°, El=16.6°): Success =   0.0%
+  [IN-BETWEEN]  VP 07 (VP 07 (In-Between Low-Left) ) (Az=-12.4°, El=19.4°): Success =   0.0%
+  [IN-BETWEEN]  VP 21 (VP 21 (In-Between Mid-Right)) (Az=+15.3°, El=36.9°): Success =   0.0%
+  [IN-BETWEEN]  VP 24 (VP 24 (In-Between High-Mid) ) (Az=-17.1°, El=40.3°): Success =   0.0%
+  [IN-BETWEEN]  VP 12 (VP 12 (Flank In-Between R)  ) (Az=+60.2°, El=25.8°): Success =   0.0%
+  [IN-BETWEEN]  VP 15 (VP 15 (Flank In-Between L)  ) (Az=-57.3°, El=29.9°): Success =   0.0%
+--------------------------------------------------------------------------------
+ Summary for StackCube-v1:
+  Anchor Views Success Rate:          0.0%
+  In-Between Views Success Rate:      0.0%
+  Overall 13-View Success Rate:       0.0%
+  Generalization Gap (Drop):          0.0%
+ Benchmark completed in 58.5s
+================================================================================
+[OK] Benchmark plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/stackcube-v1_viewpoint_benchmark.png
+
+================================================================================
+ GENERATING MASTER 7-TASK MULTI-TASK GENERALIZATION PLOT
+================================================================================
+[OK] Master 7-Task Comparison Plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/multitask_7task_viewpoint_generalization_master.png
+[Tue Nov 10 18:48:14 IST 2026] <<< TASK 1/4: StackCube-v1 COMPLETED!
+
+[Tue Nov 10 18:48:14 IST 2026] >>> STARTING TASK 2/4: PokeCube-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PokeCube-v1
+################################################################################
+[REUSING CHECKPOINT] Found trained model at /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR PokeCube-v1
+================================================================================
+  [ANCHOR]      VP 17 (VP 17 (Front-Mid Anchor)    ) (Az= -4.7°, El=31.8°): Success =  80.0%
+  [ANCHOR]      VP 00 (VP 00 (Front-Low Anchor)    ) (Az= +0.0°, El=12.3°): Success =  60.0%
+  [ANCHOR]      VP 20 (VP 20 (Diag-Left Anchor)    ) (Az=-37.2°, El=35.0°): Success =  75.0%
+  [ANCHOR]      VP 19 (VP 19 (Diag-Right Anchor)   ) (Az=+47.8°, El=33.7°): Success =  80.0%
+  [IN-BETWEEN]  VP 10 (VP 10 (In-Between El: VP00-VP17)) (Az= +7.7°, El=24.0°): Success =  45.0%
+  [IN-BETWEEN]  VP 13 (VP 13 (In-Between Az: VP17-VP20)) (Az=-24.8°, El=26.9°): Success =  95.0%
+  [IN-BETWEEN]  VP 14 (VP 14 (In-Between Az: VP17-VP19)) (Az=+27.7°, El=28.7°): Success =  75.0%
+  [IN-BETWEEN]  VP 04 (VP 04 (In-Between Low-Right)) (Az=+20.1°, El=16.6°): Success =  65.0%
+  [IN-BETWEEN]  VP 07 (VP 07 (In-Between Low-Left) ) (Az=-12.4°, El=19.4°): Success =  75.0%
+  [IN-BETWEEN]  VP 21 (VP 21 (In-Between Mid-Right)) (Az=+15.3°, El=36.9°): Success =  60.0%
+  [IN-BETWEEN]  VP 24 (VP 24 (In-Between High-Mid) ) (Az=-17.1°, El=40.3°): Success =  55.0%
+  [IN-BETWEEN]  VP 12 (VP 12 (Flank In-Between R)  ) (Az=+60.2°, El=25.8°): Success =  85.0%
+  [IN-BETWEEN]  VP 15 (VP 15 (Flank In-Between L)  ) (Az=-57.3°, El=29.9°): Success =  75.0%
+--------------------------------------------------------------------------------
+ Summary for PokeCube-v1:
+  Anchor Views Success Rate:         73.8%
+  In-Between Views Success Rate:     70.0%
+  Overall 13-View Success Rate:      71.2%
+  Generalization Gap (Drop):          3.8%
+ Benchmark completed in 41.4s
+================================================================================
+[OK] Benchmark plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/pokecube-v1_viewpoint_benchmark.png
+
+================================================================================
+ GENERATING MASTER 7-TASK MULTI-TASK GENERALIZATION PLOT
+================================================================================
+[OK] Master 7-Task Comparison Plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/multitask_7task_viewpoint_generalization_master.png
+[Tue Nov 10 18:48:58 IST 2026] <<< TASK 2/4: PokeCube-v1 COMPLETED!
+
+[Tue Nov 10 18:48:58 IST 2026] >>> STARTING TASK 3/4: PegInsertionSide-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PegInsertionSide-v1
+################################################################################
+
+================================================================================
+ [STAGE 1] COLLECTING 400 EPISODES FOR PegInsertionSide-v1 VIA DEMONSTRATION REPLAY
+ Control Mode: pd_joint_delta_pos | Action Dim: 8 | Demos: /root/.maniskill/demos/PegInsertionSide-v1/rl/trajectory.h5
+================================================================================
+  Ep   1/400 | Az=-17.6°, El=48.1°, Dist=1.17m | Samples: 50 / 20,000 (2.8s)
+  Ep  50/400 | Az= +0.4°, El=14.0°, Dist=1.03m | Samples: 2,500 / 20,000 (99.2s)
+  Ep 100/400 | Az=-39.8°, El=35.7°, Dist=0.98m | Samples: 5,000 / 20,000 (195.7s)
+  Ep 150/400 | Az=+35.5°, El=26.3°, Dist=0.98m | Samples: 7,500 / 20,000 (291.0s)
+  Ep 200/400 | Az=-45.9°, El=19.3°, Dist=0.96m | Samples: 10,000 / 20,000 (385.6s)
+  Ep 250/400 | Az= +6.1°, El=46.4°, Dist=1.14m | Samples: 12,500 / 20,000 (479.9s)
+  Ep 300/400 | Az=+55.5°, El=12.5°, Dist=0.98m | Samples: 15,000 / 20,000 (574.6s)
+  Ep 350/400 | Az=-66.6°, El=45.1°, Dist=0.96m | Samples: 17,500 / 20,000 (669.2s)
+  Ep 400/400 | Az=+65.6°, El=40.5°, Dist=0.99m | Samples: 20,000 / 20,000 (764.2s)
+[OK] Replay dataset for PegInsertionSide-v1 collected: 20,000 samples in 764.3s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR PEGINSERTIONSIDE-V1
+ Action Dim: 8 | Transitions: 20,000 | Epochs: 20
+================================================================================
+  Epoch  1/20 | MSE Loss: 0.216788 | Best: 0.216788 | Time: 1.44s
+  Epoch  5/20 | MSE Loss: 0.096310 | Best: 0.096310 | Time: 1.29s
+  Epoch 10/20 | MSE Loss: 0.078953 | Best: 0.078953 | Time: 1.20s
+  Epoch 15/20 | MSE Loss: 0.072745 | Best: 0.072745 | Time: 1.20s
+  Epoch 20/20 | MSE Loss: 0.071126 | Best: 0.071126 | Time: 1.19s
+[OK] Training complete. Best model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_peginsertionside-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR PegInsertionSide-v1
+================================================================================
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 597, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 569, in main
+    res = evaluate_13_viewpoints("PegInsertionSide-v1", "pd_joint_delta_pos", action_dim=8, target_pos=[0.0, 0.0, 0.1], ckpt_path=ckpt_path)
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 344, in evaluate_13_viewpoints
+    env = gym.make(
+  File "/opt/conda/lib/python3.9/site-packages/gymnasium/envs/registration.py", line 802, in make
+    env = env_creator(**env_spec_kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 182, in make
+    env = env_spec.make(**kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 79, in make
+    return self.cls(**_kwargs)
+  File "/home/maniskill/mani_skill/envs/tasks/tabletop/peg_insertion_side.py", line 84, in __init__
+    super().__init__(
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 244, in __init__
+    physx.enable_gpu()
+  File "/opt/conda/lib/python3.9/site-packages/sapien/physx/__init__.py", line 48, in enable_gpu
+    _enable_gpu()
+RuntimeError: GPU PhysX can only be enabled once before any other code involving PhysX
+[Tue Nov 10 19:02:11 IST 2026] <<< TASK 3/4: PegInsertionSide-v1 COMPLETED!
+
+[Tue Nov 10 19:02:11 IST 2026] >>> STARTING TASK 4/4: PlugCharger-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PlugCharger-v1
+################################################################################
+
+================================================================================
+ [STAGE 1] COLLECTING 300 EPISODES FOR PlugCharger-v1 VIA DEMONSTRATION REPLAY
+ Control Mode: pd_joint_pos | Action Dim: 8 | Demos: /root/.maniskill/demos/PlugCharger-v1/motionplanning/trajectory.h5
+================================================================================
+  Ep   1/300 | Az=-17.6°, El=48.1°, Dist=1.17m | Samples: 120 / 36,000 (2.6s)
+  Ep  50/300 | Az= +0.4°, El=14.0°, Dist=1.03m | Samples: 6,000 / 36,000 (100.5s)
+  Ep 100/300 | Az=-39.8°, El=35.7°, Dist=0.98m | Samples: 12,000 / 36,000 (198.8s)
+  Ep 150/300 | Az=+35.5°, El=26.3°, Dist=0.98m | Samples: 18,000 / 36,000 (300.7s)
+  Ep 200/300 | Az=-45.9°, El=19.3°, Dist=0.96m | Samples: 24,000 / 36,000 (402.3s)
+  Ep 250/300 | Az= +6.1°, El=46.4°, Dist=1.14m | Samples: 30,000 / 36,000 (503.1s)
+  Ep 300/300 | Az=+55.5°, El=12.5°, Dist=0.98m | Samples: 36,000 / 36,000 (604.0s)
+[OK] Replay dataset for PlugCharger-v1 collected: 36,000 samples in 604.0s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR PLUGCHARGER-V1
+ Action Dim: 8 | Transitions: 36,000 | Epochs: 20
+================================================================================
+  Epoch  1/20 | MSE Loss: 0.360495 | Best: 0.360495 | Time: 2.52s
+  Epoch  5/20 | MSE Loss: 0.012841 | Best: 0.012841 | Time: 2.16s
+  Epoch 10/20 | MSE Loss: 0.005741 | Best: 0.005741 | Time: 2.31s
+  Epoch 15/20 | MSE Loss: 0.004285 | Best: 0.004285 | Time: 2.15s
+  Epoch 20/20 | MSE Loss: 0.004018 | Best: 0.004018 | Time: 2.17s
+[OK] Training complete. Best model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_plugcharger-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR PlugCharger-v1
+================================================================================
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 597, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 587, in main
+    res = evaluate_13_viewpoints("PlugCharger-v1", "pd_joint_pos", action_dim=8, target_pos=[0.0, 0.0, 0.1], ckpt_path=ckpt_path, max_steps=120)
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 344, in evaluate_13_viewpoints
+    env = gym.make(
+  File "/opt/conda/lib/python3.9/site-packages/gymnasium/envs/registration.py", line 802, in make
+    env = env_creator(**env_spec_kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 182, in make
+    env = env_spec.make(**kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 79, in make
+    return self.cls(**_kwargs)
+  File "/home/maniskill/mani_skill/envs/tasks/tabletop/plug_charger.py", line 51, in __init__
+    super().__init__(*args, robot_uids=robot_uids, **kwargs)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 244, in __init__
+    physx.enable_gpu()
+  File "/opt/conda/lib/python3.9/site-packages/sapien/physx/__init__.py", line 48, in enable_gpu
+    _enable_gpu()
+RuntimeError: GPU PhysX can only be enabled once before any other code involving PhysX
+[Tue Nov 10 19:13:02 IST 2026] <<< TASK 4/4: PlugCharger-v1 COMPLETED!
+
+[Tue Nov 10 19:13:02 IST 2026] >>> SYNTHESIZING ALL 7 TASKS INTO MASTER COMPARISON PLOT ...
+
+================================================================================
+ GENERATING MASTER 7-TASK MULTI-TASK GENERALIZATION PLOT
+================================================================================
+[OK] Master 7-Task Comparison Plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/multitask_7task_viewpoint_generalization_master.png
+[Tue Nov 10 19:13:04 IST 2026] <<< MASTER SYNTHESIS COMPLETED!
+================================================================================
+ ALL 4 EXTENDED TASKS & MASTER 7-TASK SYNTHESIS COMPLETED SUCCESSFULLY!
+================================================================================

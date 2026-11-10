@@ -31,7 +31,7 @@ def extract_robot_frame_pc(obs: dict, num_points: int = 512) -> torch.Tensor:
     5. Samples exactly num_points points per environment.
     """
     pos = obs["sensor_data"]["base_camera"]["position"].float() / 1000.0  # mm to m
-    cam2world = obs["sensor_param"]["base_camera"]["cam2world_gl"]
+    cam2world = torch.as_tensor(obs["sensor_param"]["base_camera"]["cam2world_gl"], device=pos.device, dtype=pos.dtype)
     B = pos.shape[0]
 
     pos_homo = torch.cat([pos, torch.ones_like(pos[..., :1])], dim=-1)

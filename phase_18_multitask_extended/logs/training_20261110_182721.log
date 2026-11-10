@@ -1,0 +1,43 @@
+================================================================================
+ STARTING AUTOMATED 4-TASK EXTENDED VIEWPOINT GENERALIZATION SUITE
+ Timestamp: 20261110_182721
+ Tasks: 1. StackCube-v1 | 2. PokeCube-v1 | 3. PegInsertionSide-v1 | 4. PlugCharger-v1
+================================================================================
+
+[Tue Nov 10 18:27:21 IST 2026] >>> STARTING TASK 1/4: StackCube-v1 ...
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 27, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[Tue Nov 10 18:27:22 IST 2026] <<< TASK 1/4: StackCube-v1 COMPLETED!
+
+[Tue Nov 10 18:27:22 IST 2026] >>> STARTING TASK 2/4: PokeCube-v1 ...
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 27, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[Tue Nov 10 18:27:22 IST 2026] <<< TASK 2/4: PokeCube-v1 COMPLETED!
+
+[Tue Nov 10 18:27:22 IST 2026] >>> STARTING TASK 3/4: PegInsertionSide-v1 ...
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 27, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[Tue Nov 10 18:27:22 IST 2026] <<< TASK 3/4: PegInsertionSide-v1 COMPLETED!
+
+[Tue Nov 10 18:27:22 IST 2026] >>> STARTING TASK 4/4: PlugCharger-v1 ...
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 27, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[Tue Nov 10 18:27:23 IST 2026] <<< TASK 4/4: PlugCharger-v1 COMPLETED!
+
+[Tue Nov 10 18:27:23 IST 2026] >>> SYNTHESIZING ALL 7 TASKS INTO MASTER COMPARISON PLOT ...
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 27, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+[Tue Nov 10 18:27:23 IST 2026] <<< MASTER SYNTHESIS COMPLETED!
+================================================================================
+ ALL 4 EXTENDED TASKS & MASTER 7-TASK SYNTHESIS COMPLETED SUCCESSFULLY!
+================================================================================

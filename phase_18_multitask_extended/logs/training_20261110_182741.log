@@ -1,0 +1,146 @@
+================================================================================
+ STARTING AUTOMATED 4-TASK EXTENDED VIEWPOINT GENERALIZATION SUITE
+ Timestamp: 20261110_182741
+ Tasks: 1. StackCube-v1 | 2. PokeCube-v1 | 3. PegInsertionSide-v1 | 4. PlugCharger-v1
+================================================================================
+
+[Tue Nov 10 18:27:41 IST 2026] >>> STARTING TASK 1/4: StackCube-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: StackCube-v1
+################################################################################
+[OK] Loaded PPO Teacher: state_dim=48, action_dim=7 from /root/.maniskill/demos/StackCube-v1/rl/ppo_pd_ee_delta_pose_ckpt.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,280 EPISODES FOR StackCube-v1 VIA PPO TEACHER
+ Control Mode: pd_ee_delta_pose | Action Dim: 7 | State Dim: 48
+================================================================================
+  Batch  1/40 | [Anchor View] Az= -4.7°, El=31.8°, Dist=1.09m | Samples: 1,600 / 64,000 (4.0s)
+  Batch 10/40 | [Continuous Dome] Az=-46.1°, El=14.5°, Dist=1.23m | Samples: 16,000 / 64,000 (35.5s)
+  Batch 20/40 | [Continuous Dome] Az=-32.0°, El=43.5°, Dist=1.06m | Samples: 32,000 / 64,000 (69.6s)
+  Batch 30/40 | [Continuous Dome] Az=+29.9°, El=40.9°, Dist=1.12m | Samples: 48,000 / 64,000 (103.9s)
+  Batch 40/40 | [Continuous Dome] Az=+55.5°, El=24.1°, Dist=0.98m | Samples: 64,000 / 64,000 (140.3s)
+[OK] Dataset for StackCube-v1 collected: 64,000 samples in 140.3s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR STACKCUBE-V1
+ Action Dim: 7 | Transitions: 64,000 | Epochs: 20
+================================================================================
+  Epoch  1/20 | MSE Loss: 0.393800 | Best: 0.393800 | Time: 4.31s
+  Epoch  5/20 | MSE Loss: 0.094299 | Best: 0.094299 | Time: 3.86s
+  Epoch 10/20 | MSE Loss: 0.065873 | Best: 0.065873 | Time: 3.85s
+  Epoch 15/20 | MSE Loss: 0.056189 | Best: 0.056189 | Time: 3.88s
+  Epoch 20/20 | MSE Loss: 0.053412 | Best: 0.053412 | Time: 3.89s
+[OK] Training complete. Best model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_stackcube-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR StackCube-v1
+================================================================================
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 581, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 533, in main
+    res = evaluate_13_viewpoints("StackCube-v1", "pd_ee_delta_pose", action_dim=7, target_pos=[0.0, 0.0, 0.05], ckpt_path=ckpt)
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 337, in evaluate_13_viewpoints
+    vp_name = vp_info["name"]
+KeyError: 'name'
+[Tue Nov 10 18:31:22 IST 2026] <<< TASK 1/4: StackCube-v1 COMPLETED!
+
+[Tue Nov 10 18:31:22 IST 2026] >>> STARTING TASK 2/4: PokeCube-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PokeCube-v1
+################################################################################
+[OK] Loaded PPO Teacher: state_dim=54, action_dim=8 from /root/.maniskill/demos/PokeCube-v1/rl/ppo_pd_joint_delta_pos_ckpt.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,280 EPISODES FOR PokeCube-v1 VIA PPO TEACHER
+ Control Mode: pd_joint_delta_pos | Action Dim: 8 | State Dim: 54
+================================================================================
+  Batch  1/40 | [Anchor View] Az= -4.7°, El=31.8°, Dist=1.09m | Samples: 1,600 / 64,000 (4.3s)
+  Batch 10/40 | [Continuous Dome] Az=-46.1°, El=14.5°, Dist=1.23m | Samples: 16,000 / 64,000 (34.7s)
+  Batch 20/40 | [Continuous Dome] Az=-32.0°, El=43.5°, Dist=1.06m | Samples: 32,000 / 64,000 (69.2s)
+  Batch 30/40 | [Continuous Dome] Az=+29.9°, El=40.9°, Dist=1.12m | Samples: 48,000 / 64,000 (103.6s)
+  Batch 40/40 | [Continuous Dome] Az=+55.5°, El=24.1°, Dist=0.98m | Samples: 64,000 / 64,000 (137.9s)
+[OK] Dataset for PokeCube-v1 collected: 64,000 samples in 137.9s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR POKECUBE-V1
+ Action Dim: 8 | Transitions: 64,000 | Epochs: 20
+================================================================================
+  Epoch  1/20 | MSE Loss: 0.229719 | Best: 0.229719 | Time: 3.89s
+  Epoch  5/20 | MSE Loss: 0.023487 | Best: 0.023487 | Time: 3.96s
+  Epoch 10/20 | MSE Loss: 0.011293 | Best: 0.011293 | Time: 3.85s
+  Epoch 15/20 | MSE Loss: 0.009075 | Best: 0.009075 | Time: 4.02s
+  Epoch 20/20 | MSE Loss: 0.008466 | Best: 0.008466 | Time: 3.91s
+[OK] Training complete. Best model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt
+
+================================================================================
+ [STAGE 3] EVALUATING 13 CONTINUOUS VIEWPOINTS FOR PokeCube-v1
+================================================================================
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 581, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 543, in main
+    res = evaluate_13_viewpoints("PokeCube-v1", "pd_joint_delta_pos", action_dim=8, target_pos=[0.0, 0.0, 0.05], ckpt_path=ckpt)
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 337, in evaluate_13_viewpoints
+    vp_name = vp_info["name"]
+KeyError: 'name'
+[Tue Nov 10 18:35:02 IST 2026] <<< TASK 2/4: PokeCube-v1 COMPLETED!
+
+[Tue Nov 10 18:35:02 IST 2026] >>> STARTING TASK 3/4: PegInsertionSide-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PegInsertionSide-v1
+################################################################################
+
+================================================================================
+ [STAGE 1] COLLECTING 400 EPISODES FOR PegInsertionSide-v1 VIA DEMONSTRATION REPLAY
+ Control Mode: pd_joint_delta_pos | Action Dim: 8 | Demos: /root/.maniskill/demos/PegInsertionSide-v1/rl/trajectory.h5
+================================================================================
+[33;1m2026-11-10 18:35:03,991 - mani_skill  - WARNING - panda is not in the task's list of supported robots. Code may not run as intended[0m
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 581, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 550, in main
+    pts, proprio, acts = collect_dataset_from_demos(
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 243, in collect_dataset_from_demos
+    pts = extract_robot_frame_pc(obs, num_points=512)[0]
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/pointnet_models.py", line 38, in extract_robot_frame_pc
+    xyz_world = (pos_homo.reshape(B, -1, 4) @ cam2world.transpose(1, 2))[..., :3]
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat2 in method wrapper_CUDA_bmm)
+[Tue Nov 10 18:35:06 IST 2026] <<< TASK 3/4: PegInsertionSide-v1 COMPLETED!
+
+[Tue Nov 10 18:35:06 IST 2026] >>> STARTING TASK 4/4: PlugCharger-v1 ...
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PlugCharger-v1
+################################################################################
+
+================================================================================
+ [STAGE 1] COLLECTING 300 EPISODES FOR PlugCharger-v1 VIA DEMONSTRATION REPLAY
+ Control Mode: pd_joint_pos | Action Dim: 8 | Demos: /root/.maniskill/demos/PlugCharger-v1/motionplanning/trajectory.h5
+================================================================================
+[33;1m2026-11-10 18:35:08,307 - mani_skill  - WARNING - panda is not in the task's list of supported robots. Code may not run as intended[0m
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 581, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 564, in main
+    pts, proprio, acts = collect_dataset_from_demos(
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/train_4tasks_suite.py", line 243, in collect_dataset_from_demos
+    pts = extract_robot_frame_pc(obs, num_points=512)[0]
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/pointnet_models.py", line 38, in extract_robot_frame_pc
+    xyz_world = (pos_homo.reshape(B, -1, 4) @ cam2world.transpose(1, 2))[..., :3]
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat2 in method wrapper_CUDA_bmm)
+[Tue Nov 10 18:35:10 IST 2026] <<< TASK 4/4: PlugCharger-v1 COMPLETED!
+
+[Tue Nov 10 18:35:10 IST 2026] >>> SYNTHESIZING ALL 7 TASKS INTO MASTER COMPARISON PLOT ...
+
+================================================================================
+ GENERATING MASTER 7-TASK MULTI-TASK GENERALIZATION PLOT
+================================================================================
+[OK] Master 7-Task Comparison Plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/plots/multitask_7task_viewpoint_generalization_master.png
+[Tue Nov 10 18:35:12 IST 2026] <<< MASTER SYNTHESIS COMPLETED!
+================================================================================
+ ALL 4 EXTENDED TASKS & MASTER 7-TASK SYNTHESIS COMPLETED SUCCESSFULLY!
+================================================================================

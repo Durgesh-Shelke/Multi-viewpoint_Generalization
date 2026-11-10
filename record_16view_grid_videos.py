@@ -106,14 +106,14 @@ def overlay_tile_hud(img, vp_info, step, total_steps, is_success):
 
 def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, action_dim: int,
                              ckpt_path: str, seed: int = 100, num_steps: int = 50,
-                             target_pos=[-0.1, 0.0, 0.1]):
+                             target_pos=[-0.1, 0.0, 0.1], proprio_dim: int = 29):
     print("\n" + "=" * 80)
     print(f" RECORDING 16-VIEWPOINT HIGH-QUALITY GRID VIDEO FOR: {task_name.upper()}")
-    print(f" Env: {env_id} | Control Mode: {control_mode} | Action Dim: {action_dim} | Seed: {seed}")
+    print(f" Env: {env_id} | Control Mode: {control_mode} | Action Dim: {action_dim} | Proprio Dim: {proprio_dim} | Seed: {seed}")
     print("=" * 80)
 
     # 1. Load Policy
-    policy = PointNetAgent(action_dim=action_dim, proprio_dim=29, point_dim=256).to(DEVICE)
+    policy = PointNetAgent(action_dim=action_dim, proprio_dim=proprio_dim, point_dim=256).to(DEVICE)
     ckpt = torch.load(ckpt_path, map_location=DEVICE)
     st = ckpt["model_state"] if "model_state" in ckpt else ckpt
     policy.load_state_dict(st)
@@ -131,7 +131,8 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
         obs_mode="pointcloud+state",
         control_mode=control_mode,
         num_envs=1,
-        sensor_configs=sensor_cfg_ref
+        sensor_configs=sensor_cfg_ref,
+        shader_dir="minimal",
     )
     vec_env_ref = ManiSkillVectorEnv(env_ref, 1, ignore_terminations=True, record_metrics=True)
     obs_ref, _ = vec_env_ref.reset(seed=seed)
@@ -141,7 +142,7 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
     succ_latch = False
 
     for step in range(num_steps):
-        proprio = obs_ref["state"][:, :29].to(DEVICE)
+        proprio = obs_ref["state"][:, :proprio_dim].to(DEVICE)
         with torch.no_grad():
             pts = extract_robot_frame_pc(obs_ref, num_points=512)
             act = policy.get_action(pts, proprio, deterministic=True)
@@ -173,7 +174,8 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
             obs_mode="rgbd",
             control_mode=control_mode,
             num_envs=1,
-            sensor_configs=sensor_cfg
+            sensor_configs=sensor_cfg,
+            shader_dir="minimal",
         )
         vec_env_cam = ManiSkillVectorEnv(env_cam, 1, ignore_terminations=True)
         obs, _ = vec_env_cam.reset(seed=seed)
@@ -241,7 +243,9 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
 
     # Copy to root repo and artifacts
     os.system(f"cp {final_video_path} {REPO_DIR}/{task_name.lower()}_16view_grid.mp4")
-    os.system(f"cp {final_video_path} /root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f/{task_name.lower()}_16view_grid.mp4")
+    curr_artifact_dir = "/root/.gemini/antigravity-cli/brain/4509f9ab-8307-466a-8346-a6d6f96fae85"
+    if os.path.exists(curr_artifact_dir):
+        os.system(f"cp {final_video_path} {curr_artifact_dir}/{task_name.lower()}_16view_grid.mp4")
 
     size_mb = os.path.getsize(final_video_path) / (1024 * 1024)
     print(f"[SUCCESS] 16-Viewpoint Grid Video Generated!")
@@ -252,37 +256,60 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
 
 
 def main():
-    tasks = [
-        {
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--task", type=str, default="all", choices=["all", "PickCube", "PushCube", "PullCube", "PokeCube"])
+    args = parser.parse_args()
+
+    tasks_dict = {
+        "PushCube": {
+            "name": "PushCube",
+            "env_id": "PushCube-v1",
+            "control_mode": "pd_ee_delta_pose",
+            "action_dim": 7,
+            "proprio_dim": 28,
+            "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/checkpoints/pointnet_pushcube_consistent_best.pt",
+            "seed": 42,
+            "target_pos": [-0.1, 0.0, 0.1]
+        },
+        "PullCube": {
+            "name": "PullCube",
+            "env_id": "PullCube-v1",
+            "control_mode": "pd_ee_delta_pose",
+            "action_dim": 7,
+            "proprio_dim": 28,
+            "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/checkpoints/pointnet_pullcube_consistent_best.pt",
+            "seed": 42,
+            "target_pos": [-0.1, 0.0, 0.1]
+        },
+        "PickCube": {
             "name": "PickCube",
             "env_id": "PickCube-v1",
             "control_mode": "pd_ee_delta_pos",
             "action_dim": 4,
+            "proprio_dim": 29,
             "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/student/pointnet_student_best.pt",
             "seed": 2028,
             "target_pos": [-0.1, 0.0, 0.1]
         },
-        {
-            "name": "PushCube",
-            "env_id": "PushCube-v1",
-            "control_mode": "pd_ee_delta_pos",
-            "action_dim": 4,
-            "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/checkpoints/pointnet_pushcube_best.pt",
-            "seed": 101,
-            "target_pos": [-0.1, 0.0, 0.1]
-        },
-        {
+        "PokeCube": {
             "name": "PokeCube",
             "env_id": "PokeCube-v1",
             "control_mode": "pd_joint_delta_pos",
             "action_dim": 8,
+            "proprio_dim": 29,
             "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt",
             "seed": 101,
             "target_pos": [0.0, 0.0, 0.05]
         }
-    ]
+    }
 
-    for t in tasks:
+    if args.task == "all":
+        tasks_to_run = list(tasks_dict.values())
+    else:
+        tasks_to_run = [tasks_dict[args.task]]
+
+    for t in tasks_to_run:
         record_16view_grid_video(
             task_name=t["name"],
             env_id=t["env_id"],
@@ -291,7 +318,8 @@ def main():
             ckpt_path=t["ckpt"],
             seed=t["seed"],
             num_steps=50,
-            target_pos=t["target_pos"]
+            target_pos=t["target_pos"],
+            proprio_dim=t["proprio_dim"]
         )
 
 

@@ -31,3 +31,6 @@ Thumbs.db
 *.swo
 *~
 .pause
+
+# Root duplicate videos
+/*_16view_grid.mp4

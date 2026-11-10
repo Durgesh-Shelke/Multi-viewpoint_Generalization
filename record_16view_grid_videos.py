@@ -223,11 +223,13 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
     out_writer.release()
     print(f"[OK] Raw video written: {raw_video_path}")
 
-    # 4. Convert to H.264 using bundled ffmpeg for universal browser/slide compatibility
-    print(f"[STAGE 3] Encoding universal H.264 MP4 with ffmpeg...")
+    # 4. Convert to H.264 using bundled ffmpeg for universal browser/slide compatibility (5x slowed down for human viewing)
+    print(f"[STAGE 3] Encoding universal H.264 MP4 with ffmpeg (5x slowed down)...")
     cmd = [
         FFMPEG_BIN, "-y",
         "-i", raw_video_path,
+        "-filter:v", "setpts=5.0*PTS",
+        "-r", "25",
         "-c:v", "libx264",
         "-preset", "slow",
         "-crf", "18",

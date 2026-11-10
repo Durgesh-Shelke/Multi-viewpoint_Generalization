@@ -45,11 +45,9 @@ These experiments directly strengthen your BTP defense by addressing the exact t
 ---
 
 ## 4. BTP Submission & Presentation Prep Checklist (For Tomorrow)
-- [ ] `[btp]` Draft Slide-by-Slide BTP Presentation Deck (12–14 slides with visual placement & timing).
-- [ ] `[btp]` Compile Speaker Speaking Script (word-for-word narrative connecting Problem $\to$ 2D Failure $\to$ 3D Solution $\to$ Results $\to$ Future Work).
-- [ ] `[btp]` Draft Formal BTP Thesis Chapter / LaTeX-ready Report Section.
-- [ ] `[btp]` Prepare Examiner Viva / Defense Q&A Cheat Sheet (Top 10 hard questions and mathematically grounded answers).
-- [ ] `[btp]` Package presentation media assets: 5 MP4 rollout videos + high-res PNG plots mapped to each slide.
+- [x] `[btp]` Draft Slide-by-Slide BTP Presentation Deck (12–14 slides with visual placement & timing) → 2026-11-10: Created [`reports/btp_presentation_deck.md`](file:///home/maniskill/Multi-viewpoint_Generalization/reports/btp_presentation_deck.md) with word-for-word 12-minute speaking script.
+- [x] `[btp]` Prepare Examiner Viva / Defense Q&A Cheat Sheet → 2026-11-10: Created [`reports/btp_defense_viva_cheatsheet.md`](file:///home/maniskill/Multi-viewpoint_Generalization/reports/btp_defense_viva_cheatsheet.md) addressing top 10 difficult committee questions with mathematical and empirical justifications.
+- [x] `[btp]` Package presentation media assets → 2026-11-10: 5 MP4 continuous rollout videos + publication-grade PNG plots (`multitask_viewpoint_generalization_master.png`, `calibration_noise_robustness_curve.png`, `realsense_depth_noise_ablation.png`, `extreme_ood_viewpoints_benchmark.png`) mapped to slide decks.
 
 ---
 

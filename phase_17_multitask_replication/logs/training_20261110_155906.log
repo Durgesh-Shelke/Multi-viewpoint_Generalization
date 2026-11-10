@@ -1,0 +1,257 @@
+################################################################################
+ STARTING AUTOMATED MULTI-TASK VIEWPOINT TRAINING PIPELINE
+ Tasks to Train in Order: 1. PushCube-v1 | 2. PullCube-v1
+ Comparison Baseline: PickCube-v1 (Phase 13 Breakthrough)
+################################################################################
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PushCube-v1
+################################################################################
+[OK] Teacher oracle loaded from /root/.maniskill/demos/PushCube-v1/rl/ppo_pd_ee_delta_pos_ckpt.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,280 EPISODES FOR PushCube-v1
+ Continuous Random Viewpoint Sampling across Frontal Hemisphere Dome
+================================================================================
+[33;1m2026-11-10 15:59:08,855 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Batch  1/40 | [Anchor View] Az= -4.7°, El=31.8°, Dist=1.09m | Samples: 1,600 / 64,000 (4.3s)
+[33;1m2026-11-10 15:59:13,154 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:16,817 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:20,461 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:24,135 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:27,700 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:31,296 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:34,914 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:38,715 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:42,381 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Batch 10/40 | [Continuous Dome] Az=-46.1°, El=14.5°, Dist=1.23m | Samples: 16,000 / 64,000 (37.0s)
+[33;1m2026-11-10 15:59:45,893 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:49,456 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:53,114 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 15:59:56,709 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:00,331 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:04,064 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:07,858 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:11,472 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:14,943 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:18,573 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Batch 20/40 | [Continuous Dome] Az=-32.0°, El=43.5°, Dist=1.06m | Samples: 32,000 / 64,000 (73.5s)
+[33;1m2026-11-10 16:00:22,355 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:26,083 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:29,668 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:33,305 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:36,847 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:40,593 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:44,382 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:48,002 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:51,705 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:00:55,388 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Batch 30/40 | [Continuous Dome] Az=+29.9°, El=40.9°, Dist=1.12m | Samples: 48,000 / 64,000 (110.3s)
+[33;1m2026-11-10 16:00:59,184 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:02,809 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:06,635 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:10,444 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:14,163 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:17,911 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:21,901 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:25,970 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:29,745 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:01:33,565 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  Batch 40/40 | [Continuous Dome] Az=+55.5°, El=24.1°, Dist=0.98m | Samples: 64,000 / 64,000 (148.3s)
+[OK] Point cloud dataset for PushCube-v1 collected: 64,000 samples in 148.3s
+
+================================================================================
+ [STAGE 2] TRAINING 3D PointNet POLICY FOR PUSHCUBE
+ Transitions: 64,000 | Epochs: 20 | Batch Size: 256
+================================================================================
+  Epoch  1/20 | Train MSE Loss: 0.245125 | Best: 0.245125 | (4.3s)
+  Epoch  5/20 | Train MSE Loss: 0.047045 | Best: 0.047045 | (4.1s)
+  Epoch 10/20 | Train MSE Loss: 0.030942 | Best: 0.030942 | (3.9s)
+  Epoch 15/20 | Train MSE Loss: 0.026372 | Best: 0.026372 | (4.2s)
+  Epoch 20/20 | Train MSE Loss: 0.024973 | Best: 0.024973 | (3.9s)
+[OK] Training complete. Best checkpoint saved to /home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/checkpoints/pointnet_pushcube_best.pt
+
+================================================================================
+ [STAGE 3] BENCHMARKING PushCube-v1 ACROSS 13 STANDARDIZED VIEWPOINTS
+ 4 Anchor Cameras + 9 Interpolated Continuous In-Between Angles
+================================================================================
+[33;1m2026-11-10 16:02:58,506 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]     VP 17 (Front-Mid Anchor)         (Az= -4.7°, El=31.8°): Success =  78.0%
+[33;1m2026-11-10 16:03:02,548 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]     VP 00 (Front-Low Anchor)         (Az= +0.0°, El=12.3°): Success =  74.0%
+[33;1m2026-11-10 16:03:06,737 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]     VP 20 (Diag-Left Anchor)         (Az=-37.2°, El=35.0°): Success =  74.0%
+[33;1m2026-11-10 16:03:10,949 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [ANCHOR]     VP 19 (Diag-Right Anchor)        (Az=+47.8°, El=33.7°): Success =  74.0%
+[33;1m2026-11-10 16:03:15,150 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 10 (In-Between El: VP00-VP17) (Az= +7.7°, El=24.0°): Success =  76.0%
+[33;1m2026-11-10 16:03:19,376 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 13 (In-Between Az: VP17-VP20) (Az=-24.8°, El=26.9°): Success =  68.0%
+[33;1m2026-11-10 16:03:23,604 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 14 (In-Between Az: VP17-VP19) (Az=+27.7°, El=28.7°): Success =  72.0%
+[33;1m2026-11-10 16:03:27,817 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 04 (In-Between Low-Right)     (Az=+20.1°, El=16.6°): Success =  84.0%
+[33;1m2026-11-10 16:03:32,123 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 07 (In-Between Low-Left)      (Az=-12.4°, El=19.4°): Success =  86.0%
+[33;1m2026-11-10 16:03:36,497 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 21 (In-Between Mid-Right)     (Az=+15.3°, El=36.9°): Success =  70.0%
+[33;1m2026-11-10 16:03:40,723 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 24 (In-Between High-Mid)      (Az=-17.1°, El=40.3°): Success =  72.0%
+[33;1m2026-11-10 16:03:44,928 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 12 (Flank In-Between R)       (Az=+60.2°, El=25.8°): Success =  82.0%
+[33;1m2026-11-10 16:03:49,159 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+  [IN-BETWEEN] VP 15 (Flank In-Between L)       (Az=-57.3°, El=29.9°): Success =  68.0%
+--------------------------------------------------------------------------------
+ Summary for PushCube-v1:
+  Anchor Views Success Rate:        75.0%
+  In-Between Views Success Rate:    75.3%
+  Overall 13-View Success Rate:     75.2%
+  Generalization Gap (Drop):        -0.3%
+ Benchmark completed in 54.9s
+================================================================================
+[OK] Benchmark plot saved to /home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/plots/pushcube-v1_viewpoint_benchmark.png
+
+################################################################################
+ EXECUTING PIPELINE FOR TASK: PullCube-v1
+################################################################################
+[OK] Teacher oracle loaded from /root/.maniskill/demos/PullCube-v1/rl/ppo_pd_ee_delta_pos_ckpt.pt
+
+================================================================================
+ [STAGE 1] COLLECTING 1,280 EPISODES FOR PullCube-v1
+ Continuous Random Viewpoint Sampling across Frontal Hemisphere Dome
+================================================================================
+[33;1m2026-11-10 16:03:53,751 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:03:54,882 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+  Batch  1/40 | [Anchor View] Az= -4.7°, El=31.8°, Dist=1.09m | Samples: 1,600 / 64,000 (4.0s)
+[33;1m2026-11-10 16:03:57,705 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:03:58,880 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:01,722 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:02,790 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:05,619 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:06,740 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:09,625 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:10,778 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:13,598 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:14,783 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:17,544 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:18,708 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:21,474 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:22,574 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:25,395 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:26,559 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:29,444 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:30,516 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+  Batch 10/40 | [Continuous Dome] Az=-46.1°, El=14.5°, Dist=1.23m | Samples: 16,000 / 64,000 (39.7s)
+[33;1m2026-11-10 16:04:33,410 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:34,503 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:37,248 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:38,388 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:41,145 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:42,253 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:45,079 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:46,152 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:49,021 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:50,099 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:52,924 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:54,004 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:04:56,771 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:04:57,897 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:00,665 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:01,778 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:04,600 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:05,730 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:08,641 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:09,761 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+  Batch 20/40 | [Continuous Dome] Az=-32.0°, El=43.5°, Dist=1.06m | Samples: 32,000 / 64,000 (78.9s)
+[33;1m2026-11-10 16:05:12,607 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:13,636 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:16,366 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:17,482 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:20,243 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:21,357 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:24,197 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:25,313 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:28,198 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:29,386 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:32,161 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:33,230 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:36,092 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:37,166 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:39,965 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:41,046 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:43,933 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:45,019 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:47,814 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:48,889 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+  Batch 30/40 | [Continuous Dome] Az=+29.9°, El=40.9°, Dist=1.12m | Samples: 48,000 / 64,000 (117.9s)
+[33;1m2026-11-10 16:05:51,667 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:52,791 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:55,675 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:05:56,787 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:05:59,850 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:06:00,913 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:06:03,657 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:06:04,770 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:06:07,593 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:06:08,776 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:06:11,586 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:06:12,767 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+[33;1m2026-11-10 16:06:15,499 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
+[33;1m2026-11-10 16:06:16,642 - mani_skill  - WARNING - No initial pose set for actor builder of goal_region, setting to default pose q=[1,0,0,0], p=[0,0,0]. Not setting reasonable initial poses may slow down simulation, see https://github.com/mani-skill/ManiSkill/issues/421.[0m
+Traceback (most recent call last):
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1150, in _sapien_gpu_setup_sensors
+    camera_group = self.render_system_group.create_camera_group(
+RuntimeError: vk::Device::createFenceUnique: ErrorOutOfHostMemory
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/train_multitask_viewpoint_models.py", line 525, in <module>
+    main()
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/train_multitask_viewpoint_models.py", line 496, in main
+    buf_pts, buf_proprio, buf_actions = collect_pointcloud_dataset(
+  File "/home/maniskill/Multi-viewpoint_Generalization/phase_17_multitask_replication/train_multitask_viewpoint_models.py", line 135, in collect_pointcloud_dataset
+    env = gym.make(
+  File "/opt/conda/lib/python3.9/site-packages/gymnasium/envs/registration.py", line 802, in make
+    env = env_creator(**env_spec_kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 182, in make
+    env = env_spec.make(**kwargs)
+  File "/home/maniskill/mani_skill/utils/registration.py", line 79, in make
+    return self.cls(**_kwargs)
+  File "/home/maniskill/mani_skill/envs/tasks/tabletop/pull_cube.py", line 42, in __init__
+    super().__init__(*args, robot_uids=robot_uids, **kwargs)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 325, in __init__
+    obs, _ = self.reset(seed=[2022 + i for i in range(self.num_envs)], options=dict(reconfigure=True))
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 976, in reset
+    obs = self.get_obs(info)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 533, in get_obs
+    obs = self._get_obs_with_sensor_data(info)
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 634, in _get_obs_with_sensor_data
+    sensor_data=self._get_obs_sensor_data(apply_texture_transforms),
+  File "/home/maniskill/mani_skill/envs/sapien_env.py", line 604, in _get_obs_sensor_data
+    self.scene.update_render(update_sensors=True, update_human_render_cameras=False)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 408, in update_render
+    self._sapien_update_render(
+  File "/home/maniskill/mani_skill/envs/scene.py", line 423, in _sapien_update_render
+    self._gpu_setup_sensors(self.sensors)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1144, in _gpu_setup_sensors
+    self._sapien_gpu_setup_sensors(sensors)
+  File "/home/maniskill/mani_skill/envs/scene.py", line 1157, in _sapien_gpu_setup_sensors
+    raise RuntimeError(
+RuntimeError: Unable to create GPU parallelized camera group. If the error is about being unable to create a buffer, you are likely using too many Cameras. Either use less cameras (via less parallel envs) and/or reduce the size of the cameras. Another common cause is using a memory intensive shader, you can try using the 'minimal' shader which optimizes for GPU memory but disables some advanced functionalities. Another option is to avoid rendering with the rgb_array mode / using the human render cameras as they can be more memory intensive as they typically have higher resolutions for the purposes of visualization.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/weakref.py", line 667, in _exitfunc
+    f()
+  File "/opt/conda/lib/python3.9/weakref.py", line 591, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+  File "/opt/conda/lib/python3.9/tempfile.py", line 829, in _cleanup
+    cls._rmtree(name)
+  File "/opt/conda/lib/python3.9/tempfile.py", line 825, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/opt/conda/lib/python3.9/shutil.py", line 734, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/opt/conda/lib/python3.9/shutil.py", line 642, in _rmtree_safe_fd
+    onerror(os.scandir, path, sys.exc_info())
+  File "/opt/conda/lib/python3.9/shutil.py", line 638, in _rmtree_safe_fd
+    with os.scandir(topfd) as scandir_it:
+OSError: [Errno 24] Too many open files: '/tmp/tmpot1nysyq'

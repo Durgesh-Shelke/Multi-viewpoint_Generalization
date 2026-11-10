@@ -51,22 +51,15 @@ These experiments directly strengthen your BTP defense by addressing the exact t
 
 ---
 
-## 5. Multi-Task Continuous Viewpoint Generalization Expansion
+## 5. Multi-Task Continuous Viewpoint Generalization Expansion (Phase 18)
 
-Goal: Train and benchmark generalized 3D PointNet models across the full suite of manipulation tasks (replicating the success achieved on `PickCube-v1` [90.6% SR], `PushCube-v1` [75.2% SR], and `PullCube-v1` [46.9% SR]):
+Goal: Train and benchmark generalized 3D PointNet models across the full suite of manipulation tasks (replicating the success achieved on `PickCube-v1` [90.6% SR], `PushCube-v1` [75.2% SR], `PullCube-v1` [46.9% SR], and `PokeCube-v1` [71.2% SR]):
 
-- [ ] `[exp]` **Task 1: `StackCube-v1` (Dual-Object Relational Stacking)**
-  - Train generalized PointNet model for multi-object coordination across continuous spherical dome.
-  - Distill from verified 100% PPO teacher (`ppo_pd_ee_delta_pose_ckpt.pt`) using 7-dim action space (`pd_ee_delta_pose`).
-  - Benchmark across all 13 camera viewpoints (Anchor SR, In-Between SR, Generalization Gap).
-- [ ] `[exp]` **Task 2: `PokeCube-v1` (Planar Contact & Impulsive Interaction)**
-  - Utilize 1,000 downloaded demonstrations / PPO teacher (`/root/.maniskill/demos/PokeCube-v1/rl/`).
-  - Train PointNet model across continuous camera dome and evaluate 13-viewpoint generalization.
-- [ ] `[exp]` **Task 3: `PegInsertionSide-v1` (Sub-Millimeter High-Tolerance Insertion)**
-  - Utilize 1,000 downloaded demonstrations (`trajectory.h5` with verified 98.0% success rate).
-  - Train PointNet policy in joint action space (`pd_joint_delta_pos`) to demonstrate tight geometric tolerance invariance.
-- [ ] `[exp]` **Task 4: `PlugCharger-v1` (Precision Peg-in-Hole Assembly)**
-  - Train PointNet policy on the 1,000 motion planning demonstrations (`/root/.maniskill/demos/PlugCharger-v1/motionplanning/`).
+- [x] `[exp]` **Task 1: `PokeCube-v1` (Planar Contact & Impulsive Interaction)** → 2026-11-10: Trained with 64K continuous dome samples; **71.2% Overall SR, 73.8% Anchor, 70.0% In-Between, 3.8% gap** (`pokecube-v1_viewpoint_benchmark.png`).
+- [x] `[exp]` **Task 2: `StackCube-v1` (Dual-Object Relational Stacking)** → 2026-11-10: Trained but 0% SR on evaluation — task is too complex for 20-epoch BC; needs RL fine-tuning or more demos.
+- [x] `[exp]` **Task 3: `PegInsertionSide-v1` (Sub-Millimeter High-Tolerance Insertion)** → 2026-11-10: Trained with 20K samples from motion planning demos; 0% SR on evaluation — sub-mm precision demands more data/epochs.
+- [x] `[exp]` **Task 4: `PlugCharger-v1` (Precision Peg-in-Hole Assembly)** → 2026-11-10: Trained with 36K samples from motion planning demos; 0% SR on evaluation — same precision limitation.
+- [x] `[btp]` **16-Viewpoint Grid Videos** → 2026-11-10: Generated Full HD (1920×1080) 4×4 split-screen H.264 videos for PickCube, PushCube, PokeCube showing simultaneous viewpoint invariance across 16 diverse camera angles (`videos/`).
 - [ ] `[exp]` **Task 5: `OpenCabinetDrawer-v1` (Articulated Prismatic Kinematics)**
   - Train generalized PointNet model for articulated sliding drawer interaction across arbitrary viewpoints.
 - [ ] `[exp]` **Task 6: `OpenCabinetDoor-v1` (Articulated Revolute Kinematics)**
@@ -75,6 +68,7 @@ Goal: Train and benchmark generalized 3D PointNet models across the full suite o
   - Train generalized PointNet model for lifting and placing bucket objects with physical mass constraints.
 - [ ] `[exp]` **Task 8: `ManiSkill-HAB` (Home Assistant Benchmark / Habitat Long-Horizon Mobile Manipulation)**
   - Extend table-frame PointNet to multi-room mobile base navigation and manipulation in Habitat-Matterport 3D environments.
+- [ ] `[exp]` **Generalized Multi-Task Model** — Train a single PointNet model on all 8 tasks simultaneously (universal multi-task viewpoint-invariant policy).
 
 ---
 

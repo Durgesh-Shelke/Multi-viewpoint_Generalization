@@ -199,7 +199,8 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
     - `PullCube-v1`: **16/16 Succeeded (100.0%)** (3.11 MB)
     - `PickCube-v1`: **16/16 Succeeded (100.0%)** (2.53 MB)
     - `PokeCube-v1`: **16/16 Succeeded (100.0%)** (3.20 MB)
-  - Perfect **64 out of 64 independent closed-loop test rollouts succeeded** across all tasks and viewpoints. Videos saved in `videos/`.
+    - `LiftPegUpright-v1`: **16/16 Succeeded (100.0%)** (3.59 MB)
+  - Perfect **80 out of 80 independent closed-loop test rollouts succeeded** across all 5 tasks and 16 viewpoints. Videos saved in `videos/`.
 
 - **2026-11-10 (Late Night): Phase 18 Extended Manipulation Suite (`LiftPegUpright-v1` $\to$ 95.8% SR):**
   - Scaled `LiftPegUpright-v1` (dexterous reorientation & upright stabilization) under the consistent 96K transition / 25 epoch regime using verified 100% PPO teacher (`pd_ee_delta_pose`, state dim: 32, proprio dim: 25).

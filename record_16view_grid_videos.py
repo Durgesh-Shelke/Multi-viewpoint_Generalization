@@ -55,7 +55,7 @@ VIEWPOINTS_16 = [
     # Row 3: High Elevation & Overhead
     {"id": 8, "name": "High-Mid", "type": "Novel", "az": -12.0, "el": 42.0, "dist": 1.15},
     {"id": 9, "name": "High-Right", "type": "Novel", "az": +32.0, "el": 42.0, "dist": 1.15},
-    {"id": 10, "name": "Overhead-Steep", "type": "Novel", "az": 0.0, "el": 48.0, "dist": 1.10},
+    {"id": 10, "name": "High-Overhead", "type": "Novel", "az": 0.0, "el": 40.0, "dist": 1.10},
     {"id": 11, "name": "High-Diag-L", "type": "Novel", "az": -45.0, "el": 45.0, "dist": 1.18},
     # Row 4: Extreme Flanks & Zoom Variations
     {"id": 12, "name": "Flank-Left 60°", "type": "OOD", "az": -60.0, "el": 26.0, "dist": 1.10},
@@ -258,7 +258,7 @@ def record_16view_grid_video(task_name: str, env_id: str, control_mode: str, act
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--task", type=str, default="all", choices=["all", "PickCube", "PushCube", "PullCube", "PokeCube"])
+    parser.add_argument("--task", type=str, default="all", choices=["all", "PickCube", "PushCube", "PullCube", "PokeCube", "LiftPegUpright"])
     args = parser.parse_args()
 
     tasks_dict = {
@@ -299,6 +299,16 @@ def main():
             "action_dim": 8,
             "proprio_dim": 29,
             "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt",
+            "seed": 7,
+            "target_pos": [0.0, 0.0, 0.05]
+        },
+        "LiftPegUpright": {
+            "name": "LiftPegUpright",
+            "env_id": "LiftPegUpright-v1",
+            "control_mode": "pd_ee_delta_pose",
+            "action_dim": 7,
+            "proprio_dim": 25,
+            "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_liftpegupright-v1_best.pt",
             "seed": 7,
             "target_pos": [0.0, 0.0, 0.05]
         }

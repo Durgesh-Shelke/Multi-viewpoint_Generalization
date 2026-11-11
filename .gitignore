@@ -38,3 +38,11 @@ Thumbs.db
 
 # Run logs
 *.log
+
+# LaTeX build files
+*.aux
+*.bak
+*.out
+*.toc
+*.synctex.gz
+

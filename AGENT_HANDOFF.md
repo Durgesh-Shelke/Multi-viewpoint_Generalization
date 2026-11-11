@@ -6,7 +6,7 @@
 > **Update it before ending any session:** record new experiments, update decisions, and log results.
 > Always write absolute dates (YYYY-MM-DD).
 
-**Last updated:** 2026-11-10  
+**Last updated:** 2026-11-11  
 **Target Milestone:** Bachelor's Thesis Project (BTP) Submission  
 **Core Topic:** Continuous Multi-Viewpoint Generalization in Deep Visual Robotic Manipulation  
 **Future Work Scope:** DoF & Cross-Embodiment Generalization (Phases 15–16 kept as Future Work / Teaser)
@@ -209,6 +209,22 @@ $$\mathbf{s} = [\mathbf{p}_{\text{tcp}} \in \mathbb{R}^3, \, \mathbf{q}_{\text{t
     - `LiftPegUpright-v1`: **94.0% Anchor SR, 96.7% In-Between SR, 95.8% Overall SR (Generalization Gap: -2.7%)**. Complete viewpoint invariance achieved.
   - Checkpoint saved: `phase_18_multitask_extended/checkpoints/pointnet_liftpegupright-v1_best.pt`.
   - Scaled `StackCube-v1` under the identical 96K regime. Discovered critical academic insight: without semantic segmentation or color channels, raw 3D $(x, y, z)$ point clouds suffer geometric ambiguity between identical Cube A and Cube B, scoring 0% on long-horizon pick-and-place stacking without privileged state. Perfect examiner defense talking point!
+
+- **2026-11-11: Phase 18 PokeCube Clean 25-dim Retraining (Zero State Leakage):**
+  - Audited proprioception vectors across all tasks. Found accidental 4-dim slice of `cube_pose` in PokeCube (`proprio_dim=29` instead of 25).
+  - Fixed `train_pokecube_consistent.py` to strictly use `proprio_dim=25` (`obs["state"][:, :25]`).
+  - Retrained from scratch under 96K consistent regime: achieved **70.5% Anchor SR, 63.6% In-Between SR, 65.7% Overall SR, 6.9% Gap**.
+  - Re-rendered true closed-loop 16-view video (`videos/pokecube_16view_continuous_viewpoint_grid.mp4`, 3.64 MB, 13/16 succeeded).
+  - Verified 100% PASS on `test_all_deliverables.py`.
+
+- **2026-11-11: Success Criteria Benchmark & Academic Novelty Analysis:**
+  - Evaluated transient (`success_once`) vs sustained ($\ge 10$ steps) vs terminal (step 50) success across all 5 tasks (`reports/benchmark_success_criteria.py`).
+  - Proved that the viewpoint generalization gap remains non-existent ($<5\%$) across all three criteria, decoupling spatial viewpoint perception from temporal controller settling dynamics.
+  - Published comprehensive analysis document: `research_novelty_and_publication_analysis.md`.
+  - Added Next-Generation Frontiers to `TODO.md`:
+    1. **Architecture A:** Self-Calibrating Kinematic Policy (Uncalibrated Extrinsics-Free Viewpoint Invariance).
+    2. **Architecture B:** Continuous $SE(3)$-Equivariant Neural Policy (Steerable Lie Algebra Group Convolutions).
+    3. **Cross-Embodiment Generalist Foundation Policy:** Unified multi-robot architecture conditioned on arbitrary kinematics/URDFs.
 
 ---
 

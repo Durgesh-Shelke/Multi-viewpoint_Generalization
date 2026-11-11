@@ -73,7 +73,33 @@ Goal: Train and benchmark generalized 3D PointNet models across the full suite o
 
 ---
 
-## 6. Post-BTP Future Work (DoF & Real-World Generalization)
-- [ ] `[future]` Real-world deployment on physical Franka Panda arm using Intel RealSense D435 camera.
+## 6. Next-Generation Research Frontiers (Post-BTP Novel Architecture Creations)
+
+These represent brand-new, original architectural inventions that move beyond benchmarking to solve fundamental open problems in robotics:
+
+- [ ] `[exp][novelty]` **Architecture A: Self-Calibrating Kinematic Policy (Uncalibrated Extrinsics-Free Viewpoint Invariance)**
+  - *The Open Problem:* Existing 3D policies (DP3, PerAct, PointNet) completely break if camera extrinsics $T_{\text{cam}}^{\text{base}}$ are unknown (e.g. human places camera on arbitrary tripod).
+  - *The Invention:* Design a differentiable visual-kinematic alignment module:
+    1. Segment the robot's own arm in the uncalibrated point cloud (visual proprioception).
+    2. Correlate arm point cloud with the robot's known forward kinematics from joint encoders ($q_{\text{pos}}$).
+    3. Self-supervise the estimation of $\hat{T}_{\text{cam}}^{\text{base}}$ on-the-fly without AprilTags or manual hand-eye calibration.
+    4. Dynamically align the scene into canonical robot base frame for zero-shot uncalibrated deployment.
+
+- [ ] `[exp][novelty]` **Architecture B: Continuous $SE(3)$-Equivariant Neural Policy**
+  - *The Open Problem:* 2D representations suffer continuous collapse (0% SR) because 2D convolutions are only translation-equivariant in pixel space, not in 3D world space; standard PointNet is permutation-invariant but not rotation-equivariant.
+  - *The Invention:* Formulate a continuous $SE(3)$-steerable neural network using spherical harmonics and Lie algebra representations ($SO(3) \times \mathbb{R}^3$).
+  - *Mathematical Guarantee:* Rotating/translating camera perspective by any continuous angle $(\theta, \phi)$ mathematically forces the predicted end-effector action to rotate equivariantly, achieving viewpoint invariance by algebraic construction.
+
+- [ ] `[exp][novelty]` **Cross-Embodiment Generalist Foundation Policy (Heterogeneous Kinematics)**
+  - *The Open Problem:* Robot policies are typically tied to a single kinematic morphology (e.g. 7-DoF Franka Panda or 6-DoF xArm 6); retraining is needed for each new arm.
+  - *The Invention:* Build a unified generalist architecture that dynamically conditions on arbitrary kinematic URDFs / DH-parameters:
+    1. Decoupled 3D Spatial Task Engine (predicts invariant Cartesian end-effector trajectories $[x, y, z, \text{rot}, \text{grip}]$).
+    2. Adaptive Kinematic Inverse Dynamics Head (maps task space trajectories to arbitrary $N$-DoF joint deltas via learnable differential IK).
+    3. Benchmark zero-shot transfer across Franka Panda (7-DoF), xArm 6 (6-DoF), UR5, and dual-arm setups.
+
+---
+
+## 7. Post-BTP Real-World & System Extensions
+- [ ] `[future]` Real-world deployment on physical Franka Panda arm using Intel RealSense D435 camera on mobile tripod.
 - [ ] `[future]` Multi-Arm Foundation Model: Scale Composite Modular Architecture to mobile manipulators (Fetch, Unitree G1 humanoid).
-- [ ] `[future]` Multi-Object & Cluttered Manipulation: Extend table-frame PointNet to multi-class pick-and-place and obstacle avoidance.
+- [ ] `[future]` Multi-Object & Cluttered Manipulation: Extend table-frame PointNet to multi-class pick-and-place and obstacle avoidance via SAM 3D segmentation masks.

@@ -19,10 +19,10 @@
   },
   "PokeCube-v1": {
     "env_id": "PokeCube-v1",
-    "overall_sr": 89.07692065605751,
-    "anchor_sr": 89.49999660253525,
-    "inbetween_sr": 88.8888869020674,
-    "gen_gap": 0.6111097004678498
+    "overall_sr": 65.69230556488037,
+    "anchor_sr": 70.49999833106995,
+    "inbetween_sr": 63.55555322435167,
+    "gen_gap": 6.944445106718277
   },
   "StackCube-v1": {
     "env_id": "StackCube-v1",

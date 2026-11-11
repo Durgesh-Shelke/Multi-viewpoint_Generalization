@@ -297,7 +297,7 @@ def main():
             "env_id": "PokeCube-v1",
             "control_mode": "pd_joint_delta_pos",
             "action_dim": 8,
-            "proprio_dim": 29,
+            "proprio_dim": 25,
             "ckpt": "/home/maniskill/Multi-viewpoint_Generalization/phase_18_multitask_extended/checkpoints/pointnet_pokecube-v1_best.pt",
             "seed": 7,
             "target_pos": [0.0, 0.0, 0.05]

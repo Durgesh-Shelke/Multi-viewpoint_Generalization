@@ -6,7 +6,7 @@ Scales PokeCube-v1 to the 96,000 transitions / 25 epochs consistent regime:
 - Teacher: Verified 96.0% PPO Oracle (/root/.maniskill/demos/PokeCube-v1/rl/ppo_pd_joint_delta_pos_ckpt.pt)
 - Dataset: 1,920 episodes (96,000 transitions) across continuous spherical dome
 - Optimization: 25 epochs with AdamW + Cosine Annealing (lr: 5e-4 to 1e-5)
-- Perception: 512-point PointNet in robot base frame + 29-dim proprioception
+- Perception: 512-point PointNet in robot base frame + 25-dim proprioception (zero state leakage)
 - Evaluation: Standardized 13 viewpoints with 50 evaluation episodes per viewpoint
 """
 
@@ -83,14 +83,14 @@ def collect_dataset(num_episodes: int = 1920, batch_envs: int = 32, max_steps: i
     print("\n" + "=" * 80, flush=True)
     print(f" [STAGE 1] COLLECTING {num_episodes:,} EPISODES ({num_episodes * max_steps:,} TRANSITIONS) FOR PokeCube-v1", flush=True)
     print(" Continuous Random Viewpoint Sampling across Frontal Hemisphere Dome", flush=True)
-    print(" Control Mode: pd_joint_delta_pos (8-dim) | Proprio Dim: 29 | State Dim: 54", flush=True)
+    print(" Control Mode: pd_joint_delta_pos (8-dim) | Proprio Dim: 25 | State Dim: 54", flush=True)
     print("=" * 80, flush=True)
 
     teacher = load_ppo_teacher(TEACHER_CKPT, state_dim=54, action_dim=8)
 
     total_samples = num_episodes * max_steps
     buf_pts = torch.empty((total_samples, 512, 3), dtype=torch.float32)
-    buf_proprio = torch.empty((total_samples, 29), dtype=torch.float32)
+    buf_proprio = torch.empty((total_samples, 25), dtype=torch.float32)
     buf_actions = torch.empty((total_samples, 8), dtype=torch.float32)
 
     rng = np.random.RandomState(seed)
@@ -134,14 +134,14 @@ def collect_dataset(num_episodes: int = 1920, batch_envs: int = 32, max_steps: i
 
         for step in range(max_steps):
             state_vec = obs["state"][:, :54].to(DEVICE)
-            proprio_29 = obs["state"][:, :29]
+            proprio_25 = obs["state"][:, :25]
 
             with torch.no_grad():
                 act = teacher.get_action(state_vec, deterministic=True)
                 pts = extract_robot_frame_pc(obs, num_points=512)[:cur_batch]
 
             buf_pts[cur_idx:cur_idx + cur_batch] = pts.cpu()
-            buf_proprio[cur_idx:cur_idx + cur_batch] = proprio_29[:cur_batch].cpu()
+            buf_proprio[cur_idx:cur_idx + cur_batch] = proprio_25[:cur_batch].cpu()
             buf_actions[cur_idx:cur_idx + cur_batch] = act[:cur_batch].cpu()
             cur_idx += cur_batch
 
@@ -179,7 +179,7 @@ def train_pointnet(buf_pts, buf_proprio, buf_actions, num_epochs: int = 25, batc
     bs = min(batch_size, len(buf_actions))
     loader = DataLoader(dataset, batch_size=bs, shuffle=True, drop_last=(len(buf_actions) > bs), pin_memory=True, num_workers=0)
 
-    student = PointNetAgent(action_dim=8, proprio_dim=29, point_dim=256).to(DEVICE)
+    student = PointNetAgent(action_dim=8, proprio_dim=25, point_dim=256).to(DEVICE)
     optimizer = optim.AdamW(student.parameters(), lr=5e-4, weight_decay=1e-4)
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=num_epochs, eta_min=1e-5)
 
@@ -237,7 +237,7 @@ def evaluate_13_viewpoints(ckpt_path: str, num_eval_episodes: int = 50, max_step
     print("=" * 80, flush=True)
 
     viewpoint_catalog = load_viewpoint_catalog()
-    policy = PointNetAgent(action_dim=8, proprio_dim=29, point_dim=256).to(DEVICE)
+    policy = PointNetAgent(action_dim=8, proprio_dim=25, point_dim=256).to(DEVICE)
     policy.load_state_dict(torch.load(ckpt_path, map_location=DEVICE))
     policy.eval()
 
@@ -268,7 +268,7 @@ def evaluate_13_viewpoints(ckpt_path: str, num_eval_episodes: int = 50, max_step
         obs, _ = vec_env.reset(seed=1000 + vid)
 
         for step in range(max_steps):
-            proprio = obs["state"][:, :29].to(DEVICE)
+            proprio = obs["state"][:, :25].to(DEVICE)
             with torch.no_grad():
                 pts = extract_robot_frame_pc(obs, num_points=512)
                 act = policy.get_action(pts, proprio, deterministic=True)

@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BASE_DIR = "/home/maniskill/phase_16_composite_modular_architecture"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture"
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
 JSON_PATH = os.path.join(EVAL_DIR, "composite_architecture_benchmark.json")
 PLOT_PATH = os.path.join(EVAL_DIR, "phase16_composite_modular_benchmark.png")

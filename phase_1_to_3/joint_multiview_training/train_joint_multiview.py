@@ -33,7 +33,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 sys.path.insert(0, "/home/maniskill")
 sys.path.insert(0, "/home/maniskill/examples/baselines/ppo")
-sys.path.insert(0, "/home/maniskill/phase_1_to_3/visual_manipulation")
+sys.path.insert(0, "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation")
 
 import mani_skill.envs
 from mani_skill.utils import sapien_utils
@@ -303,7 +303,7 @@ def evaluate_hemisphere(agent: RGBDAgent, viewpoints: list, episodes_per_vp: int
 def train_joint_multiview(
     base_model: str,
     viewpoints_file: str,
-    output_dir: str = "/home/maniskill/phase_1_to_3/joint_multiview_training",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/joint_multiview_training",
     total_timesteps: int = 10000000,
     num_envs: int = 128,
     num_steps: int = 50,
@@ -523,9 +523,9 @@ def train_joint_multiview(
 
 def main():
     parser = argparse.ArgumentParser(description="Joint Multi-View Domain Randomization Training (RGB-D 4-Channel)")
-    parser.add_argument("--base_model", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training/backup_original_model.pt")
-    parser.add_argument("--viewpoints_file", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
-    parser.add_argument("--output_dir", type=str, default="/home/maniskill/phase_1_to_3/joint_multiview_training")
+    parser.add_argument("--base_model", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/backup_original_model.pt")
+    parser.add_argument("--viewpoints_file", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
+    parser.add_argument("--output_dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/joint_multiview_training")
     parser.add_argument("--total_timesteps", type=int, default=10000000)
     parser.add_argument("--num_envs", type=int, default=128)
     parser.add_argument("--lr", type=float, default=2e-4)

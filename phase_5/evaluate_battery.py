@@ -127,7 +127,7 @@ def evaluate_candidate_battery(
     checkpoint_path: str,
     num_envs: int = 100,
     target_episodes: int = 1000,
-    output_dir: str = "/home/maniskill/phase_5/eval_results",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results",
     device_str: str = "cuda",
 ) -> dict:
     candidate = candidate.upper()
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint", type=str, required=True)
     parser.add_argument("--num-envs", type=int, default=100)
     parser.add_argument("--target-episodes", type=int, default=1000)
-    parser.add_argument("--output-dir", type=str, default="/home/maniskill/phase_5/eval_results")
+    parser.add_argument("--output-dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results")
     args = parser.parse_args()
 
     evaluate_candidate_battery(

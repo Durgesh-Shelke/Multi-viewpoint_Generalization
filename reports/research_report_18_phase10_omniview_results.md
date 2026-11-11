@@ -4,7 +4,7 @@
 **Date:** October 31, 2026  
 **Status:** Complete  
 **Artifact Directory:** `file:///root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f`  
-**Code Repository:** `/home/maniskill/phase_10_omniview_nextgen` & `/home/maniskill/Multi-viewpoint_Generalization`
+**Code Repository:** `/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen` & `/home/maniskill/Multi-viewpoint_Generalization`
 
 ---
 

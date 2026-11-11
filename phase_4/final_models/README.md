@@ -11,7 +11,7 @@ This directory contains the definitive, converged model checkpoints from each ma
 | **`pure_rgb_5m_front_view.pt`** | RGB | 3 (`[R, G, B]`) | 5,000,000 | Front (`[0.3, 0.0, 0.6]`) | **97.40%** | 12.82 / 5.46 | 8.89% (Peak: 97.0%) | 3.23% | 75.0% (VP 17) |
 | **`clean_rgbd_5m_front_view.pt`** | RGB-D | 4 (`[R, G, B, D]`) | 5,000,000 | Front (`[0.3, 0.0, 0.6]`) | **95.00%** | 14.14 / **5.96** | 8.35% (Peak: 95.0%) | **3.93%** | **87.0% (VP 17)** |
 
-*Note: Pre-5M models and early checkpoints are cleanly archived in `/home/maniskill/phase_4/archive_pre_5m/`.*
+*Note: Pre-5M models and early checkpoints are cleanly archived in `/home/maniskill/Multi-viewpoint_Generalization/phase_4/archive_pre_5m/`.*
 
 ---
 
@@ -32,7 +32,7 @@ env = ManiSkillVectorEnv(env, 1, ignore_terminations=False)
 obs, _ = env.reset()
 
 agent = Agent(env, sample_obs=obs).cuda()
-agent.load_state_dict(torch.load("/home/maniskill/phase_4/final_models/pure_rgb_5m_front_view.pt"))
+agent.load_state_dict(torch.load("/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/pure_rgb_5m_front_view.pt"))
 agent.eval()
 
 with torch.no_grad():
@@ -54,7 +54,7 @@ env = ManiSkillVectorEnv(env, 1, ignore_terminations=False)
 obs, _ = env.reset()
 
 agent = Agent(env, sample_obs=obs).cuda()
-agent.load_state_dict(torch.load("/home/maniskill/phase_4/final_models/clean_rgbd_5m_front_view.pt"))
+agent.load_state_dict(torch.load("/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_5m_front_view.pt"))
 agent.eval()
 
 with torch.no_grad():

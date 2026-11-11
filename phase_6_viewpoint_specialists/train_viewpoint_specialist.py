@@ -146,8 +146,8 @@ class Args:
     max_grad_norm: float = 0.5
     target_kl: float = 0.2
     seed: int = 42
-    output_dir: str = "/home/maniskill/phase_6_viewpoint_specialists"
-    viewpoints_json: str = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists"
+    viewpoints_json: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 
 
 def train_specialist(args: Args):
@@ -516,7 +516,7 @@ if __name__ == "__main__":
     parser.add_argument("--eval-episodes", type=int, default=100)
     parser.add_argument("--eval-freq", type=int, default=25)
     parser.add_argument("--early-stop-threshold", type=float, default=95.0)
-    parser.add_argument("--output-dir", type=str, default="/home/maniskill/phase_6_viewpoint_specialists")
+    parser.add_argument("--output-dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists")
     parser.add_argument("--seed", type=int, default=42)
 
     args = parser.parse_args()

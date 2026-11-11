@@ -69,7 +69,7 @@ env = ManiSkillVectorEnv(env, 1, ignore_terminations=False)
 obs, _ = env.reset()
 
 agent = Agent(env, sample_obs=obs).cuda()
-agent.load_state_dict(torch.load("/home/maniskill/phase_4/final_models/clean_rgbd_5m_front_view.pt"))
+agent.load_state_dict(torch.load("/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_5m_front_view.pt"))
 agent.eval()
 
 with torch.no_grad():

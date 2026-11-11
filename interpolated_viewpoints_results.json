@@ -1,5 +1,5 @@
 {
-  "student_checkpoint": "/home/maniskill/phase_10_omniview_nextgen/student/omniview_student_best.pt",
+  "student_checkpoint": "/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/student/omniview_student_best.pt",
   "catalog_results": [
     {
       "trials": 50,

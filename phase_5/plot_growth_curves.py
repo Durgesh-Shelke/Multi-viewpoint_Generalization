@@ -61,8 +61,8 @@ def analyze_plateau(history_rows: list) -> dict:
 
 
 def generate_plots(
-    eval_dir: str = "/home/maniskill/phase_5/eval_results",
-    output_png: str = "/home/maniskill/phase_5/growth_curves_comparison.png",
+    eval_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results",
+    output_png: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_5/growth_curves_comparison.png",
     brain_dir: str = "/root/.gemini/antigravity-cli/brain/82673f33-5c96-4154-bb42-cf6de559c7b7",
 ):
     plt.style.use("seaborn-v0_8-whitegrid" if "seaborn-v0_8-whitegrid" in plt.style.available else "default")
@@ -195,8 +195,8 @@ def generate_plots(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--eval-dir", type=str, default="/home/maniskill/phase_5/eval_results")
-    parser.add_argument("--output-png", type=str, default="/home/maniskill/phase_5/growth_curves_comparison.png")
+    parser.add_argument("--eval-dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results")
+    parser.add_argument("--output-png", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_5/growth_curves_comparison.png")
     args = parser.parse_args()
 
     generate_plots(eval_dir=args.eval_dir, output_png=args.output_png)

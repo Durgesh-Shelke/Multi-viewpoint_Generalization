@@ -26,9 +26,9 @@ from mani_skill.utils.wrappers.flatten import FlattenRGBDObservationWrapper, Fla
 from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from phase_10_omniview_nextgen.train_teacher_specialists_v3 import Phase10TeacherAgent, append_extrinsics
 
-STUDENT_CKPT = "/home/maniskill/phase_10_omniview_nextgen/student/omniview_student_best.pt"
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
-OUTPUT_DIR = "/home/maniskill/phase_10_omniview_nextgen/eval_results"
+STUDENT_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/student/omniview_student_best.pt"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+OUTPUT_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/eval_results"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

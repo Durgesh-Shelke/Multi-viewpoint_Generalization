@@ -4,7 +4,7 @@
 
 ## Executive Summary
 
-We evaluated the newly trained **4-Channel RGB-D baseline policy** ([`clean_rgbd_baseline_front_view_91percent.pt`](file:///home/maniskill/phase_4/final_models/clean_rgbd_baseline_front_view_91percent.pt)), trained completely from scratch with orthogonal random initialization on the **Front View (`eye = [0.300, 0.000, 0.600]`, `target = [-0.100, 0.000, 0.100]`)**, matching the exact camera configuration and training hyperparameters (256 envs, 16 minibatches) of the pure RGB baseline.
+We evaluated the newly trained **4-Channel RGB-D baseline policy** ([`clean_rgbd_baseline_front_view_91percent.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_baseline_front_view_91percent.pt)), trained completely from scratch with orthogonal random initialization on the **Front View (`eye = [0.300, 0.000, 0.600]`, `target = [-0.100, 0.000, 0.100]`)**, matching the exact camera configuration and training hyperparameters (256 envs, 16 minibatches) of the pure RGB baseline.
 
 The policy was evaluated across the full benchmark suite comprising over 17,000 independent physical rollouts:
 1. **1,000-Run Peak Training View Benchmark**

@@ -18,11 +18,11 @@ set -e
 echo "=========================================================================="
 echo " STARTING OVERNIGHT RESOLUTION & SENSOR FUSION BENCHMARK STUDY"
 echo " Timestamp: $(date)"
-echo " Working Dir: /home/maniskill/phase_5"
+echo " Working Dir: /home/maniskill/Multi-viewpoint_Generalization/phase_5"
 echo " Candidates:  A B C D E"
 echo "=========================================================================="
 
-python3 /home/maniskill/phase_5/run_master_unbiased_benchmark.py \
+python3 /home/maniskill/Multi-viewpoint_Generalization/phase_5/run_master_unbiased_benchmark.py \
   --total-timesteps 10000000 \
   --candidates A B C D E \
   --num-envs 128 \

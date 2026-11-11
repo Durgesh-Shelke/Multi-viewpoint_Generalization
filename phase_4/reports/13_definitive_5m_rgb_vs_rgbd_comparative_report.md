@@ -164,7 +164,7 @@ Evaluating equal-area hemispherical sampling over the upper-frontal quadrant (Az
 ## 7. Model Checkpoint Registry
 
 All evaluated models and benchmark artifacts are permanently archived in the ManiSkill workspace:
-- **Pure RGB 5M Model:** [`/home/maniskill/phase_4/final_models/pure_rgb_5m_front_view.pt`](file:///home/maniskill/phase_4/final_models/pure_rgb_5m_front_view.pt)
-- **4-Channel RGB-D 5M Model:** [`/home/maniskill/phase_4/final_models/clean_rgbd_5m_front_view.pt`](file:///home/maniskill/phase_4/final_models/clean_rgbd_5m_front_view.pt)
-- **Pure RGB 5M Run Directory:** [`/home/maniskill/phase_4/runs/sim2real_45mm_block_rgb_5m/`](file:///home/maniskill/phase_4/runs/sim2real_45mm_block_rgb_5m/)
-- **RGB-D 5M Run Directory:** [`/home/maniskill/phase_4/runs/sim2real_45mm_block_rgbd_5m/`](file:///home/maniskill/phase_4/runs/sim2real_45mm_block_rgbd_5m/)
+- **Pure RGB 5M Model:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/pure_rgb_5m_front_view.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/pure_rgb_5m_front_view.pt)
+- **4-Channel RGB-D 5M Model:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_5m_front_view.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_5m_front_view.pt)
+- **Pure RGB 5M Run Directory:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgb_5m/`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgb_5m/)
+- **RGB-D 5M Run Directory:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgbd_5m/`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgbd_5m/)

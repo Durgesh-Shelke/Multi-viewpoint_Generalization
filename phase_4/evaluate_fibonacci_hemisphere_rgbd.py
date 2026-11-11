@@ -206,7 +206,7 @@ def run_fibonacci_benchmark(
     num_viewpoints: int = 30,
     episodes_per_viewpoint: int = 100,
     num_envs: int = 50,
-    output_dir: str = "/home/maniskill/phase_4/runs/sim2real_45mm_block_rgbd_5m/fibonacci_results",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgbd_5m/fibonacci_results",
     viewpoints_file: str = "/home/maniskill/sequential_viewpoint_training/viewpoints.json",
     device: str = "cuda",
 ):
@@ -326,7 +326,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_viewpoints", type=int, default=30)
     parser.add_argument("--episodes", type=int, default=100)
     parser.add_argument("--num_envs", type=int, default=50)
-    parser.add_argument("--output_dir", type=str, default="/home/maniskill/phase_4/runs/sim2real_45mm_block_rgbd_5m/fibonacci_results")
+    parser.add_argument("--output_dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgbd_5m/fibonacci_results")
     parser.add_argument("--viewpoints_file", type=str, default="/home/maniskill/sequential_viewpoint_training/viewpoints.json")
     args = parser.parse_args()
 

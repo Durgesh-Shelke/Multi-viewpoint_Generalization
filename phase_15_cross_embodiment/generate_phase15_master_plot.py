@@ -13,7 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BASE_DIR = "/home/maniskill/phase_15_cross_embodiment"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment"
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
 JSON_PATH = os.path.join(EVAL_DIR, "path1_vs_path2_comprehensive_benchmark.json")
 PLOT_PATH = os.path.join(EVAL_DIR, "cross_embodiment_path1_vs_path2_comparison.png")

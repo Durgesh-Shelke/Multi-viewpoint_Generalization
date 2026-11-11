@@ -15,5 +15,5 @@
     "6": 88.0
   },
   "total_walltime_seconds": 353.9,
-  "checkpoint_path": "/home/maniskill/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt"
+  "checkpoint_path": "/home/maniskill/Multi-viewpoint_Generalization/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt"
 }

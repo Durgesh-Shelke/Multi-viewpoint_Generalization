@@ -18,7 +18,7 @@ from mani_skill.sensors.camera import CameraConfig
 from mani_skill.utils import sapien_utils, common
 from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 CANONICAL_VP_ID = 17
 
 

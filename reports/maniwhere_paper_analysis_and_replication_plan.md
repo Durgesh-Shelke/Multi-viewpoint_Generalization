@@ -73,16 +73,16 @@ At test time (and during real-robot deployment), the policy operates using **onl
 
 We have implemented the complete Maniwhere pipeline tailored to ManiSkill 3 `PickCube-v1`:
 
-1. **Dual-Camera Environment ([`pick_cube_dual_view.py`](file:///home/maniskill/phase_9_maniwhere_replication/pick_cube_dual_view.py)):**
+1. **Dual-Camera Environment ([`pick_cube_dual_view.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/pick_cube_dual_view.py)):**
    - Subclasses `PickCubeEnv` with simultaneous GPU rendering of `cam_canonical` (VP 17) and `cam_moving` (sampled from the 7 alternate viewpoints).
    - Wrapped via `DualViewWrapper` to output synchronized `(o_fixed, o_move)` observation tuples.
-2. **Model Architecture ([`models_maniwhere.py`](file:///home/maniskill/phase_9_maniwhere_replication/models_maniwhere.py)):**
+2. **Model Architecture ([`models_maniwhere.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/models_maniwhere.py)):**
    - `PerspectiveSTN`: Predicts 8 homography parameters initialized to identity, using bilinear grid sampling with border padding.
    - `ManiwhereVisualEncoder`: Integrates NatureCNN backbone with embedded STN and a 2-layer contrastive MLP projection head.
    - `ManiwhereAgent`: Computes PPO policy/value updates alongside `compute_maniwhere_representation_loss()`.
-3. **Training Script ([`train_maniwhere.py`](file:///home/maniskill/phase_9_maniwhere_replication/train_maniwhere.py)):**
+3. **Training Script ([`train_maniwhere.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/train_maniwhere.py)):**
    - End-to-end PPO training with the joint objective:
      $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{PPO}} + 0.5 \left( J_{\text{con}}(\tau=0.1) + 200 \cdot J_{\text{feat}} \right)$$
    - Periodic single-view evaluation across all 8 viewpoints.
-4. **Benchmarking ([`evaluate_maniwhere_1000_tests.py`](file:///home/maniskill/phase_9_maniwhere_replication/evaluate_maniwhere_1000_tests.py)):**
+4. **Benchmarking ([`evaluate_maniwhere_1000_tests.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/evaluate_maniwhere_1000_tests.py)):**
    - Evaluates the trained Maniwhere model on the identical 1,000 randomized viewpoint test sequence, generating a direct head-to-head comparison against our Distilled Unified Policy.

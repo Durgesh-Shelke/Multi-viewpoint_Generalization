@@ -31,13 +31,13 @@ from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from phase_13_pointcloud_generalization.pointnet_models import extract_robot_frame_pc
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-BASE_DIR = "/home/maniskill/phase_15_cross_embodiment"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment"
 COMBINED_DIR = os.path.join(BASE_DIR, "combined")
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
 os.makedirs(COMBINED_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 COMBINED_CKPT = os.path.join(COMBINED_DIR, "combined_omniarm_best.pt")
 
 

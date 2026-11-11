@@ -3,7 +3,7 @@
 # Live status monitor for the resolution ablation study
 # ==============================================================================
 
-DIR="/home/maniskill/phase_5"
+DIR="/home/maniskill/Multi-viewpoint_Generalization/phase_5"
 PAUSE_FILE="$DIR/.pause"
 MASTER_PID=$(pgrep -f "run_master_unbiased_benchmark.py" || true)
 TRAIN_PID=$(pgrep -f "train_candidate.py" || true)
@@ -29,7 +29,7 @@ echo " CANDIDATES PROGRESS:"
 python3 -c "
 import os, json, torch
 
-DIR = '/home/maniskill/phase_5'
+DIR = '/home/maniskill/Multi-viewpoint_Generalization/phase_5'
 for cand in ['A', 'B', 'C', 'D', 'E']:
     latest_pt = os.path.join(DIR, 'checkpoints', f'candidate_{cand}_latest.pt')
     metrics_json = os.path.join(DIR, 'checkpoints', f'candidate_{cand}_train_metrics.json')
@@ -69,6 +69,6 @@ echo "--------------------------------------------------------------------------
 echo " GPU HARDWARE TELEMETRY:"
 nvidia-smi --query-gpu=name,temperature.gpu,utilization.gpu,memory.used,memory.total --format=csv,noheader
 echo "=========================================================================="
-echo " Controls:  Pause: /home/maniskill/phase_5/pause.sh | Resume: /home/maniskill/phase_5/resume.sh"
-echo " Logs:      tail -f /home/maniskill/phase_5/master_execution.log"
+echo " Controls:  Pause: /home/maniskill/Multi-viewpoint_Generalization/phase_5/pause.sh | Resume: /home/maniskill/Multi-viewpoint_Generalization/phase_5/resume.sh"
+echo " Logs:      tail -f /home/maniskill/Multi-viewpoint_Generalization/phase_5/master_execution.log"
 echo "=========================================================================="

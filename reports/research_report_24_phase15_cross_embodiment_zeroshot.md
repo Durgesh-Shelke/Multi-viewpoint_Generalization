@@ -3,7 +3,7 @@
 **Date:** October 31, 2026  
 **Project:** Continuous Multi-Viewpoint Generalization & Cross-Embodiment Transfer  
 **Primary Artifact:** `cross_embodiment_master_comparison.png`  
-**Dataset & Weights:** [`/home/maniskill/phase_15_cross_embodiment/`](file:///home/maniskill/phase_15_cross_embodiment/)  
+**Dataset & Weights:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/)  
 **Git Synchronization:** `/home/maniskill/Multi-viewpoint_Generalization`
 
 ---
@@ -98,6 +98,6 @@ The master comparison plot is displayed below:
 ![Cross-Embodiment Master Comparison](file:///root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f/cross_embodiment_master_comparison.png)
 
 All checkpoints and benchmark logs are archived at:
-- `combined_omniarm_best.pt`: [`/home/maniskill/phase_15_cross_embodiment/combined/combined_omniarm_best.pt`](file:///home/maniskill/phase_15_cross_embodiment/combined/combined_omniarm_best.pt)
-- `combined_path2_standardized_best.pt`: [`/home/maniskill/phase_15_cross_embodiment/combined/combined_path2_standardized_best.pt`](file:///home/maniskill/phase_15_cross_embodiment/combined/combined_path2_standardized_best.pt)
-- `path1_vs_path2_comprehensive_benchmark.json`: [`/home/maniskill/phase_15_cross_embodiment/eval_results/path1_vs_path2_comprehensive_benchmark.json`](file:///home/maniskill/phase_15_cross_embodiment/eval_results/path1_vs_path2_comprehensive_benchmark.json)
+- `combined_omniarm_best.pt`: [`/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/combined/combined_omniarm_best.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/combined/combined_omniarm_best.pt)
+- `combined_path2_standardized_best.pt`: [`/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/combined/combined_path2_standardized_best.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/combined/combined_path2_standardized_best.pt)
+- `path1_vs_path2_comprehensive_benchmark.json`: [`/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/eval_results/path1_vs_path2_comprehensive_benchmark.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/eval_results/path1_vs_path2_comprehensive_benchmark.json)

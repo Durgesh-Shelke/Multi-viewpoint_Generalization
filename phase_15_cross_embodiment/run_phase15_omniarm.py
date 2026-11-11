@@ -40,11 +40,11 @@ from phase_15_cross_embodiment.omniarm_models import (
 )
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-BASE_DIR = "/home/maniskill/phase_15_cross_embodiment"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment"
 TEACHER_DIR = os.path.join(BASE_DIR, "teachers")
 OMNIARM_DIR = os.path.join(BASE_DIR, "omniarm")
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 
 os.makedirs(OMNIARM_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)

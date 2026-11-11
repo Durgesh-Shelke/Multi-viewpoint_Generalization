@@ -33,11 +33,11 @@ from ppo import Agent as PrivilegedAgent
 from phase_13_pointcloud_generalization.pointnet_models import PointNetAgent, extract_robot_frame_pc
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-TEACHER_CKPT = "/home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
-PHASE13_DIR = "/home/maniskill/phase_13_pointcloud_generalization"
+TEACHER_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
+PHASE13_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization"
 STUDENT_DIR = os.path.join(PHASE13_DIR, "student")
 EVAL_DIR = os.path.join(PHASE13_DIR, "eval_results")
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 
 os.makedirs(STUDENT_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)

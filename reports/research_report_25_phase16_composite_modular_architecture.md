@@ -2,7 +2,7 @@
 
 **Date:** October 31, 2026  
 **Project:** Continuous Multi-Viewpoint Generalization & Cross-Embodiment Transfer  
-**Primary Deliverable:** [`universal_composite_omniarm.pt`](file:///home/maniskill/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt)  
+**Primary Deliverable:** [`universal_composite_omniarm.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt)  
 **Primary Visual Artifact:** `phase16_composite_modular_benchmark.png`  
 **Git Synchronization:** `/home/maniskill/Multi-viewpoint_Generalization`
 
@@ -15,7 +15,7 @@ In Phase 16, we operationalized the concept of the **Factory-Assembled Composite
 
 ### Key Milestones Achieved:
 1. **Single Deliverable Model (`UniversalCompositeOmniPolicy`):**
-   - Packaged as a clean, unified PyTorch `nn.Module` and saved to [`universal_composite_omniarm.pt`](file:///home/maniskill/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt).
+   - Packaged as a clean, unified PyTorch `nn.Module` and saved to [`universal_composite_omniarm.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt).
    - Internally partitioned into:
      - **Sub-Module 1 (`ViewpointPerceptionEngine`):** 3D PointNet spatial reasoning engine that unprojects raw RGB-D observations into table-frame metric coordinates, predicting universal Cartesian actions $[\Delta x, \Delta y, \Delta z, a_{\text{gripper}}]$.
      - **Sub-Module 2 (`EmbodimentKinematicEngine`):** Embodiment conditioning network and Neural Differential Inverse Kinematics engine that maps universal Cartesian intent into hardware-specific actions and joint deltas $\Delta \mathbf{q}$.
@@ -120,6 +120,6 @@ Across the full suite of **13 continuous camera viewpoints** (4 trained anchors 
 ![Phase 16 Composite Modular Benchmark](file:///root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f/phase16_composite_modular_benchmark.png)
 
 Checkpoints and test logs:
-- Deliverable: [`universal_composite_omniarm.pt`](file:///home/maniskill/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt)
-- Benchmark JSON: [`composite_architecture_benchmark.json`](file:///home/maniskill/phase_16_composite_modular_architecture/eval_results/composite_architecture_benchmark.json)
-- Implementation: [`composite_models.py`](file:///home/maniskill/phase_16_composite_modular_architecture/composite_models.py)
+- Deliverable: [`universal_composite_omniarm.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture/checkpoints/universal_composite_omniarm.pt)
+- Benchmark JSON: [`composite_architecture_benchmark.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture/eval_results/composite_architecture_benchmark.json)
+- Implementation: [`composite_models.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture/composite_models.py)

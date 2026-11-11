@@ -3,8 +3,8 @@
 **Author:** Google DeepMind Team (Antigravity Assistant)  
 **Experiment Date:** October 31, 2026  
 **Subject:** Zero-Shot Spatial Generalization & Interpolation Basin of Phase 10 OmniView Student Policy  
-**Evaluation Model:** [`/home/maniskill/phase_10_omniview_nextgen/student/omniview_student_best.pt`](file:///home/maniskill/phase_10_omniview_nextgen/student/omniview_student_best.pt)  
-**Evaluation Script:** [`/home/maniskill/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py`](file:///home/maniskill/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py)  
+**Evaluation Model:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/student/omniview_student_best.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/student/omniview_student_best.pt)  
+**Evaluation Script:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py)  
 **Visual Artifact:** ![Interpolated Viewpoints Benchmark](file:///root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f/phase10_interpolated_viewpoints_benchmark.png)
 
 ---
@@ -26,7 +26,7 @@ To answer this, we conducted **1,400 precision evaluation episodes** in `PickCub
 ## 2. Experimental Methodology
 
 ### 2.1 Model Architecture & Conditioning
-- **Student Policy:** [`Phase10TeacherAgent`](file:///home/maniskill/phase_10_omniview_nextgen/train_teacher_specialists_v3.py#L88-L133) utilizing a 4-channel 128x128 RGB-D NatureCNN visual encoder.
+- **Student Policy:** [`Phase10TeacherAgent`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/train_teacher_specialists_v3.py#L88-L133) utilizing a 4-channel 128x128 RGB-D NatureCNN visual encoder.
 - **State Vector (33 dimensions):**
   - Dimensions 0–28: Standard Franka robot proprioceptive state (joint angles, velocities, end-effector pose, gripper status).
   - Dimensions 29–32: 4-dim camera extrinsics conditioning:
@@ -161,7 +161,7 @@ To bridge the interpolation gap and achieve $>80\%$ success at *any arbitrary co
 ## 6. Artifact Verification & Reproduction
 
 All evaluation data, scripts, and visualizations have been verified and archived:
-- Evaluation harness: [`/home/maniskill/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py`](file:///home/maniskill/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py)
-- Full numeric logs (JSON): [`/home/maniskill/phase_10_omniview_nextgen/eval_results/interpolated_viewpoints_results.json`](file:///home/maniskill/phase_10_omniview_nextgen/eval_results/interpolated_viewpoints_results.json)
-- Summary benchmark figure: [`/home/maniskill/phase_10_omniview_nextgen/eval_results/phase10_interpolated_viewpoints_benchmark.png`](file:///home/maniskill/phase_10_omniview_nextgen/eval_results/phase10_interpolated_viewpoints_benchmark.png)
+- Evaluation harness: [`/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/evaluate_interpolated_viewpoints.py)
+- Full numeric logs (JSON): [`/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/eval_results/interpolated_viewpoints_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/eval_results/interpolated_viewpoints_results.json)
+- Summary benchmark figure: [`/home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/eval_results/phase10_interpolated_viewpoints_benchmark.png`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_10_omniview_nextgen/eval_results/phase10_interpolated_viewpoints_benchmark.png)
 - Standalone repo sync: `git status` clean in [`/home/maniskill/Multi-viewpoint_Generalization`](file:///home/maniskill/Multi-viewpoint_Generalization).

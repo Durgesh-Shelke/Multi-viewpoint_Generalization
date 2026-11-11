@@ -1,0 +1,65 @@
+{
+  "overall_accuracy": 44.6,
+  "viable_accuracy": 47.69,
+  "total_trials": 1000,
+  "total_successes": 446,
+  "evaluation_time_seconds": 45.4,
+  "per_viewpoint": {
+    "17": {
+      "viewpoint_id": 17,
+      "role": "Front-Mid Canonical",
+      "trials": 133,
+      "successes": 121,
+      "success_rate": 90.98
+    },
+    "0": {
+      "viewpoint_id": 0,
+      "role": "Front-Low Graze",
+      "trials": 117,
+      "successes": 105,
+      "success_rate": 89.74
+    },
+    "28": {
+      "viewpoint_id": 28,
+      "role": "Front-High Steep Tilt",
+      "trials": 113,
+      "successes": 23,
+      "success_rate": 20.35
+    },
+    "18": {
+      "viewpoint_id": 18,
+      "role": "Left-Flank 90\u00b0",
+      "trials": 146,
+      "successes": 0,
+      "success_rate": 0.0
+    },
+    "27": {
+      "viewpoint_id": 27,
+      "role": "Right-Flank 90\u00b0",
+      "trials": 125,
+      "successes": 3,
+      "success_rate": 2.4
+    },
+    "20": {
+      "viewpoint_id": 20,
+      "role": "Diag Front-Left",
+      "trials": 113,
+      "successes": 93,
+      "success_rate": 82.3
+    },
+    "19": {
+      "viewpoint_id": 19,
+      "role": "Diag Front-Right",
+      "trials": 119,
+      "successes": 81,
+      "success_rate": 68.07
+    },
+    "6": {
+      "viewpoint_id": 6,
+      "role": "Low Flank Right",
+      "trials": 134,
+      "successes": 20,
+      "success_rate": 14.93
+    }
+  }
+}

@@ -213,13 +213,13 @@ def record_angle_video(
 
 
 def run_sweep(
-    checkpoint_path: str = "/home/maniskill/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt",
+    checkpoint_path: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt",
     start_deg: float = 0.0,
     end_deg: float = 180.0,
     step_deg: float = 15.0,
     episodes_per_angle: int = 1000,
     num_envs: int = 48,
-    output_dir: str = "/home/maniskill/phase_1_to_3/visual_manipulation/camera_sweep_results",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/camera_sweep_results",
     device: str = "cuda",
 ):
     os.makedirs(output_dir, exist_ok=True)
@@ -308,13 +308,13 @@ def run_sweep(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate visual policy across camera angles")
-    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt")
+    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt")
     parser.add_argument("--start_deg", type=float, default=0.0)
     parser.add_argument("--end_deg", type=float, default=180.0)
     parser.add_argument("--step_deg", type=float, default=15.0)
     parser.add_argument("--episodes", type=int, default=1000)
     parser.add_argument("--num_envs", type=int, default=48)
-    parser.add_argument("--output_dir", type=str, default="/home/maniskill/phase_1_to_3/visual_manipulation/camera_sweep_results")
+    parser.add_argument("--output_dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/camera_sweep_results")
     args = parser.parse_args()
 
     run_sweep(

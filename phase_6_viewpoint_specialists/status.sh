@@ -3,7 +3,7 @@
 # Live status monitor for Phase 6 Viewpoint Specialists Benchmark
 # ==============================================================================
 
-DIR="/home/maniskill/phase_6_viewpoint_specialists"
+DIR="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists"
 PAUSE_FILE="$DIR/.pause"
 MASTER_PID=$(pgrep -f "run_master_phase6.py" || true)
 TRAIN_PID=$(pgrep -f "train_viewpoint_specialist.py" || true)
@@ -29,7 +29,7 @@ echo " 8 SPECIALIST VIEWPOINTS PROGRESS:"
 python3 -c "
 import os, json, torch
 
-DIR = '/home/maniskill/phase_6_viewpoint_specialists'
+DIR = '/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists'
 CORE_VIPS = [17, 0, 28, 18, 27, 20, 19, 6]
 NAMES = {
     17: 'Front-Mid (Baseline)  [-4.7°, 31.8°]',

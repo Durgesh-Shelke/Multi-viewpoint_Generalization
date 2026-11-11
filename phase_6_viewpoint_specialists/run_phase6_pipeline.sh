@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-DIR="/home/maniskill/phase_6_viewpoint_specialists"
+DIR="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists"
 LOG_FILE="$DIR/master_execution.log"
 
 cd "$DIR"

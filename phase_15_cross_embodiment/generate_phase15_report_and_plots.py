@@ -18,7 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BASE_DIR = "/home/maniskill/phase_15_cross_embodiment"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment"
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
 SPEC_JSON = os.path.join(EVAL_DIR, "specialists_accuracy_benchmark.json")
 COMB_JSON = os.path.join(EVAL_DIR, "combined_omniarm_benchmark.json")

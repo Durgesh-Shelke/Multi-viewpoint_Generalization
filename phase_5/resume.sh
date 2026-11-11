@@ -3,7 +3,7 @@
 # Script to resume the benchmark (either live unpause or restart from checkpoint)
 # ==============================================================================
 
-DIR="/home/maniskill/phase_5"
+DIR="/home/maniskill/Multi-viewpoint_Generalization/phase_5"
 PAUSE_FILE="$DIR/.pause"
 LOG_FILE="$DIR/master_execution.log"
 
@@ -21,7 +21,7 @@ if [ -n "$RUNNING_PID" ]; then
     echo " [RESUME] Benchmark process is currently running (PID: $RUNNING_PID)!"
     echo " Training will unpause and resume instantly."
     echo ""
-    echo " To monitor status:  /home/maniskill/phase_5/status.sh"
+    echo " To monitor status:  /home/maniskill/Multi-viewpoint_Generalization/phase_5/status.sh"
     echo " To watch live logs: tail -f $LOG_FILE"
     echo "=========================================================================="
 else
@@ -31,11 +31,11 @@ else
     echo "   - Completed candidates will be skipped automatically."
     echo "   - Active candidate will resume from its exact iteration/step."
     echo "=========================================================================="
-    nohup /home/maniskill/phase_5/run_resolution_ablation.sh > "$LOG_FILE" 2>&1 &
+    nohup /home/maniskill/Multi-viewpoint_Generalization/phase_5/run_resolution_ablation.sh > "$LOG_FILE" 2>&1 &
     NEW_PID=$!
     echo " [STARTED] Benchmark launched in background (PID: $NEW_PID)"
     echo ""
-    echo " To monitor status:  /home/maniskill/phase_5/status.sh"
+    echo " To monitor status:  /home/maniskill/Multi-viewpoint_Generalization/phase_5/status.sh"
     echo " To watch live logs: tail -f $LOG_FILE"
     echo "=========================================================================="
 fi

@@ -1,0 +1,80 @@
+{
+  "overall_accuracy": 0.6,
+  "viable_accuracy": 0.5636978579481398,
+  "vp_28_accuracy": 0.8849557522123894,
+  "total_time_seconds": 39.896759271621704,
+  "per_viewpoint": {
+    "17": {
+      "viewpoint_id": 17,
+      "role": "Front-Mid Canonical",
+      "azimuth": -4.74,
+      "elevation": 31.8,
+      "trials": 133,
+      "successes": 1,
+      "accuracy": 0.7518796992481203
+    },
+    "0": {
+      "viewpoint_id": 0,
+      "role": "Front-Low Graze",
+      "azimuth": 0.0,
+      "elevation": 12.27,
+      "trials": 117,
+      "successes": 0,
+      "accuracy": 0.0
+    },
+    "28": {
+      "viewpoint_id": 28,
+      "role": "Front-High Steep Tilt",
+      "azimuth": 2.93,
+      "elevation": 46.16,
+      "trials": 113,
+      "successes": 1,
+      "accuracy": 0.8849557522123894
+    },
+    "18": {
+      "viewpoint_id": 18,
+      "role": "Left-Flank 90\u00b0",
+      "azimuth": -89.72,
+      "elevation": 33.06,
+      "trials": 146,
+      "successes": 1,
+      "accuracy": 0.684931506849315
+    },
+    "27": {
+      "viewpoint_id": 27,
+      "role": "Right-Flank 90\u00b0",
+      "azimuth": 87.91,
+      "elevation": 44.65,
+      "trials": 125,
+      "successes": 2,
+      "accuracy": 1.6
+    },
+    "20": {
+      "viewpoint_id": 20,
+      "role": "Diag Front-Left",
+      "azimuth": -37.2,
+      "elevation": 34.98,
+      "trials": 113,
+      "successes": 0,
+      "accuracy": 0.0
+    },
+    "19": {
+      "viewpoint_id": 19,
+      "role": "Diag Front-Right",
+      "azimuth": 47.79,
+      "elevation": 33.69,
+      "trials": 119,
+      "successes": 1,
+      "accuracy": 0.8403361344537815
+    },
+    "6": {
+      "viewpoint_id": 6,
+      "role": "Low Flank Right",
+      "azimuth": 72.59,
+      "elevation": 18.32,
+      "trials": 134,
+      "successes": 0,
+      "accuracy": 0.0
+    }
+  }
+}

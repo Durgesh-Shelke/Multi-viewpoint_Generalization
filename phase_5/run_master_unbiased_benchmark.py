@@ -32,8 +32,8 @@ from evaluate_battery import evaluate_candidate_battery
 from plot_growth_curves import generate_plots
 from train_candidate import train_single_candidate
 
-OUTPUT_DIR = "/home/maniskill/phase_5"
-REPORT_PATH = "/home/maniskill/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md"
+OUTPUT_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_5"
+REPORT_PATH = "/home/maniskill/Multi-viewpoint_Generalization/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md"
 MASTER_JSON = os.path.join(OUTPUT_DIR, "master_benchmark_summary.json")
 LOG_FILE = os.path.join(OUTPUT_DIR, "master_execution.log")
 
@@ -275,7 +275,7 @@ def main():
             res = subprocess.run(train_cmd)
             if res.returncode == 130:
                 print(f"\n[PIPELINE PAUSED/STOPPED] Candidate {cand} was stopped or paused by user.")
-                print(f"[RESUME READY] Run /home/maniskill/phase_5/resume.sh to continue training seamlessly.\n")
+                print(f"[RESUME READY] Run /home/maniskill/Multi-viewpoint_Generalization/phase_5/resume.sh to continue training seamlessly.\n")
                 break
             elif res.returncode != 0:
                 raise RuntimeError(f"Training of Candidate {cand} exited with code {res.returncode}")
@@ -312,7 +312,7 @@ def main():
 
         except KeyboardInterrupt:
             print(f"\n[INTERRUPT] Benchmark interrupted by user at Candidate {cand}.")
-            print(f"[RESUME READY] Run /home/maniskill/phase_5/resume.sh to continue training.")
+            print(f"[RESUME READY] Run /home/maniskill/Multi-viewpoint_Generalization/phase_5/resume.sh to continue training.")
             break
         except Exception as e:
             print(f"\n[ERROR] Exception encountered during Candidate {cand} execution:")

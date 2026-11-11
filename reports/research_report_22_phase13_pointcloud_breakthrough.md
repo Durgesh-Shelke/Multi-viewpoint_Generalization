@@ -74,8 +74,8 @@ The resulting geometric feature vector $\mathbf{f}_{\text{geom}}$ is **strictly 
 
 ## 5. Artifacts and Checkpoints Summary
 
-- **Trained PointNet Student Checkpoint:** [`pointnet_student_best.pt`](file:///home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt) (Action MSE: **0.00140**).
-- **PointNet Policy Code:** [`pointnet_models.py`](file:///home/maniskill/phase_13_pointcloud_generalization/pointnet_models.py).
-- **Full Distillation Pipeline:** [`run_phase13_pointcloud_distillation.py`](file:///home/maniskill/phase_13_pointcloud_generalization/run_phase13_pointcloud_distillation.py).
-- **Benchmark Results (JSON):** [`phase13_pointnet_eval_results.json`](file:///home/maniskill/phase_13_pointcloud_generalization/eval_results/phase13_pointnet_eval_results.json).
+- **Trained PointNet Student Checkpoint:** [`pointnet_student_best.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/student/pointnet_student_best.pt) (Action MSE: **0.00140**).
+- **PointNet Policy Code:** [`pointnet_models.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/pointnet_models.py).
+- **Full Distillation Pipeline:** [`run_phase13_pointcloud_distillation.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/run_phase13_pointcloud_distillation.py).
+- **Benchmark Results (JSON):** [`phase13_pointnet_eval_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/eval_results/phase13_pointnet_eval_results.json).
 - **Standalone Repository:** Synced to [`/home/maniskill/Multi-viewpoint_Generalization/`](file:///home/maniskill/Multi-viewpoint_Generalization/).

@@ -33,11 +33,11 @@ from phase_12_privileged_state_distillation.film_models import FiLMPhase12Agent
 from phase_10_omniview_nextgen.train_teacher_specialists_v3 import append_extrinsics
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-TEACHER_CKPT = "/home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
-PHASE12_DIR = "/home/maniskill/phase_12_privileged_state_distillation"
+TEACHER_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
+PHASE12_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation"
 STUDENT_DIR = os.path.join(PHASE12_DIR, "student")
 EVAL_DIR = os.path.join(PHASE12_DIR, "eval_results")
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 
 os.makedirs(STUDENT_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)

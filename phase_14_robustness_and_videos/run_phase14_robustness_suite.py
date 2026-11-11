@@ -26,8 +26,8 @@ from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from phase_13_pointcloud_generalization.pointnet_models import PointNetAgent
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-POINTNET_CKPT = "/home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt"
-OUTPUT_DIR = "/home/maniskill/phase_14_robustness_and_videos/eval_results"
+POINTNET_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/student/pointnet_student_best.pt"
+OUTPUT_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/eval_results"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 

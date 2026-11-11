@@ -257,12 +257,12 @@ def record_viewpoint_video(
 
 
 def run_fibonacci_benchmark(
-    checkpoint_path: str = "/home/maniskill/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt",
+    checkpoint_path: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt",
     num_viewpoints: int = 30,
     episodes_per_viewpoint: int = 100,
     num_envs: int = 50,
-    output_dir: str = "/home/maniskill/phase_1_to_3/fibonacci_hemisphere_30vp_results",
-    viewpoints_file: str = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/fibonacci_hemisphere_30vp_results",
+    viewpoints_file: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json",
     device: str = "cuda",
 ):
     os.makedirs(output_dir, exist_ok=True)
@@ -371,12 +371,12 @@ def run_fibonacci_benchmark(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fibonacci Equal-Area Hemisphere Viewpoint Evaluation")
-    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt")
+    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/visual_manipulation/best_sim2real_policy.pt")
     parser.add_argument("--num_viewpoints", type=int, default=25, help="Number of equal-area viewpoints")
     parser.add_argument("--episodes", type=int, default=200, help="Episodes per viewpoint")
     parser.add_argument("--num_envs", type=int, default=48, help="Parallel environments")
-    parser.add_argument("--output_dir", type=str, default="/home/maniskill/phase_1_to_3/fibonacci_hemisphere_30vp_results")
-    parser.add_argument("--viewpoints_file", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
+    parser.add_argument("--output_dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/fibonacci_hemisphere_30vp_results")
+    parser.add_argument("--viewpoints_file", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
     args = parser.parse_args()
 
     run_fibonacci_benchmark(

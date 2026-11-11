@@ -15,9 +15,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PHASE6_DIR = "/home/maniskill/phase_6_viewpoint_specialists"
-PHASE7_DIR = "/home/maniskill/phase_7_multiteacher_distillation"
-PHASE8_DIR = "/home/maniskill/phase_8_federated_aggregation"
+PHASE6_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists"
+PHASE7_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_7_multiteacher_distillation"
+PHASE8_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_8_federated_aggregation"
 REPORTS_DIR = os.path.join(PHASE8_DIR, "reports")
 EVAL_RESULTS_DIR = os.path.join(PHASE8_DIR, "eval_results")
 

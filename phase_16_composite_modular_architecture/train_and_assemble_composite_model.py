@@ -31,14 +31,14 @@ from phase_16_composite_modular_architecture.composite_models import UniversalCo
 from phase_15_cross_embodiment.train_combined_omniarm import extract_table_workspace_pc, get_universal_proprio
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-BASE_DIR = "/home/maniskill/phase_16_composite_modular_architecture"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_16_composite_modular_architecture"
 CKPT_DIR = os.path.join(BASE_DIR, "checkpoints")
 EVAL_DIR = os.path.join(BASE_DIR, "eval_results")
 os.makedirs(CKPT_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
-PHASE15_CKPT = "/home/maniskill/phase_15_cross_embodiment/combined/combined_omniarm_best.pt"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+PHASE15_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment/combined/combined_omniarm_best.pt"
 DELIVERABLE_CKPT = os.path.join(CKPT_DIR, "universal_composite_omniarm.pt")
 
 

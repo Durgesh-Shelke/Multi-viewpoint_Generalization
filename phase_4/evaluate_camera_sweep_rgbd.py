@@ -200,10 +200,10 @@ def record_angle_video(
 
 def main():
     parser = argparse.ArgumentParser(description="13-Angle Camera Sweep for RGB-D Policy")
-    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/phase_4/final_models/clean_rgbd_baseline_front_view_91percent.pt")
+    parser.add_argument("--checkpoint", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_baseline_front_view_91percent.pt")
     parser.add_argument("--episodes", type=int, default=1000, help="Episodes per angle")
     parser.add_argument("--num_envs", type=int, default=100, help="Parallel environments")
-    parser.add_argument("--output_json", type=str, default="/home/maniskill/phase_4/runs/sim2real_45mm_block_rgbd/sweep_results_front_rgbd.json")
+    parser.add_argument("--output_json", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_4/runs/sim2real_45mm_block_rgbd/sweep_results_front_rgbd.json")
     args = parser.parse_args()
 
     print("\n" + "=" * 78)
@@ -254,8 +254,8 @@ def main():
         json.dump(summary, f, indent=2)
 
     # Also mirror to research_reports
-    os.makedirs("/home/maniskill/phase_4/reports", exist_ok=True)
-    with open("/home/maniskill/phase_4/reports/sweep_results_front_rgbd.json", "w") as f:
+    os.makedirs("/home/maniskill/Multi-viewpoint_Generalization/phase_4/reports", exist_ok=True)
+    with open("/home/maniskill/Multi-viewpoint_Generalization/phase_4/reports/sweep_results_front_rgbd.json", "w") as f:
         json.dump(summary, f, indent=2)
 
     print("\n" + "=" * 78)

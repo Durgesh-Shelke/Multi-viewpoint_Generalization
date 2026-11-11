@@ -2,7 +2,7 @@
 # ==============================================================================
 # Resume script for Phase 6 Viewpoint Specialists
 # ==============================================================================
-DIR="/home/maniskill/phase_6_viewpoint_specialists"
+DIR="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists"
 PAUSE_FILE="$DIR/.pause"
 LOG_FILE="$DIR/master_execution.log"
 

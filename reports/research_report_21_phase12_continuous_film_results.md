@@ -5,9 +5,9 @@
 Phase 12 tackled the **viewpoint interpolation gap** identified in Phase 10 (where untrained in-between camera angles suffered a drop to 2.9% pick-and-lift success and 19.8% grasp rate). 
 
 To solve this without discrete teacher interference, Phase 12 deployed:
-1. **Privileged State Oracle Teacher:** A 100.0% optimal PPO state-based teacher ([`privileged_state_teacher.pt`](file:///home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt)) with zero camera dependence, enabling arbitrary closed-loop demonstration labeling across continuous 3D camera coordinates.
+1. **Privileged State Oracle Teacher:** A 100.0% optimal PPO state-based teacher ([`privileged_state_teacher.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt)) with zero camera dependence, enabling arbitrary closed-loop demonstration labeling across continuous 3D camera coordinates.
 2. **Continuous Viewpoint Randomization:** Rollouts sampled continuously over the frontal hemisphere ($\text{Az} \in [-70^\circ, +70^\circ]$, $\text{El} \in [12^\circ, 50^\circ]$, $\text{Dist} \in [0.95, 1.25]\text{m}$).
-3. **Early-Fusion FiLM Modulation:** [`FiLMPhase12Agent`](file:///home/maniskill/phase_12_privileged_state_distillation/film_models.py#L100-L123), applying affine transformations $\gamma(\mathbf{c}_{\text{ext}}) \odot \mathbf{h} + \beta(\mathbf{c}_{\text{ext}})$ directly inside the NatureCNN convolutional stages.
+3. **Early-Fusion FiLM Modulation:** [`FiLMPhase12Agent`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation/film_models.py#L100-L123), applying affine transformations $\gamma(\mathbf{c}_{\text{ext}}) \odot \mathbf{h} + \beta(\mathbf{c}_{\text{ext}})$ directly inside the NatureCNN convolutional stages.
 
 ### Key Benchmark Achievements:
 - **In-Between Grasp Initiation Rate:** Surged from **19.8%** in Phase 10 to **53.1%** (+33.3% absolute increase, **2.68x gain**). Over half of all novel viewpoints now successfully guide the robot gripper to establish physical contact and grasp the cube.

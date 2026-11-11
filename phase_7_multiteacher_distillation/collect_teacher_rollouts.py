@@ -23,8 +23,8 @@ from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper, Flatten
 from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from models import UnifiedAblationAgent
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
-TEACHER_CKPT_DIR = "/home/maniskill/phase_6_viewpoint_specialists/checkpoints"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+TEACHER_CKPT_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists/checkpoints"
 DEFAULT_DATA_DIR = os.path.join(SCRIPT_DIR, "data")
 
 

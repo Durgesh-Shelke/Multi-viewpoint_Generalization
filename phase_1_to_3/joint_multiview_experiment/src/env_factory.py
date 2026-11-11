@@ -39,8 +39,8 @@ def find_viewpoints_file() -> str:
     """Finds canonical viewpoints.json file."""
     candidates = [
         str(EXP_DIR / "configs" / "viewpoints.json"),
-        "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json",
-        "/home/maniskill/phase_1_to_3/RGB/checkpoints/sequential_viewpoints_checkpoints/viewpoints.json",
+        "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json",
+        "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/RGB/checkpoints/sequential_viewpoints_checkpoints/viewpoints.json",
     ]
     for c in candidates:
         if os.path.isfile(c):

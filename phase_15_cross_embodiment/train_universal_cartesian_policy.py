@@ -37,11 +37,11 @@ from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from ppo import Agent as PrivilegedAgent
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-BASE_DIR = "/home/maniskill/phase_15_cross_embodiment"
+BASE_DIR = "/home/maniskill/Multi-viewpoint_Generalization/phase_15_cross_embodiment"
 OUTPUT_DIR = os.path.join(BASE_DIR, "eval_results")
 CKPT_DIR = os.path.join(BASE_DIR, "omniarm")
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
-TEACHER_CKPT = "/home/maniskill/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+TEACHER_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_12_privileged_state_distillation/teacher/privileged_state_teacher.pt"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(CKPT_DIR, exist_ok=True)

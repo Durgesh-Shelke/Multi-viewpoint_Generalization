@@ -28,7 +28,7 @@ from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from models_maniwhere import ManiwhereAgent
 from pick_cube_dual_view import PickCubeDualViewEnv, DualViewWrapper
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 CORE_VP_IDS = [17, 0, 28, 18, 27, 20, 19, 6]
 MOVING_VP_IDS = [0, 28, 18, 27, 20, 19, 6]
 
@@ -112,7 +112,7 @@ def train_maniwhere(
     lambda_feat: float = 200.0,
     temperature: float = 0.1,
     eval_freq_iters: int = 10,
-    output_dir: str = "/home/maniskill/phase_9_maniwhere_replication",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication",
     warm_start_ckpt: str = None,
     device_str: str = "cuda",
 ):
@@ -418,7 +418,7 @@ if __name__ == "__main__":
     parser.add_argument("--total-timesteps", type=int, default=3000000)
     parser.add_argument("--num-envs", type=int, default=64)
     parser.add_argument("--eval-freq", type=int, default=10)
-    parser.add_argument("--warm-start", type=str, default="/home/maniskill/phase_5/checkpoints/candidate_A_best.pt")
+    parser.add_argument("--warm-start", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_5/checkpoints/candidate_A_best.pt")
     args = parser.parse_args()
 
     train_maniwhere(

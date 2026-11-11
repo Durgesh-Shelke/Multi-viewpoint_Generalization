@@ -26,7 +26,7 @@ python3 /home/maniskill/examples/baselines/ppo/ppo_rgb.py \
   --camera-target="-0.1,0.0,0.1"
 
 echo ""
-echo "[PIPELINE] >>> Phase 1 Complete! Pure RGB 5M model saved to /home/maniskill/phase_4/final_models/pure_rgb_5m_front_view.pt"
+echo "[PIPELINE] >>> Phase 1 Complete! Pure RGB 5M model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/pure_rgb_5m_front_view.pt"
 echo ""
 
 # 2. Train 4-Channel RGB-D Baseline for 5M steps
@@ -44,7 +44,7 @@ python3 /home/maniskill/examples/baselines/ppo/ppo_rgbd.py \
   --camera-target="-0.1,0.0,0.1"
 
 echo ""
-echo "[PIPELINE] >>> Phase 2 Complete! 4-Channel RGB-D 5M model saved to /home/maniskill/phase_4/final_models/clean_rgbd_5m_front_view.pt"
+echo "[PIPELINE] >>> Phase 2 Complete! 4-Channel RGB-D 5M model saved to /home/maniskill/Multi-viewpoint_Generalization/phase_4/final_models/clean_rgbd_5m_front_view.pt"
 echo ""
 echo "=============================================================================="
 echo " 5M-STEP BASELINE RETRAINING CAMPAIGN FINISHED SUCCESSFULLY!"

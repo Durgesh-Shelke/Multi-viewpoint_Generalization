@@ -79,11 +79,11 @@ def evaluate_model_on_viewpoint(agent, eye, target, num_episodes=100, num_envs=5
     return succ_rate, float(np.mean(returns)) if returns else 0.0, float(np.mean(lengths)) if lengths else 0.0
 
 
-def run_matrix_eval(output_dir="/home/maniskill/phase_6_viewpoint_specialists", episodes_per_cell=200):
+def run_matrix_eval(output_dir="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists", episodes_per_cell=200):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ckpt_dir = os.path.join(output_dir, "checkpoints")
     eval_dir = os.path.join(output_dir, "eval_results")
-    vps_file = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+    vps_file = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
 
     with open(vps_file) as f:
         all_vps = json.load(f)
@@ -195,7 +195,7 @@ def run_matrix_eval(output_dir="/home/maniskill/phase_6_viewpoint_specialists", 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output-dir", type=str, default="/home/maniskill/phase_6_viewpoint_specialists")
+    parser.add_argument("--output-dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_6_viewpoint_specialists")
     parser.add_argument("--episodes", type=int, default=200)
     args = parser.parse_args()
     run_matrix_eval(args.output_dir, args.episodes)

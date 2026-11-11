@@ -144,7 +144,7 @@ def train_single_candidate(
     learning_rate: float = 3e-4,
     target_kl: float = 0.2,
     eval_freq: int = 25,
-    output_dir: str = "/home/maniskill/phase_5",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_5",
     seed: int = 42,
     device_str: str = "cuda",
     resume: bool = True,
@@ -495,7 +495,7 @@ if __name__ == "__main__":
     parser.add_argument("--num-minibatches", type=int, default=None, help="Number of minibatches (default: 8 for 128x128, 16 for 256x256)")
     parser.add_argument("--target-kl", type=float, default=0.2, help="PPO target KL divergence early stopping threshold")
     parser.add_argument("--eval-freq", type=int, default=25)
-    parser.add_argument("--output-dir", type=str, default="/home/maniskill/phase_5")
+    parser.add_argument("--output-dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_5")
     parser.add_argument("--resume", action="store_true", default=True, help="Resume from existing checkpoint if available (default: True)")
     parser.add_argument("--no-resume", dest="resume", action="store_false", help="Start training from scratch, ignoring checkpoints")
     args = parser.parse_args()

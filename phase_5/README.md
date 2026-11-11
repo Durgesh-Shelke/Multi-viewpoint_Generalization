@@ -31,21 +31,21 @@ Each candidate is subjected to:
 ### To Run the Full Overnight Benchmark (All 5 Candidates A, B, C, D, E):
 ```bash
 # Default 10M steps each (~11.0 hours)
-/home/maniskill/phase_5/run_resolution_ablation.sh
+/home/maniskill/Multi-viewpoint_Generalization/phase_5/run_resolution_ablation.sh
 
 # Or 8M steps each (~8.8 hours, fits within an 8-9 hour window)
-/home/maniskill/phase_5/run_resolution_ablation.sh --total-timesteps 8000000
+/home/maniskill/Multi-viewpoint_Generalization/phase_5/run_resolution_ablation.sh --total-timesteps 8000000
 ```
 Or directly via python:
 ```bash
-python3 /home/maniskill/phase_5/run_master_unbiased_benchmark.py --candidates A B C D E --total-timesteps 10000000
+python3 /home/maniskill/Multi-viewpoint_Generalization/phase_5/run_master_unbiased_benchmark.py --candidates A B C D E --total-timesteps 10000000
 ```
 
 ### Generated Artifacts & Reports:
 - **Master JSON Summary:** `master_benchmark_summary.json`
 - **Growth Curves & Plateau Analysis Chart:** `growth_curves_comparison.png`
 - **Plateau Metrics Summary:** `eval_results/plateau_summary.json`
-- **Formal Research Report:** [`/home/maniskill/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md`](file:///home/maniskill/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md)
+- **Formal Research Report:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/reports/14_resolution_and_asymmetric_depth_ablation_report.md)
 - **Execution Log:** `master_execution.log`
 - **Saved Model Checkpoints:** `checkpoints/candidate_{A,B,C,D,E}.pt`
 
@@ -57,7 +57,7 @@ The benchmark suite features zero-loss pause and resume functionality:
 
 | Command | Action | Mechanism |
 | :--- | :--- | :--- |
-| **`/home/maniskill/phase_5/pause.sh`** | **Pause Execution** | Checkpoints active model state, frees GPU VRAM cache, enters low-CPU sleep. |
-| **`/home/maniskill/phase_5/resume.sh`** | **Resume Execution** | If running: unpauses instantly. If stopped: restarts pipeline, skipping completed candidates and resuming from exact step. |
-| **`/home/maniskill/phase_5/status.sh`** | **Live Status Dashboard** | Displays current pipeline state, steps reached per candidate, and GPU utilization/VRAM. |
+| **`/home/maniskill/Multi-viewpoint_Generalization/phase_5/pause.sh`** | **Pause Execution** | Checkpoints active model state, frees GPU VRAM cache, enters low-CPU sleep. |
+| **`/home/maniskill/Multi-viewpoint_Generalization/phase_5/resume.sh`** | **Resume Execution** | If running: unpauses instantly. If stopped: restarts pipeline, skipping completed candidates and resuming from exact step. |
+| **`/home/maniskill/Multi-viewpoint_Generalization/phase_5/status.sh`** | **Live Status Dashboard** | Displays current pipeline state, steps reached per candidate, and GPU utilization/VRAM. |
 

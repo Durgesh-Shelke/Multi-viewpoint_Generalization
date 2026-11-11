@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-Phase 14 subjects the breakthrough **3D Base-Frame PointNet Policy** ([`pointnet_student_best.pt`](file:///home/maniskill/phase_13_pointcloud_generalization/student/pointnet_student_best.pt)) to an extensive battery of real-world stress tests and generates a high-definition video showcase across novel in-between camera viewpoints.
+Phase 14 subjects the breakthrough **3D Base-Frame PointNet Policy** ([`pointnet_student_best.pt`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_13_pointcloud_generalization/student/pointnet_student_best.pt)) to an extensive battery of real-world stress tests and generates a high-definition video showcase across novel in-between camera viewpoints.
 
 ### Key Benchmark Discoveries:
 1. **1,000 Continuous Spherical Trials:** Evaluated across 1,000 completely random, continuous, unseen camera viewpoints sampled across the entire frontal hemisphere ($\text{Az} \in [-80^\circ, +80^\circ]$, $\text{El} \in [10^\circ, 60^\circ]$, $\text{Dist} \in [0.85, 1.35]\text{m}$).
@@ -82,7 +82,7 @@ All videos are rendered at $512 \times 512$ with Picture-in-Picture sensor view:
 
 ## 5. Artifacts and Repository State
 
-- **Robustness Results (JSON):** [`phase14_robustness_results.json`](file:///home/maniskill/phase_14_robustness_and_videos/eval_results/phase14_robustness_results.json).
+- **Robustness Results (JSON):** [`phase14_robustness_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/eval_results/phase14_robustness_results.json).
 - **Sensitivity Curves Plot:** [`phase14_robustness_curves.png`](file:///root/.gemini/antigravity-cli/brain/789cffef-f152-46d8-aadb-5a046942c35f/phase14_robustness_curves.png).
-- **Video Generator Script:** [`generate_phase14_videos.py`](file:///home/maniskill/phase_14_robustness_and_videos/generate_phase14_videos.py).
+- **Video Generator Script:** [`generate_phase14_videos.py`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_14_robustness_and_videos/generate_phase14_videos.py).
 - **Standalone Repo:** Synced to [`/home/maniskill/Multi-viewpoint_Generalization/`](file:///home/maniskill/Multi-viewpoint_Generalization/).

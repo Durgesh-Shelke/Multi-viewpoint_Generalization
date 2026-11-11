@@ -25,8 +25,8 @@ from mani_skill.utils.wrappers.flatten import FlattenActionSpaceWrapper, Flatten
 from mani_skill.vector.wrappers.gymnasium import ManiSkillVectorEnv
 from models_maniwhere import ManiwhereAgent
 
-VIEWPOINTS_JSON = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
-MANIWHERE_CKPT = "/home/maniskill/phase_9_maniwhere_replication/checkpoints/maniwhere_best.pt"
+VIEWPOINTS_JSON = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json"
+MANIWHERE_CKPT = "/home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/checkpoints/maniwhere_best.pt"
 DISTILLED_SUMMARY = "/home/maniskill/Multi-viewpoint_Generalization/reports/random_1000_tests_summary.json"
 CORE_VP_IDS = [17, 0, 28, 18, 27, 20, 19, 6]
 
@@ -46,7 +46,7 @@ def run_maniwhere_evaluation(
     num_tests: int = 1000,
     seed: int = 42,
     batch_envs: int = 50,
-    output_dir: str = "/home/maniskill/phase_9_maniwhere_replication/eval_results",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_9_maniwhere_replication/eval_results",
     device_str: str = "cuda",
 ):
     os.makedirs(output_dir, exist_ok=True)

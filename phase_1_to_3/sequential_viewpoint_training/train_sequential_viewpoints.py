@@ -117,8 +117,8 @@ def train_single_viewpoint_until_target(
     vf_coef: float = 0.5,
     max_grad_norm: float = 0.5,
     start_iter: int = 1,
-    output_dir: str = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training",
-    progress_file: str = "/home/maniskill/phase_1_to_3/sequential_viewpoint_training/training_progress.json",
+    output_dir: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training",
+    progress_file: str = "/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/training_progress.json",
     device: str = "cuda",
 ) -> tuple:
     global STOP_REQUESTED
@@ -368,9 +368,9 @@ def update_progress_json(
 
 def main():
     parser = argparse.ArgumentParser(description="Target-Driven (>= 95%) Sequential Viewpoint Training")
-    parser.add_argument("--base_model", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training/backup_original_model.pt")
-    parser.add_argument("--viewpoints_json", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
-    parser.add_argument("--output_dir", type=str, default="/home/maniskill/phase_1_to_3/sequential_viewpoint_training")
+    parser.add_argument("--base_model", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/backup_original_model.pt")
+    parser.add_argument("--viewpoints_json", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training/viewpoints.json")
+    parser.add_argument("--output_dir", type=str, default="/home/maniskill/Multi-viewpoint_Generalization/phase_1_to_3/sequential_viewpoint_training")
     parser.add_argument("--target_accuracy", type=float, default=95.0, help="Accuracy threshold (%) required to advance")
     parser.add_argument("--eval_freq", type=int, default=5, help="Check accuracy every N epochs")
     parser.add_argument("--eval_episodes", type=int, default=50, help="Number of test episodes per accuracy check")

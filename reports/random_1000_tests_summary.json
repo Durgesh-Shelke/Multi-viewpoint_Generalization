@@ -1,7 +1,7 @@
 {
   "benchmark": "1,000 Randomized Viewpoint Tests",
   "model": "Distilled Unified Policy (Candidate A NatureCNN)",
-  "checkpoint": "/home/maniskill/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt",
+  "checkpoint": "/home/maniskill/Multi-viewpoint_Generalization/phase_7_multiteacher_distillation/checkpoints/distilled_student_best.pt",
   "seed": 42,
   "total_tests": 1000,
   "total_successes": 809,

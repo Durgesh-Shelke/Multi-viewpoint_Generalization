@@ -68,7 +68,7 @@ To resolve the foundational debate regarding camera input resolution and sensor 
 
 ## 3. Learning Curves & Plateau Dynamics
 
-![Learning Curves and Plateau Analysis](/home/maniskill/phase_5/growth_curves_comparison.png)
+![Learning Curves and Plateau Analysis](/home/maniskill/Multi-viewpoint_Generalization/phase_5/growth_curves_comparison.png)
 
 ### Plateau Characterization Table
 - **Candidate A ($128 \times 128$ RGB-D):**
@@ -109,16 +109,16 @@ If walltime or edge compute is strictly constrained (e.g., embedded Jetson Orin 
 
 ## 5. Artifact Checklist & Deliverables
 
-- [x] **Master Benchmark Summary JSON:** [`/home/maniskill/phase_5/master_benchmark_summary.json`](file:///home/maniskill/phase_5/master_benchmark_summary.json)
-- [x] **Plateau Analysis Summary:** [`/home/maniskill/phase_5/eval_results/plateau_summary.json`](file:///home/maniskill/phase_5/eval_results/plateau_summary.json)
-- [x] **Visual Growth Curves Comparison:** [`/home/maniskill/phase_5/growth_curves_comparison.png`](file:///home/maniskill/phase_5/growth_curves_comparison.png)
+- [x] **Master Benchmark Summary JSON:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_5/master_benchmark_summary.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/master_benchmark_summary.json)
+- [x] **Plateau Analysis Summary:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/plateau_summary.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/plateau_summary.json)
+- [x] **Visual Growth Curves Comparison:** [`/home/maniskill/Multi-viewpoint_Generalization/phase_5/growth_curves_comparison.png`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/growth_curves_comparison.png)
 - [x] **Individual Candidate Histories & Result JSONs:**
-  - Candidate A: [`candidate_A_results.json`](file:///home/maniskill/phase_5/eval_results/candidate_A_results.json)
-  - Candidate B: [`candidate_B_results.json`](file:///home/maniskill/phase_5/eval_results/candidate_B_results.json)
-  - Candidate C: [`candidate_C_results.json`](file:///home/maniskill/phase_5/eval_results/candidate_C_results.json)
-  - Candidate D: [`candidate_D_results.json`](file:///home/maniskill/phase_5/eval_results/candidate_D_results.json)
-  - Candidate E: [`candidate_E_results.json`](file:///home/maniskill/phase_5/eval_results/candidate_E_results.json)
-- [x] **Checkpoints Preserved:** [`checkpoints/`](file:///home/maniskill/phase_5/checkpoints/) (`candidate_{A,B,C,D,E}_best.pt`)
+  - Candidate A: [`candidate_A_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/candidate_A_results.json)
+  - Candidate B: [`candidate_B_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/candidate_B_results.json)
+  - Candidate C: [`candidate_C_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/candidate_C_results.json)
+  - Candidate D: [`candidate_D_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/candidate_D_results.json)
+  - Candidate E: [`candidate_E_results.json`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/eval_results/candidate_E_results.json)
+- [x] **Checkpoints Preserved:** [`checkpoints/`](file:///home/maniskill/Multi-viewpoint_Generalization/phase_5/checkpoints/) (`candidate_{A,B,C,D,E}_best.pt`)
 - [x] **30-Minute Overnight Audit Log:** [`benchmark_overnight_monitor_log.md`](file:///root/.gemini/antigravity-cli/brain/82673f33-5c96-4154-bb42-cf6de559c7b7/benchmark_overnight_monitor_log.md)
 
 <!-- GOAL_COMPLETE -->

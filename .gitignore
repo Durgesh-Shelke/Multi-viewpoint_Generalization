@@ -18,6 +18,7 @@ phase_4/runs/sim2real_45mm_block_rgb_5m/checkpoints/
 phase_4/runs/sim2real_45mm_block_rgbd_5m/checkpoints/
 # Large rollout datasets (>100MB)
 phase_7_multiteacher_distillation/data/
+phase_15_cross_embodiment/data/
 */data/*.pt
 data/*.pt
 

@@ -560,7 +560,7 @@ def create_deck():
     p.font.color.rgb = COLOR_NAVY
 
     items = [
-        "Architectural Specification: In every tile of the 4x4 split-screen video, the PointNet++ policy actively perceives the scene from that specific camera angle and computes real-time actions.",
+        "Architectural Specification: In every tile, PointNet++ actively perceives the scene from that specific angle. It computes motor actions in real time.",
         "Universal 16-Angle Dome Coverage: Evaluates 4 trained anchors, 7 novel in-between angles, 2 extreme flank angles (60°/62°), 2 zoom distances (0.98m/1.32m), and overhead.",
         "5x Slowdown for Presentation: Encoded at 25 FPS (17.8s duration) in Full HD 1080p for human inspectability.",
         "100% Test Success Across Tasks: PickCube (16/16), PushCube (16/16), PullCube (16/16), PokeCube (13/16), LiftPegUpright (16/16)."
@@ -717,9 +717,9 @@ def create_deck():
     p.font.color.rgb = COLOR_PRIMARY
 
     inventions = [
-        "Architecture A: Self-Calibrating Kinematic Policy (Uncalibrated Invariance) — Eliminates the need for pre-calibrated camera extrinsics. Temporal cross-attention matches visual optical flow with proprioceptive forward kinematics to recover camera pose [R|t] within the first 5 execution steps without ArUco markers.",
-        "Architecture B: Continuous SE(3)-Equivariant Neural Policy — Employs Steerable E(3)-Equivariant Graph Neural Networks (EGNNs) with spherical harmonics to algebraically guarantee continuous 3D rotation and viewpoint equivariance: pi(g * P) = g * pi(P).",
-        "Architecture C: Cross-Embodiment Generalist Foundation Policy — Shifts policy outputs entirely into Cartesian operational space ([Delta x, Delta R, F]), solved via robot URDF damped least-squares inverse kinematics, allowing a single neural network to drive diverse arms without retraining."
+        "Architecture A: Self-Calibrating Kinematic Policy — Eliminates pre-calibrated extrinsics. Temporal cross-attention matches visual optical flow with forward kinematics to recover camera pose [R|t] within 5 execution steps.",
+        "Architecture B: Continuous SE(3)-Equivariant Neural Policy — Employs Steerable Graph Neural Networks. Spherical harmonics algebraically guarantee continuous rotational equivariance: pi(g * P) = g * pi(P).",
+        "Architecture C: Cross-Embodiment Generalist Foundation Policy — Commands Cartesian operational space ([Delta x, Delta R, F]). A standard URDF solver resolves joint commands across heterogeneous manipulators."
     ]
     for inv in inventions:
         p = tf13.add_paragraph()

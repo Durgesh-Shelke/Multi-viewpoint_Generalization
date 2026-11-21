@@ -14,7 +14,7 @@
 
 \begin{document}
 
-\title{Continuous Multi-Viewpoint Generalization in Deep Visual Robotic Manipulation: Overcoming the 2D Spatial Collapse via 3D Metric Geometry and Kinematic Decoupling}
+\title{Continuous Multi-Viewpoint Generalization in Visual Robotic Manipulation}
 
 \author{\IEEEauthorblockN{Durgesh Balkrishna Shelke}
 \IEEEauthorblockA{\textit{Department of Computer Science and Engineering} \\
@@ -32,7 +32,7 @@ sbnair@iitg.ac.in}
 \maketitle
 
 \begin{abstract}
-Shift a robot camera by just ten degrees or five centimeters, and modern visuomotor policies fail. While standard 2D computer vision handles image rotations well using data augmentation, closed-loop manipulation policies hit a wall. We call this failure mode the Continuous 2D Collapse. In ManiSkill 3.0, we tested state-of-the-art multi-teacher distillation (ManiWhere, NeurIPS 2024). Even though the student scored 90.7\% on its four trained cameras, success plummeted to 4.3\% on intermediate angles along the spherical dome---an 86.4\% drop. Feeding camera extrinsics through FiLM layers did not rescue performance, stalling at 4.6\%. The fix is geometric. We map depth into 3D metric coordinates relative to the robot base, bypassing 2D pixels before PointNet++ feature extraction. On PickCube-v1, this cuts the continuous generalization gap from 86.4\% down to 1.3\% (86.1\% anchor vs. 84.8\% in-between). We verified this geometric fix across five physical contact tasks. The policy tolerated RealSense noise, including $\pm 1.5$\,cm calibration shifts and 20\% depth dropout. Zero-shot visual transfer succeeded from Franka Panda to xArm 6. The network hits 14.2\,ms (70\,Hz) inference on Jetson Orin Nano. We identify failure bounds on StackCube-v1 and define three subsequent architectures.
+Shift a robot camera by just ten degrees or five centimeters, and modern visuomotor policies fail. While standard 2D computer vision handles image rotations well using data augmentation, closed-loop manipulation policies fail. We call this failure mode the Continuous 2D Collapse. In ManiSkill 3.0, we benchmarked multi-camera representation baselines including ManiWhere (CoRL 2024) and multi-teacher distillation. Even though the distilled student scored 90.7\% on its four trained cameras, success plummeted to 4.3\% on intermediate angles along the spherical dome---an 86.4\% drop. Feeding camera extrinsics through FiLM layers did not rescue performance, stalling at 4.6\%. The fix is geometric. We map depth into 3D metric coordinates relative to the robot base, bypassing 2D pixels before PointNet++ feature extraction. On PickCube-v1, this cuts the continuous generalization gap from 86.4\% down to 1.3\% (86.1\% anchor vs. 84.8\% in-between). We verified this geometric fix across five physical contact tasks. The policy tolerated RealSense noise, including $\pm 1.5$\,cm calibration shifts and 20\% depth dropout. Zero-shot visual transfer succeeded from Franka Panda to xArm 6. The network hits 14.2\,ms (70\,Hz) inference on Jetson Orin Nano(simulated). We identify failure bounds on StackCube-v1 and define three subsequent architectures.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -40,7 +40,7 @@ Robotic Manipulation, Visuomotor Control, Multi-Viewpoint Generalization, 3D Poi
 \end{IEEEkeywords}
 
 \section{Introduction}
-Mounting an external camera above a robotic manipulator looks deceptively simple in simulation. But real robot workcells are unpredictable. A technician bumps an aluminum rail, a mobile base docks off target, or an overhead rig flexes under acceleration. While standard deep visuomotor policies \cite{diffusion_policy, r3m, vc1} routinely score 85\% to 97\% success under fixed cameras, a 10-degree rotation causes complete failure. The arm reaches down and closes its fingers on empty air.
+Mounting an external camera above a robotic manipulator looks very simple in simulation. But real robot workspaces are unpredictable. A technician bumps an aluminum rail, a mobile base docks off target, or an overhead rig flexes under acceleration. While standard deep visuomotor policies \cite{diffusion_policy, r3m, vc1} routinely score 85\% to 97\% success under fixed cameras, a 10-degree rotation causes complete failure. The arm reaches down and closes its fingers on empty air.
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/camera_geometry_diagram.png}}
@@ -49,7 +49,7 @@ Mounting an external camera above a robotic manipulator looks deceptively simple
 \end{figure}
 
 \subsection{The 2D Generalization Illusion in Policy Learning}
-Why does 2D vision fail so abruptly? Image classifiers learn many-to-one invariant mappings where camera angle does not change the label. Augmentation schemes like ColorJitter deliberately train filters to discard view geometry. Robot manipulation requires the exact opposite: fine-grained spatial equivariance. Rotate the camera viewpoint by $22.5^\circ$ in ManiSkill 3.0, and block coordinates jump over 60 pixels across the sensor grid. Yet the target cube sits motionless at table coordinate $(0, 0, 0.1)$. Because 2D convolutional filters operate strictly on pixel indices $(u, v)$, the policy commands motor commands rotated relative to the scene. The gripper misses the target block by 8.4\,cm. We designate this performance cliff the \textbf{Continuous 2D Collapse}.
+Why does 2D vision fail so abruptly? Image classifiers learn many-to-one invariant mappings where camera angle does not change the label. Augmentation schemes like ColorJitter deliberately train filters to discard view geometry. Robot manipulation requires the exact opposite: fine-grained spatial equivariance. Rotate the camera viewpoint by $22.5^\circ$ in ManiSkill 3.0, and block coordinates jump over 60 pixels across the sensor grid. Yet the target cube sits motionless at table coordinate $(0, 0, 0.1)$. Because 2D convolutional filters operate strictly on pixel indices $(u, v)$, the policy outputs motor actions rotated relative to the scene. The gripper misses the target block by 8.4\,cm. We designate this performance cliff the \textbf{Continuous 2D Collapse}.
 
 \subsection{Formal Mathematical Problem Formulation}
 We anchor the coordinate frame to the robot base. An RGB-D sensor observes the scene from spherical pose $(r, \theta, \phi)$ with extrinsic parameters $T_{\text{cam}}^t = [R_t \mid p_t] \in SE(3)$. As the camera orbits from $0^\circ$ to $360^\circ$, the rendered frames change completely, but the physical task state does not. We consider a policy $\pi(a_t \mid o_{\le t})$ viewpoint-invariant if its expected return across continuous azimuth $\phi \in [0, 2\pi)$ matches an oracle $\pi^*$. Expected return must stay within 5\% of oracle return:
@@ -67,10 +67,10 @@ where $\epsilon \le 0.05$ enforces a strict upper bound on the continuous genera
 
 \section{Related Work}
 \subsection{2D Representation Learning and Augmentation}
-Handling camera variations in visuomotor manipulation follows two main approaches. First, engineers apply 2D image transformations, such as random cropping, pixel jitter, and translations \cite{drq}. Other methods use pre-trained visual representations like R3M \cite{r3m}, VC-1 \cite{vc1}, and ViNT \cite{vint}. While these backbones absorb changes in lighting and texture, they fail under 3D camera rotations. Planar pixel operations cannot synthesize perspective parallax or shifting occlusion boundaries \cite{pointnet}.
+Standard reinforcement learning applies 2D image transformations, such as random cropping, pixel jitter, and translations \cite{drq}. Other methods use pre-trained visual representations like R3M \cite{r3m}, VC-1 \cite{vc1}, and ViNT \cite{vint}. While these backbones absorb changes in lighting and texture, they fail under 3D camera rotations because planar pixel operations cannot synthesize perspective parallax or shifting occlusion boundaries.
 
-\subsection{Multi-Teacher Distillation and ManiWhere}
-Second, multi-camera distillation has gained traction. ManiWhere (NeurIPS 2024) \cite{maniwhere} trained separate PPO policies across discrete camera viewpoints. It distilled their features into a single student policy. While this student scored 90.7\% on its training views, evaluation never extended beyond those fixed cameras. As our experiments show, testing between those anchors reveals an immediate 86.4\% collapse in task success.
+\subsection{Multi-View Policy Generalization}
+Second, multi-camera policy learning has gained traction. Methods like ManiWhere (CoRL 2024) \cite{maniwhere} encourage multi-view consistency using Spatial Transformer Networks and contrastive representation learning under domain randomization. Alternatively, multi-teacher distillation trains separate viewpoint specialists and distills their features into a unified student policy. While our distilled student scored 90.7\% on its trained anchor views, evaluation between these anchors reveals an immediate 86.4\% collapse in task success.
 
 \section{The Continuous 2D Collapse Discovery}
 We mapped the breakdown of 2D policies across continuous camera dome orbits around a Franka Panda in ManiSkill 3.0.
@@ -261,7 +261,7 @@ Inspection of rollout trajectories reveals two physical bottlenecks:
 \item \textbf{Relative Depth Ambiguity:} Single-cube tasks only require finding one block relative to the fixed robot base. Stacking requires tracking sub-millimeter relative displacement between two movable objects simultaneously. Because uncolored point clouds yield identical geometric shapes for identical blocks, the policy cannot distinguish the top cube from the bottom cube. Without semantic identity masks, the network confuses target coordinates during multi-body contact. Precision stacking ultimately demands multi-camera fusion or eye-in-hand sensors.
 \end{enumerate}
 
-\section{Novel Post-BTP Architectural Proposals}
+\section{Future Architectural Directions}
 To address these physical limits, we formulate three subsequent research architectures:
 
 \subsection{Architecture A: Online Self-Calibrating Kinematics}
@@ -297,24 +297,31 @@ The visual encoder downsamples raw depth frames to $N=1200$ points via Farthest 
 \subsection{Policy Optimization Configuration}
 We trained policies using Proximal Policy Optimization (PPO). Rollout buffers collected 4096 transitions per gradient update with a minibatch size of 128. We used the Adam optimizer with initial learning rate $\eta = 3 \times 10^{-4}$ and linear decay. The PPO clipping parameter was set to $\epsilon_{\text{ppo}} = 0.2$. Value and policy networks train for 200000 environment steps.
 
-\newpage
 \section{Conclusion}
 Over eighteen development phases in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the continuous generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
 
 \section*{Acknowledgment}
-The author expresses sincere gratitude to his supervisor, Prof. Shivashankar B. Nair, for his guidance throughout this BTP project. All computational experiments, simulations, and neural network training routines were conducted on personal GPU hardware; no departmental compute clusters or resources were utilized.
+I express my sincere gratitude to my supervisor, Prof. Shivashankar B. Nair, for his guidance throughout this BTP project.
 
+\newpage
 \begin{thebibliography}{00}
+\bibitem{diffusion_policy} C. Chi, S. Feng, Y. Du, Z. Xu, E. Cousineau, B. Burchfiel, and S. Song, ``Diffusion Policy: Visuomotor Policy Learning via Action Diffusion,'' in \textit{Proc. Robotics: Science and Systems (RSS)}, 2023, paper 26, doi: 10.15607/RSS.2023.XIX.026.
 
-\bibitem{maniwhere} Y. Chen, J. Gao, and D. Pathak, ``ManiWhere: Multi-Viewpoint Robot Manipulation via Visual Distillation,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 37, 2024.
-\bibitem{pointnet2} C. R. Qi, L. Yi, H. Su, and L. J. Guibas, ``PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 30, 2017.
+\bibitem{r3m} S. Nair, A. Rajeswaran, V. Kumar, C. Finn, and A. Gupta, ``R3M: A Universal Visual Representation for Robot Manipulation,'' in \textit{Proc. 6th Conf. Robot Learning (CoRL)}, ser. PMLR, vol. 205, 2023, pp. 892--909.
+
+\bibitem{vc1} A. Majumdar et al., ``Where are we in the search for an Artificial Visual Cortex for Embodied Intelligence?,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 36, 2023, pp. 655--677.
+
+\bibitem{drq} I. Kostrikov, D. Yarats, and R. Fergus, ``Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels,'' in \textit{Proc. International Conference on Learning Representations (ICLR)}, 2021.
+
+\bibitem{vint} D. Shah, A. Sridhar, N. Dashora, K. Stachowicz, K. Black, N. Hirose, and S. Levine, ``ViNT: A Foundation Model for Visual Navigation,'' in \textit{Proc. 7th Conf. Robot Learning (CoRL)}, ser. PMLR, vol. 229, 2023, pp. 711--733.
+
+\bibitem{maniwhere} Z. Yuan, T. Wei, S. Cheng, G. Zhang, Y. Chen, and H. Xu, ``Learning to Manipulate Anywhere: A Visual Generalizable Framework For Reinforcement Learning,'' in \textit{Proc. 8th Conf. Robot Learning (CoRL)}, ser. PMLR, vol. 270, 2025, pp. 1815--1833.
+
+\bibitem{maniskill} S. Tao et al., ``ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI,'' \textit{arXiv preprint arXiv:2410.00425}, 2024.
+
+\bibitem{pointnet2} C. R. Qi, L. Yi, H. Su, and L. J. Guibas, ``PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS/NIPS)}, vol. 30, 2017, pp. 5099--5108.
+
 \bibitem{pointnet} C. R. Qi, H. Su, K. Mo, and L. J. Guibas, ``PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation,'' in \textit{Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017, pp. 652--660.
-\bibitem{maniskill} J. Gu et al., ``ManiSkill: Generalizable Manipulation Skills Benchmark with Large-Scale Demonstrations,'' in \textit{Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2023.
-\bibitem{diffusion_policy} C. Chi et al., ``Diffusion Policy: Visuomotor Policy Learning via Action Diffusion,'' in \textit{Proc. Robotics: Science and Systems (RSS)}, 2023.
-\bibitem{r3m} S. Nair et al., ``R3M: A Universal Visual Representation for Robot Manipulation,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2022.
-\bibitem{vc1} A. Majumdar et al., ``Where are we in the journey towards Generalist Robot Policies?,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2023.
-\bibitem{vint} D. Shah et al., ``ViNT: A Foundation Model for Visual Navigation,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2023.
-\bibitem{drq} D. Yarats, I. Kostrikov, and R. Fergus, ``Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels,'' in \textit{Proc. International Conference on Learning Representations (ICLR)}, 2021.
 \end{thebibliography}
 
 \end{document}

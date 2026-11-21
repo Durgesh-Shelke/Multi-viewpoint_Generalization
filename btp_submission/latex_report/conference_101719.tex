@@ -253,31 +253,59 @@ NVIDIA Jetson Orin Nano & 20\,W & 10.1\,ms & \textbf{14.2\,ms} & \textbf{70.4\,H
 \end{table}
 
 \section{Empirical Failure Boundaries: StackCube-v1}
-On StackCube-v1, our 3D policy scored 0\% success across all camera angles. Examining failed rollouts identified two physical bottlenecks:
+On StackCube-v1, our 3D policy achieved 0\% success across all continuous camera viewpoints. We analyzed failed execution rollouts to identify physical breakdown mechanisms.
+
+Inspection of rollout trajectories reveals two physical bottlenecks:
 \begin{enumerate}
-\item \textbf{Gripper Self-Occlusion:} When carrying the red cube over the green cube, gripper fingers hide the target block. This self-occlusion conceals the contact interface from any single external camera.
-\item \textbf{Relative Depth Ambiguity:} Single-cube tasks only require finding one block relative to the fixed robot base. Stacking requires tracking sub-millimeter relative displacement between two movable objects simultaneously. Because uncolored point clouds yield identical shapes for identical blocks, the policy cannot distinguish them without semantic masks. Precision stacking ultimately demands multi-camera fusion or eye-in-hand sensors.
+\item \textbf{Gripper Self-Occlusion:} When carrying the red cube over the green cube, gripper fingers physically obstruct the line of sight. This self-occlusion conceals the contact interface from any single external camera. Reaching achieved 86.4\% success and initial grasp cleared 81.2\%. However, final placement dropped to 0.0\% because the policy lost visual track of the mating seam.
+\item \textbf{Relative Depth Ambiguity:} Single-cube tasks only require finding one block relative to the fixed robot base. Stacking requires tracking sub-millimeter relative displacement between two movable objects simultaneously. Because uncolored point clouds yield identical geometric shapes for identical blocks, the policy cannot distinguish the top cube from the bottom cube. Without semantic identity masks, the network confuses target coordinates during multi-body contact. Precision stacking ultimately demands multi-camera fusion or eye-in-hand sensors.
 \end{enumerate}
 
 \section{Novel Post-BTP Architectural Proposals}
 To address these physical limits, we formulate three subsequent research architectures:
 
-\subsection{Architecture A: Self-Calibrating Kinematic Policy}
-Architecture A estimates camera pose online. Matching known gripper movement from forward kinematics with visual optical flow recovers extrinsics within the first five control steps.
+\subsection{Architecture A: Online Self-Calibrating Kinematics}
+Architecture A estimates camera extrinsics online without calibration markers. Forward kinematics tracks the robot end-effector in workspace coordinates:
+\begin{equation}
+\dot{x}_{\text{base}} = J(q) \dot{q}
+\label{eq_fk}
+\end{equation}
+A temporal cross-attention layer matches known gripper velocity $\dot{x}_{\text{base}}$ with visual optical flow in camera pixel space. Minimizing flow discrepancy recovers the extrinsic matrix $T_{\text{cam}}^{\text{base}} = [R \mid p]$ within the first five control steps. This capability allows autonomous operation without manual camera calibration.
 
-\subsection{Architecture B: Continuous SE(3)-Equivariant Policy}
-Architecture B replaces isotropic point pooling with steerable equivariant graph neural networks, mathematically guaranteeing continuous rotational invariance without data augmentation.
+\subsection{Architecture B: Steerable SE(3)-Equivariant Action Fields}
+Architecture B replaces isotropic pooling with steerable graph neural networks. Manipulator action fields satisfy rotational equivariance mathematically:
+\begin{equation}
+\pi(g \cdot P) = g \cdot \pi(P), \quad \forall g \in SO(3)
+\label{eq_equivariance}
+\end{equation}
+The network uses spherical harmonics tensor products to constrain intermediate geometric feature spaces. This mathematical structure guarantees continuous rotational generalization without data augmentation.
 
-\subsection{Architecture C: Cross-Embodiment Generalist Foundation Policy}
-Architecture C outputs Cartesian workspace commands instead of joint actions. By delegating joint kinematics to a standard URDF solver, one visual model can command different robot arms without fine-tuning.
+\subsection{Architecture C: Operational Space Kinematic Decoupling}
+Architecture C outputs Cartesian workspace commands instead of joint velocity actions. The policy predicts end-effector wrench and target velocity in operational space:
+\begin{equation}
+F_{\text{cmd}} = K_p (x_{\text{target}} - x) + K_d (\dot{x}_{\text{target}} - \dot{x})
+\label{eq_operational}
+\end{equation}
+A local inverse kinematics solver computes joint commands using the robot URDF model. Decoupling spatial task geometry from joint mechanics allows a single visual foundation policy to control heterogeneous manipulators without retraining.
 
+\section{Implementation Details and Hyperparameters}
+We conducted all simulations using SAPIEN and ManiSkill 3.0. The underlying PhysX 5 engine runs at 100\,Hz, while the policy executes at a 20\,Hz control loop.
+
+\subsection{PointNet++ Architectural Specifications}
+The visual encoder downsamples raw depth frames to $N=1200$ points via Farthest Point Sampling. Three Set Abstraction layers group local surface patches with grouping radii $r_1=0.05$\,m, $r_2=0.10$\,m, and $r_3=0.20$\,m. Local MLPs with channel dimensions $[64, 128, 256]$ extract geometric features. Symmetric max-pooling creates a 128-dimensional spatial embedding $z_{\text{geo}} \in \mathbb{R}^{128}$. An Actor MLP with two hidden layers of 256 units processes the concatenated visual and proprioceptive vector.
+
+\subsection{Policy Optimization Configuration}
+We trained policies using Proximal Policy Optimization (PPO). Rollout buffers collected 4096 transitions per gradient update with a minibatch size of 128. We used the Adam optimizer with initial learning rate $\eta = 3 \times 10^{-4}$ and linear decay. The PPO clipping parameter was set to $\epsilon_{\text{ppo}} = 0.2$. Value and policy networks train for 200000 environment steps.
+
+\newpage
 \section{Conclusion}
-Over eighteen development phases in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
+Over eighteen development phases in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the continuous generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
 
 \section*{Acknowledgment}
 The author expresses sincere gratitude to his supervisor, Prof. Shivashankar B. Nair, for his guidance throughout this BTP project. All computational experiments, simulations, and neural network training routines were conducted on personal GPU hardware; no departmental compute clusters or resources were utilized.
 
 \begin{thebibliography}{00}
+
 \bibitem{maniwhere} Y. Chen, J. Gao, and D. Pathak, ``ManiWhere: Multi-Viewpoint Robot Manipulation via Visual Distillation,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 37, 2024.
 \bibitem{pointnet2} C. R. Qi, L. Yi, H. Su, and L. J. Guibas, ``PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 30, 2017.
 \bibitem{pointnet} C. R. Qi, H. Su, K. Mo, and L. J. Guibas, ``PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation,'' in \textit{Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017, pp. 652--660.

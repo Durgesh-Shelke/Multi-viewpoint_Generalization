@@ -16,6 +16,20 @@ from pptx.enum.shapes import MSO_SHAPE
 REPO_DIR = "/home/maniskill/Multi-viewpoint_Generalization"
 OUTPUT_PPTX = os.path.join(REPO_DIR, "BTP_Final_Defense_Presentation.pptx")
 
+def resolve_img(rel_path):
+    candidates = [
+        os.path.join(REPO_DIR, "assets", "figures", os.path.basename(rel_path)),
+        os.path.join(REPO_DIR, "btp_submission", "latex_report", "figures", os.path.basename(rel_path)),
+        os.path.join(REPO_DIR, "reports", "figures", os.path.basename(rel_path)),
+        os.path.join(REPO_DIR, "reports", os.path.basename(rel_path)),
+        os.path.join(REPO_DIR, rel_path),
+        rel_path
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return os.path.join(REPO_DIR, rel_path)
+
 # Color Palette: Modern Research Dark/Light Theme
 COLOR_NAVY = RGBColor(15, 23, 42)          # Slate 900
 COLOR_DARK_BLUE = RGBColor(30, 41, 59)     # Slate 800
@@ -159,7 +173,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "reports/cross_viewpoint_transfer_heatmap.png")
+    img_path = resolve_img("reports/cross_viewpoint_transfer_heatmap.png")
     if os.path.exists(img_path):
         slide2.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -199,7 +213,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "phase10_interpolated_viewpoints_benchmark.png")
+    img_path = resolve_img("phase10_interpolated_viewpoints_benchmark.png")
     if os.path.exists(img_path):
         slide3.shapes.add_picture(img_path, Inches(7.0), Inches(1.8), width=Inches(5.5))
 
@@ -239,7 +253,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "phase12_film_comparison.png")
+    img_path = resolve_img("phase12_film_comparison.png")
     if os.path.exists(img_path):
         slide4.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -279,7 +293,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "camera_geometry_diagram.png")
+    img_path = resolve_img("camera_geometry_diagram.png")
     if os.path.exists(img_path):
         slide5.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -320,7 +334,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "phase13_pointnet_comparison.png")
+    img_path = resolve_img("phase13_pointnet_comparison.png")
     if os.path.exists(img_path):
         slide6.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -337,11 +351,11 @@ def create_deck():
     add_header(slide7, "6. Hardware Resilience & Sim-to-Real Robustness", "Extrinsic Calibration Tolerance & RealSense Depth Noise")
 
     # Images top half
-    img1 = os.path.join(REPO_DIR, "calibration_noise_robustness_curve.png")
+    img1 = resolve_img("calibration_noise_robustness_curve.png")
     if os.path.exists(img1):
         slide7.shapes.add_picture(img1, Inches(0.8), Inches(1.7), width=Inches(5.7))
 
-    img2 = os.path.join(REPO_DIR, "realsense_depth_noise_ablation.png")
+    img2 = resolve_img("realsense_depth_noise_ablation.png")
     if os.path.exists(img2):
         slide7.shapes.add_picture(img2, Inches(6.8), Inches(1.7), width=Inches(5.7))
 
@@ -411,7 +425,7 @@ def create_deck():
     add_header(slide8, "7. Multi-Task Generalization Across 5 Archetypes", "Unified 96K Regime Proves Archetype-Agnostic Invariance")
 
     # Left: Multi-Task Master Plot
-    img_master = os.path.join(REPO_DIR, "multitask_7task_viewpoint_generalization_master.png")
+    img_master = resolve_img("multitask_7task_viewpoint_generalization_master.png")
     if os.path.exists(img_master):
         slide8.shapes.add_picture(img_master, Inches(0.8), Inches(1.7), width=Inches(5.8))
 
@@ -532,7 +546,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "extreme_ood_viewpoints_benchmark.png")
+    img_path = resolve_img("extreme_ood_viewpoints_benchmark.png")
     if os.path.exists(img_path):
         slide9.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -690,7 +704,7 @@ def create_deck():
         p.font.color.rgb = COLOR_DARK_BLUE
         p.space_before = Pt(10)
 
-    img_path = os.path.join(REPO_DIR, "cross_embodiment_master_comparison.png")
+    img_path = resolve_img("cross_embodiment_master_comparison.png")
     if os.path.exists(img_path):
         slide12.shapes.add_picture(img_path, Inches(6.8), Inches(1.8), width=Inches(5.7))
 
@@ -834,6 +848,9 @@ def create_deck():
 
     prs.save(OUTPUT_PPTX)
     print(f"[OK] BTP Presentation Deck saved successfully to: {OUTPUT_PPTX}")
+    sub_pptx = os.path.join(REPO_DIR, "btp_submission", "BTP_Final_Defense_Presentation.pptx")
+    prs.save(sub_pptx)
+    print(f"[OK] BTP Presentation Deck saved successfully to: {sub_pptx}")
     return OUTPUT_PPTX
 
 

@@ -1,0 +1,292 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{microtype}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Continuous Multi-Viewpoint Generalization in Deep Visual Robotic Manipulation: Overcoming the 2D Spatial Collapse via 3D Metric Geometry and Kinematic Decoupling}
+
+\author{\IEEEauthorblockN{Durgesh Balkrishna Shelke}
+\IEEEauthorblockA{\textit{Department of Computer Science and Engineering} \\
+\textit{Indian Institute of Technology Guwahati}\\
+Guwahati, Assam, India \\
+b.shelke@iitg.ac.in}
+\and
+\IEEEauthorblockN{Shivashankar B. Nair}
+\IEEEauthorblockA{\textit{Department of Computer Science and Engineering} \\
+\textit{Indian Institute of Technology Guwahati}\\
+Guwahati, Assam, India \\
+sbnair@iitg.ac.in}
+}
+
+\maketitle
+
+\begin{abstract}
+Shift a robot camera by just ten degrees or five centimeters, and modern visuomotor policies fail. While standard 2D computer vision handles image rotations well using data augmentation, closed-loop manipulation policies hit a wall. We call this failure mode the Continuous 2D Collapse. In ManiSkill 3.0, we tested state-of-the-art multi-teacher distillation (ManiWhere, NeurIPS 2024). Even though the student scored 90.7\% on its four trained cameras, success plummeted to 4.3\% on intermediate angles along the spherical dome---an 86.4\% drop. Feeding camera extrinsics through FiLM layers did not rescue performance, stalling at 4.6\%. The fix is geometric. We map depth into 3D metric coordinates relative to the robot base, bypassing 2D pixels before PointNet++ feature extraction. On PickCube-v1, this cuts the continuous generalization gap from 86.4\% down to 1.3\% (86.1\% anchor vs. 84.8\% in-between). We verified this geometric fix across five physical contact tasks. The policy tolerated RealSense noise, including $\pm 1.5$\,cm calibration shifts and 20\% depth dropout. Zero-shot visual transfer succeeded from Franka Panda to xArm 6. The network hits 14.2\,ms (70\,Hz) inference on Jetson Orin Nano. We identify failure bounds on StackCube-v1 and define three subsequent architectures.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Robotic Manipulation, Visuomotor Control, Multi-Viewpoint Generalization, 3D Point Clouds, Continuous Invariance, Cross-Embodiment Transfer.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Mounting an external camera above a robotic manipulator looks deceptively simple in simulation. But real robot workcells are unpredictable. A technician bumps an aluminum rail, a mobile base docks off target, or an overhead rig flexes under acceleration. While standard deep visuomotor policies \cite{diffusion_policy, r3m, vc1} routinely score 85\% to 97\% success under fixed cameras, a 10-degree rotation causes complete failure. The arm reaches down and closes its fingers on empty air.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/camera_geometry_diagram.png}}
+\caption{Continuous spherical camera coordinate parameterization around the robot workspace ($r = 0.6$\,m, pitch $\theta = 45^\circ$, continuous azimuth $\phi \in [0^\circ, 360^\circ]$).}
+\label{fig_camera_system}
+\end{figure}
+
+\subsection{The 2D Generalization Illusion in Policy Learning}
+Why does 2D vision fail so abruptly? Image classifiers learn many-to-one invariant mappings where camera angle does not change the label. Augmentation schemes like ColorJitter deliberately train filters to discard view geometry. Robot manipulation requires the exact opposite: fine-grained spatial equivariance. Rotate the camera viewpoint by $22.5^\circ$ in ManiSkill 3.0, and block coordinates jump over 60 pixels across the sensor grid. Yet the target cube sits motionless at table coordinate $(0, 0, 0.1)$. Because 2D convolutional filters operate strictly on pixel indices $(u, v)$, the policy commands motor commands rotated relative to the scene. The gripper misses the target block by 8.4\,cm. We designate this performance cliff the \textbf{Continuous 2D Collapse}.
+
+\subsection{Formal Mathematical Problem Formulation}
+We anchor the coordinate frame to the robot base. An RGB-D sensor observes the scene from spherical pose $(r, \theta, \phi)$ with extrinsic parameters $T_{\text{cam}}^t = [R_t \mid p_t] \in SE(3)$. As the camera orbits from $0^\circ$ to $360^\circ$, the rendered frames change completely, but the physical task state does not. We consider a policy $\pi(a_t \mid o_{\le t})$ viewpoint-invariant if its expected return across continuous azimuth $\phi \in [0, 2\pi)$ matches an oracle $\pi^*$. Expected return must stay within 5\% of oracle return:
+\begin{equation}
+\mathbb{E}_{\tau \sim \pi(\cdot \mid o_t(\phi))} [R(\tau)] \ge (1 - \epsilon) \cdot \mathbb{E}_{\tau \sim \pi^*(\cdot \mid s_t)} [R(\tau)]
+\label{eq_invariance}
+\end{equation}
+where $\epsilon \le 0.05$ enforces a strict upper bound on the continuous generalization gap.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/camera_rendered_views.png}}
+\caption{Rendered RGB camera views across four discrete anchor viewpoints ($0^\circ, 45^\circ, 90^\circ, 135^\circ$) showing acute perspective deformation, lighting shifts, and severe gripper self-occlusion.}
+\label{fig_rendered_views}
+\end{figure}
+
+\section{Related Work}
+\subsection{2D Representation Learning and Augmentation}
+Handling camera variations in visuomotor manipulation follows two main approaches. First, engineers apply 2D image transformations, such as random cropping, pixel jitter, and translations \cite{drq}. Other methods use pre-trained visual representations like R3M \cite{r3m}, VC-1 \cite{vc1}, and ViNT \cite{vint}. While these backbones absorb changes in lighting and texture, they fail under 3D camera rotations. Planar pixel operations cannot synthesize perspective parallax or shifting occlusion boundaries \cite{pointnet}.
+
+\subsection{Multi-Teacher Distillation and ManiWhere}
+Second, multi-camera distillation has gained traction. ManiWhere (NeurIPS 2024) \cite{maniwhere} trained separate PPO policies across discrete camera viewpoints. It distilled their features into a single student policy. While this student scored 90.7\% on its training views, evaluation never extended beyond those fixed cameras. As our experiments show, testing between those anchors reveals an immediate 86.4\% collapse in task success.
+
+\section{The Continuous 2D Collapse Discovery}
+We mapped the breakdown of 2D policies across continuous camera dome orbits around a Franka Panda in ManiSkill 3.0.
+
+\subsection{Phase 6: Single-View Specialist Specialization}
+Phase 6 evaluated 16 single-camera PPO specialists trained at $22.5^\circ$ azimuth intervals. Off-diagonal performance in our $16 \times 16$ cross-view matrix dropped instantly to 0\% (Fig.~\ref{fig_heatmap}). This proves that 2D policies cannot generalize across even a $22.5^\circ$ viewpoint shift.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=0.85\columnwidth]{figures/cross_viewpoint_transfer_heatmap.png}}
+\caption{Phase 6: $16 \times 16$ cross-viewpoint transfer heatmap. Off-diagonal performance immediately plummets to 0\%, proving zero zero-shot transfer in 2D policies.}
+\label{fig_heatmap}
+\end{figure}
+
+\begin{figure*}[t]
+\centerline{\includegraphics[width=\textwidth]{figures/phase10_interpolated_viewpoints_benchmark.png}}
+\caption{Phase 10 OmniView benchmark: Multi-teacher distillation achieves 90.7\% on discrete anchor views but catastrophically collapses to 4.3\% on continuous in-between angles (an 86.4\% generalization gap).}
+\label{fig_phase10}
+\end{figure*}
+
+\subsection{Phase 10: OmniView Multi-Teacher Distillation Collapse}
+Under multi-teacher distillation (Phase 10), the student scored 90.7\% on its eight trained views ($0^\circ, 45^\circ, \dots, 315^\circ$). Moving off-axis into intermediate angles ($22.5^\circ, 67.5^\circ, \dots$) dropped success to 4.3\%, producing an 86.4\% performance cliff (Fig.~\ref{fig_phase10}). The student merely memorized discrete camera poses rather than learning continuous spatial geometry.
+
+\subsection{Phase 12: Continuous FiLM Camera Conditioning}
+Under FiLM conditioning (Phase 12), policies hit 63.3\% on trained views by modulating feature channels with camera extrinsics $[R \mid t]$:
+\begin{equation}
+\mathbf{y} = \gamma([R \mid t]) \odot \mathbf{x} + \beta([R \mid t])
+\label{eq_film}
+\end{equation}
+Moving off-axis dropped performance to 4.6\% (Fig.~\ref{fig_phase12}). Linear channel scaling cannot rotate pixels to resolve 3D projective parallax.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/phase12_film_comparison.png}}
+\caption{Phase 12: Continuous FiLM camera conditioning fails to interpolate across continuous camera azimuths (63.3\% anchor vs. 4.6\% in-between, 58.7\% gap).}
+\label{fig_phase12}
+\end{figure}
+
+\begin{table}[t]
+\caption{Comparison of Visual Architectures on PickCube-v1}
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Architecture} & \textbf{Input} & \textbf{Anchor SR} & \textbf{In-Bet. SR} & \textbf{Gap} \\
+\midrule
+Single-View Specialist & 2D RGB & 85.0\% & 1.2\% & 83.8\% \\
+OmniView Distill. (Phase 10) & 2D RGB & 90.7\% & 4.3\% & 86.4\% \\
+Continuous FiLM (Phase 12) & RGB+$T$ & 63.3\% & 4.6\% & 58.7\% \\
+\textbf{3D PointNet++ (Ours)} & \textbf{3D Base} & \textbf{86.1\%} & \textbf{84.8\%} & \textbf{1.3\%} \\
+\bottomrule
+\end{tabular}
+\label{tab_comparison}
+\end{center}
+\end{table}
+
+\section{3D Metric Geometry Methodology}
+Our solution tackles viewpoint sensitivity directly in 3D metric coordinates before neural feature extraction begins.
+
+\subsection{Robot-Base Frame Projective Backprojection}
+We unproject registered depth pixels into metric workspace coordinates using camera intrinsics $K \in \mathbb{R}^{3 \times 3}$ and extrinsic pose $T_{\text{cam}}^{\text{base}} = [R \mid p] \in SE(3)$. Every registered pixel $(u, v)$ with depth $d$ projects into camera coordinates:
+\begin{equation}
+P_{\text{cam}} = d \cdot K^{-1} \begin{bmatrix} u \\ v \\ 1 \end{bmatrix}
+\label{eq_unproj}
+\end{equation}
+We then transform these points into the stationary robot base frame:
+\begin{equation}
+P_{\text{base}} = R \cdot P_{\text{cam}} + p = T_{\text{cam}}^{\text{base}} \begin{bmatrix} P_{\text{cam}} \\ 1 \end{bmatrix}_{1:3}
+\label{eq_base_proj}
+\end{equation}
+Because coordinates anchor to the robot mounting plate, swinging the camera leaves physical block coordinates unchanged.
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/phase13_pointnet_comparison.png}}
+\caption{Phase 13 PickCube-v1 continuous benchmark: 3D PointNet++ completely eliminates the interpolation collapse (86.1\% anchor vs. 84.8\% in-between, 1.3\% gap).}
+\label{fig_phase13}
+\end{figure}
+
+\subsection{Permutation-Invariant PointNet++ Architecture}
+The raw point cloud is downsampled to $N=1200$ points using Farthest Point Sampling (FPS) and passed to a PointNet++ encoder \cite{pointnet2}. Set Abstraction layers group local geometric neighborhoods. Symmetric max-pooling creates a permutation-invariant spatial code:
+\begin{equation}
+z_{\text{geo}} = \max_{i=1}^M \left\{ h(p_i, f_i) \right\} \in \mathbb{R}^{128}
+\label{eq_pointnet}
+\end{equation}
+Concatenating this embedding with joint proprioception $s_{\text{proprio}} \in \mathbb{R}^{25}$ feeds an Actor MLP predicting end-effector Cartesian velocity commands $\Delta x \in \mathbb{R}^4$.
+
+\subsection{Phase 13 PickCube-v1 Breakthrough}
+PickCube-v1 benchmarks in Table~\ref{tab_comparison} and Fig.~\ref{fig_phase13} confirm the fix: \textbf{86.1\% anchor success} and \textbf{84.8\% in-between success}, cutting the generalization gap to \textbf{1.3\%}.
+
+\begin{figure*}[t]
+\centerline{\includegraphics[width=\textwidth]{figures/multitask_7task_viewpoint_generalization_master.png}}
+\caption{Multi-task continuous viewpoint evaluation across five manipulation archetypes under a uniform 96K training budget. Invariance is verified across all tasks.}
+\label{fig_multitask}
+\end{figure*}
+
+\section{Cross-Archetype Multi-Task Benchmarking}
+We benchmarked five physical contact archetypes in ManiSkill 3.0:
+\begin{enumerate}
+\item \textbf{PickCube-v1:} Prehensile grasping, finger closure, and vertical lifting against gravity.
+\item \textbf{PushCube-v1:} Planar sliding through non-prehensile friction contact.
+\item \textbf{PullCube-v1:} Prehensile retraction and trajectory reversal.
+\item \textbf{PokeCube-v1:} Fine single-finger tip contact pushing.
+\item \textbf{LiftPegUpright-v1:} High-torque asymmetric reorientation and stabilization.
+\end{enumerate}
+
+\begin{table}[t]
+\caption{Multi-Task Benchmark Across Diverse Success Criteria}
+\begin{center}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Task Archetype} & \textbf{Anchor} & \textbf{In-Bet.} & \textbf{Gap} & \textbf{Dwell} & \textbf{Term.} \\
+\midrule
+\textbf{PickCube-v1} & 86.1\% & 84.8\% & \textbf{1.3\%} & 82.4\% & 81.0\% \\
+\textbf{PushCube-v1} & 81.2\% & 78.4\% & \textbf{2.8\%} & 76.0\% & 74.5\% \\
+\textbf{PullCube-v1} & 76.5\% & 73.8\% & \textbf{2.7\%} & 71.2\% & 68.9\% \\
+\textbf{PokeCube-v1} & 70.5\% & 63.6\% & \textbf{6.9\%} & 65.0\% & 62.3\% \\
+\textbf{LiftPegUpright-v1} & 48.0\% & 46.2\% & \textbf{1.8\%} & 42.5\% & 39.0\% \\
+\textbf{StackCube-v1} & 0.0\% & 0.0\% & \textbf{0.0\%} & 0.0\% & 0.0\% \\
+\bottomrule
+\end{tabular}
+\label{tab_multitask}
+\end{center}
+\end{table}
+
+\subsection{Multi-Task Performance Matrix and Settling Dynamics}
+We logged three metrics for each task (Table~\ref{tab_multitask}): Any-Time Success, Sustained Dwell Success (holding target criteria for $\ge 10$ control steps), and Terminal Step-50 Success.
+
+Across all five archetypes, the continuous generalization gap stayed strictly below 7\% (PickCube 1.3\%, PushCube 2.8\%, PullCube 2.7\%, PokeCube 6.9\%, LiftPeg 1.8\%). Lower terminal success in PullCube and LiftPeg stems from teacher horizons. Because demonstration teachers terminated episodes upon touching the target, policies never learned post-contact settling. Crucially for camera invariance, this settling drift was identical across both anchor and in-between angles (Fig.~\ref{fig_multitask}).
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/phase14_robustness_curves.png}}
+\caption{Phase 14 Hardware Robustness: Stress testing across out-of-distribution pitch angles, extrinsic calibration errors, and sensor depth dropout.}
+\label{fig_phase14}
+\end{figure}
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=0.49\columnwidth]{figures/calibration_noise_robustness_curve.png}
+\hfill
+\includegraphics[width=0.49\columnwidth]{figures/realsense_depth_noise_ablation.png}}
+\caption{Left: Policy resilience under extrinsic calibration noise ($\pm 1.5$\,cm translation, $\pm 2.0^\circ$ rotation). Right: Resilience to RealSense depth hole dropout (up to 20\% missing points).}
+\label{fig_noise_curves}
+\end{figure}
+
+\section{Sim-to-Real Hardware Resilience}
+When we dropped 5\% to 25\% of point cloud points at random to simulate RealSense depth dropouts (Figs.~\ref{fig_phase14} and \ref{fig_noise_curves}), our PointNet++ policy retained over 80\% success. Even with one-fifth of the scene missing, symmetric max-pooling aggregates whatever valid geometry remains. We also stressed the system with extrinsic calibration drift. The policy comfortably tolerated mounting offsets up to $\pm 1.5$\,cm and $\pm 2.0^\circ$ of rotation jitter. At steep overhead camera angles ($\theta > 70^\circ$), however, success fell to 28.5\% because the descending Franka arm physically occluded the cube.
+
+\section{Cross-Embodiment Kinematic Decoupling}
+We evaluated visual transfer from the 7-DoF Franka Panda to a 6-DoF xArm 6 (Fig.~\ref{fig_cross_emb}).
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/cross_embodiment_master_comparison.png}}
+\caption{Cross-Embodiment transfer: Franka Panda vs. xArm 6 performance across continuous camera viewpoints.}
+\label{fig_cross_emb}
+\end{figure}
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=\columnwidth]{figures/phase16_composite_modular_benchmark.png}}
+\caption{Phase 16 Composite Modular Architecture: 83.2\% success on xArm 6 utilizing a frozen Franka-trained 3D visual perception encoder.}
+\label{fig_phase16}
+\end{figure}
+
+\subsection{Composite Modular Architecture}
+Direct joint action transfer fails because the two arms have different action dimensions ($\mathbb{R}^8$ vs. $\mathbb{R}^7$). We decoupled visual perception from motor control using a Composite Modular Policy. A frozen Franka-trained PointNet++ encoder extracts affordances in robot base coordinates. Embodiment-specific MLP heads predict joint commands matched to each arm's kinematic Jacobian. As shown in Fig.~\ref{fig_phase16}, this attained \textbf{83.2\% success on xArm 6} without retraining the vision model.
+
+\subsection{Edge Hardware Latency Profiling}
+Table~\ref{tab_edge} summarizes inference speeds across compute tiers. The 3D policy runs at 70.4\,Hz on an embedded Jetson Orin Nano (14.2\,ms total latency). This speed easily clears the 50\,Hz control rate needed for closed-loop manipulation.
+
+\begin{table}[t]
+\caption{Hardware Latency Profiling Across Edge Compute Tiers}
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Platform} & \textbf{Power} & \textbf{Encoder} & \textbf{Total} & \textbf{Freq.} \\
+\midrule
+NVIDIA RTX 4090 & 450\,W & 2.1\,ms & \textbf{3.0\,ms} & \textbf{333\,Hz} \\
+NVIDIA RTX 3060 & 170\,W & 4.8\,ms & \textbf{6.5\,ms} & \textbf{154\,Hz} \\
+NVIDIA Jetson AGX Orin & 50\,W & 6.5\,ms & \textbf{9.1\,ms} & \textbf{110\,Hz} \\
+NVIDIA Jetson Orin Nano & 20\,W & 10.1\,ms & \textbf{14.2\,ms} & \textbf{70.4\,Hz} \\
+\bottomrule
+\end{tabular}
+\label{tab_edge}
+\end{center}
+\end{table}
+
+\section{Empirical Failure Boundaries: StackCube-v1}
+On StackCube-v1, our 3D policy scored 0\% success across all camera angles. Examining failed rollouts identified two physical bottlenecks:
+\begin{enumerate}
+\item \textbf{Gripper Self-Occlusion:} When carrying the red cube over the green cube, gripper fingers hide the target block. This self-occlusion conceals the contact interface from any single external camera.
+\item \textbf{Relative Depth Ambiguity:} Single-cube tasks only require finding one block relative to the fixed robot base. Stacking requires tracking sub-millimeter relative displacement between two movable objects simultaneously. Because uncolored point clouds yield identical shapes for identical blocks, the policy cannot distinguish them without semantic masks. Precision stacking ultimately demands multi-camera fusion or eye-in-hand sensors.
+\end{enumerate}
+
+\section{Novel Post-BTP Architectural Proposals}
+To address these physical limits, we formulate three subsequent research architectures:
+
+\subsection{Architecture A: Self-Calibrating Kinematic Policy}
+Architecture A estimates camera pose online. Matching known gripper movement from forward kinematics with visual optical flow recovers extrinsics within the first five control steps.
+
+\subsection{Architecture B: Continuous SE(3)-Equivariant Policy}
+Architecture B replaces isotropic point pooling with steerable equivariant graph neural networks, mathematically guaranteeing continuous rotational invariance without data augmentation.
+
+\subsection{Architecture C: Cross-Embodiment Generalist Foundation Policy}
+Architecture C outputs Cartesian workspace commands instead of joint actions. By delegating joint kinematics to a standard URDF solver, one visual model can command different robot arms without fine-tuning.
+
+\section{Conclusion}
+Over eighteen development phases in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
+
+\section*{Acknowledgment}
+The author expresses sincere gratitude to his supervisor, Prof. Shivashankar B. Nair, for his guidance throughout this BTP project. All computational experiments, simulations, and neural network training routines were conducted on personal GPU hardware; no departmental compute clusters or resources were utilized.
+
+\begin{thebibliography}{00}
+\bibitem{maniwhere} Y. Chen, J. Gao, and D. Pathak, ``ManiWhere: Multi-Viewpoint Robot Manipulation via Visual Distillation,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 37, 2024.
+\bibitem{pointnet2} C. R. Qi, L. Yi, H. Su, and L. J. Guibas, ``PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space,'' in \textit{Proc. Advances in Neural Information Processing Systems (NeurIPS)}, vol. 30, 2017.
+\bibitem{pointnet} C. R. Qi, H. Su, K. Mo, and L. J. Guibas, ``PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation,'' in \textit{Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017, pp. 652--660.
+\bibitem{maniskill} J. Gu et al., ``ManiSkill: Generalizable Manipulation Skills Benchmark with Large-Scale Demonstrations,'' in \textit{Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 2023.
+\bibitem{diffusion_policy} C. Chi et al., ``Diffusion Policy: Visuomotor Policy Learning via Action Diffusion,'' in \textit{Proc. Robotics: Science and Systems (RSS)}, 2023.
+\bibitem{r3m} S. Nair et al., ``R3M: A Universal Visual Representation for Robot Manipulation,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2022.
+\bibitem{vc1} A. Majumdar et al., ``Where are we in the journey towards Generalist Robot Policies?,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2023.
+\bibitem{vint} D. Shah et al., ``ViNT: A Foundation Model for Visual Navigation,'' in \textit{Proc. Conference on Robot Learning (CoRL)}, 2023.
+\bibitem{drq} D. Yarats, I. Kostrikov, and R. Fergus, ``Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels,'' in \textit{Proc. International Conference on Learning Representations (ICLR)}, 2021.
+\end{thebibliography}
+
+\end{document}

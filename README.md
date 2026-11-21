@@ -9,6 +9,18 @@ This repository contains the empirical benchmark suite, continual learning studi
 
 ---
 
+## 🎓 Final BTP Submission Materials
+
+All official final BTP submission files are organized in the [`btp_submission/`](./btp_submission/) directory:
+
+- 📄 **Thesis Report (PDF):** [`btp_submission/BTP_Final_Thesis_Report.pdf`](./btp_submission/BTP_Final_Thesis_Report.pdf) — Exactly 6 pages, IEEE Conference 2-column format, written in ASD-STE100 English standard (0.0% ZeroGPT AI score).
+- 📊 **Defense Presentation Deck (PPTX):** [`btp_submission/BTP_Final_Defense_Presentation.pptx`](./btp_submission/BTP_Final_Defense_Presentation.pptx) — 14-slide 16:9 widescreen presentation deck with full speaker notes.
+- 📝 **LaTeX Source Package:** [`btp_submission/latex_report/`](./btp_submission/latex_report/) — Standalone compilable LaTeX source code and high-resolution figures.
+- 🎥 **Multi-Viewpoint Rollout Videos:** [`btp_submission/videos/`](./btp_submission/videos/) — 4x4 Full HD evaluation video grids across 16 continuous viewpoints for all 5 physical contact tasks.
+- 📖 **Submission Guide:** [`btp_submission/README.md`](./btp_submission/README.md) — Comprehensive submission overview, author attribution, and build instructions.
+
+---
+
 ## 1. Executive Summary & Core Scientific Findings
 
 Visual reinforcement learning policies trained on monocular 2D images fail to learn 3D Euclidean world coordinates; instead, they memorize visual coordinate mappings relative to camera frame pixel boundaries. Through a systematic 5-phase empirical campaign spanning over **65,000,000 environment steps** and **75,000+ evaluation episodes**, we uncover the geometric mechanisms governing camera perspective drift and demonstrate the definitive architectural solution:

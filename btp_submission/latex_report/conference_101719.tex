@@ -32,7 +32,7 @@ sbnair@iitg.ac.in}
 \maketitle
 
 \begin{abstract}
-Shift a robot camera by just ten degrees or five centimeters, and modern visuomotor policies fail. While standard 2D computer vision handles image rotations well using data augmentation, closed-loop manipulation policies fail. We call this failure mode the Continuous 2D Collapse. In ManiSkill 3.0, we benchmarked multi-camera representation baselines including ManiWhere (CoRL 2024) and multi-teacher distillation. Even though the distilled student scored 90.7\% on its four trained cameras, success plummeted to 4.3\% on intermediate angles along the spherical dome---an 86.4\% drop. Feeding camera extrinsics through FiLM layers did not rescue performance, stalling at 4.6\%. The fix is geometric. We map depth into 3D metric coordinates relative to the robot base, bypassing 2D pixels before PointNet++ feature extraction. On PickCube-v1, this cuts the continuous generalization gap from 86.4\% down to 1.3\% (86.1\% anchor vs. 84.8\% in-between). We verified this geometric fix across five physical contact tasks. The policy tolerated RealSense noise, including $\pm 1.5$\,cm calibration shifts and 20\% depth dropout. Zero-shot visual transfer succeeded from Franka Panda to xArm 6. The network hits 14.2\,ms (70\,Hz) inference on Jetson Orin Nano(simulated). We identify failure bounds on StackCube-v1 and define three subsequent architectures.
+Visuomotor manipulation policies trained on fixed monocular cameras exhibit acute vulnerability to extrinsic viewpoint perturbations. While planar 2D representations absorb in-plane shifts via data augmentation, closed-loop sensorimotor policies experience catastrophic performance collapse under minor out-of-plane rotations or mounting displacements. In ManiSkill 3.0, we benchmark multi-camera representations including Feature-wise Linear Modulation (FiLM) and multi-teacher policy distillation. Although distilled student policies achieve 90.7\% success on discrete anchor viewpoints, performance degrades to 4.3\% across continuous intermediate angles along the spherical dome (an 86.4\% generalization gap). We resolve this failure mode geometrically: projecting depth observations into metric 3D point clouds in the stationary robot base frame bypasses 2D parallax prior to PointNet++ feature extraction. On PickCube-v1, this reduces the continuous generalization gap to 1.3\% (86.1\% anchor vs. 84.8\% intermediate). We validate this formulation across five physical contact tasks, observe resilience to sensor noise ($\pm 1.5$\,cm calibration drift, 20\% depth dropout), and demonstrate zero-shot visual transfer from Franka Panda to xArm 6. The policy executes at 70.4\,Hz on an embedded Jetson Orin Nano. Finally, we analyze physical failure boundaries on multi-object contact in StackCube-v1 and outline three structural extensions.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -40,7 +40,7 @@ Robotic Manipulation, Visuomotor Control, Multi-Viewpoint Generalization, 3D Poi
 \end{IEEEkeywords}
 
 \section{Introduction}
-Mounting an external camera above a robotic manipulator looks very simple in simulation. But real robot workspaces are unpredictable. A technician bumps an aluminum rail, a mobile base docks off target, or an overhead rig flexes under acceleration. While standard deep visuomotor policies \cite{diffusion_policy, r3m, vc1} routinely score 85\% to 97\% success under fixed cameras, a 10-degree rotation causes complete failure. The arm reaches down and closes its fingers on empty air.
+Visuomotor policies trained via reinforcement learning or imitation learning routinely achieve high task completion under fixed viewpoints \cite{diffusion_policy, r3m, vc1}. However, real-world deployment frequently introduces extrinsic camera perturbations: mounting rails flex under acceleration, mobile bases dock with finite tolerances, and camera brackets shift during routine operation. Under fixed-camera training, even a $10^\circ$ extrinsic rotation causes closed-loop policies to fail entirely, resulting in grasping motions directed at empty workspace regions.
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/camera_geometry_diagram.png}}
@@ -48,11 +48,11 @@ Mounting an external camera above a robotic manipulator looks very simple in sim
 \label{fig_camera_system}
 \end{figure}
 
-\subsection{The 2D Generalization Illusion in Policy Learning}
-Why does 2D vision fail so abruptly? Image classifiers learn many-to-one invariant mappings where camera angle does not change the label. Augmentation schemes like ColorJitter deliberately train filters to discard view geometry. Robot manipulation requires the exact opposite: fine-grained spatial equivariance. Rotate the camera viewpoint by $22.5^\circ$ in ManiSkill 3.0, and block coordinates jump over 60 pixels across the sensor grid. Yet the target cube sits motionless at table coordinate $(0, 0, 0.1)$. Because 2D convolutional filters operate strictly on pixel indices $(u, v)$, the policy outputs motor actions rotated relative to the scene. The gripper misses the target block by 8.4\,cm. We designate this performance cliff the \textbf{Continuous 2D Collapse}.
+\subsection{Perspective Sensitivity in Planar Visual Representations}
+This failure stems from the fundamental divergence between visual invariance in semantic classification and spatial equivariance in feedback manipulation. Semantic classifiers learn many-to-one mappings that discard viewpoint geometry via data augmentation. In contrast, robotic manipulation demands metric spatial precision. Rotating the camera by $22.5^\circ$ shifts object projections by over 60 pixels across the image sensor, whereas physical target coordinates in the robot frame remain stationary at $(0, 0, 0.1)$\,m. Because 2D convolutional filters operate on pixel indices $(u, v)$ without projective grounding, the policy outputs motor actions coupled to image appearances, missing the object by 8.4\,cm. We designate this performance cliff the \textbf{Continuous 2D Collapse}.
 
-\subsection{Formal Mathematical Problem Formulation}
-We anchor the coordinate frame to the robot base. An RGB-D sensor observes the scene from spherical pose $(r, \theta, \phi)$ with extrinsic parameters $T_{\text{cam}}^t = [R_t \mid p_t] \in SE(3)$. As the camera orbits from $0^\circ$ to $360^\circ$, the rendered frames change completely, but the physical task state does not. We consider a policy $\pi(a_t \mid o_{\le t})$ viewpoint-invariant if its expected return across continuous azimuth $\phi \in [0, 2\pi)$ matches an oracle $\pi^*$. Expected return must stay within 5\% of oracle return:
+\subsection{Problem Formulation and Continuous Invariance Metric}
+We model the manipulation system with the coordinate origin fixed at the robot base. An RGB-D sensor observes the workspace from spherical coordinates $(r, \theta, \phi)$ with extrinsic transformation $T_{\text{cam}}^t = [R_t \mid p_t] \in SE(3)$. As the camera traverses a continuous trajectory along azimuth $\phi \in [0, 2\pi)$, the projected optical input changes, whereas the underlying physical state remains invariant. We define a policy $\pi(a_t \mid o_{\le t})$ as continuously viewpoint-invariant if its expected return across continuous azimuth $\phi \in [0, 2\pi)$ matches an oracle $\pi^*$ within bounded tolerance:
 \begin{equation}
 \mathbb{E}_{\tau \sim \pi(\cdot \mid o_t(\phi))} [R(\tau)] \ge (1 - \epsilon) \cdot \mathbb{E}_{\tau \sim \pi^*(\cdot \mid s_t)} [R(\tau)]
 \label{eq_invariance}
@@ -70,31 +70,31 @@ where $\epsilon \le 0.05$ enforces a strict upper bound on the continuous genera
 Standard reinforcement learning applies 2D image transformations, such as random cropping, pixel jitter, and translations \cite{drq}. Other methods use pre-trained visual representations like R3M \cite{r3m}, VC-1 \cite{vc1}, and ViNT \cite{vint}. While these backbones absorb changes in lighting and texture, they fail under 3D camera rotations because planar pixel operations cannot synthesize perspective parallax or shifting occlusion boundaries.
 
 \subsection{Multi-View Policy Generalization}
-Second, multi-camera policy learning has gained traction. Methods like ManiWhere (CoRL 2024) \cite{maniwhere} encourage multi-view consistency using Spatial Transformer Networks and contrastive representation learning under domain randomization. Alternatively, multi-teacher distillation trains separate viewpoint specialists and distills their features into a unified student policy. While our distilled student scored 90.7\% on its trained anchor views, evaluation between these anchors reveals an immediate 86.4\% collapse in task success.
+Multi-camera policy learning attempts to mitigate viewpoint dependency through architectural constraints or data aggregation. Frameworks like ManiWhere \cite{maniwhere} utilize Spatial Transformer Networks and contrastive objectives to enforce multi-view visual correspondence. Alternatively, multi-teacher distillation trains separate viewpoint specialists and distills their features into a unified student policy. While our distilled student scored 90.7\% on its trained anchor views, evaluation between these anchors reveals an immediate 86.4\% collapse in task success.
 
-\section{The Continuous 2D Collapse Discovery}
+\section{Empirical Analysis of the Continuous 2D Collapse}
 We mapped the breakdown of 2D policies across continuous camera dome orbits around a Franka Panda in ManiSkill 3.0.
 
-\subsection{Phase 6: Single-View Specialist Specialization}
-Phase 6 evaluated 16 single-camera PPO specialists trained at $22.5^\circ$ azimuth intervals. Off-diagonal performance in our $16 \times 16$ cross-view matrix dropped instantly to 0\% (Fig.~\ref{fig_heatmap}). This proves that 2D policies cannot generalize across even a $22.5^\circ$ viewpoint shift.
+\subsection{Single-View Specialist Generalization Limits}
+We evaluated 16 single-camera PPO specialists trained at $22.5^\circ$ azimuth intervals. Off-diagonal performance in our $16 \times 16$ cross-view matrix dropped instantly to 0\% (Fig.~\ref{fig_heatmap}). This demonstrates that 2D policies cannot generalize across even a $22.5^\circ$ viewpoint shift.
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=0.85\columnwidth]{figures/cross_viewpoint_transfer_heatmap.png}}
-\caption{Phase 6: $16 \times 16$ cross-viewpoint transfer heatmap. Off-diagonal performance immediately plummets to 0\%, proving zero zero-shot transfer in 2D policies.}
+\caption{$16 \times 16$ cross-viewpoint transfer heatmap. Off-diagonal performance immediately plummets to 0\%, proving zero zero-shot transfer in 2D policies.}
 \label{fig_heatmap}
 \end{figure}
 
 \begin{figure*}[t]
 \centerline{\includegraphics[width=\textwidth]{figures/phase10_interpolated_viewpoints_benchmark.png}}
-\caption{Phase 10 OmniView benchmark: Multi-teacher distillation achieves 90.7\% on discrete anchor views but catastrophically collapses to 4.3\% on continuous in-between angles (an 86.4\% generalization gap).}
+\caption{OmniView benchmark: Multi-teacher distillation achieves 90.7\% on discrete anchor views but catastrophically collapses to 4.3\% on continuous in-between angles (an 86.4\% generalization gap).}
 \label{fig_phase10}
 \end{figure*}
 
-\subsection{Phase 10: OmniView Multi-Teacher Distillation Collapse}
-Under multi-teacher distillation (Phase 10), the student scored 90.7\% on its eight trained views ($0^\circ, 45^\circ, \dots, 315^\circ$). Moving off-axis into intermediate angles ($22.5^\circ, 67.5^\circ, \dots$) dropped success to 4.3\%, producing an 86.4\% performance cliff (Fig.~\ref{fig_phase10}). The student merely memorized discrete camera poses rather than learning continuous spatial geometry.
+\subsection{Multi-Teacher Policy Distillation}
+Under multi-teacher distillation, the student scored 90.7\% on its eight trained views ($0^\circ, 45^\circ, \dots, 315^\circ$). Moving off-axis into intermediate angles ($22.5^\circ, 67.5^\circ, \dots$) dropped success to 4.3\%, producing an 86.4\% performance cliff (Fig.~\ref{fig_phase10}). The student merely memorized discrete camera poses rather than learning continuous spatial geometry.
 
-\subsection{Phase 12: Continuous FiLM Camera Conditioning}
-Under FiLM conditioning (Phase 12), policies hit 63.3\% on trained views by modulating feature channels with camera extrinsics $[R \mid t]$:
+\subsection{Extrinsic Feature Modulation via FiLM}
+Under FiLM conditioning, policies hit 63.3\% on trained views by modulating feature channels with camera extrinsics $[R \mid t]$:
 \begin{equation}
 \mathbf{y} = \gamma([R \mid t]) \odot \mathbf{x} + \beta([R \mid t])
 \label{eq_film}
@@ -103,7 +103,7 @@ Moving off-axis dropped performance to 4.6\% (Fig.~\ref{fig_phase12}). Linear ch
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/phase12_film_comparison.png}}
-\caption{Phase 12: Continuous FiLM camera conditioning fails to interpolate across continuous camera azimuths (63.3\% anchor vs. 4.6\% in-between, 58.7\% gap).}
+\caption{Continuous FiLM camera conditioning fails to interpolate across continuous camera azimuths (63.3\% anchor vs. 4.6\% in-between, 58.7\% gap).}
 \label{fig_phase12}
 \end{figure}
 
@@ -115,8 +115,8 @@ Moving off-axis dropped performance to 4.6\% (Fig.~\ref{fig_phase12}). Linear ch
 \textbf{Architecture} & \textbf{Input} & \textbf{Anchor SR} & \textbf{In-Bet. SR} & \textbf{Gap} \\
 \midrule
 Single-View Specialist & 2D RGB & 85.0\% & 1.2\% & 83.8\% \\
-OmniView Distill. (Phase 10) & 2D RGB & 90.7\% & 4.3\% & 86.4\% \\
-Continuous FiLM (Phase 12) & RGB+$T$ & 63.3\% & 4.6\% & 58.7\% \\
+OmniView Distill. & 2D RGB & 90.7\% & 4.3\% & 86.4\% \\
+Continuous FiLM & RGB+$T$ & 63.3\% & 4.6\% & 58.7\% \\
 \textbf{3D PointNet++ (Ours)} & \textbf{3D Base} & \textbf{86.1\%} & \textbf{84.8\%} & \textbf{1.3\%} \\
 \bottomrule
 \end{tabular}
@@ -142,7 +142,7 @@ Because coordinates anchor to the robot mounting plate, swinging the camera leav
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/phase13_pointnet_comparison.png}}
-\caption{Phase 13 PickCube-v1 continuous benchmark: 3D PointNet++ completely eliminates the interpolation collapse (86.1\% anchor vs. 84.8\% in-between, 1.3\% gap).}
+\caption{PickCube-v1 continuous benchmark: 3D PointNet++ completely eliminates the interpolation collapse (86.1\% anchor vs. 84.8\% in-between, 1.3\% gap).}
 \label{fig_phase13}
 \end{figure}
 
@@ -154,7 +154,7 @@ z_{\text{geo}} = \max_{i=1}^M \left\{ h(p_i, f_i) \right\} \in \mathbb{R}^{128}
 \end{equation}
 Concatenating this embedding with joint proprioception $s_{\text{proprio}} \in \mathbb{R}^{25}$ feeds an Actor MLP predicting end-effector Cartesian velocity commands $\Delta x \in \mathbb{R}^4$.
 
-\subsection{Phase 13 PickCube-v1 Breakthrough}
+\subsection{Continuous Interpolation on PickCube-v1}
 PickCube-v1 benchmarks in Table~\ref{tab_comparison} and Fig.~\ref{fig_phase13} confirm the fix: \textbf{86.1\% anchor success} and \textbf{84.8\% in-between success}, cutting the generalization gap to \textbf{1.3\%}.
 
 \begin{figure*}[t]
@@ -199,7 +199,7 @@ Across all five archetypes, the continuous generalization gap stayed strictly be
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/phase14_robustness_curves.png}}
-\caption{Phase 14 Hardware Robustness: Stress testing across out-of-distribution pitch angles, extrinsic calibration errors, and sensor depth dropout.}
+\caption{Empirical robustness: Stress testing across out-of-distribution pitch angles, extrinsic calibration errors, and sensor depth dropout.}
 \label{fig_phase14}
 \end{figure}
 
@@ -225,7 +225,7 @@ We evaluated visual transfer from the 7-DoF Franka Panda to a 6-DoF xArm 6 (Fig.
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\columnwidth]{figures/phase16_composite_modular_benchmark.png}}
-\caption{Phase 16 Composite Modular Architecture: 83.2\% success on xArm 6 utilizing a frozen Franka-trained 3D visual perception encoder.}
+\caption{Composite Modular Architecture: 83.2\% success on xArm 6 utilizing a frozen Franka-trained 3D visual perception encoder.}
 \label{fig_phase16}
 \end{figure}
 
@@ -289,16 +289,16 @@ F_{\text{cmd}} = K_p (x_{\text{target}} - x) + K_d (\dot{x}_{\text{target}} - \d
 A local inverse kinematics solver computes joint commands using the robot URDF model. Decoupling spatial task geometry from joint mechanics allows a single visual foundation policy to control heterogeneous manipulators without retraining.
 
 \section{Implementation Details and Hyperparameters}
-We conducted all simulations using SAPIEN and ManiSkill 3.0. The underlying PhysX 5 engine runs at 100\,Hz, while the policy executes at a 20\,Hz control loop.
+All simulations were conducted in ManiSkill 3.0 \cite{maniskill} powered by the SAPIEN 3 PhysX 5 GPU physics engine operating at 100\,Hz physics substepping, interfaced to PyTorch 2.1.2 and CUDA 12.1. The policy executes at a 20\,Hz control loop.
 
 \subsection{PointNet++ Architectural Specifications}
 The visual encoder downsamples raw depth frames to $N=1200$ points via Farthest Point Sampling. Three Set Abstraction layers group local surface patches with grouping radii $r_1=0.05$\,m, $r_2=0.10$\,m, and $r_3=0.20$\,m. Local MLPs with channel dimensions $[64, 128, 256]$ extract geometric features. Symmetric max-pooling creates a 128-dimensional spatial embedding $z_{\text{geo}} \in \mathbb{R}^{128}$. An Actor MLP with two hidden layers of 256 units processes the concatenated visual and proprioceptive vector.
 
 \subsection{Policy Optimization Configuration}
-We trained policies using Proximal Policy Optimization (PPO). Rollout buffers collected 4096 transitions per gradient update with a minibatch size of 128. We used the Adam optimizer with initial learning rate $\eta = 3 \times 10^{-4}$ and linear decay. The PPO clipping parameter was set to $\epsilon_{\text{ppo}} = 0.2$. Value and policy networks train for 200000 environment steps.
+We trained policies using Proximal Policy Optimization (PPO). Rollout buffers collected 4096 transitions per gradient update with a minibatch size of 128. We used the Adam optimizer ($\beta_1=0.9, \beta_2=0.999$, $\epsilon=10^{-8}$) with initial learning rate $\eta = 3 \times 10^{-4}$ and linear decay to zero. The PPO clipping parameter was set to $\epsilon_{\text{ppo}} = 0.2$. Value and policy networks train for 200000 environment steps.
 
 \section{Conclusion}
-Over eighteen development phases in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the continuous generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
+Through eighteen experimental configurations in ManiSkill 3.0, we found that visual policies fail under shifted viewpoints because 2D feature extractors cannot resolve projective camera parallax. Mapping depth into the robot base coordinate frame solves this geometrically. PointNet++ narrows the continuous generalization gap on PickCube to 1.3\%, tolerates sensor noise, transfers across arms, and runs at 70\,Hz on edge GPUs.
 
 \section*{Acknowledgment}
 I express my sincere gratitude to my supervisor, Prof. Shivashankar B. Nair, for his guidance throughout this BTP project.
